@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41DB0525-25FF-4A3D-965B-5D750EF7D0DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Liplis</RootNamespace>
+    <AssemblyName>LiplisMini</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Liplis\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>liplis.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Liplis.MainSystem.EntryPoint</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\DLL\Newtonsoft.Json\Net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Liplis\Activity\ActivityChar.cs">
+      <Link>Activity\ActivityChar.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityChar.designer.cs">
+      <Link>Activity\ActivityChar.designer.cs</Link>
+      <DependentUpon>ActivityChar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityLog.cs">
+      <Link>Activity\ActivityLog.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityLog.designer.cs">
+      <Link>Activity\ActivityLog.designer.cs</Link>
+      <DependentUpon>ActivityLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityNicoBrowser.cs">
+      <Link>Activity\ActivityNicoBrowser.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityNicoBrowser.designer.cs">
+      <Link>Activity\ActivityNicoBrowser.designer.cs</Link>
+      <DependentUpon>ActivityNicoBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityPic.cs">
+      <Link>Activity\ActivityPic.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityPic.designer.cs">
+      <Link>Activity\ActivityPic.designer.cs</Link>
+      <DependentUpon>ActivityPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityRssRegistAddCat.cs">
+      <Link>Activity\ActivityRssRegistAddCat.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityRssRegistAddCat.designer.cs">
+      <Link>Activity\ActivityRssRegistAddCat.designer.cs</Link>
+      <DependentUpon>ActivityRssRegistAddCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivitySetting.cs">
+      <Link>Activity\ActivitySetting.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivitySetting.designer.cs">
+      <Link>Activity\ActivitySetting.designer.cs</Link>
+      <DependentUpon>ActivitySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityTalk.cs">
+      <Link>Activity\ActivityTalk.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityTalk.designer.cs">
+      <Link>Activity\ActivityTalk.designer.cs</Link>
+      <DependentUpon>ActivityTalk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityTopicRegist.cs">
+      <Link>Activity\ActivityTopicRegist.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityTopicRegist.designer.cs">
+      <Link>Activity\ActivityTopicRegist.designer.cs</Link>
+      <DependentUpon>ActivityTopicRegist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityTwitterActivation.cs">
+      <Link>Activity\ActivityTwitterActivation.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityTwitterActivation.designer.cs">
+      <Link>Activity\ActivityTwitterActivation.designer.cs</Link>
+      <DependentUpon>ActivityTwitterActivation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityVersion.cs">
+      <Link>Activity\ActivityVersion.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityVersion.designer.cs">
+      <Link>Activity\ActivityVersion.designer.cs</Link>
+      <DependentUpon>ActivityVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\Cmp\Form\CharPanel.cs">
+      <Link>Cmp\Form\CharPanel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Cmp\Form\CusCtlDataPanel.cs">
+      <Link>Cmp\Form\CusCtlDataPanel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Cmp\Form\CusCtlDataPanelNonThum.cs">
+      <Link>Cmp\Form\CusCtlDataPanelNonThum.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Cmp\Form\CustomTextBox.cs">
+      <Link>Cmp\Form\CustomTextBox.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Cmp\Tree\LiplisTreeNodeCld.cs">
+      <Link>Cmp\Tree\LiplisTreeNodeCld.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Cmp\Tree\LiplisTreeNodePar.cs">
+      <Link>Cmp\Tree\LiplisTreeNodePar.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Common\LiplisDefine.cs">
+      <Link>Common\LiplisDefine.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Common\LiplisLog.cs">
+      <Link>Common\LiplisLog.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Common\LpsBaseMovieConverter.cs">
+      <Link>Common\LpsBaseMovieConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Common\LpsDelegate.cs">
+      <Link>Common\LpsDelegate.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Common\LpsLogController.cs">
+      <Link>Common\LpsLogController.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Common\LpsPathControllerCus.cs">
+      <Link>Common\LpsPathControllerCus.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Fct\FctCreateBackground.cs">
+      <Link>Fct\FctCreateBackground.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Fct\FctCreateFromResource.cs">
+      <Link>Fct\FctCreateFromResource.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Fct\FctDragData.cs">
+      <Link>Fct\FctDragData.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Fct\FctGUIDCreater.cs">
+      <Link>Fct\FctGUIDCreater.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Fct\FctLiplisMsg.cs">
+      <Link>Fct\FctLiplisMsg.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Fct\FctRssObjectCreater.cs">
+      <Link>Fct\FctRssObjectCreater.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Fct\FctTagFactory.cs">
+      <Link>Fct\FctTagFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Fct\FctWindowFileLoader.cs">
+      <Link>Fct\FctWindowFileLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\BaseSystem.cs">
+      <Link>MainSystem\BaseSystem.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\BaseSystem.designer.cs">
+      <Link>MainSystem\BaseSystem.designer.cs</Link>
+      <DependentUpon>BaseSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\Liplis.cs">
+      <Link>MainSystem\Liplis.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\Liplis.designer.cs">
+      <Link>MainSystem\Liplis.designer.cs</Link>
+      <DependentUpon>Liplis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\LiplisIcon.cs">
+      <Link>MainSystem\LiplisIcon.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\LiplisIcon.designer.cs">
+      <Link>MainSystem\LiplisIcon.designer.cs</Link>
+      <DependentUpon>LiplisIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\LiplisPopIcon.cs">
+      <Link>MainSystem\LiplisPopIcon.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\LiplisTaskBar.cs">
+      <Link>MainSystem\LiplisTaskBar.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\LiplisTaskBar.designer.cs">
+      <Link>MainSystem\LiplisTaskBar.designer.cs</Link>
+      <DependentUpon>LiplisTaskBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Liplis\MainSystem\LiplisUpdate.cs">
+      <Link>MainSystem\LiplisUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\MsgShortNews.cs">
+      <Link>Msg\MsgShortNews.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\MsgWindowMatrix.cs">
+      <Link>Msg\MsgWindowMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjBattery.cs">
+      <Link>Msg\ObjBattery.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjBody.cs">
+      <Link>Msg\ObjBody.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjBodyDef.cs">
+      <Link>Msg\ObjBodyDef.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjBodyGen.cs">
+      <Link>Msg\ObjBodyGen.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjBodyList.cs">
+      <Link>Msg\ObjBodyList.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjBroom.cs">
+      <Link>Msg\ObjBroom.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjCat.cs">
+      <Link>Msg\ObjCat.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjDownloadFile.cs">
+      <Link>Msg\ObjDownloadFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjDownloadHst.cs">
+      <Link>Msg\ObjDownloadHst.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjEmotion.cs">
+      <Link>Msg\ObjEmotion.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjLiplisChat.cs">
+      <Link>Msg\ObjLiplisChat.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjLog.cs">
+      <Link>Msg\ObjLog.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjLpsApiMsg.cs">
+      <Link>Msg\ObjLpsApiMsg.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjNetwork.cs">
+      <Link>Msg\ObjNetwork.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjPos.cs">
+      <Link>Msg\ObjPos.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjRss.cs">
+      <Link>Msg\ObjRss.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjRssCatList.cs">
+      <Link>Msg\ObjRssCatList.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjRssList.cs">
+      <Link>Msg\ObjRssList.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjSetting.cs">
+      <Link>Msg\ObjSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjSkinSetting.cs">
+      <Link>Msg\ObjSkinSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjSkinSettingList.cs">
+      <Link>Msg\ObjSkinSettingList.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjTone.cs">
+      <Link>Msg\ObjTone.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjTopic.cs">
+      <Link>Msg\ObjTopic.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjVersion.cs">
+      <Link>Msg\ObjVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjWidgetSetting.cs">
+      <Link>Msg\ObjWidgetSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjWindowFile.cs">
+      <Link>Msg\ObjWindowFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\RegisterRsUserInfo.cs">
+      <Link>Msg\RegisterRsUserInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\RegisterRsUserInfoCat.cs">
+      <Link>Msg\RegisterRsUserInfoCat.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\RegisterTwUserInfo.cs">
+      <Link>Msg\RegisterTwUserInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLiplisId.cs">
+      <Link>Msg\ResLiplisId.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsLoginRegisterInfoRss.cs">
+      <Link>Msg\ResLpsLoginRegisterInfoRss.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsLoginRegisterInfoRssEachCat.cs">
+      <Link>Msg\ResLpsLoginRegisterInfoRssEachCat.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsLoginRegisterInfoTw.cs">
+      <Link>Msg\ResLpsLoginRegisterInfoTw.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsLoginStatus.cs">
+      <Link>Msg\ResLpsLoginStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsRegisterTwitterInfoRespons.cs">
+      <Link>Msg\ResLpsRegisterTwitterInfoRespons.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsShortNews2Json.cs">
+      <Link>Msg\ResLpsShortNews2Json.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsShortNews2JsonList.cs">
+      <Link>Msg\ResLpsShortNews2JsonList.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsSummaryNews2Json.cs">
+      <Link>Msg\ResLpsSummaryNews2Json.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsSummaryNews2JsonList.cs">
+      <Link>Msg\ResLpsSummaryNews2JsonList.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsTopicSearchWord.cs">
+      <Link>Msg\ResLpsTopicSearchWord.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsTopicSearchWordList.cs">
+      <Link>Msg\ResLpsTopicSearchWordList.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ResUserOnetimePass.cs">
+      <Link>Msg\ResUserOnetimePass.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Ser\SerialCatObject.cs">
+      <Link>Ser\SerialCatObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Ser\SerialLiplisDownloadHst.cs">
+      <Link>Ser\SerialLiplisDownloadHst.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Ser\SerialRssObject.cs">
+      <Link>Ser\SerialRssObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Web\LiplisApi.cs">
+      <Link>Web\LiplisApi.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Web\LiplisNicoDownLoader.cs">
+      <Link>Web\LiplisNicoDownLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Web\LiplisTwitterOAuth.cs">
+      <Link>Web\LiplisTwitterOAuth.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Web\LiplisTwitterOAuthBase.cs">
+      <Link>Web\LiplisTwitterOAuthBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Web\LiplisWebUrl.cs">
+      <Link>Web\LiplisWebUrl.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Web\LiplisWedFileDownLoader.cs">
+      <Link>Web\LiplisWedFileDownLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Xml\SharedPreferences.cs">
+      <Link>Xml\SharedPreferences.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Xml\XmlSettingObject.cs">
+      <Link>Xml\XmlSettingObject.cs</Link>
+    </Compile>
+    <Compile Include="Activity\ActivityTalkMini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityTalkMini.Designer.cs">
+      <DependentUpon>ActivityTalkMini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSystem\EntryPoint.cs" />
+    <Compile Include="MainSystem\LiplisIconMini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSystem\LiplisIconMini.Designer.cs">
+      <DependentUpon>LiplisIconMini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSystem\LiplisMini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSystem\LiplisMini.Designer.cs">
+      <DependentUpon>LiplisMini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Msg\ObjBodyListMini.cs" />
+    <Compile Include="Msg\ObjTopicMini.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityChar.resx">
+      <Link>Activity\ActivityChar.resx</Link>
+      <DependentUpon>ActivityChar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityLog.resx">
+      <Link>Activity\ActivityLog.resx</Link>
+      <DependentUpon>ActivityLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityNicoBrowser.resx">
+      <Link>Activity\ActivityNicoBrowser.resx</Link>
+      <DependentUpon>ActivityNicoBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityPic.resx">
+      <Link>Activity\ActivityPic.resx</Link>
+      <DependentUpon>ActivityPic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityRssRegistAddCat.resx">
+      <Link>Activity\ActivityRssRegistAddCat.resx</Link>
+      <DependentUpon>ActivityRssRegistAddCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivitySetting.resx">
+      <Link>Activity\ActivitySetting.resx</Link>
+      <DependentUpon>ActivitySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityTalk.resx">
+      <Link>Activity\ActivityTalk.resx</Link>
+      <DependentUpon>ActivityTalk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityTopicRegist.resx">
+      <Link>Activity\ActivityTopicRegist.resx</Link>
+      <DependentUpon>ActivityTopicRegist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityTwitterActivation.resx">
+      <Link>Activity\ActivityTwitterActivation.resx</Link>
+      <DependentUpon>ActivityTwitterActivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityVersion.resx">
+      <Link>Activity\ActivityVersion.resx</Link>
+      <DependentUpon>ActivityVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\MainSystem\Liplis.resx">
+      <Link>MainSystem\Liplis.resx</Link>
+      <DependentUpon>Liplis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\MainSystem\LiplisIcon.resx">
+      <Link>MainSystem\LiplisIcon.resx</Link>
+      <DependentUpon>LiplisIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\MainSystem\LiplisTaskBar.resx">
+      <Link>MainSystem\LiplisTaskBar.resx</Link>
+      <DependentUpon>LiplisTaskBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityTalkMini.resx">
+      <DependentUpon>ActivityTalkMini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSystem\LiplisMini.resx">
+      <DependentUpon>LiplisMini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\sel_search.png" />
+    <None Include="Resources\picRdoFrqChangeable.png" />
+    <None Include="Resources\picRdoFrqVerryNoisy.png" />
+    <None Include="Resources\picRdoFrqTalkative.png" />
+    <None Include="Resources\picRdoFrqReticent.png" />
+    <None Include="Resources\picRdoFrqRefined.png" />
+    <None Include="Resources\picRdoFrqQuiet.png" />
+    <None Include="Resources\picRdoFrqNormal.png" />
+    <None Include="Resources\picRdoFrqNoisy.png" />
+    <None Include="Resources\picRdoFrqMachen.png" />
+    <None Include="Resources\picRdoFrqKeeps.png" />
+    <None Include="Resources\windowMini.png" />
+    <None Include="Resources\transe.png" />
+    <None Include="Resources\btn.png" />
+    <None Include="Resources\sel_voice.png" />
+    <None Include="Resources\sel_upd.png" />
+    <None Include="Resources\sel_twitter.png" />
+    <None Include="Resources\sel_topic.png" />
+    <None Include="Resources\sel_setting.png" />
+    <None Include="Resources\sel_rss.png" />
+    <None Include="Resources\sel_intro.png" />
+    <None Include="bin\Release\skin\Lili\window\setting.png" />
+    <None Include="Resources\version.png" />
+    <None Include="bin\Release\skin\Lili\window\window.png" />
+    <Content Include="liplis.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiplisLibCircMen\LiplisLibCircMen.csproj">
+      <Project>{3CCE5DDC-F9F5-408B-B1B8-A456F0FC698F}</Project>
+      <Name>LiplisLibCircMen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiplisLibCommon35\LiplisLibCommon35.csproj">
+      <Project>{95675FF2-9139-4ED1-B93A-A5D1F3E33072}</Project>
+      <Name>LiplisLibCommon35</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

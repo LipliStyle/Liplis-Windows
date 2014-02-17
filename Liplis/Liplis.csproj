@@ -1,0 +1,1672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC881F65-C436-4052-BEFD-BF39CF95B466}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Liplis</RootNamespace>
+    <AssemblyName>Liplis</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>liplis.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\DLL\Newtonsoft.Json\Net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity\ActivityChar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityChar.Designer.cs">
+      <DependentUpon>ActivityChar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivityLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityLog.Designer.cs">
+      <DependentUpon>ActivityLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivityPic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityPic.Designer.cs">
+      <DependentUpon>ActivityPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivityRssRegistAddCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityRssRegistAddCat.Designer.cs">
+      <DependentUpon>ActivityRssRegistAddCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivitySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivitySetting.Designer.cs">
+      <DependentUpon>ActivitySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivityTalk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityTalk.Designer.cs">
+      <DependentUpon>ActivityTalk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivityNicoBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityNicoBrowser.designer.cs">
+      <DependentUpon>ActivityNicoBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivityTwitterActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityTwitterActivation.Designer.cs">
+      <DependentUpon>ActivityTwitterActivation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivityVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityVersion.Designer.cs">
+      <DependentUpon>ActivityVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\ActivityTopicRegist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityTopicRegist.Designer.cs">
+      <DependentUpon>ActivityTopicRegist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cmp\Form\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cmp\Form\CharPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cmp\Form\CusCtlDataPanelNonThum.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cmp\Form\CusCtlDataPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cmp\Tree\LiplisTreeNodeCld.cs" />
+    <Compile Include="Cmp\Tree\LiplisTreeNodePar.cs" />
+    <Compile Include="Common\LiplisLog.cs" />
+    <Compile Include="Common\LpsBaseMovieConverter.cs" />
+    <Compile Include="Common\LpsDelegate.cs" />
+    <Compile Include="Common\LiplisDefine.cs" />
+    <Compile Include="Common\LpsLogController.cs" />
+    <Compile Include="Common\LpsPathControllerCus.cs" />
+    <Compile Include="Common\tet.cs" />
+    <Compile Include="Fct\FctCreateBackground.cs" />
+    <Compile Include="Fct\FctCreateFromResource.cs" />
+    <Compile Include="Fct\FctDragData.cs" />
+    <Compile Include="Fct\FctGUIDCreater.cs" />
+    <Compile Include="Fct\FctLiplisMsg.cs" />
+    <Compile Include="Fct\FctWindowFileLoader.cs" />
+    <Compile Include="MainSystem\LiplisPopIcon.cs" />
+    <Compile Include="Msg\ObjBattery.cs" />
+    <Compile Include="Msg\ObjCat.cs" />
+    <Compile Include="Msg\ObjDownloadHst.cs" />
+    <Compile Include="Msg\ObjDownloadFile.cs" />
+    <Compile Include="Msg\RegisterRsUserInfo.cs" />
+    <Compile Include="Msg\RegisterRsUserInfoCat.cs" />
+    <Compile Include="Msg\RegisterTwUserInfo.cs" />
+    <Compile Include="Msg\ResLiplisId.cs" />
+    <Compile Include="Msg\ResLpsLoginRegisterInfoRss.cs" />
+    <Compile Include="Msg\ResLpsLoginRegisterInfoRssEachCat.cs" />
+    <Compile Include="Msg\ResLpsLoginRegisterInfoTw.cs" />
+    <Compile Include="Msg\ResLpsLoginStatus.cs" />
+    <Compile Include="Msg\ResLpsRegisterTwitterInfoRespons.cs" />
+    <Compile Include="Msg\ResLpsShortNews2Json.cs" />
+    <Compile Include="Msg\ResLpsShortNews2JsonList.cs" />
+    <Compile Include="Msg\ResLpsSummaryNews2Json.cs" />
+    <Compile Include="Msg\ResLpsSummaryNews2JsonList.cs" />
+    <Compile Include="Msg\ResLpsTopicSearchWord.cs" />
+    <Compile Include="Msg\ResLpsTopicSearchWordList.cs" />
+    <Compile Include="Msg\ResUserOnetimePass.cs" />
+    <Compile Include="Ser\SerialLiplisDownloadHst.cs" />
+    <Compile Include="Ser\SerialRssObject.cs" />
+    <Compile Include="Fct\FctTagFactory.cs" />
+    <Compile Include="MainSystem\BaseSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSystem\BaseSystem.Designer.cs">
+      <DependentUpon>BaseSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSystem\Liplis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSystem\Liplis.Designer.cs">
+      <DependentUpon>Liplis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSystem\EntryPoint.cs" />
+    <Compile Include="MainSystem\LiplisIcon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSystem\LiplisIcon.Designer.cs">
+      <DependentUpon>LiplisIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSystem\LiplisTaskBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSystem\LiplisTaskBar.Designer.cs">
+      <DependentUpon>LiplisTaskBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSystem\LiplisUpdate.cs" />
+    <Compile Include="Msg\MsgShortNews.cs" />
+    <Compile Include="Ser\SerialCatObject.cs" />
+    <Compile Include="Web\LiplisNicoDownLoader.cs" />
+    <Compile Include="Msg\ObjBody.cs" />
+    <Compile Include="Msg\ObjBodyGen.cs" />
+    <Compile Include="Msg\ObjBodyList.cs" />
+    <Compile Include="Msg\ObjBroom.cs" />
+    <Compile Include="Msg\ObjEmotion.cs" />
+    <Compile Include="Msg\ObjLiplisChat.cs" />
+    <Compile Include="Msg\ObjLog.cs" />
+    <Compile Include="Msg\ObjLpsApiMsg.cs" />
+    <Compile Include="Msg\ObjNetwork.cs" />
+    <Compile Include="Msg\ObjPos.cs" />
+    <Compile Include="Msg\ObjRss.cs" />
+    <Compile Include="Msg\ObjRssCatList.cs" />
+    <Compile Include="Msg\ObjRssList.cs" />
+    <Compile Include="Msg\ObjSetting.cs" />
+    <Compile Include="Msg\ObjSkinSetting.cs" />
+    <Compile Include="Msg\ObjSkinSettingList.cs" />
+    <Compile Include="Msg\ObjBodyDef.cs" />
+    <Compile Include="Msg\ObjTopic.cs" />
+    <Compile Include="Msg\ObjVersion.cs" />
+    <Compile Include="Msg\ObjWidgetSetting.cs" />
+    <Compile Include="Msg\ObjWindowFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\LiplisApi.cs" />
+    <Compile Include="Web\LiplisTwitterOAuth.cs" />
+    <Compile Include="Web\LiplisWebUrl.cs" />
+    <Compile Include="Web\LiplisWedFileDownLoader.cs" />
+    <Compile Include="Web\LiplisTwitterOAuthBase.cs" />
+    <Compile Include="Xml\SharedPreferences.cs" />
+    <Compile Include="Xml\XmlSettingObject.cs" />
+    <EmbeddedResource Include="Activity\ActivityChar.resx">
+      <DependentUpon>ActivityChar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityLog.resx">
+      <DependentUpon>ActivityLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityPic.resx">
+      <DependentUpon>ActivityPic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityRssRegistAddCat.resx">
+      <DependentUpon>ActivityRssRegistAddCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivitySetting.resx">
+      <DependentUpon>ActivitySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityTalk.resx">
+      <DependentUpon>ActivityTalk.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityNicoBrowser.resx">
+      <DependentUpon>ActivityNicoBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityTwitterActivation.resx">
+      <DependentUpon>ActivityTwitterActivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityVersion.resx">
+      <DependentUpon>ActivityVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityTopicRegist.resx">
+      <DependentUpon>ActivityTopicRegist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSystem\Liplis.resx">
+      <DependentUpon>Liplis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSystem\LiplisIcon.resx">
+      <DependentUpon>LiplisIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSystem\LiplisTaskBar.resx">
+      <DependentUpon>LiplisTaskBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_4_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_4_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_4_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_4_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_4_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_4_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_5_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_5_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_5_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_5_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_5_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_m_5_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admiration_p_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_m_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazement_p_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_4_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_4_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_4_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_4_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_4_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_m_4_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calmly_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_conma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_slash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_m_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecstasy_p_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_4_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_4_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_4_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_4_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_4_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_4_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_5_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_5_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_5_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_5_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_5_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interest_p_5_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\introduction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_4_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_4_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_4_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_4_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_4_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_m_4_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_4_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_4_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_4_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_4_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_4_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\joy_p_4_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_4_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_4_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_4_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_4_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_4_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_4_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_5_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_5_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_5_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_5_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_5_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_5_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_m_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peace_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_m_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proud_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage_p_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_m_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_1_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_1_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_1_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_1_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_1_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_1_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_2_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_2_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_2_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_2_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_2_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_2_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_3_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_3_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_3_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_3_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_3_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respect_p_3_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tone.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\talkWin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ico_zzz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingWin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqChangeable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqKeeps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqMachen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqNoisy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqQuiet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqRefined.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqReticent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqTalkative.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picRdoFrqVerryNoisy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ico_char.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\version.png" />
+    <None Include="Resources\sel_search.png" />
+    <None Include="Resources\ico_next.png" />
+    <None Include="Resources\ico_log.png" />
+    <None Include="Resources\ico_waikup.png" />
+    <None Include="Resources\ico_tray.png" />
+    <None Include="Resources\ico_sleep.png" />
+    <None Include="Resources\ico_setting.png" />
+    <None Include="Resources\ico_rss.png" />
+    <None Include="Resources\ico_pow.png" />
+    <None Include="Resources\ico_brw.png" />
+    <None Include="Resources\sel_setting.png" />
+    <None Include="Resources\sel_twitter.png" />
+    <None Include="Resources\sel_rss.png" />
+    <None Include="Resources\sel_upd.png" />
+    <None Include="Resources\sel_voice.png" />
+    <None Include="Resources\sel_topic.png" />
+    <None Include="Resources\sel_intro.png" />
+    <None Include="Resources\arrow_right.png" />
+    <None Include="Resources\arrow_fat_right.gif" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\mp3Dl.png" />
+    <None Include="Resources\dougaDl.png" />
+    <None Include="Resources\Brw.png" />
+    <None Include="Resources\mp3.png" />
+    <None Include="Resources\dlDoga.png" />
+    <None Include="Resources\dlMp3.png" />
+    <None Include="Resources\ｄｌMp3.png" />
+    <None Include="Resources\ｄｌDoga.png" />
+    <None Include="Resources\ico_down.png" />
+    <None Include="Resources\widNet.png" />
+    <None Include="Resources\widNet24.png" />
+    <None Include="Resources\widHdd24.png" />
+    <None Include="Resources\widCpu24.png" />
+    <None Include="Resources\widMem24.png" />
+    <None Include="Resources\widHdd.png" />
+    <None Include="Resources\widMem.png" />
+    <None Include="Resources\widCpu.png" />
+    <None Include="Resources\btnLink.png" />
+    <None Include="Resources\widBrw.png" />
+    <None Include="Resources\btnClose.png" />
+    <None Include="Resources\widTest.png" />
+    <None Include="Resources\widWet.png" />
+    <None Include="Resources\widRss.png" />
+    <None Include="Resources\widSys.png" />
+    <None Include="bin\Release\skin\Lili\window\talkWin.png" />
+    <None Include="bin\Release\skin\Lili\window\settingWin.png" />
+    <None Include="bin\Release\skin\Lili\window\ico_char.png" />
+    <None Include="bin\Release\skin\Lili\window\ico_brw.png" />
+    <None Include="bin\Release\skin\Lili\window\ico_wid.png" />
+    <None Include="bin\Release\skin\Lili\window\window.png" />
+    <None Include="bin\Release\skin\Lili\window\setting.png" />
+    <None Include="bin\Release\skin\Lili\window\ico_zzz.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_0.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_100.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_12.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_25.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_37.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_50.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_62.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_75.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_87.png" />
+    <None Include="bin\Release\skin\Lili\window\battery_non.png" />
+    <Content Include="liplis.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiplisLibCircMen\LiplisLibCircMen.csproj">
+      <Project>{3CCE5DDC-F9F5-408B-B1B8-A456F0FC698F}</Project>
+      <Name>LiplisLibCircMen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiplisLibCommon35\LiplisLibCommon35.csproj">
+      <Project>{95675FF2-9139-4ED1-B93A-A5D1F3E33072}</Project>
+      <Name>LiplisLibCommon35</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

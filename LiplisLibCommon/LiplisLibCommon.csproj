@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACD8DC50-D309-45BC-B782-94391312DCF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Liplis</RootNamespace>
+    <AssemblyName>LiplisLibCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\DLL\LCL\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\..\..\DLL\DotNetZipLib-DevKit-v1.9\zip-v1.9\Release\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\DLL\MySQL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NReadability, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLL\NReadability146\NReadability.dll</HintPath>
+    </Reference>
+    <Reference Include="SgmlReaderDll, Version=1.8.8.30578, Culture=neutral, PublicKeyToken=46b2db9ca481831b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLL\NReadability146\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\BaseCompatilizedRandom.cs" />
+    <Compile Include="Common\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BaseRandom.cs" />
+    <Compile Include="Common\LpsDiffResult.cs" />
+    <Compile Include="Common\LpsArchiveUtil.cs" />
+    <Compile Include="Common\LpsCmdControl.cs" />
+    <Compile Include="Common\LpsCreateObject.cs" />
+    <Compile Include="Common\LpsDefineMost.cs" />
+    <Compile Include="Common\LpsDefineRegion.cs" />
+    <Compile Include="Common\LpsEmotionNameExpert.cs" />
+    <Compile Include="Common\LpsIme.cs" />
+    <Compile Include="Common\LpsJavaCode.cs" />
+    <Compile Include="Common\LpsLiplisUtil.cs" />
+    <Compile Include="Common\LpsLiplisUtilDevice.cs" />
+    <Compile Include="Common\LpsLogController.cs" />
+    <Compile Include="Common\LpsMail.cs" />
+    <Compile Include="Common\LpsMailController.cs" />
+    <Compile Include="Common\LpsPathController.cs" />
+    <Compile Include="Common\LpsResourceController.cs" />
+    <Compile Include="Common\LpsSqlServerBalkCopy.cs" />
+    <Compile Include="Common\LpsTimeController.cs" />
+    <Compile Include="Common\LpsVoiceRoid.cs" />
+    <Compile Include="Common\LpsWindowsApi.cs" />
+    <Compile Include="Common\LpsWindowsApiDefine.cs" />
+    <Compile Include="Common\LpsLanguage.cs" />
+    <Compile Include="Common\LpsRegularEx.cs" />
+    <Compile Include="Common\LstShufflableList.cs" />
+    <Compile Include="Common\LstSort.cs" />
+    <Compile Include="Common\NlsEdtProfessionalRenderer.cs" />
+    <Compile Include="Common\NlsUrlCreator.cs" />
+    <Compile Include="Common\RndMersenneTwister.cs" />
+    <Compile Include="Control\CusCtlButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlCurveBorderDrawPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlDataGridViewProgressBarColumn.cs" />
+    <Compile Include="Control\CusCtlFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlLabelGradational.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlNoPastTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlRssPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlTabX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\UsrCtlLoadingImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UsrCtlLoadingImage.Designer.cs">
+      <DependentUpon>UsrCtlLoadingImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\NonDispBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\TabPageManager.cs" />
+    <Compile Include="Control\TransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlTabXPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlCurveBorderDrawTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\CusCtlCurveBorderDrawLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fct\BaseTextFactory.cs" />
+    <Compile Include="Fct\BaseTextFactoryBcp.cs" />
+    <Compile Include="Maid\LiplisMaidSystem.cs" />
+    <Compile Include="Msg\MsgShortNewsCm.cs" />
+    <Compile Include="Msg\msgVoiceRoid.cs" />
+    <Compile Include="Msg\msgWetherDescription.cs" />
+    <Compile Include="Msg\ObjLpsApiMsg.cs" />
+    <Compile Include="Pic\ComImageController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sql\BaseEntity.cs" />
+    <Compile Include="Sql\SqlUtil.cs" />
+    <Compile Include="Sql\SqlUtilMySql.cs" />
+    <Compile Include="Sys\CpuInfo.cs" />
+    <Compile Include="Sys\MemoryCleenClass.cs" />
+    <Compile Include="Sys\MemoryInfoClass.cs" />
+    <Compile Include="Sys\NetworkInfoClass.cs" />
+    <Compile Include="Sys\TranserateInfoClass.cs" />
+    <Compile Include="Web\HtmlDownloader.cs" />
+    <Compile Include="Web\HtmlParseController.cs" />
+    <Compile Include="Web\HtmlParser.cs" />
+    <Compile Include="Web\HttpGet.cs" />
+    <Compile Include="Web\HttpPost.cs" />
+    <Compile Include="Web\HttpResponseCheck.cs" />
+    <Compile Include="Web\JpgController.cs" />
+    <Compile Include="Web\LiplisApi.cs" />
+    <Compile Include="Web\MhtGenerator\MhtDownloader.cs" />
+    <Compile Include="Web\MhtGenerator\MimePart.cs" />
+    <Compile Include="Web\MhtGenerator\XmlParser.cs" />
+    <Compile Include="Web\msgResWebSummary.cs" />
+    <Compile Include="Web\Nico\NicoSearch.cs" />
+    <Compile Include="Web\Nico\objNicoInfo.cs" />
+    <Compile Include="Web\Nico\objNicoNico.cs" />
+    <Compile Include="Web\Nico\objNicoSearchInfo.cs" />
+    <Compile Include="Web\Nico\objNicoSearchMovieList.cs" />
+    <Compile Include="Web\OAuth.cs" />
+    <Compile Include="Web\ProxyController.cs" />
+    <Compile Include="Web\RssUrlExtraction.cs" />
+    <Compile Include="Web\UrlEncoder.cs" />
+    <Compile Include="Web\UrlFactory.cs" />
+    <Compile Include="Web\WebBrowserAPI.cs" />
+    <Compile Include="Web\WebCapture\IOleClientSite.cs" />
+    <Compile Include="Web\WebCapture\IOleObject.cs" />
+    <Compile Include="Web\WebCapture\WebCapture.cs" />
+    <Compile Include="Web\WebClientCookieCoustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Web\WebConnectCheck.cs" />
+    <Compile Include="Web\WebSummary.cs" />
+    <Compile Include="Web\WetherInfo\WetherInfoLiveDoor.cs" />
+    <Compile Include="Web\WetherInfo\WetherInfoYahoo.cs" />
+    <Compile Include="Xml\AppConfig.cs" />
+    <Compile Include="Xml\mailSetting.cs" />
+    <Compile Include="Xml\RssReaderEx.cs" />
+    <Compile Include="Xml\RssReaderNative.cs" />
+    <Compile Include="Xml\XmlTone.cs" />
+    <Compile Include="Xml\RssReader.cs" />
+    <Compile Include="Xml\XmlLinq.cs" />
+    <Compile Include="Xml\XmlMost.cs" />
+    <Compile Include="Xml\XmlReadList.cs" />
+    <Compile Include="Xml\xmlWetherBase.cs" />
+    <Compile Include="Xml\xmlWetherLiveDoor.cs" />
+    <Compile Include="Xml\xmlWetherYahoo.cs" />
+    <Compile Include="Xml\RssReaderCustom.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UsrCtlLoadingImage.resx">
+      <DependentUpon>UsrCtlLoadingImage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Voice\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

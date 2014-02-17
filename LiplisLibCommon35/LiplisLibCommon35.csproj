@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95675FF2-9139-4ED1-B93A-A5D1F3E33072}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Liplis</RootNamespace>
+    <AssemblyName>LiplisLibCommon35</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NReadability, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLL\NReadability146\NReadability.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\LiplisLibCommon\Common\BaseCompatilizedRandom.cs">
+      <Link>Common\BaseCompatilizedRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\BaseForm.cs">
+      <Link>Common\BaseForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\BaseForm.designer.cs">
+      <Link>Common\BaseForm.designer.cs</Link>
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\BaseRandom.cs">
+      <Link>Common\BaseRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsCmdControl.cs">
+      <Link>Common\LpsCmdControl.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsCreateObject.cs">
+      <Link>Common\LpsCreateObject.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsDefineMost.cs">
+      <Link>Common\LpsDefineMost.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsDefineRegion.cs">
+      <Link>Common\LpsDefineRegion.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsEmotionNameExpert.cs">
+      <Link>LpsEmotionNameExpert.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsIme.cs">
+      <Link>Common\LpsIme.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsLanguage.cs">
+      <Link>Common\LpsLanguage.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsLiplisUtil.cs">
+      <Link>Common\LpsLiplisUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsLiplisUtilDevice.cs">
+      <Link>Common\LpsLiplisUtilDevice.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsLogController.cs">
+      <Link>Common\LpsLogController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsMailController.cs">
+      <Link>Common\LpsMailController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsPathController.cs">
+      <Link>Common\LpsPathController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsRegularEx.cs">
+      <Link>Common\LpsRegularEx.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsResourceController.cs">
+      <Link>Common\LpsResourceController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsTimeController.cs">
+      <Link>Common\LpsTimeController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsVoiceRoid.cs">
+      <Link>Common\LpsVoiceRoid.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsWindowsApi.cs">
+      <Link>Common\LpsWindowsApi.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LpsWindowsApiDefine.cs">
+      <Link>Common\LpsWindowsApiDefine.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LstShufflableList.cs">
+      <Link>Common\LstShufflableList.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LstSort.cs">
+      <Link>Common\LstSort.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\NlsEdtProfessionalRenderer.cs">
+      <Link>Common\NlsEdtProfessionalRenderer.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\NlsUrlCreator.cs">
+      <Link>Common\NlsUrlCreator.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\RndMersenneTwister.cs">
+      <Link>Common\RndMersenneTwister.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlButton.cs">
+      <Link>Control\CusCtlButton.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlCurveBorderDrawLabel.cs">
+      <Link>Control\CusCtlCurveBorderDrawLabel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlCurveBorderDrawPanel.cs">
+      <Link>Control\CusCtlCurveBorderDrawPanel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlCurveBorderDrawTextBox.cs">
+      <Link>Control\CusCtlCurveBorderDrawTextBox.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlDataGridViewProgressBarColumn.cs">
+      <Link>Control\CusCtlDataGridViewProgressBarColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlFlowLayoutPanel.cs">
+      <Link>Control\CusCtlFlowLayoutPanel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlGroupBox.cs">
+      <Link>Control\CusCtlGroupBox.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlLabel.cs">
+      <Link>Control\CusCtlLabel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlLabelGradational.cs">
+      <Link>Control\CusCtlLabelGradational.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlLinkLabel.cs">
+      <Link>Control\CusCtlLinkLabel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlNoPastTextBox.cs">
+      <Link>Control\CusCtlNoPastTextBox.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlPanel.cs">
+      <Link>Control\CusCtlPanel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlPictureBox.cs">
+      <Link>Control\CusCtlPictureBox.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlProgressBar.cs">
+      <Link>Control\CusCtlProgressBar.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlRssPanel.cs">
+      <Link>Control\CusCtlRssPanel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlTabControl.cs">
+      <Link>Control\CusCtlTabControl.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlTabPage.cs">
+      <Link>Control\CusCtlTabPage.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlTabX.cs">
+      <Link>Control\CusCtlTabX.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlTabXPage.cs">
+      <Link>Control\CusCtlTabXPage.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlTextBox.cs">
+      <Link>Control\CusCtlTextBox.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CusCtlWebBrowser.cs">
+      <Link>Control\CusCtlWebBrowser.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\NonDispBrowser.cs">
+      <Link>Control\NonDispBrowser.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\TabPageManager.cs">
+      <Link>Control\TabPageManager.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\TransparentLabel.cs">
+      <Link>Control\TransparentLabel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\UsrCtlLoadingImage.cs">
+      <Link>Common\UsrCtlLoadingImage.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\UsrCtlLoadingImage.designer.cs">
+      <Link>Common\UsrCtlLoadingImage.designer.cs</Link>
+      <DependentUpon>UsrCtlLoadingImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Fct\BaseTextFactory.cs">
+      <Link>Fct\BaseTextFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Msg\MsgShortNewsCm.cs">
+      <Link>Msg\MsgShortNewsCm.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Msg\msgVoiceRoid.cs">
+      <Link>Msg\msgVoiceRoid.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Msg\msgWetherDescription.cs">
+      <Link>Msg\msgWetherDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Msg\ObjLpsApiMsg.cs">
+      <Link>Msg\ObjLpsApiMsg.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Pic\ComImageController.cs">
+      <Link>Pic\ComImageController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Sys\CpuInfo.cs">
+      <Link>Sys\CpuInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Sys\MemoryCleenClass.cs">
+      <Link>Sys\MemoryCleenClass.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Sys\MemoryInfoClass.cs">
+      <Link>Sys\MemoryInfoClass.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Sys\NetworkInfoClass.cs">
+      <Link>Sys\NetworkInfoClass.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Sys\TranserateInfoClass.cs">
+      <Link>Sys\TranserateInfoClass.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\HtmlDownloader.cs">
+      <Link>Web\HtmlDownloader.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\HtmlParseController.cs">
+      <Link>Web\HtmlParseController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\HtmlParser.cs">
+      <Link>Web\HtmlParser.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\HttpGet.cs">
+      <Link>Web\HttpGet.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\HttpPost.cs">
+      <Link>Web\HttpPost.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\HttpResponseCheck.cs">
+      <Link>Web\HttpResponseCheck.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\JpgController.cs">
+      <Link>Web\JpgController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\LiplisApi.cs">
+      <Link>Web\LiplisApi.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\MhtGenerator\MhtDownloader.cs">
+      <Link>Web\MhtGenerator\MhtDownloader.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\MhtGenerator\MimePart.cs">
+      <Link>Web\MhtGenerator\MimePart.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\MhtGenerator\XmlParser.cs">
+      <Link>Web\MhtGenerator\XmlParser.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\msgResWebSummary.cs">
+      <Link>Web\msgResWebSummary.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\Nico\NicoSearch.cs">
+      <Link>Web\Nico\NicoSearch.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\Nico\objNicoInfo.cs">
+      <Link>Web\Nico\objNicoInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\Nico\objNicoNico.cs">
+      <Link>Web\Nico\objNicoNico.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\Nico\objNicoSearchInfo.cs">
+      <Link>Web\Nico\objNicoSearchInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\Nico\objNicoSearchMovieList.cs">
+      <Link>Web\Nico\objNicoSearchMovieList.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\OAuth.cs">
+      <Link>Web\OAuth.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\ProxyController.cs">
+      <Link>Web\ProxyController.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\UrlEncoder.cs">
+      <Link>Web\UrlEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\UrlFactory.cs">
+      <Link>Web\UrlFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\WebCapture\IOleClientSite.cs">
+      <Link>Web\WebCapture\IOleClientSite.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\WebCapture\IOleObject.cs">
+      <Link>Web\WebCapture\IOleObject.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\WebCapture\WebCapture.cs">
+      <Link>Web\WebCapture\WebCapture.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\WebConnectCheck.cs">
+      <Link>Web\WebConnectCheck.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\WebSummary.cs">
+      <Link>Web\WebSummary.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Web\WetherInfo\WetherInfoLiveDoor.cs">
+      <Link>Web\WetherInfo\WetherInfoLiveDoor.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\AppConfig.cs">
+      <Link>Xml\AppConfig.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\mailSetting.cs">
+      <Link>Xml\mailSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\RssReader.cs">
+      <Link>Xml\RssReader.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\XmlLinq.cs">
+      <Link>Xml\XmlLinq.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\XmlMost.cs">
+      <Link>Xml\XmlMost.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\XmlReadList.cs">
+      <Link>Xml\XmlReadList.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\XmlTone.cs">
+      <Link>Xml\XmlTone.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\xmlWetherBase.cs">
+      <Link>Xml\xmlWetherBase.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\xmlWetherLiveDoor.cs">
+      <Link>Xml\xmlWetherLiveDoor.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\xmlWetherYahoo.cs">
+      <Link>Xml\xmlWetherYahoo.cs</Link>
+    </Compile>
+    <Compile Include="Maid\LiplisMaidSystem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\LiplisLibCommon\Common\BaseForm.resx">
+      <Link>Common\BaseForm.resx</Link>
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\LiplisLibCommon\Control\UsrCtlLoadingImage.resx">
+      <Link>Common\UsrCtlLoadingImage.resx</Link>
+      <DependentUpon>UsrCtlLoadingImage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MAPI">
+      <Guid>{3FA7DEA7-6438-101B-ACC1-00AA00423326}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>21</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

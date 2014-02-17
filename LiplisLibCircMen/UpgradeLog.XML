@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CircularMenu">
+</Property><Property Name="ソリューション ファイル" Value="D:\Prg2010\統合待ち\circularmenu_src\CircMen\CircularMenu.sln">
+</Property><Property Name="Date" Value="2012年6月10日">
+</Property><Property Name="Time" Value="11:35">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="CircularMenu.sln" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\CircularMenu.sln としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="CircularMenu.csproj" Description="プロジェクト ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\CircularMenu.csproj としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="Animation.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Animation.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="AssemblyInfo.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\AssemblyInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="CircularMenu.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\CircularMenu.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="CircularMenuWindow.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\CircularMenuWindow.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="DropShadowOptions.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\DropShadowOptions.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="DropShadowOptionsEditorUI.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\DropShadowOptionsEditorUI.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="FrameModifiers.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\FrameModifiers.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="Frames.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Frames.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="LayoutManagers.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\LayoutManagers.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="MenuAnimationEditorUI.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\MenuAnimationEditorUI.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="MenuOptionImageEditorUI.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\MenuOptionImageEditorUI.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="MenuOptions.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\MenuOptions.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="ToolTips.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\ToolTips.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="Icon.ico" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Icon.ico としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="Play.ico" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Play.ico としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="CircularMenu.resx" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\CircularMenu.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="CircularMenuWindow.resx" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\CircularMenuWindow.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="DefaultIcon.ico" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\DefaultIcon.ico としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="DropShadowOptionsEditorUI.resx" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\DropShadowOptionsEditorUI.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="Icon.bmp" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Icon.bmp としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="MenuAnimationEditorUI.resx" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\MenuAnimationEditorUI.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="MenuOptionImageEditorUI.resx" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\MenuOptionImageEditorUI.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="Orb.bmp" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Orb.bmp としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="OrbSmall.bmp" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\OrbSmall.bmp としてバックアップされました。">
+</Event><Event ErrorLevel="1" Project="CircularMenu" Source="CircularMenu.csproj" Description="このプロジェクトは .NET Framework 2.0 または 3.0 に対応しています。プロジェクトで新しい .NET Framework を必要とするアセンブリを使用すると、ビルドに失敗します。[プロジェクト] メニューの [プロパティ] をクリックし、[.NET Framework] ボックスの一覧で新しいバージョンを選択することにより、.NET Framework のバージョンを変更できます。Visual Basic では、これは [コンパイル] タブの [詳細コンパイラ オプション] ボタンをクリックすると表示されます。">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="CircularMenu.csproj" Description="プロジェクトは正常に変換されました。">
+</Event><Event ErrorLevel="3" Project="CircularMenu" Source="CircularMenu.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="PixelEffects" Source="..\PixelEffects\PixelEffects.csproj" Description="警告: プロジェクト ファイルは、元のソリューションの相対パスとは異なる相対パスにバックアップされています。フォルダー階層の違いにより、バックアップされたソリューションおよびプロジェクトを開いたり作成したりするときに、問題が発生する可能性があります。">
+</Event><Event ErrorLevel="0" Project="PixelEffects" Source="..\PixelEffects\PixelEffects.csproj" Description="プロジェクト ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\PixelEffects\PixelEffects.csproj としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="PixelEffects" Source="..\PixelEffects\AssemblyInfo.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\PixelEffects\AssemblyInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="PixelEffects" Source="..\PixelEffects\Effects.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\PixelEffects\Effects.cs としてバックアップされました。">
+</Event><Event ErrorLevel="1" Project="PixelEffects" Source="..\PixelEffects\PixelEffects.csproj" Description="このプロジェクトは .NET Framework 2.0 または 3.0 に対応しています。プロジェクトで新しい .NET Framework を必要とするアセンブリを使用すると、ビルドに失敗します。[プロジェクト] メニューの [プロパティ] をクリックし、[.NET Framework] ボックスの一覧で新しいバージョンを選択することにより、.NET Framework のバージョンを変更できます。Visual Basic では、これは [コンパイル] タブの [詳細コンパイラ オプション] ボタンをクリックすると表示されます。">
+</Event><Event ErrorLevel="0" Project="PixelEffects" Source="..\PixelEffects\PixelEffects.csproj" Description="プロジェクトは正常に変換されました。">
+</Event><Event ErrorLevel="3" Project="PixelEffects" Source="..\PixelEffects\PixelEffects.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="Installer" Source="..\Installer\Installer.vdproj" Description="警告: プロジェクト ファイルは、元のソリューションの相対パスとは異なる相対パスにバックアップされています。フォルダー階層の違いにより、バックアップされたソリューションおよびプロジェクトを開いたり作成したりするときに、問題が発生する可能性があります。">
+</Event><Event ErrorLevel="0" Project="Installer.vdproj" Source="..\Installer\Installer.vdproj" Description="プロジェクト ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Installer\Installer.vdproj としてバックアップされました。">
+</Event><Event ErrorLevel="1" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\Tutorial1.csproj" Description="警告: プロジェクト ファイルは、元のソリューションの相対パスとは異なる相対パスにバックアップされています。フォルダー階層の違いにより、バックアップされたソリューションおよびプロジェクトを開いたり作成したりするときに、問題が発生する可能性があります。">
+</Event><Event ErrorLevel="0" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\Tutorial1.csproj" Description="プロジェクト ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Tutorial1\Tutorial1.csproj としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\AssemblyInfo.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Tutorial1\AssemblyInfo.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\Form1.cs" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Tutorial1\Form1.cs としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\App.ico" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Tutorial1\App.ico としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\Form1.resx" Description="ファイルは正常に D:\Prg2010\統合待ち\circularmenu_src\CircMen\Backup\Tutorial1\Form1.resx としてバックアップされました。">
+</Event><Event ErrorLevel="1" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\Tutorial1.csproj" Description="このプロジェクトは .NET Framework 2.0 または 3.0 に対応しています。プロジェクトで新しい .NET Framework を必要とするアセンブリを使用すると、ビルドに失敗します。[プロジェクト] メニューの [プロパティ] をクリックし、[.NET Framework] ボックスの一覧で新しいバージョンを選択することにより、.NET Framework のバージョンを変更できます。Visual Basic では、これは [コンパイル] タブの [詳細コンパイラ オプション] ボタンをクリックすると表示されます。">
+</Event><Event ErrorLevel="0" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\Tutorial1.csproj" Description="プロジェクトは正常に変換されました。">
+</Event><Event ErrorLevel="3" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\Tutorial1.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="CircularMenu.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="CircularMenu.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="CircularMenu" Source="CircularMenu.csproj" Description="スキャンが完了しました: プロジェクト ファイルにアップグレードは必要ありません。">
+</Event><Event ErrorLevel="0" Project="PixelEffects" Source="..\PixelEffects\PixelEffects.csproj" Description="スキャンが完了しました: プロジェクト ファイルにアップグレードは必要ありません。">
+</Event><Event ErrorLevel="0" Project="Installer.vdproj" Source="..\Installer\Installer.vdproj" Description="プロジェクトは正常に変換されました。">
+</Event><Event ErrorLevel="3" Project="Installer.vdproj" Source="..\Installer\Installer.vdproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Tutorial1" Source="..\Circular Menu Tutorials\Tutorial1\Tutorial1.csproj" Description="スキャンが完了しました: プロジェクト ファイルにアップグレードは必要ありません。">
+</Event></UpgradeLog>

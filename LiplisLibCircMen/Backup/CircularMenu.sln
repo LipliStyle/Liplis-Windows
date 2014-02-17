@@ -1,0 +1,43 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularMenu", "CircularMenu.csproj", "{3CCE5DDC-F9F5-408B-B1B8-A456F0FC698F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelEffects", "..\PixelEffects\PixelEffects.csproj", "{AEF08EC3-DBCC-44B7-8C8C-23A764E48127}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "..\Installer\Installer.vdproj", "{0B68EBF9-D06B-435E-A9E7-4A308F6BDE57}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial1", "..\Circular Menu Tutorials\Tutorial1\Tutorial1.csproj", "{CD2A2C45-DA13-4CF3-9E9B-1B4ADDD15BCD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3CCE5DDC-F9F5-408B-B1B8-A456F0FC698F}.Debug.ActiveCfg = Debug|.NET
+		{3CCE5DDC-F9F5-408B-B1B8-A456F0FC698F}.Debug.Build.0 = Debug|.NET
+		{3CCE5DDC-F9F5-408B-B1B8-A456F0FC698F}.Release.ActiveCfg = Release|.NET
+		{3CCE5DDC-F9F5-408B-B1B8-A456F0FC698F}.Release.Build.0 = Release|.NET
+		{AEF08EC3-DBCC-44B7-8C8C-23A764E48127}.Debug.ActiveCfg = Debug|.NET
+		{AEF08EC3-DBCC-44B7-8C8C-23A764E48127}.Debug.Build.0 = Debug|.NET
+		{AEF08EC3-DBCC-44B7-8C8C-23A764E48127}.Release.ActiveCfg = Release|.NET
+		{AEF08EC3-DBCC-44B7-8C8C-23A764E48127}.Release.Build.0 = Release|.NET
+		{0B68EBF9-D06B-435E-A9E7-4A308F6BDE57}.Debug.ActiveCfg = Debug
+		{0B68EBF9-D06B-435E-A9E7-4A308F6BDE57}.Release.ActiveCfg = Release
+		{CD2A2C45-DA13-4CF3-9E9B-1B4ADDD15BCD}.Debug.ActiveCfg = Debug|.NET
+		{CD2A2C45-DA13-4CF3-9E9B-1B4ADDD15BCD}.Debug.Build.0 = Debug|.NET
+		{CD2A2C45-DA13-4CF3-9E9B-1B4ADDD15BCD}.Release.ActiveCfg = Release|.NET
+		{CD2A2C45-DA13-4CF3-9E9B-1B4ADDD15BCD}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

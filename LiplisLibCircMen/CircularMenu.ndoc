@@ -1,0 +1,60 @@
+<project SchemaVersion="1.3">
+    <assemblies>
+        <assembly location=".\bin\Release\CircularMenu.dll" documentation=".\bin\Release\CircularMenu.xml" />
+        <assembly location=".\..\PixelEffects\bin\Release\PixelEffects.dll" documentation=".\..\PixelEffects\bin\Release\PixelEffects.xml" />
+    </assemblies>
+    <namespaces>
+        <namespace name="CircularMenu">Provides a robust implementation of an animated popup menu.  The typical arrangement of this menu is circular, but this can be customized.</namespace>
+        <namespace name="PixelEffects">Provides basic functions for applying effects and transformations to images.</namespace>
+    </namespaces>
+    <documenters>
+        <documenter name="JavaDoc">
+            <property name="OutputDirectory" value=".\javadoc\" />
+        </documenter>
+        <documenter name="LaTeX">
+            <property name="OutputDirectory" value=".\doc\latex" />
+            <property name="TextFileFullName" value="CircularMenuDocumentation.tex" />
+            <property name="TexFileBaseName" value="CircularMenuDocumentation" />
+            <property name="LatexCompiler" value="C:\texmf\miktex\bin\latex.exe" />
+            <property name="TexFileFullPath" value=".\doc\latex\CircularMenuDocumentation.tex" />
+            <property name="DocumentInheritedMembers" value="None" />
+            <property name="IncludeAssemblyVersion" value="True" />
+            <property name="CopyrightText" value="(c) 2004 Mark Biddlecom" />
+            <property name="FeedbackEmailAddress" value="markbiddlecom@gmail.com" />
+            <property name="DocumentAttributes" value="True" />
+            <property name="StaticMembersDefaultToSafe" value="False" />
+            <property name="CleanIntermediates" value="True" />
+        </documenter>
+        <documenter name="LinearHtml">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="Title" value="An NDoc Documented Class Library" />
+        </documenter>
+        <documenter name="MSDN">
+            <property name="OutputDirectory" value=".\doc\msdn\" />
+            <property name="HtmlHelpName" value="Documentation" />
+            <property name="Title" value="Circular Menu Component Documentation" />
+            <property name="ShowVisualBasic" value="True" />
+            <property name="SdkLinksOnWeb" value="True" />
+            <property name="IncludeAssemblyVersion" value="True" />
+            <property name="CopyrightText" value="(c) 2004 Mark Biddlecom" />
+            <property name="FeedbackEmailAddress" value="markbiddlecom@gmail.com" />
+            <property name="DocumentAttributes" value="True" />
+            <property name="StaticMembersDefaultToSafe" value="False" />
+        </documenter>
+        <documenter name="VS.NET 2003">
+            <property name="OutputDirectory" value=".\doc\vs2003\" />
+            <property name="HtmlHelpName" value="Documentation" />
+            <property name="Title" value="Circular Menu Component Documentation" />
+            <property name="CollectionNamespace" value="mbiSoftware.CircularMenu" />
+            <property name="GenerateCollectionFiles" value="True" />
+            <property name="BuildSeparateIndexFile" value="True" />
+            <property name="CopyrightText" value="(c) 2004 Mark Biddlecom" />
+            <property name="DocumentAttributes" value="True" />
+            <property name="StaticMembersDefaultToSafe" value="False" />
+            <property name="CleanIntermediates" value="True" />
+        </documenter>
+        <documenter name="XML">
+            <property name="OutputFile" value=".\doc\doc.xml" />
+        </documenter>
+    </documenters>
+</project>
