@@ -52,23 +52,23 @@ Visual Studio 2012 でビルドして下さい。
 
 著作権表示
 ==========
-*民安★TALK
-ボイスロイドの連携機能を実現するため、「 民安★TALK」のソースを一部使用させて頂いています。
-MITライセンスにもとづき、使用させて頂きます。
-http://publish-tool.blogspot.jp/
-
-*JOSN.Net
-Jsonをシリアライズするため、「Json.Net」を使用しています。
-MITライセンスにもとづき、使用させて頂きます。
-http://json.codeplex.com/
-
-*CircularMenu.dll
-著作権表記が見つかりませんでしたが、使用させて頂いています。
-http://www.codeproject.com/Articles/9369/Circular-Menu-Component
-
-*TweetSharp.dll
-ライセンス表記より、自由に使用および改変を行なって良いとの記述がありますので、
-ライセンス条文に従い、使用させて頂きます。
-https://github.com/danielcrenna/tweetsharp
+*民安★TALK  
+ボイスロイドの連携機能を実現するため、「 民安★TALK」のソースを一部使用させて頂いています。  
+MITライセンスにもとづき、使用させて頂きます。  
+http://publish-tool.blogspot.jp/  
+  
+*JOSN.Net  
+Jsonをシリアライズするため、「Json.Net」を使用しています。  
+MITライセンスにもとづき、使用させて頂きます。  
+http://json.codeplex.com/    
+  
+*CircularMenu.dll  
+著作権表記が見つかりませんでしたが、使用させて頂いています。  
+http://www.codeproject.com/Articles/9369/Circular-Menu-Component  
+  
+*TweetSharp.dll  
+ライセンス表記より、自由に使用および改変を行なって良いとの記述がありますので、  
+ライセンス条文に従い、使用させて頂きます。  
+https://github.com/danielcrenna/tweetsharp  
 
 
