@@ -46,7 +46,7 @@
 //
 //
 //
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+// Copyright(c) 2014 LipliStyle さちん MITライセンス
 //=======================================================================
 using System;
 using System.Collections.Generic;

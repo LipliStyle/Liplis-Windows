@@ -72,7 +72,7 @@
     <Compile Include="Common\LpsDiffResult.cs" />
     <Compile Include="Common\LpsArchiveUtil.cs" />
     <Compile Include="Common\LpsCmdControl.cs" />
-    <Compile Include="Common\LpsCreateObject.cs" />
+    <Compile Include="Common\LpsCreateIeObject.cs" />
     <Compile Include="Common\LpsDefineMost.cs" />
     <Compile Include="Common\LpsDefineRegion.cs" />
     <Compile Include="Common\LpsEmotionNameExpert.cs" />
