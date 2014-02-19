@@ -5,7 +5,7 @@
 //  Liplis2.3
 //  2013/06/20 var2.3.0 作成
 /// 2014/02/02 ver3.2.4 ツイッターの認証方式変更
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Windows.Forms;

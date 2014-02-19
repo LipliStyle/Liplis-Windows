@@ -3,7 +3,7 @@
 ////  概要      : OAuth認証を行うクラス
 ////
 ////  Liplisシステム      
-////  Copyright(c) 2010-2011 sachin. All Rights Reserved. 
+////  Copyright(c) 2010-2011 sachin.Sachin
 ////=======================================================================
 
 //using System;

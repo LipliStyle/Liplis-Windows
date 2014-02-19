@@ -3,7 +3,7 @@
 //  概要      : 共通定数定義
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2011 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2011 sachin.Sachin
 //=======================================================================
 namespace Liplis.Common
 {

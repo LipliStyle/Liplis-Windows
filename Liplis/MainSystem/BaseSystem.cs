@@ -3,7 +3,7 @@
 //  概要      : 
 //
 //  Liplis2.0
-//  Copyright(c) 2010-2011 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2011 sachin.Sachin
 //=======================================================================
 
 using System;

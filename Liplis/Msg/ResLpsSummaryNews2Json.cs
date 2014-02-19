@@ -3,7 +3,7 @@
 //  概要      : ニュースサマリーメッセージ
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2013 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2013 sachin.Sachin
 //=======================================================================
 using System;
 using System.Runtime.InteropServices;

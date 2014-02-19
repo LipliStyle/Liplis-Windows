@@ -4,7 +4,7 @@
 //
 //  Liplis3.0
 //  2013/06/23 Liplis3.0.2 トピックスミニ追加
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Collections.Generic;

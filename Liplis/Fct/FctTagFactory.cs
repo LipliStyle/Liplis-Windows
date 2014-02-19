@@ -3,7 +3,7 @@
 //  概要      : デリゲート定義
 //
 //  Liplis2.0
-//  Copyright(c) 2010-2011 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2011 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Collections.Generic;

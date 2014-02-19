@@ -4,7 +4,7 @@
 //
 //  Liplis2.3
 //  2013/06/20 Liplis2.3.0 UI変更
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.ComponentModel;

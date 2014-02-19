@@ -4,7 +4,7 @@
 //
 //  Liplis3.0
 //  2013/07/06 Liplis3.0.4 ニコニコサムネイル最新API対応
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.IO;

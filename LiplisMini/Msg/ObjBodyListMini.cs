@@ -3,7 +3,7 @@
 //  概要      : ボディオブジェクトリストミニ
 //
 //  Liplis3.0.2
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 
 using Liplis.Common;

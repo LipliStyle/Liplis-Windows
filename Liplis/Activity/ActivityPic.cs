@@ -3,7 +3,7 @@
 //  概要      : ピクチャーアクティビティ
 //
 //  Liplis2.3
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Drawing;

@@ -3,7 +3,7 @@
 //  概要      : ノラリスエディタ用プロフェッショナルレンダラ
 //
 //  Liplis2.0
-//  Copyright(c) 2010-2012 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2012 LipliStyle.Sachin
 //=======================================================================
 using System.Drawing;
 using System.Windows.Forms;

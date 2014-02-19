@@ -3,7 +3,7 @@
 //  概要      : アーカイブユーティル
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2012 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2012 sachin.Sachin
 //=======================================================================
 using Ionic.Zip;
 using Ionic.Zlib;

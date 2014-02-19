@@ -5,7 +5,7 @@
 //  2013/08/31 Liplis3.0.5 ico_sleep.png→ico_zzz.pngに変更
 //                         バージョン違い windowリソース 互換性チェック機能追加
 //  Liplis3.0
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System.Drawing;
 using Liplis.Common;

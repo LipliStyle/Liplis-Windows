@@ -10,7 +10,7 @@
 //  2013/06/23 Liplis3.0.2 待機スレッドでスリープし、負荷低減
 //                         読み上げメソッド内のストップ処理のタイミングを変更
 //  Liplisシステム      
-//  Copyright(c) 2010-2014 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2014 sachin.Sachin
 //=======================================================================
 using System;
 using System.Collections.Generic;

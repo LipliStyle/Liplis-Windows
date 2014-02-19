@@ -3,7 +3,7 @@
 //  概要      : エントリーポイント
 //
 //  Liplis3.0.1
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Windows.Forms;

@@ -3,7 +3,7 @@
 //  概要      : ユーティリティクラス
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2013 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2013 sachin.Sachin
 //=======================================================================
 using System;
 using System.Collections;

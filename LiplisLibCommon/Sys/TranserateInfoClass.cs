@@ -3,7 +3,7 @@
 //  概要      : 転送情報を取得する
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2011 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2011 sachin.Sachin
 //=======================================================================
 using System.Net.NetworkInformation;
 

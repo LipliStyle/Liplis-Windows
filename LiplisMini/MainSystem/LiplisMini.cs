@@ -6,7 +6,7 @@
 //  2013/06/23 Liplis3.0.1 LiplisMini作成
 //  2013/06/23 Liplis3.0.4 Liplis本体側の修正
 //  2013/08/31 Liplis3.0.5 ATにOSSを渡すように変更。フォントカラー適用
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Reflection;

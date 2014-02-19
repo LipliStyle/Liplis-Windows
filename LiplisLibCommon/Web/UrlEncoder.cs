@@ -5,7 +5,7 @@
 //  Tips      :一度バイト列に変換してからURLエンコードを行う
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2010 sachin.Sachin
 //=======================================================================
 using System.Text;
 using System.Web;

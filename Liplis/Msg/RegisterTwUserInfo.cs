@@ -4,7 +4,7 @@
 //  概要      : ツイッターユーザー情報
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2013 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2013 sachin.Sachin
 //=======================================================================
 
 namespace Liplis.Msg

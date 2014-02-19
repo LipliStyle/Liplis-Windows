@@ -4,7 +4,7 @@
 //
 //  NoralisEditor
 //  2013/07/14 NoralisEditor2.2.2 テーマカラー設定追加
-//  Copyright(c) 2010-2011 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2011 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Reflection;

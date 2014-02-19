@@ -3,7 +3,7 @@
 //  概要      : ツリーノード(親)
 //
 //  Liplis2.3   
-//  Copyright(c) 2010-2013 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2013 sachin.Sachin
 //=======================================================================
 using System.Windows.Forms;
 using Liplis.Msg;

@@ -3,7 +3,7 @@
 //  概要      : データベース書き込み用テキストファイル生成クラス
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2011 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2011 sachin.Sachin
 //=======================================================================
 using System;
 using System.Collections.Generic;

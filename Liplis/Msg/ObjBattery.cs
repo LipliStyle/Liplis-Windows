@@ -6,7 +6,7 @@
 //■ Liplis3.0
 //  2013/10/29 Liplis3.2.0 バッテリー管理機能追加
 //
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 
 using Liplis.Fct;

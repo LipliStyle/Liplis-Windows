@@ -3,13 +3,12 @@
 //  概要      : ウインドウズAPIの定義
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2010 sachin.Sachin
 //=======================================================================
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
-
 
 namespace Liplis.Common
 {

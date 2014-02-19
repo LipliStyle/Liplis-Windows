@@ -3,7 +3,7 @@
 //  概要      : ウェザーインフォヤフー
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2010 sachin.Sachin
 //=======================================================================
 using System.Collections.Generic;
 using System.IO;

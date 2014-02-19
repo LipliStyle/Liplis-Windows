@@ -3,7 +3,7 @@
 //  概要      : ヤフー天気
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2012 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2012 sachin.Sachin
 //=======================================================================
 using System;
 using System.Collections.Generic;

@@ -4,7 +4,7 @@
 //
 //  Liplis2.3
 //  2013/06/20 Liplis2.3.0 設定画面一新
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //
 //
 //  何もしないのにウインドウが出てきてしまう場合は、最小化/最大化メソッドを確認

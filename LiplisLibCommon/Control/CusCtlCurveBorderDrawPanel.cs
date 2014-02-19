@@ -13,7 +13,7 @@
 //Panel コントロールはコンテナ機能を持っているため、Padding プロパティの値の最小値を BorderWidth プロパティの値になるようにしています。
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2012 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2012 sachin.Sachin
 //=======================================================================
 using System;
 using System.ComponentModel;

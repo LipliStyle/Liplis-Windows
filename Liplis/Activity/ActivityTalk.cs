@@ -6,7 +6,7 @@
 //  2013/06/20 ver2.3.0 サイズ変更
 //  2013/08/31 ver3.0.5 ossも設定するように変更
 //                      テキストカラー、リンクカラーが適用されるように変更
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Drawing;

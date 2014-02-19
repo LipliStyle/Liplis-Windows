@@ -4,7 +4,7 @@
 //               各所に記述する方向に変更
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2010 sachin.Sachin
 //=======================================================================
 using System;
 using System.Collections.Generic;

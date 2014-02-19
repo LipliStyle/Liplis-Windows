@@ -3,7 +3,7 @@
 //  概要      : SQLServerのバルクコピーを実行する。
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2012 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2012 sachin.Sachin
 //=======================================================================
 
 namespace Liplis.Common

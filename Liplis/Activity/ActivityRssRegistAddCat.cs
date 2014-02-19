@@ -4,7 +4,7 @@
 //
 //  Liplis2.3
 //  2013/06/20 Liplis2.3.0 話題登録画面一新
-//  Copyright(c) 2010-2013 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Windows.Forms;

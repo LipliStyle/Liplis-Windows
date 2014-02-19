@@ -3,7 +3,7 @@
 //  概要      : HTMLファイルの取得
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2011 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2011 sachin.Sachin
 //=======================================================================;
 using System;
 using System.Collections.Generic;

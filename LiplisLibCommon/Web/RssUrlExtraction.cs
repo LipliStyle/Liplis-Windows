@@ -3,7 +3,7 @@
 //  概要      : WEBサイトからRSSURLを抽出する
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2014 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2014 sachin.Sachin
 //=======================================================================
 using System.Windows.Forms;
 using Liplis.Control;

@@ -3,7 +3,7 @@
 //  概要      : ポップアイコン
 //
 //  Liplis2.1
-//  Copyright(c) 2010-2012 LipliStyle. All Rights Reserved. 
+//  Copyright(c) 2010-2012 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Drawing;

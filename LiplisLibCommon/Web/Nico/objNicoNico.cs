@@ -3,7 +3,7 @@
 //  概要      : ニコニコ動画オブジェクト
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2010 sachin.Sachin
 //=======================================================================
 using System.Collections;
 using System.IO;

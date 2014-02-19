@@ -3,7 +3,7 @@
 //  概要      : MersenneTwisterで乱数を生成
 //
 //  Liplisシステム      
-//  Copyright(c) 2009-2011 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2011 sachin.Sachin
 //=======================================================================
 using System;
 

@@ -4,7 +4,7 @@
 //              RSS1.0系、RSS ATOM、RSS2.0系に対応
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2013 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2013 sachin.Sachin
 //=======================================================================
 using System;
 using System.ServiceModel.Syndication;

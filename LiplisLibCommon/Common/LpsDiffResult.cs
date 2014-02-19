@@ -30,7 +30,7 @@
 //(2009/8/24 追記 行単位 diff のバグを修正。id:SiroKuro さん、ご指摘ありがとうございます。
 //
 //  SatelliteServer
-//  Copyright(c) 2009-2014 sachin. All Rights Reserved. 
+//  Copyright(c) 2009-2014 sachin.Sachin
 //=======================================================================
 using System;
 using System.Collections.Generic;

@@ -3,7 +3,7 @@
 //  概要      : ウインドウズAPIの定義
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2010 sachin.Sachin
 //=======================================================================
 
 

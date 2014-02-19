@@ -3,7 +3,7 @@
 //  概要      : httppostし、情報を取得する
 //
 //  Liplisちゃんシステム      
-//  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2010 sachin.Sachin
 //
 //  Update : 2011/07/17 ver0.3 作成
 //           2013/01/12 verMT  ストアアプリとの互換性なし。45バージョンを作成する。

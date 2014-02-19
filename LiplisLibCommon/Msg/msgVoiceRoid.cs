@@ -3,7 +3,7 @@
 //  概要      : ボイスロイドメッセージ
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2013 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2013 sachin.Sachin
 //=======================================================================
 namespace Liplis.Msg
 {

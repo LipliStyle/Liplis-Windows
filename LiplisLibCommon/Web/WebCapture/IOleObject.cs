@@ -3,7 +3,7 @@
 //  概要      : webキャプチャーに必要なインターフェース
 //
 //  Ocinちゃんシステム      
-//  Copyright(c) 2009-2009 10kgRocket. All Rights Reserved. 
+//  Copyright(c) 2009-2009 10kgRocket.Sachin
 //=======================================================================
 
 using System;

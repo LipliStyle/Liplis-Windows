@@ -3,7 +3,7 @@
 //  概要      : ユーティリティクラス
 //
 //  Liplisシステム      
-//  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2010 sachin.Sachin
 //=======================================================================
 using System.Net.Mail;
 using System.Collections.Generic;
