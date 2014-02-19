@@ -6,11 +6,9 @@
 //  Copyright(c) 2010-2010 sachin. All Rights Reserved. 
 //=======================================================================
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Runtime.InteropServices;
 using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Text;
 
 
 namespace Liplis.Common

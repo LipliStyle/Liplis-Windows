@@ -1,11 +1,16 @@
 ﻿//=======================================================================
 //  ClassName : LpsVoiceRoid
 //  概要      : ボイスロイドAPI
+//  このクラスにうえさんの「民安★TALK」のソースをMITライセンスにもとづき、
+//  使用させて頂いております。
+//
+//  民安★TALK
+//  http://uep.s321.xrea.com/vrx/
 //
 //  2013/06/23 Liplis3.0.2 待機スレッドでスリープし、負荷低減
 //                         読み上げメソッド内のストップ処理のタイミングを変更
 //  Liplisシステム      
-//  Copyright(c) 2010-2013 sachin. All Rights Reserved. 
+//  Copyright(c) 2010-2014 sachin. All Rights Reserved. 
 //=======================================================================
 using System;
 using System.Collections.Generic;
@@ -98,8 +103,6 @@ namespace Liplis.Common
         }
         #endregion
         
-
-
         /// <summary>
         /// デストラクター
         /// </summary>
@@ -367,8 +370,6 @@ namespace Liplis.Common
         ///                         プロセス操作
         ///                         
         ///====================================================================
-
-
 
         /// <summary>
         /// エラーウインドウの検索
