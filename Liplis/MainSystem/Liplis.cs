@@ -32,7 +32,8 @@
 //                         画面外復帰機能
 //　2014/01/14 Liplis3.2.3 再起動時、話題取得範囲が正しく設定されなかったバグを修正
 //　2014/02/02 Liplis3.2.4 ツイッター認証が行えないバグを修正
-
+//
+//  2014/04/07 Liplis4.0.0 Clalis4.0対応
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -114,13 +115,13 @@ namespace Liplis.MainSystem
         protected int nowPos            = 0;		//現在品詞ポイント
         protected int nowEmotion        = 0;		//感情現在値
         protected int prvEmotion        = 0;		//感情前回値
-        protected int cntMouth          = 0;      //1回/1s
-        protected int cntBlink          = 0;      //1回/5～10s
-        protected int nowBlink          = 0;      //まばたき現在値
-        protected int prvBlink          = 0;      //まばたき前回値
-        protected int nowDirection      = 0;      //方向 0:左向き　1:右向き
-        protected int prvDirection      = 0;      //方向 前回値
-        protected int cntSlow           = 0;      //スローカウント
+        protected int cntMouth          = 0;        //1回/1s
+        protected int cntBlink          = 0;        //1回/5～10s
+        protected int nowBlink          = 0;        //まばたき現在値
+        protected int prvBlink          = 0;        //まばたき前回値
+        protected int nowDirection      = 0;        //方向 0:左向き　1:右向き
+        protected int prvDirection      = 0;        //方向 前回値
+        protected int cntSlow           = 0;        //スローカウント
 
         ///=====================================
         /// 発言数
@@ -1884,6 +1885,9 @@ namespace Liplis.MainSystem
         }
         #endregion
 
+        /// <summary>
+        /// メニューを開く
+        /// </summary>
         #region showMenuBox
         protected void showMenuBox()
         {
@@ -1893,6 +1897,9 @@ namespace Liplis.MainSystem
         }
         #endregion
 
+        /// <summary>
+        /// メニューを閉じる
+        /// </summary>
         #region closeMenuBox
         protected void closeMenuBox()
         {
@@ -1901,6 +1908,9 @@ namespace Liplis.MainSystem
         }
         #endregion
 
+        /// <summary>
+        /// サークルメニューを開く
+        /// </summary>
         #region showMenuCircle
         protected virtual void showMenuCircle()
         {
@@ -1910,6 +1920,9 @@ namespace Liplis.MainSystem
         }
         #endregion
 
+        /// <summary>
+        /// サークルメニューを閉じる
+        /// </summary>
         #region closeMenuCircle
         protected void closeMenuCircle()
         {
@@ -1918,6 +1931,11 @@ namespace Liplis.MainSystem
         }
         #endregion
 
+        /// <summary>
+        /// CMPの初期化
+        /// </summary>
+        /// <param name="sleepMode"></param>
+        #region initCmp
         private void initCmp(int sleepMode)
         {
             if (this.cmp != null)
@@ -1950,6 +1968,8 @@ namespace Liplis.MainSystem
             lpi = new LiplisPopIcon(this, sleepMode);
 
         }
+        #endregion
+        
 
         ///====================================================================
         ///

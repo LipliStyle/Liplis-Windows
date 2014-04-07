@@ -2,8 +2,8 @@
 //  ClassName : LiplisDefine
 //  概要      : 各種定義
 //
-//  Liplis2.0
-//  Copyright(c) 2010-2011 LipliStyle.Sachin
+//  Liplis4.0
+//  Copyright(c) 2010-2014 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Collections.Generic;
@@ -112,10 +112,9 @@ namespace Liplis.Common
         ///=============================
         /// URL定義
         #region URL定義
-        public const string LIPLIS_API_SUMMARY_NEWS               = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplis.aspx";        //2013/10/26 ver3.1.0 Clalis3.2採用
-        public const string LIPLIS_API_SUMMARY_NEWS_LIST          = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisFx.aspx";      //2013/10/26 ver3.1.0 Clalis3.2採用
-        public const string LIPLIS_API_SHORT_NEWS                 = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisWeb.aspx";
-        //public const string LIPLIS_API_SHORT_NEWS_LIST            = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisWebFx.aspx";
+        public const string LIPLIS_API_SUMMARY_NEWS               = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplis.aspx";                        //2014/04/07 ver4.0.0 Clalis4.0採用
+        public const string LIPLIS_API_SUMMARY_NEWS_LIST          = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplisFx.aspx";                      //2014/04/07 ver4.0.0 Clalis4.0採用
+        public const string LIPLIS_API_SHORT_NEWS                 = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplisWeb.aspx";                     //2014/04/07 ver4.0.0 Clalis4.0採用         
         public const string LIPLIS_API_SHORT_NEWS_LIST            = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisWebTest.aspx";
         public const string LIPLIS_API_REGISTER_RSS               = @"http://liplis.mine.nu/Clalis/v31/Liplis/ClalisForLiplisRegisterAddRssUrl.aspx";
         public const string LIPLIS_API_TOPIC_SETTING              = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisSettingTopicSetting.aspx";
@@ -138,15 +137,12 @@ namespace Liplis.Common
         public const string LIPLIS_LIPLISTYLE                     = @"http://liplis.mine.nu/";
 
         public const string LIPLIS_FREE_TALK                      = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisFreeTalk.aspx";
-
-        //以下廃止
-        //public const string LIPLIS_API_SUMMARY_NEWS               = @"http://liplis.mine.nu/Clalis/v31/Liplis/ClalisForLiplis.aspx";
-        //public const string LIPLIS_API_SUMMARY_NEWS_LIST31 = "http://liplis.mine.nu/Clalis/v31/Liplis/ClalisForLiplisFx.aspx";
         #endregion
 
         ///=============================
         /// ツイッター認証コード
         ///=============================
+        #region ツイッター認証コード
         public const string TWITTER_OAUTH_CONSUMERKEY = "W1tQBXDr3pQu1atfIwp6A";
         public const string TWITTER_OAUTH_CONSUMERSECRET = "eTFat5surbln3MH7f0uIlwmpOcQdjlkyg7vUk90eG8";
 
@@ -154,7 +150,7 @@ namespace Liplis.Common
         public static readonly string REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token";
         public static readonly string AUTHORIZE_URL = "https://api.twitter.com/oauth/authorize";
         public static readonly string ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token";
-
+        #endregion
 
         ///=============================
         /// ClalisAPI定義

@@ -2,11 +2,13 @@
 //  ClassName : LiplisApi
 //  概要      : LiplisApiとのインターフェースクラス
 //
-//  Liplis2.0
-//  Copyright(c) 2010-2011 LipliStyle.Sachin
+//  Liplis4.0
+//  Copyright(c) 2010-2014 LipliStyle.Sachin
+//
+//
+//  2014/04/07 Liplis4.0 Clalis4.0対応
 //=======================================================================
 using System.Collections.Generic;
-
 using System.Collections.Specialized;
 using System.Text;
 using Liplis.Common;
@@ -84,10 +86,6 @@ namespace Liplis.Web
 
                 //Jsonで結果取得
                 string jsonText = HttpPost.sendPost(LiplisDefine.LIPLIS_API_SUMMARY_NEWS_LIST, ps);
-
-                //2013/10/29
-                //改行変換
-                //jsonText = jsonText.Replace("@", "<br/>");
 
                 //APIの結果受け取り用クラス
                 ResLpsSummaryNews2JsonList result = JsonConvert.DeserializeObject<ResLpsSummaryNews2JsonList>(jsonText);

@@ -3,14 +3,13 @@
 //  概要      : アクティビティキャラクター
 //
 //  Liplis2.3
+//
 //  2013/06/20 Liplis2.3.0 UI変更
 //  Copyright(c) 2010-2013 LipliStyle.Sachin
 //=======================================================================
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 using Liplis.Cmp.Form;
-using Liplis.Common;
 using Liplis.MainSystem;
 using Liplis.Msg;
 
