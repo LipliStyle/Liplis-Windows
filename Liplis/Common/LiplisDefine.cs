@@ -16,12 +16,14 @@ namespace Liplis.Common
     {
         ///=============================
         /// 設定ファイルパス定義
-        public const string SETTING_SKIN_FILE_NAME    = "skin.xml";
+        #region 設定ファイルパス定義
+        public const string SETTING_SKIN_FILE_NAME = "skin.xml";
         public const string SETTING_VERSION_FILE_NAME = "version.xml";
-        public const string SETTING_BODY_XML_FILE     = "body.xml";
-        public const string SETTING_CHAT_XML_FILE     = "chat.xml";
-        public const string SETTING_TONE_XML_FILE     = "tone.xml";
-        public const string LIPLIS_NEW_EXE_FILE       = "Liplis.lps";
+        public const string SETTING_BODY_XML_FILE = "body.xml";
+        public const string SETTING_CHAT_XML_FILE = "chat.xml";
+        public const string SETTING_TONE_XML_FILE = "tone.xml";
+        public const string LIPLIS_NEW_EXE_FILE = "Liplis.lps";
+        #endregion
 
         ///=============================
         /// 設定ファイル定義

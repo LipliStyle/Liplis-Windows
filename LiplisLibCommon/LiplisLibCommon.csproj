@@ -69,6 +69,7 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\BaseRandom.cs" />
+    <Compile Include="Common\LpsCreateObject.cs" />
     <Compile Include="Common\LpsDiffResult.cs" />
     <Compile Include="Common\LpsArchiveUtil.cs" />
     <Compile Include="Common\LpsCmdControl.cs" />
