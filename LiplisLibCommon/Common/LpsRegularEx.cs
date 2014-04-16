@@ -256,7 +256,7 @@ namespace Liplis.Common
         public static string fctReplaceNewLine(string target)
         {
             string result = target;
-
+            result = new Regex("。@").Replace(result, "。");
             result = new Regex("。").Replace(result, "。<br><br>");
             result = new Regex("」").Replace(result, "」<br><br>");
             result = new Regex("「").Replace(result, "<br><br>「");
