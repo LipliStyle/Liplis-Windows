@@ -719,10 +719,17 @@ namespace Liplis.Web
                     {
                         string[] bufList2 = buf.Split(',');
 
-                        msg.nameList.Add(bufList2[0]);
-                        msg.emotionList.Add(int.Parse(bufList2[1]));
-                        msg.pointList.Add(int.Parse(bufList2[2]));
-                        sbResult.Append(bufList2[0]);
+                        if (bufList2.Length == 3)
+                        {
+                            msg.nameList.Add(bufList2[0]);
+                            msg.emotionList.Add(int.Parse(bufList2[1]));
+                            msg.pointList.Add(int.Parse(bufList2[2]));
+                            sbResult.Append(bufList2[0]);
+                        }
+                        else
+                        {
+
+                        }
                     }
                 }
                 catch
