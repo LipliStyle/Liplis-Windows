@@ -59,6 +59,8 @@ namespace Liplis.Msg
         /// collect
         /// 話題を非同期で収集する
         /// (非同期実行)
+        /// 
+        /// 2014/04/20 Liplis4.0 キューに直接投入するように変更 
         /// </summary>
         #region collect
         public override void collect()
@@ -70,13 +72,8 @@ namespace Liplis.Msg
                     //開始時ON
                     flgCollect = true;
 
-                    List<MsgShortNews> res = LiplisApiCus.getShortNewsList(os.uid, oss.toneUrl, os.getNewsFlg(), "100", os.lpsTopicHour.ToString(), os.lpsAlready.ToString(), os.lpsAlready.ToString(), os.lpsRunout.ToString());
+                    LiplisApiCus.getShortNewsList(newsQ, os.uid, oss.toneUrl, os.getNewsFlg(), "100", os.lpsTopicHour.ToString(), os.lpsAlready.ToString(), os.lpsAlready.ToString(), os.lpsRunout.ToString());
 
-                    //取得したメッセージをキューに入れる
-                    foreach (MsgShortNews msg in res)
-                    {
-                        newsQ.Enqueue(msg);
-                    }
                 }
                 catch
                 {

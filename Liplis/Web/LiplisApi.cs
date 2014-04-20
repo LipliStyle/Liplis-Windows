@@ -1,4 +1,5 @@
-﻿//=======================================================================
+﻿using System;
+//=======================================================================
 //  ClassName : LiplisApi
 //  概要      : LiplisApiとのインターフェースクラス
 //
@@ -66,12 +67,12 @@ namespace Liplis.Web
         /// getSummaryNewsList
         /// サマリーニュースリストの取得
         /// Liplis3.1.0 URL変更、引数追加
+        /// Liplis4.0.0 キューに直接投入するように変更
         /// </summary>
         /// <returns></returns>
         #region getSummaryNewsList
-        public static List<MsgShortNews> getSummaryNewsList(string uid, string toneUrl, string newsFlg, string num, string hour, string already, string twitterMode, string runout)
+        public static void getSummaryNewsList(Queue<MsgShortNews> newsQ, string uid, string toneUrl, string newsFlg, string num, string hour, string already, string twitterMode, string runout)
         {
-            List<MsgShortNews> msgList = new List<MsgShortNews>();
             try
             {
                 NameValueCollection ps = new NameValueCollection();
@@ -95,15 +96,12 @@ namespace Liplis.Web
                 {
                     MsgShortNews msg = convertRlSumNjToMsg(rlsn2);
                     FctTagFactory.setTag(msg);
-                    msgList.Add(msg);
+                    newsQ.Enqueue(msg);
+                    Console.WriteLine(msg.url);
                 }
-
-                return msgList;
             }
-            catch
-            {
-                return msgList;
-            }
+            catch{}
+            return;
         }
         #endregion
 
@@ -148,12 +146,12 @@ namespace Liplis.Web
         /// <summary>
         /// getShortNewsList
         /// ショートニュースリストの取得
+        /// Liplis4.0.0 キューに直接投入するように変更
         /// </summary>
         /// <returns></returns>
         #region getShortNewsList
-        public static List<MsgShortNews> getShortNewsList(string uid, string toneUrl, string newsFlg, string num, string hour, string already, string twitterMode, string runout)
+        public static void getShortNewsList(Queue<MsgShortNews> newsQ, string uid, string toneUrl, string newsFlg, string num, string hour, string already, string twitterMode, string runout)
         {
-            List<MsgShortNews> msgList = new List<MsgShortNews>();
             try
             {
                 NameValueCollection ps = new NameValueCollection();
@@ -175,14 +173,14 @@ namespace Liplis.Web
                 //取得したリストをメッセージリストに変換する
                 foreach (ResLpsShortNews2Json rlsn2 in result.lstNews)
                 {
-                    msgList.Add(convertRlShtNjToMsg(rlsn2));
+                    newsQ.Enqueue(convertRlShtNjToMsg(rlsn2));
                 }
 
-                return msgList;
+                return;
             }
             catch
             {
-                return msgList;
+                return;
             }
         }
         #endregion

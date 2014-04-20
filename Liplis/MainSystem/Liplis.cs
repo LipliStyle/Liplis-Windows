@@ -34,6 +34,7 @@
 //　2014/02/02 Liplis3.2.4 ツイッター認証が行えないバグを修正
 //
 //  2014/04/07 Liplis4.0.0 Clalis4.0対応
+//  2014/04/16             おしゃべり内容の解析方法修正
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -469,7 +470,6 @@ namespace Liplis.MainSystem
         }
         #endregion
 
-
         ///====================================================================
         ///
         ///                          onLoad
@@ -541,9 +541,6 @@ namespace Liplis.MainSystem
         {
             try
             {
-                //チャットテキストの初期化
-                //liplisChatText = "";
-
                 //ナウワードの初期化
                 liplisNowWord = "";
 
@@ -2164,8 +2161,6 @@ namespace Liplis.MainSystem
         }
         #endregion 
 
-
-
         ///====================================================================
         ///
         ///                          チャット関連
@@ -2987,17 +2982,9 @@ namespace Liplis.MainSystem
                         //現在ワードチェック
                         if (checkResult == 1 || checkResult == 9)
                         {
-                            //プレブエモーションセット
-                            prvEmotion = nowEmotion;
-
-                            //なうエモーションの取得
-                            nowEmotion = liplisNowTopic.emotionList[cntLnw];
-
-                            //なうポイントの取得
-                            nowPoint = liplisNowTopic.pointList[cntLnw];
-
-                            //なう品詞を取得する
-                            nowPos = liplisNowTopic.pointList[cntLnw];
+                            //2014/04/17 Liplis4.0
+                            //エモーションのセット
+                            setEmotion();
 
                             //インデックスインクリメント
                             cntLnw++;
@@ -3030,6 +3017,33 @@ namespace Liplis.MainSystem
                 return true ;
             }
 
+        }
+        #endregion
+
+        /// <summary>
+        /// 2014/04/17 
+        /// エモーションセットを関数化
+        /// ここで、エモーション変化の判断はこのメソッドで行う
+        /// 修正方針 
+        /// 　ある程度感情モードを保持する
+        /// 　あまりにも表情変化が速いとヘンなのでその点を考慮する
+        /// </summary>
+        #region setEmotion
+        protected void setEmotion()
+        {
+            //プレブエモーションセット
+            prvEmotion = nowEmotion;
+
+            //なうエモーションの取得
+            nowEmotion = liplisNowTopic.emotionList[cntLnw];
+
+            //なうポイントの取得
+            nowPoint = liplisNowTopic.pointList[cntLnw];
+
+            //なう品詞を取得する
+            nowPos = liplisNowTopic.pointList[cntLnw];
+
+            Console.WriteLine("emotion prv:" + prvEmotion + " now:" + nowEmotion + "," + nowPoint);
         }
         #endregion
 
@@ -3228,12 +3242,6 @@ namespace Liplis.MainSystem
         {
             try
             {
-                //if (nowEmotion != prvEmotion && flgChatting)
-                //{
-                //    ob = obl.getLiplisBody(nowEmotion, nowPoint);
-                //    flgBodyChencge = true;
-                //}
-
                 //ボディ変化チェック
                 setObjectBody();
 
