@@ -145,6 +145,7 @@
     <Compile Include="Fct\FctLiplisMsg.cs" />
     <Compile Include="Fct\FctWindowFileLoader.cs" />
     <Compile Include="MainSystem\LiplisPopIcon.cs" />
+    <Compile Include="Msg\MsgEmotion.cs" />
     <Compile Include="Msg\ObjBattery.cs" />
     <Compile Include="Msg\ObjCat.cs" />
     <Compile Include="Msg\ObjDownloadHst.cs" />

@@ -23,14 +23,6 @@ namespace Liplis.MainSystem
         {
             try
             {
-                //起動チェック
-                //LiplisUpdate.waitUpdate();
-
-                //バージョンチェック
-                //if (LiplisUpdate.update())
-                //{
-                //    return;
-                //}
 
             }
             catch

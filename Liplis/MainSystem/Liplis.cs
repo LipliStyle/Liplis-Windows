@@ -35,6 +35,7 @@
 //
 //  2014/04/07 Liplis4.0.0 Clalis4.0対応
 //  2014/04/16             おしゃべり内容の解析方法修正
+//  2014/04/20             データ受信処理修正(リアルタイム受信)      
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -114,8 +115,6 @@ namespace Liplis.MainSystem
         protected int cntLnw            = 0;		//リプリスナウワードカウント
         protected int nowPoint          = 0;		//現在感情ポイント
         protected int nowPos            = 0;		//現在品詞ポイント
-        protected int nowEmotion        = 0;		//感情現在値
-        protected int prvEmotion        = 0;		//感情前回値
         protected int cntMouth          = 0;        //1回/1s
         protected int cntBlink          = 0;        //1回/5～10s
         protected int nowBlink          = 0;        //まばたき現在値
@@ -123,6 +122,10 @@ namespace Liplis.MainSystem
         protected int nowDirection      = 0;        //方向 0:左向き　1:右向き
         protected int prvDirection      = 0;        //方向 前回値
         protected int cntSlow           = 0;        //スローカウント
+
+        protected int nowEmotion = 0;		//感情現在値
+        protected int prvEmotion = 0;		//感情前回値
+        protected MsgEmotion sumEmotion;    //感情蓄積値
 
         ///=====================================
         /// 発言数
@@ -262,6 +265,8 @@ namespace Liplis.MainSystem
         /// Liplisの初期化
         /// 主にクラスの初期化
         /// ☆Miniオーバーライド
+        /// 
+        /// 2014/04/20 Liplis4.0 総合エモーション追加
         /// </summary>
         #region initObject
         protected virtual void initObject()
@@ -307,6 +312,10 @@ namespace Liplis.MainSystem
 
             //ほうきオブジェクトの初期化
             obr = new ObjBroom();
+
+            ///2014/04/20 Liplis4.0 総合エモーション追加
+            //総合エモーション
+            sumEmotion = new MsgEmotion();
 
             //アイコンクラスを連動登録
             this.AddOwnedForm(li);
@@ -2456,6 +2465,9 @@ namespace Liplis.MainSystem
                 //現在表示文字の初期化
                 liplisChatText = "";
 
+                //総合エモーションの初期化
+                sumEmotion.init();
+
                 //トークウインドウを開く
                 Invoke(new LpsDelegate.dlgVoidToVoid(at.Show));
 
@@ -2931,7 +2943,7 @@ namespace Liplis.MainSystem
                 flgSkipping = false;
                 herfEyeCheck();
                 if (liplisNowTopic != null) { appendLog(); }
-                //liplisNowTopic = null;
+                liplisNowTopic = null;
                 return true;
             }
             catch(Exception err)
@@ -3031,17 +3043,30 @@ namespace Liplis.MainSystem
         #region setEmotion
         protected void setEmotion()
         {
+            //
+            int bufEmotion = liplisNowTopic.emotionList[cntLnw];
+
             //プレブエモーションセット
             prvEmotion = nowEmotion;
 
-            //なうエモーションの取得
-            nowEmotion = liplisNowTopic.emotionList[cntLnw];
+            //変化があった場合にのみセット
+            if (prvEmotion != bufEmotion)
+            {
+                if (bufEmotion != 0)
+                {
+                    //なうエモーションの取得
+                    nowEmotion = bufEmotion; 
+                }
+            }
 
             //なうポイントの取得
             nowPoint = liplisNowTopic.pointList[cntLnw];
 
             //なう品詞を取得する
             nowPos = liplisNowTopic.pointList[cntLnw];
+
+            //エモーション値の積算
+            sumEmotion.set(nowEmotion, nowPoint);
 
             Console.WriteLine("emotion prv:" + prvEmotion + " now:" + nowEmotion + "," + nowPoint);
         }
@@ -3315,6 +3340,7 @@ namespace Liplis.MainSystem
                     else
                     {
                         ob = obl.getLiplisBody(nowEmotion, nowPoint);
+                        Console.WriteLine("c"+ prvEmotion + " : " + nowEmotion);
                     }
 
                     flgBodyChencge = true;

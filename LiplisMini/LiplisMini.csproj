@@ -236,6 +236,9 @@
     <Compile Include="..\Liplis\MainSystem\LiplisUpdate.cs">
       <Link>MainSystem\LiplisUpdate.cs</Link>
     </Compile>
+    <Compile Include="..\Liplis\Msg\MsgEmotion.cs">
+      <Link>Msg\MsgEmotion.cs</Link>
+    </Compile>
     <Compile Include="..\Liplis\Msg\MsgShortNews.cs">
       <Link>Msg\MsgShortNews.cs</Link>
     </Compile>

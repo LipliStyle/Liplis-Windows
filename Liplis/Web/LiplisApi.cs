@@ -97,7 +97,6 @@ namespace Liplis.Web
                     MsgShortNews msg = convertRlSumNjToMsg(rlsn2);
                     FctTagFactory.setTag(msg);
                     newsQ.Enqueue(msg);
-                    Console.WriteLine(msg.url);
                 }
             }
             catch{}
