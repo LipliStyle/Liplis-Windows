@@ -133,6 +133,9 @@
     <Compile Include="..\LiplisLibCommon\Common\RndMersenneTwister.cs">
       <Link>Common\RndMersenneTwister.cs</Link>
     </Compile>
+    <Compile Include="..\LiplisLibCommon\Control\CenterMessageBox.cs">
+      <Link>Control\CenterMessageBox.cs</Link>
+    </Compile>
     <Compile Include="..\LiplisLibCommon\Control\CusCtlButton.cs">
       <Link>Control\CusCtlButton.cs</Link>
       <SubType>Component</SubType>
@@ -391,17 +394,6 @@
       <Link>Common\UsrCtlLoadingImage.resx</Link>
       <DependentUpon>UsrCtlLoadingImage.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="MAPI">
-      <Guid>{3FA7DEA7-6438-101B-ACC1-00AA00423326}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>21</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

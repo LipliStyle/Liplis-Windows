@@ -98,6 +98,7 @@
     <Compile Include="Common\NlsEdtProfessionalRenderer.cs" />
     <Compile Include="Common\NlsUrlCreator.cs" />
     <Compile Include="Common\RndMersenneTwister.cs" />
+    <Compile Include="Control\CenterMessageBox.cs" />
     <Compile Include="Control\CusCtlButton.cs">
       <SubType>Component</SubType>
     </Compile>

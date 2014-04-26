@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Resources;
 
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("デスクトップマスコット Liplis")]
-[assembly: AssemblyDescription("デスクトップマスコット Liplis")]
+[assembly: AssemblyTitle("LiplisUpdater")]
+[assembly: AssemblyDescription("リプリスの更新ツール")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LipliStyle")]
-[assembly: AssemblyProduct("Liplis")]
+[assembly: AssemblyProduct("LiplisUpdater")]
 [assembly: AssemblyCopyright("Copyright © LipliStyle Sachin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +20,7 @@ using System.Resources;
 [assembly: ComVisible(false)]
 
 // 次の GUID は、このプロジェクトが COM に公開される場合の、typelib の ID です
-[assembly: Guid("e4cd1413-cd12-47ef-8993-1bc8a19165a4")]
+[assembly: Guid("accde2cc-efdf-4fa7-9828-ff1c11469b69")]
 
 // アセンブリのバージョン情報は、以下の 4 つの値で構成されています:
 //
@@ -33,6 +32,5 @@ using System.Resources;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.0.0.0")]
-[assembly: AssemblyFileVersion("4.0.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("ja")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
