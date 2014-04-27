@@ -317,6 +317,54 @@ namespace Liplis.Activity
         }
         #endregion
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            lips.onRecive(LiplisDefine.LM_NEXT, "");
+        }
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region
+        private void btnUrlCopy_Click(object sender, EventArgs e)
+        {
+            LpsLiplisUtil.setDataToClipBord(url);
+        }
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region
+        private void btnWebJump_Click(object sender, EventArgs e)
+        {
+            callBrowser();
+        }
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region
+        private void btnTweet_Click(object sender, EventArgs e)
+        {
+            lips.onRecive(LiplisDefine.LM_TWEET, "");
+        }
+        #endregion
+
         ///====================================================================
         ///
         ///                          onReciveCms
@@ -872,6 +920,7 @@ namespace Liplis.Activity
             e.ReturnValue = false;
         }
         #endregion
+
 
     }
 }

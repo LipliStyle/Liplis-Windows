@@ -121,6 +121,15 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cms.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 48</value>
+  </data>
+  <data name="&gt;&gt;cms.Name" xml:space="preserve">
+    <value>cms</value>
+  </data>
+  <data name="&gt;&gt;cms.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 22</value>
   </data>
@@ -133,18 +142,40 @@
   <data name="tsmiShow.Text" xml:space="preserve">
     <value>記事を表示</value>
   </data>
-  <data name="cms.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 48</value>
-  </data>
-  <data name="&gt;&gt;cms.Name" xml:space="preserve">
-    <value>cms</value>
-  </data>
-  <data name="&gt;&gt;cms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <metadata name="cmst.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>93, 17</value>
   </metadata>
+  <data name="cmst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 136</value>
+  </data>
+  <data name="&gt;&gt;cmst.Name" xml:space="preserve">
+    <value>cmst</value>
+  </data>
+  <data name="&gt;&gt;cmst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lnkLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 4</value>
+  </data>
+  <data name="lnkLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 12</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lnkLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl.Name" xml:space="preserve">
+    <value>lnkLbl</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="tsmitTitleCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 22</value>
   </data>
@@ -166,7 +197,6 @@
   <data name="tsmitDogaDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 22</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tsmitDogaDown.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -185,36 +215,6 @@
   <data name="mHTToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="cmst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 158</value>
-  </data>
-  <data name="&gt;&gt;cmst.Name" xml:space="preserve">
-    <value>cmst</value>
-  </data>
-  <data name="&gt;&gt;cmst.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lnkLbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 4</value>
-  </data>
-  <data name="lnkLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 12</value>
-  </data>
-  <data name="lnkLbl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lnkLbl.Name" xml:space="preserve">
-    <value>lnkLbl</value>
-  </data>
-  <data name="&gt;&gt;lnkLbl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkLbl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lnkLbl.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="wbTalk.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 16</value>
   </data>
@@ -222,7 +222,7 @@
     <value>20, 20</value>
   </data>
   <data name="wbTalk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 114</value>
+    <value>328, 100</value>
   </data>
   <data name="wbTalk.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -237,6 +237,218 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;wbTalk.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NC
+        NwAAASZJREFUOE+tkLHKgmAUhiNoEAKHwEEwIgoHQdChobHJUfCKvAAnl/buqESvQ2/g7X+Fc4jPrx+y
+        hgcfzjnfM7gA8FOsw2+wDr9B5Xq9IkmSj+E7aRCVOI4xF2kQlSiKYHK73VAUxWRuIg2iEoYhTLquwzAM
+        yPN8sntFGkTlcDjAJE1TtG07Rum2GyINorLb7WCD/4hBhum2G2kQlSAI8I4syzTKf2bupUFUfN/Hf1RV
+        9XeG8Wvu+F5Q8TwP77hcLuj7Hk3T4Hg8TvbSICqbzQY29vv9GHs8HqPbbqRBVFzXhcl2ux1DDNJtN0Qa
+        RGW9XsPkfr+PsfP5PNm9Ig2i4jgOTOq6xul0msxNpEFUVqsV5iINolKWJZbL5cfwnTSIyq+wDueDxROM
+        XWcSJXrF8AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnNext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 118</value>
+  </data>
+  <data name="btnNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnNext.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
+  </data>
+  <data name="btnNext.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnNext.Name" xml:space="preserve">
+    <value>btnNext</value>
+  </data>
+  <data name="&gt;&gt;btnNext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnNext.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnNext.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnUrlCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAABaElEQVQ4T6XS
+        v0sCYRgH8AdBEASHA0HQFAdJEA/EZimz39YuVJJT1D9gHMdhRDS6BNHgIgQROFWaUmN4R3NBUWvQ0NrQ
+        8M3ngVcQlyMPPrxfn/fLwyFHuVwOmUzGNcuyMHhIIV3X4UalUhlm0zSHSyiVSsGNZrM58tswDFlCyWQS
+        bjiOMzarVqugRCIBN2zbRqvVGptTPB6HG/V6Hf1+XzQaDZRKJZlTNBrFJCgcDmMSdFizwEKhkOC8sV7E
+        Q68D/P4MqQ5n1WVUs0ywYDAoOBfXVnHf7cjJs5lsFh9vL5J5geoyskwDTNM0wXlleWmwoD3yBqrDWXUZ
+        7ZS3YRoHCAQCgvPiQgG9u1s59XRaciwWk3teoLqMCvN5XF1eYCoSEe+vz3L2OjfgO7/fj/LWJs7PTiXz
+        Aj4V8vl8ODk+kovvr0/s7+2CZ932NfJzs5LZk/04+Pqmpadwh7xeLyZB/Ed4PJ5/0TQNfywMyf8pKlkE
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnUrlCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnUrlCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 118</value>
+  </data>
+  <data name="btnUrlCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="btnUrlCopy.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
+  </data>
+  <data name="btnUrlCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnUrlCopy.Name" xml:space="preserve">
+    <value>btnUrlCopy</value>
+  </data>
+  <data name="&gt;&gt;btnUrlCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUrlCopy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUrlCopy.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnWebJump.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NC
+        NwAAAXxJREFUOE+NksHLAVEUxV9KTU1ZqImaEgtlUkoolIWUbJTCgiymZGthYy07G8WGpY1SbPyD5/vO
+        rfd6TxYWv7n3nnPum3ozCoDD+/3GarVCtVp1oEbvM+8M0+kUlUrlK4PBQCoz9o5pms0myuUy1uv1/wjF
+        vt/vI45j0dlTH4/HYJY9kcdoNEKpVEKv1zMG50ajgdvtJh4z2mOvZ/V6vVAsFlGr1UxgsVhgu92KbnM6
+        nUyGM3fVbDZDoVDAfr83JuFM3UZnSafTkVnlcjkQe5kXpnWbdruN4/GI5/OJ3W4nmgrDEGQymUiNokjq
+        N5bLpfMiaiqbzULDS7TnTx6Ph3MANRUEAX7lcDjIAdfrVSo1NRwOkU6nDZfLRUxelK1r8vm8VH4p7qr7
+        /Y5UKmXgsmY+nzveJ9yVYKvVgu/7Anv7EKI9G50zoUwmA8/zhPP5LCbhL6x1DbPaNweQer2OZDIJ1s1m
+        IxfH2YaeveMcQPjvd7tdJBIJB2r03DzUH2qNAHT4jCvgAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnWebJump.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnWebJump.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 118</value>
+  </data>
+  <data name="btnWebJump.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="btnWebJump.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
+  </data>
+  <data name="btnWebJump.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnWebJump.Name" xml:space="preserve">
+    <value>btnWebJump</value>
+  </data>
+  <data name="&gt;&gt;btnWebJump.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWebJump.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnWebJump.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnTweet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NC
+        NwAAAQdJREFUOE+lzz/LRVAcB3BZ7mKQuimKgeEOFqOFUmRX3oPVoGRhscjiHRiUgcUb/F7nPOVxnnu6
+        3dszfDi/P98TAoB/4Ta/wW1+g9v8y/d9uK5L9X1/tH5nzCJPHMdwHIfyPI++67o+Rj/zl8DVNE14PB4n
+        UldVdZ7JDjdYliW2bUMQBLAs60R+4VqT+RlqmgaGYdBPLIoCWZbRmofsrOt6xC5fkKYpNE37yDAMNMxc
+        QCzLAtu2cb/f37pmhDzPmQZhmiZkWeYis+uuMM8zJEmCrutIkoSe3+m6jr2APPZ9h6qquN1ub0VRxIQJ
+        phjHEWEYQhRFhqIoaNv2WGHDxEvjW9zm5yA8AR12aVDNKmgdAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnTweet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTweet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 118</value>
+  </data>
+  <data name="btnTweet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="btnTweet.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
+  </data>
+  <data name="btnTweet.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnTweet.Name" xml:space="preserve">
+    <value>btnTweet</value>
+  </data>
+  <data name="&gt;&gt;btnTweet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTweet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTweet.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblEmotion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 119</value>
+  </data>
+  <data name="lblEmotion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 15</value>
+  </data>
+  <data name="lblEmotion.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblEmotion.Text" xml:space="preserve">
+    <value>かなしい</value>
+  </data>
+  <data name="lblEmotion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblEmotion.Name" xml:space="preserve">
+    <value>lblEmotion</value>
+  </data>
+  <data name="&gt;&gt;lblEmotion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmotion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblEmotion.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblPoint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPoint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>297, 119</value>
+  </data>
+  <data name="lblPoint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 16</value>
+  </data>
+  <data name="lblPoint.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblPoint.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPoint.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblPoint.Name" xml:space="preserve">
+    <value>lblPoint</value>
+  </data>
+  <data name="&gt;&gt;lblPoint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPoint.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPoint.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -300,6 +512,6 @@
     <value>ActivityTalk</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Liplis.MainSystem.BaseSystem, Liplis, Version=3.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Liplis.MainSystem.BaseSystem, Liplis, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

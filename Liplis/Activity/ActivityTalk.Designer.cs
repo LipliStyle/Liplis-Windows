@@ -43,8 +43,18 @@ namespace Liplis.Activity
             this.tsmitMp3Down = new System.Windows.Forms.ToolStripMenuItem();
             this.mHTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wbTalk = new System.Windows.Forms.WebBrowser();
+            this.btnNext = new System.Windows.Forms.PictureBox();
+            this.btnUrlCopy = new System.Windows.Forms.PictureBox();
+            this.btnWebJump = new System.Windows.Forms.PictureBox();
+            this.btnTweet = new System.Windows.Forms.PictureBox();
+            this.lblEmotion = new System.Windows.Forms.Label();
+            this.lblPoint = new System.Windows.Forms.Label();
             this.cms.SuspendLayout();
             this.cmst.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnUrlCopy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnWebJump)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTweet)).BeginInit();
             this.SuspendLayout();
             // 
             // cms
@@ -129,10 +139,60 @@ namespace Liplis.Activity
             this.wbTalk.ScrollBarsEnabled = false;
             this.wbTalk.Url = new System.Uri("http://m", System.UriKind.Absolute);
             // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnNext, "btnNext");
+            this.btnNext.Name = "btnNext";
+            this.btnNext.TabStop = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnUrlCopy
+            // 
+            this.btnUrlCopy.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnUrlCopy, "btnUrlCopy");
+            this.btnUrlCopy.Name = "btnUrlCopy";
+            this.btnUrlCopy.TabStop = false;
+            this.btnUrlCopy.Click += new System.EventHandler(this.btnUrlCopy_Click);
+            // 
+            // btnWebJump
+            // 
+            this.btnWebJump.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnWebJump, "btnWebJump");
+            this.btnWebJump.Name = "btnWebJump";
+            this.btnWebJump.TabStop = false;
+            this.btnWebJump.Click += new System.EventHandler(this.btnWebJump_Click);
+            // 
+            // btnTweet
+            // 
+            this.btnTweet.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnTweet, "btnTweet");
+            this.btnTweet.Name = "btnTweet";
+            this.btnTweet.TabStop = false;
+            this.btnTweet.Click += new System.EventHandler(this.btnTweet_Click);
+            // 
+            // lblEmotion
+            // 
+            this.lblEmotion.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblEmotion, "lblEmotion");
+            this.lblEmotion.Name = "lblEmotion";
+            // 
+            // lblPoint
+            // 
+            this.lblPoint.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblPoint, "lblPoint");
+            this.lblPoint.Name = "lblPoint";
+            // 
             // ActivityTalk
             // 
             resources.ApplyResources(this, "$this");
             this.BackgroundImage = global::Liplis.Properties.Resources.window;
+            this.Controls.Add(this.lblPoint);
+            this.Controls.Add(this.lblEmotion);
+            this.Controls.Add(this.btnTweet);
+            this.Controls.Add(this.btnWebJump);
+            this.Controls.Add(this.btnUrlCopy);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.wbTalk);
             this.Controls.Add(this.lnkLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -142,6 +202,10 @@ namespace Liplis.Activity
             this.MouseEnter += new System.EventHandler(this.ActivityTalk_MouseEnter);
             this.cms.ResumeLayout(false);
             this.cmst.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnUrlCopy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnWebJump)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTweet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,5 +224,11 @@ namespace Liplis.Activity
         private System.Windows.Forms.ToolStripMenuItem mHTToolStripMenuItem;
         protected System.Windows.Forms.LinkLabel lnkLbl;
         protected System.Windows.Forms.WebBrowser wbTalk;
+        private System.Windows.Forms.PictureBox btnNext;
+        private System.Windows.Forms.PictureBox btnUrlCopy;
+        private System.Windows.Forms.PictureBox btnWebJump;
+        private System.Windows.Forms.PictureBox btnTweet;
+        private System.Windows.Forms.Label lblEmotion;
+        private System.Windows.Forms.Label lblPoint;
     }
 }

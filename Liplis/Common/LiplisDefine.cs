@@ -749,6 +749,7 @@ namespace Liplis.Common
         public const int LM_FILTER           = 21;
         public const int LM_BATTERY          = 22;
         public const int LM_OUTRANGE_RECOVERY= 23;
+        public const int LM_TWEET            = 24;
 
         public const int LM_WIN_FONTS　                 =　1001;
         public const int LM_WIN_IEXPLORE　              =　1002;

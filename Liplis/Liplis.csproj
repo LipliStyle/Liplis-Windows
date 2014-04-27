@@ -118,6 +118,12 @@
     <Compile Include="Activity\ActivityTopicRegist.Designer.cs">
       <DependentUpon>ActivityTopicRegist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Activity\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cmp\Form\CustomTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activity\ActivityTopicRegist.resx">
       <DependentUpon>ActivityTopicRegist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainSystem\Liplis.resx">
       <DependentUpon>Liplis.cs</DependentUpon>
@@ -1581,6 +1590,7 @@
     <None Include="Resources\ico_char.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ico_talk_next.png" />
     <None Include="Resources\version.png" />
     <None Include="Resources\sel_search.png" />
     <None Include="Resources\ico_next.png" />
