@@ -59,6 +59,7 @@ namespace Liplis.Activity
         protected static LpsDelegate.dlgVoidToVoid reqSetBackGround;
         protected static LpsDelegate.dlgI1ToVoid reqSetWindowMode;
         protected static LpsDelegate.dlgVoidToVoid reqCallBrowser;
+        protected static LpsDelegate.dlgI2ToVoid reqSetEmotion;
 
         #endregion
 
@@ -120,6 +121,9 @@ namespace Liplis.Activity
 
             //コールブラウザ
             reqCallBrowser = new LpsDelegate.dlgVoidToVoid(dlgCallBrowser);
+
+            //エモーションセットデリゲート
+            reqSetEmotion = new LpsDelegate.dlgI2ToVoid(dlgSetEtmotion);
         }
         #endregion
 
@@ -318,7 +322,7 @@ namespace Liplis.Activity
         #endregion
 
         /// <summary>
-        /// 
+        /// 次の話題
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -330,7 +334,7 @@ namespace Liplis.Activity
         #endregion
 
         /// <summary>
-        /// 
+        /// URLコピー
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -342,7 +346,7 @@ namespace Liplis.Activity
         #endregion
 
         /// <summary>
-        /// 
+        /// URLジャンプ
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -354,7 +358,7 @@ namespace Liplis.Activity
         #endregion
 
         /// <summary>
-        /// 
+        /// ツイート
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -520,6 +524,19 @@ namespace Liplis.Activity
         #endregion
 
         /// <summary>
+        /// エモーションセット
+        /// </summary>
+        /// <param name="emotion"></param>
+        /// <param name="point"></param>
+        #region setEmotion
+        public virtual void setEmotionWindow(int emotion, int point)
+        {
+            reqSetEmotion(emotion, point);
+        }
+        #endregion
+        
+
+        /// <summary>
         /// setLocation
         /// 座標のセット
         /// </summary>
@@ -622,6 +639,127 @@ namespace Liplis.Activity
             this.Refresh();
         }
         #endregion
+
+        /// <summary>
+        /// setTextWindow
+        /// ☆Miniオーバーライド
+        /// </summary>
+        /// <param name="demotion"></param>
+        /// <param name="point"></param>
+        #region dlgSetEtmotion
+        protected virtual void setEmotion(int emotion, int point)
+        {
+            //ポイントのセット
+            if (point != 0)
+            {
+                lblPoint.Text = point.ToString();
+            }
+
+            //エモーションセット
+            switch (emotion)
+            {
+                case 1:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "うれしい！"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "かなしい"; break;
+                    }
+                case 2:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "好き"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "きらい・・・"; break;
+                    }
+                case 3:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "安心"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "不安・・・"; break;
+                    }
+                case 4:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "快感！"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "きもちわるい・・・"; break;
+                    }
+                case 5:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "びっくり！"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "びっくり！"; break;
+                    }
+                case 6:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "怒り！"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "・・・"; break;
+                    }
+                case 7:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "興味津々！"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "ふーん"; break;
+                    }
+                case 8:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "尊敬！"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "残念です・・・"; break;
+                    }
+                case 9:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "冷静"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "あせあせ"; break;
+                    }
+                case 10:
+                    if (point >= 0)
+                    {
+                        lblEmotion.Text = "えっへん！"; break;
+                    }
+                    else
+                    {
+                        lblEmotion.Text = "はずかしい・・・"; break;
+                    }
+                default:
+                    lblEmotion.Text = "ふつう";break;
+            }
+
+            
+        }
+        protected virtual void dlgSetEtmotion(int emotion, int point)
+        {
+            setEmotion(emotion, point);
+        }
+        #endregion
+        
 
         /// <summary>
         /// dlgSetLocation

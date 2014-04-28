@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
+using Liplis.Activity;
 using Liplis.Common;
 using Liplis.Control;
 using Liplis.Fct;
@@ -22,8 +23,8 @@ namespace Liplis.Cmp.Form
     {
         ///=====================================
         /// lips
-        private Liplis.MainSystem.Liplis lips;
-        private ObjSetting os;
+        protected Liplis.MainSystem.Liplis lips;
+        protected ObjSetting os;
 
         ///=====================================
         /// 構成要素
@@ -32,6 +33,10 @@ namespace Liplis.Cmp.Form
         protected CusCtlLinkLabel lnkLbl;
         protected CusCtlLabel lblPoint;
         protected CusCtlLabel lblEmotion;
+
+        protected System.Windows.Forms.PictureBox btnUrlCopy;
+        protected System.Windows.Forms.PictureBox btnWebJump;
+        protected System.Windows.Forms.PictureBox btnTweet;
         
 
         protected System.Windows.Forms.ContextMenuStrip cms;
@@ -97,17 +102,25 @@ namespace Liplis.Cmp.Form
             this.picChar    = new CusCtlPictureBox();
             this.lblEmotion = new CusCtlLabel();
             this.lblPoint   = new CusCtlLabel();
+            this.btnUrlCopy = new System.Windows.Forms.PictureBox();
+            this.btnWebJump = new System.Windows.Forms.PictureBox();
+            this.btnTweet = new System.Windows.Forms.PictureBox();
 
             // 
             // panel
             // 
             this.BackColor = Color.Azure;
             //this.Controls.Add(this.lblText);
+            this.Controls.Add(this.btnUrlCopy);
+            this.Controls.Add(this.btnWebJump);
+            this.Controls.Add(this.btnTweet);
+
             this.Controls.Add(this.lnkLbl);
             this.Controls.Add(this.pic);
             this.Controls.Add(this.lblPoint);
             this.Controls.Add(this.lblEmotion);
             this.Controls.Add(this.picChar);
+
             this.Location = new System.Drawing.Point(3, 3);
             this.Name = "panel";
             this.Size = new System.Drawing.Size(460, 60);
@@ -186,8 +199,53 @@ namespace Liplis.Cmp.Form
             this.lblPoint.TabIndex = 5;
             this.lblPoint.Text = newsPoint.ToString();
             this.lblPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+            //スモールアイコンの初期化
+            initSmallIcon();
         }
         #endregion
+
+        /// <summary>
+        /// /スモールアイコンの初期化
+        /// </summary>
+        #region initSmallIcon
+        protected void initSmallIcon()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActivityTalk));
+            // 
+            // btnUrlCopy
+            // 
+            this.btnUrlCopy.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnUrlCopy, "btnUrlCopy");
+            this.btnUrlCopy.Size = new System.Drawing.Size(20, 20);
+            this.btnUrlCopy.Location = new System.Drawing.Point(230, 40);
+            this.btnUrlCopy.Name = "btnUrlCopy";
+            this.btnUrlCopy.TabStop = false;
+            this.btnUrlCopy.Click += new System.EventHandler(this.btnUrlCopy_Click);
+            // 
+            // btnWebJump
+            // 
+            this.btnWebJump.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnWebJump, "btnWebJump");
+            this.btnWebJump.Size = new System.Drawing.Size(20, 20);
+            this.btnWebJump.Location = new System.Drawing.Point(255, 40);
+            this.btnWebJump.Name = "btnWebJump";
+            this.btnWebJump.TabStop = false;
+            this.btnWebJump.Click += new System.EventHandler(this.btnWebJump_Click);
+            // 
+            // btnTweet
+            // 
+            this.btnTweet.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnTweet, "btnTweet");
+            this.btnTweet.Size = new System.Drawing.Size(20, 20);
+            this.btnTweet.Location = new System.Drawing.Point(280, 40);
+            this.btnTweet.Name = "btnTweet";
+            this.btnTweet.TabStop = false;
+            this.btnTweet.Click += new System.EventHandler(this.btnTweet_Click);
+        }
+        #endregion
+        
+
 
         /// <summary>
         /// CMSの初期化
@@ -370,6 +428,54 @@ namespace Liplis.Cmp.Form
         private void tsmiJumpNews_Click(object sender, EventArgs e)
         {
             linkJump();
+        }
+        #endregion
+
+        /// <summary>
+        /// 次の話題
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            lips.onRecive(LiplisDefine.LM_NEXT, "");
+        }
+        #endregion
+
+        /// <summary>
+        /// URLコピー
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region
+        protected void btnUrlCopy_Click(object sender, EventArgs e)
+        {
+            LpsLiplisUtil.setDataToClipBord(url);
+        }
+        #endregion
+
+        /// <summary>
+        /// URLジャンプ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region
+        protected void btnWebJump_Click(object sender, EventArgs e)
+        {
+            linkJump();
+        }
+        #endregion
+
+        /// <summary>
+        /// ツイート
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region
+        protected void btnTweet_Click(object sender, EventArgs e)
+        {
+            lips.onRecive(LiplisDefine.LM_TWEET, lnkLbl.Text);
         }
         #endregion
 

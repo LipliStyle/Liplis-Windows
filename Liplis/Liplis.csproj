@@ -149,6 +149,7 @@
     <Compile Include="Fct\FctDragData.cs" />
     <Compile Include="Fct\FctGUIDCreater.cs" />
     <Compile Include="Fct\FctLiplisMsg.cs" />
+    <Compile Include="Fct\FctLiplisTweet.cs" />
     <Compile Include="Fct\FctWindowFileLoader.cs" />
     <Compile Include="MainSystem\LiplisPopIcon.cs" />
     <Compile Include="Msg\MsgEmotion.cs" />
@@ -286,7 +287,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

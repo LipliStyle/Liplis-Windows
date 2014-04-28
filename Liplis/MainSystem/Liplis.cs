@@ -35,7 +35,11 @@
 //
 //  2014/04/07 Liplis4.0.0 Clalis4.0対応
 //  2014/04/16             おしゃべり内容の解析方法修正
-//  2014/04/20             データ受信処理修正(リアルタイム受信)      
+//  2014/04/20             データ受信処理修正(リアルタイム受信)    
+//
+//  2014/04/28 Liplis4.0.1 ウインドウデザイン変更(ボタン、感情値追加)
+//                         ツイート機能追加  
+//
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -126,6 +130,11 @@ namespace Liplis.MainSystem
         protected int nowEmotion = 0;		//感情現在値
         protected int prvEmotion = 0;		//感情前回値
         protected MsgEmotion sumEmotion;    //感情蓄積値
+
+        ///=====================================
+        /// ツイッター発言控え
+        protected string liplisTweetMessege = "";
+        protected string liplisTweetMessegeTitle = "";
 
         ///=====================================
         /// 発言数
@@ -1142,7 +1151,7 @@ namespace Liplis.MainSystem
                     outRangeRecovery();
                     break;
                 case LiplisDefine.LM_TWEET:
-                    tweet();
+                    tweet(param[0]);
                     break;
 
                 //ウインドウズ実行コマンド
@@ -2427,6 +2436,11 @@ namespace Liplis.MainSystem
                 //ショートニュース取得
                 liplisNowTopic = otp.getTopic();
 
+                //ver4.0.1
+                //ツイッター内容控え
+                liplisTweetMessege = liplisNowTopic.sorce;
+                liplisTweetMessegeTitle = liplisNowTopic.title;
+
                 flgThinking = false;
                 updateThinkingIcon();
 
@@ -3377,6 +3391,7 @@ namespace Liplis.MainSystem
                 if (liplisNowTopic.result.Length > cntLct - 1 )
                 {
                     Invoke(new LpsDelegate.dlgS1ToVoid(at.setTextTotalkWindow), liplisChatText);
+                    Invoke(new LpsDelegate.dlgI2ToVoid(at.setEmotionWindow), nowEmotion, nowPoint);
                 }
                 
                 return true;
@@ -3932,9 +3947,29 @@ namespace Liplis.MainSystem
         /// ツイートする
         /// </summary>
         #region tweet
+        //現在の話題のツイート
         private void tweet()
         {
-            LiplisApiCus.tweet(this.os.uid, "test");
+            if (!liplisTweetMessege.Equals(""))
+            {
+                //ここでツイート確認メッセージを表示するか?
+                string fixmessage = FctLiplisTweet.createLiplisTweet(liplisTweetMessegeTitle, liplisTweetMessege);
+
+                ///ツイート
+                FctLiplisTweet.tweet(this.os.uid, fixmessage);
+            }
+        }
+        //メッセージ指定のツイート
+        private void tweet(string msg)
+        {
+            if (!msg.Equals(""))
+            {
+                //ここでツイート確認メッセージを表示するか?
+                string fixmessage = FctLiplisTweet.createLiplisTweet(msg);
+
+                ///ツイート
+                FctLiplisTweet.tweet(this.os.uid, fixmessage);
+            }
         }
         #endregion
         

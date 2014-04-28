@@ -344,7 +344,7 @@ namespace Liplis.Activity
             }
             else
             {
-                d = new CusCtlDataPanelNonThum(url, title, discription, newsEmotion, newsPoint, charBody, new System.EventHandler(this.mouseEnter), this.components);
+                d = new CusCtlDataPanelNonThum(lips, os, url, title, discription, newsEmotion, newsPoint, charBody, new System.EventHandler(this.mouseEnter), this.components);
                 
             }
 

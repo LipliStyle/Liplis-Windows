@@ -5,10 +5,6 @@
 //  Liplis2.0
 //  Copyright(c) 2010-2011 LipliStyle.Sachin
 //=======================================================================
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Liplis.Msg;
 
 namespace Liplis.Fct

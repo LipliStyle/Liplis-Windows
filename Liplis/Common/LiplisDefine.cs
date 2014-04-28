@@ -142,7 +142,7 @@ namespace Liplis.Common
 
         public const string LIPLIS_FREE_TALK                      = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisFreeTalk.aspx";
 
-        public const string LIPLIS_TWEET                          = @"http://localhost:64718/Clalis/v40/Liplis/ClalisForLiplisTweet.aspx";
+        public const string LIPLIS_TWEET                            = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplisTweet.aspx";
 
         #endregion
 

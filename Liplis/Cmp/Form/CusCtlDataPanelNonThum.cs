@@ -8,7 +8,9 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using Liplis.Activity;
 using Liplis.Control;
+using Liplis.Msg;
 
 namespace Liplis.Cmp.Form
 {
@@ -24,8 +26,10 @@ namespace Liplis.Cmp.Form
         /// コンストラクター
         /// </summary>
         #region DataPanelNonThum
-        public CusCtlDataPanelNonThum(string url, string title, string discription, int newsEmotion, int newsPoint, Bitmap charBody, EventHandler enter, IContainer components)
+        public CusCtlDataPanelNonThum(Liplis.MainSystem.Liplis lips, ObjSetting os, string url, string title, string discription, int newsEmotion, int newsPoint, Bitmap charBody, EventHandler enter, IContainer components)
         {
+            this.lips = lips;
+            this.os = os;
             initCms(components);
             initDataPanelNonThum(url, title, discription, newsEmotion, newsPoint, charBody, enter);
         }
@@ -58,13 +62,19 @@ namespace Liplis.Cmp.Form
             this.picChar    = new CusCtlPictureBox();
             this.lblEmotion = new CusCtlLabel();
             this.lblPoint   = new CusCtlLabel();
-
+            this.btnUrlCopy = new System.Windows.Forms.PictureBox();
+            this.btnWebJump = new System.Windows.Forms.PictureBox();
+            this.btnTweet = new System.Windows.Forms.PictureBox();
 
             // 
             // panel
             // 
             this.BackColor = Color.Azure;
             //this.Controls.Add(this.lblText);
+            this.Controls.Add(this.btnUrlCopy);
+            this.Controls.Add(this.btnWebJump);
+            this.Controls.Add(this.btnTweet);
+
             this.Controls.Add(this.lnkLbl);
             this.Controls.Add(this.lblPoint);
             this.Controls.Add(this.lblEmotion);
@@ -129,6 +139,9 @@ namespace Liplis.Cmp.Form
             this.lblPoint.TabIndex = 5;
             this.lblPoint.Text = newsPoint.ToString();
             this.lblPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+            //スモールアイコンの初期化
+            initSmallIcon();
         }
         #endregion
 
