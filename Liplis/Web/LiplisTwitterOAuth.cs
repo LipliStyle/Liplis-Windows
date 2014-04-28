@@ -147,7 +147,7 @@ namespace Liplis.Web
 
                 tokens = convertToTokenForOauth(sr.ReadToEnd());
 
-                lips.registerTwitterInfo(tokens["oauth_token"],tokens["oauth_token_secret"]);
+                lips.registerTwitterInfo(tokens["oauth_token"], tokens["oauth_token_secret"], tokens["user_id"], tokens["screen_name"]);
                 MessageBox.Show("アクセストークンの取得に成功しました。", "TwitterPinコード送信");
 
             }

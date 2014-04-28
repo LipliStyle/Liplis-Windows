@@ -459,7 +459,7 @@ namespace Liplis.Web
         /// <param name="cat">カテゴリ</param>
         /// <param name="uid">UID</param>
         #region twitterRegister
-        public static ResLpsRegisterTwitterInfoRespons twitterRegister(string uid, string token, string secret)
+        public static ResLpsRegisterTwitterInfoRespons twitterRegister(string uid, string token, string secret, string userId, string screanNam)
         {
             try
             {
@@ -468,6 +468,8 @@ namespace Liplis.Web
                 ps.Add("userid", uid);
                 ps.Add("token", token);
                 ps.Add("secret", secret);
+                ps.Add("twitteruid", userId);
+                ps.Add("twittersname", screanNam);
 
                 //Jsonで結果取得
                 string jsonText = HttpPost.sendPost(LiplisDefine.LIPLIS_API_REGISTER_TWITTER_USER_INFO, ps);
@@ -578,6 +580,36 @@ namespace Liplis.Web
             }
         }
         #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="topicId"></param>
+        /// <returns></returns>
+        #region registFilter
+        public static ResLpsLoginStatus tweet(string uid, string sentence)
+        {
+            try
+            {
+                //引数の指定
+                NameValueCollection ps = new NameValueCollection();
+                ps.Add("userid", uid);
+                ps.Add("sentence", sentence);
+
+                //Jsonで結果取得
+                string jsonText = HttpPost.sendPost(LiplisDefine.LIPLIS_TWEET, ps);
+
+                //APIの結果受け取り用クラス
+                return JsonConvert.DeserializeObject<ResLpsLoginStatus>(jsonText);
+            }
+            catch
+            {
+                return new ResLpsLoginStatus("-1", uid);
+            }
+        }
+        #endregion
+
 
         ///====================================================================
         ///

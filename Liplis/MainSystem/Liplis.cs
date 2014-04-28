@@ -1141,6 +1141,9 @@ namespace Liplis.MainSystem
                 case LiplisDefine.LM_OUTRANGE_RECOVERY:
                     outRangeRecovery();
                     break;
+                case LiplisDefine.LM_TWEET:
+                    tweet();
+                    break;
 
                 //ウインドウズ実行コマンド
                 #region ウインドウズ実行コマンド
@@ -3898,10 +3901,10 @@ namespace Liplis.MainSystem
         /// ツイッター情報を登録する
         /// </summary>
         #region registerTwitterInfo
-        public void registerTwitterInfo(string token, string secret)
+        public void registerTwitterInfo(string token, string secret, string userId, string screanName)
         {
             //API呼び出し
-            ResLpsRegisterTwitterInfoRespons res = LiplisApiCus.twitterRegister(os.uid,token,secret);
+            ResLpsRegisterTwitterInfoRespons res = LiplisApiCus.twitterRegister(os.uid, token, secret, userId, screanName);
 
             if (res.responseCode == "0")
             {
@@ -3923,6 +3926,18 @@ namespace Liplis.MainSystem
             os.setPreferenceData();
         }
         #endregion
+
+        /// <summary>
+        /// tweet
+        /// ツイートする
+        /// </summary>
+        #region tweet
+        private void tweet()
+        {
+            LiplisApiCus.tweet(this.os.uid, "test");
+        }
+        #endregion
+        
 
     }
 }

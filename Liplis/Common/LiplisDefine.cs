@@ -129,7 +129,8 @@ namespace Liplis.Common
         public const string LIPLIS_API_GET_SEARCH_WORD            = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisSettingGetSearchWord.aspx";
         public const string LIPLIS_API_REGISTER_SEARCH_WORD       = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisSettingAddSearchWord.aspx";
         public const string LIPLIS_API_DELETE_SEARCH_WORD         = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisSettingDelSearchWord.aspx";
-        public const string LIPLIS_API_REGISTER_TWITTER_USER_INFO = @"http://liplis.mine.nu/Clalis/v31/Liplis/ClalisForLiplisRegisterTwitterInfo.aspx";
+        public const string LIPLIS_API_REGISTER_TWITTER_USER_INFO = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplisRegisterTwitterInfo.aspx";
+
         public const string LIPLIS_API_GET_ONETIME_PASS           = @"http://liplis.mine.nu/Clalis/v31/Liplis/ClalisForLiplisGetOnetimePass.aspx";
         public const string LIPLIS_API_GET_USERID                 = @"http://liplis.mine.nu/Clalis/v31/Liplis/ClalisForLiplisGetUserId.aspx";
 
@@ -140,6 +141,9 @@ namespace Liplis.Common
         public const string LIPLIS_LIPLISTYLE                     = @"http://liplis.mine.nu/";
 
         public const string LIPLIS_FREE_TALK                      = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisFreeTalk.aspx";
+
+        public const string LIPLIS_TWEET                          = @"http://localhost:64718/Clalis/v40/Liplis/ClalisForLiplisTweet.aspx";
+
         #endregion
 
         ///=============================
