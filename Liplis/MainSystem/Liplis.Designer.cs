@@ -56,6 +56,7 @@
             this.Text = "Liplis";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Liplis_FormClosing);
             this.Load += new System.EventHandler(this.Liplis_Load);
+            this.Click += new System.EventHandler(this.Liplis_Click);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Liplis_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Liplis_DragEnter);
             this.DoubleClick += new System.EventHandler(this.Liplis_DoubleClick);

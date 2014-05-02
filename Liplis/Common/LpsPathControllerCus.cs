@@ -267,6 +267,28 @@ namespace Liplis.Common
         #endregion
 
         /// <summary>
+        /// touchパスを返す
+        /// Liplis4.0.2 
+        /// </summary>
+        /// <returns>パス</returns> 
+        #region getTouchDefinePath
+        public static string getTouchDefinePath(string loadSkin)
+        {
+            LpsLogControllerCus lc = new LpsLogControllerCus();
+            try
+            {
+                checkDir(getAppPath() + "\\skin");
+                return getAppPath() + "\\skin\\" + loadSkin + "\\define\\touch.xml";
+            }
+            catch (System.Exception err)
+            {
+                LpsLogControllerCus.writingLog("LiplisFileController", MethodBase.GetCurrentMethod().Name, err.ToString());
+                return "";
+            }
+        }
+        #endregion
+
+        /// <summary>
         /// skinToneパスを返す
         /// </summary>
         /// <returns>パス</returns> 

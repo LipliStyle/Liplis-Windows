@@ -192,31 +192,31 @@ namespace Liplis.Msg
 		#region createList
 		protected virtual void createList()
 		{
-			normalList      = readResult(LiplisDefine.BODY_NORMAL_11, LiplisDefine.BODY_NORMAL_12, LiplisDefine.BODY_NORMAL_21, LiplisDefine.BODY_NORMAL_22, LiplisDefine.BODY_NORMAL_31, LiplisDefine.BODY_NORMAL_32);
-			joyPList        = readResult(LiplisDefine.BODY_JOY_P_11, LiplisDefine.BODY_JOY_P_12, LiplisDefine.BODY_JOY_P_21, LiplisDefine.BODY_JOY_P_22, LiplisDefine.BODY_JOY_P_31, LiplisDefine.BODY_JOY_P_32);
-			joyMList        = readResult(LiplisDefine.BODY_JOY_M_11, LiplisDefine.BODY_JOY_M_12, LiplisDefine.BODY_JOY_M_21, LiplisDefine.BODY_JOY_M_22, LiplisDefine.BODY_JOY_M_31, LiplisDefine.BODY_JOY_M_32);
-			admirationPList = readResult(LiplisDefine.BODY_ADMIRATION_P_11, LiplisDefine.BODY_ADMIRATION_P_12, LiplisDefine.BODY_ADMIRATION_P_21, LiplisDefine.BODY_ADMIRATION_P_22, LiplisDefine.BODY_ADMIRATION_P_31, LiplisDefine.BODY_ADMIRATION_P_32);
-			admirationMList = readResult(LiplisDefine.BODY_ADMIRATION_M_11, LiplisDefine.BODY_ADMIRATION_M_12, LiplisDefine.BODY_ADMIRATION_M_21, LiplisDefine.BODY_ADMIRATION_M_22, LiplisDefine.BODY_ADMIRATION_M_31, LiplisDefine.BODY_ADMIRATION_M_32);
-			peacePList      = readResult(LiplisDefine.BODY_PEACE_P_11, LiplisDefine.BODY_PEACE_P_12, LiplisDefine.BODY_PEACE_P_21, LiplisDefine.BODY_PEACE_P_22, LiplisDefine.BODY_PEACE_P_31, LiplisDefine.BODY_PEACE_P_32);
-			peaceMList      = readResult(LiplisDefine.BODY_PEACE_M_11, LiplisDefine.BODY_PEACE_M_12, LiplisDefine.BODY_PEACE_M_21, LiplisDefine.BODY_PEACE_M_22, LiplisDefine.BODY_PEACE_M_31, LiplisDefine.BODY_PEACE_M_32);
-			ecstasyPList    = readResult(LiplisDefine.BODY_ECSTASY_P_11, LiplisDefine.BODY_ECSTASY_P_12, LiplisDefine.BODY_ECSTASY_P_21, LiplisDefine.BODY_ECSTASY_P_22, LiplisDefine.BODY_ECSTASY_P_31, LiplisDefine.BODY_ECSTASY_P_32);
-			ecstasyMList    = readResult(LiplisDefine.BODY_ECSTASY_M_11, LiplisDefine.BODY_ECSTASY_M_12, LiplisDefine.BODY_ECSTASY_M_21, LiplisDefine.BODY_ECSTASY_M_22, LiplisDefine.BODY_ECSTASY_M_31, LiplisDefine.BODY_ECSTASY_M_32);
-			amazementPList  = readResult(LiplisDefine.BODY_AMAZEMENT_P_11, LiplisDefine.BODY_AMAZEMENT_P_12, LiplisDefine.BODY_AMAZEMENT_P_21, LiplisDefine.BODY_AMAZEMENT_P_22, LiplisDefine.BODY_AMAZEMENT_P_31, LiplisDefine.BODY_AMAZEMENT_P_32);
-			amazementMList  = readResult(LiplisDefine.BODY_AMAZEMENT_M_11, LiplisDefine.BODY_AMAZEMENT_M_12, LiplisDefine.BODY_AMAZEMENT_M_21, LiplisDefine.BODY_AMAZEMENT_M_22, LiplisDefine.BODY_AMAZEMENT_M_31, LiplisDefine.BODY_AMAZEMENT_M_32);
-			ragePList       = readResult(LiplisDefine.BODY_RAGE_P_11, LiplisDefine.BODY_RAGE_P_12, LiplisDefine.BODY_RAGE_P_21, LiplisDefine.BODY_RAGE_P_22, LiplisDefine.BODY_RAGE_P_31, LiplisDefine.BODY_RAGE_P_32);
-			rageMList       = readResult(LiplisDefine.BODY_RAGE_M_11, LiplisDefine.BODY_RAGE_M_12, LiplisDefine.BODY_RAGE_M_21, LiplisDefine.BODY_RAGE_M_22, LiplisDefine.BODY_RAGE_M_31, LiplisDefine.BODY_RAGE_M_32);
-			interestPList   = readResult(LiplisDefine.BODY_INTEREST_P_11, LiplisDefine.BODY_INTEREST_P_12, LiplisDefine.BODY_INTEREST_P_21, LiplisDefine.BODY_INTEREST_P_22, LiplisDefine.BODY_INTEREST_P_31, LiplisDefine.BODY_INTEREST_P_32);
-			interestMList   = readResult(LiplisDefine.BODY_INTEREST_M_11, LiplisDefine.BODY_INTEREST_M_12, LiplisDefine.BODY_INTEREST_M_21, LiplisDefine.BODY_INTEREST_M_22, LiplisDefine.BODY_INTEREST_M_31, LiplisDefine.BODY_INTEREST_M_32);
-			respectPList    = readResult(LiplisDefine.BODY_RESPECT_P_11, LiplisDefine.BODY_RESPECT_P_12, LiplisDefine.BODY_RESPECT_P_21, LiplisDefine.BODY_RESPECT_P_22, LiplisDefine.BODY_RESPECT_P_31, LiplisDefine.BODY_RESPECT_P_32);
-			respectMList    = readResult(LiplisDefine.BODY_RESPECT_M_11, LiplisDefine.BODY_RESPECT_M_12, LiplisDefine.BODY_RESPECT_M_21, LiplisDefine.BODY_RESPECT_M_22, LiplisDefine.BODY_RESPECT_M_31, LiplisDefine.BODY_RESPECT_M_32);
-			calmlyPList     = readResult(LiplisDefine.BODY_CLAMLY_P_11, LiplisDefine.BODY_CLAMLY_P_12, LiplisDefine.BODY_CLAMLY_P_21, LiplisDefine.BODY_CLAMLY_P_22, LiplisDefine.BODY_CLAMLY_P_31, LiplisDefine.BODY_CLAMLY_P_32);
-			calmlyMList     = readResult(LiplisDefine.BODY_CLAMLY_M_11, LiplisDefine.BODY_CLAMLY_M_12, LiplisDefine.BODY_CLAMLY_M_21, LiplisDefine.BODY_CLAMLY_M_22, LiplisDefine.BODY_CLAMLY_M_31, LiplisDefine.BODY_CLAMLY_M_32);
-			proudPList      = readResult(LiplisDefine.BODY_PROUD_P_11, LiplisDefine.BODY_PROUD_P_12, LiplisDefine.BODY_PROUD_P_21, LiplisDefine.BODY_PROUD_P_22, LiplisDefine.BODY_PROUD_P_31, LiplisDefine.BODY_PROUD_P_32);
-			proudMList      = readResult(LiplisDefine.BODY_PROUD_M_11, LiplisDefine.BODY_PROUD_M_12, LiplisDefine.BODY_PROUD_M_21, LiplisDefine.BODY_PROUD_M_22, LiplisDefine.BODY_PROUD_M_31, LiplisDefine.BODY_PROUD_M_32);
-            sitdownList     = readResult(LiplisDefine.BODY_SITDOWN_11, LiplisDefine.BODY_SITDOWN_12, LiplisDefine.BODY_SITDOWN_21, LiplisDefine.BODY_SITDOWN_22, LiplisDefine.BODY_SITDOWN_31, LiplisDefine.BODY_SITDOWN_32);
-            batteryHiList   = readResult(LiplisDefine.BODY_BATTERY_HI_11, LiplisDefine.BODY_BATTERY_HI_12, LiplisDefine.BODY_BATTERY_HI_21, LiplisDefine.BODY_BATTERY_HI_22, LiplisDefine.BODY_BATTERY_HI_31, LiplisDefine.BODY_BATTERY_HI_32);			//小破 2013/10/27 ver3.2.0
-            batteryMidList  = readResult(LiplisDefine.BODY_BATTERY_MID_11, LiplisDefine.BODY_BATTERY_MID_12, LiplisDefine.BODY_BATTERY_MID_21, LiplisDefine.BODY_BATTERY_MID_22, LiplisDefine.BODY_BATTERY_MID_31, LiplisDefine.BODY_BATTERY_MID_32);			//中破 2013/10/27 ver3.2.0
-            batteryLowList  = readResult(LiplisDefine.BODY_BATTERY_LOW_11, LiplisDefine.BODY_BATTERY_LOW_12, LiplisDefine.BODY_BATTERY_LOW_21, LiplisDefine.BODY_BATTERY_LOW_22, LiplisDefine.BODY_BATTERY_LOW_31, LiplisDefine.BODY_BATTERY_LOW_32);			//大破 2013/10/27 ver3.2.0
+			normalList      = readResult(LiplisDefine.BODY_NORMAL_11, LiplisDefine.BODY_NORMAL_12, LiplisDefine.BODY_NORMAL_21, LiplisDefine.BODY_NORMAL_22, LiplisDefine.BODY_NORMAL_31, LiplisDefine.BODY_NORMAL_32, LiplisDefine.BODY_NORMAL_TOUCH);
+			joyPList        = readResult(LiplisDefine.BODY_JOY_P_11, LiplisDefine.BODY_JOY_P_12, LiplisDefine.BODY_JOY_P_21, LiplisDefine.BODY_JOY_P_22, LiplisDefine.BODY_JOY_P_31, LiplisDefine.BODY_JOY_P_32, LiplisDefine.BODY_JOY_P_TOUCH);
+			joyMList        = readResult(LiplisDefine.BODY_JOY_M_11, LiplisDefine.BODY_JOY_M_12, LiplisDefine.BODY_JOY_M_21, LiplisDefine.BODY_JOY_M_22, LiplisDefine.BODY_JOY_M_31, LiplisDefine.BODY_JOY_M_32, LiplisDefine.BODY_JOY_M_TOUCH);
+			admirationPList = readResult(LiplisDefine.BODY_ADMIRATION_P_11, LiplisDefine.BODY_ADMIRATION_P_12, LiplisDefine.BODY_ADMIRATION_P_21, LiplisDefine.BODY_ADMIRATION_P_22, LiplisDefine.BODY_ADMIRATION_P_31, LiplisDefine.BODY_ADMIRATION_P_32, LiplisDefine.BODY_ADMIRATION_P_TOUCH);
+			admirationMList = readResult(LiplisDefine.BODY_ADMIRATION_M_11, LiplisDefine.BODY_ADMIRATION_M_12, LiplisDefine.BODY_ADMIRATION_M_21, LiplisDefine.BODY_ADMIRATION_M_22, LiplisDefine.BODY_ADMIRATION_M_31, LiplisDefine.BODY_ADMIRATION_M_32, LiplisDefine.BODY_ADMIRATION_M_TOUCH);
+			peacePList      = readResult(LiplisDefine.BODY_PEACE_P_11, LiplisDefine.BODY_PEACE_P_12, LiplisDefine.BODY_PEACE_P_21, LiplisDefine.BODY_PEACE_P_22, LiplisDefine.BODY_PEACE_P_31, LiplisDefine.BODY_PEACE_P_32, LiplisDefine.BODY_PEACE_P_TOUCH);
+			peaceMList      = readResult(LiplisDefine.BODY_PEACE_M_11, LiplisDefine.BODY_PEACE_M_12, LiplisDefine.BODY_PEACE_M_21, LiplisDefine.BODY_PEACE_M_22, LiplisDefine.BODY_PEACE_M_31, LiplisDefine.BODY_PEACE_M_32, LiplisDefine.BODY_PEACE_M_TOUCH);
+			ecstasyPList    = readResult(LiplisDefine.BODY_ECSTASY_P_11, LiplisDefine.BODY_ECSTASY_P_12, LiplisDefine.BODY_ECSTASY_P_21, LiplisDefine.BODY_ECSTASY_P_22, LiplisDefine.BODY_ECSTASY_P_31, LiplisDefine.BODY_ECSTASY_P_32, LiplisDefine.BODY_ECSTASY_P_TOUCH);
+			ecstasyMList    = readResult(LiplisDefine.BODY_ECSTASY_M_11, LiplisDefine.BODY_ECSTASY_M_12, LiplisDefine.BODY_ECSTASY_M_21, LiplisDefine.BODY_ECSTASY_M_22, LiplisDefine.BODY_ECSTASY_M_31, LiplisDefine.BODY_ECSTASY_M_32, LiplisDefine.BODY_ECSTASY_M_TOUCH);
+			amazementPList  = readResult(LiplisDefine.BODY_AMAZEMENT_P_11, LiplisDefine.BODY_AMAZEMENT_P_12, LiplisDefine.BODY_AMAZEMENT_P_21, LiplisDefine.BODY_AMAZEMENT_P_22, LiplisDefine.BODY_AMAZEMENT_P_31, LiplisDefine.BODY_AMAZEMENT_P_32, LiplisDefine.BODY_AMAZEMENT_P_TOUCH);
+			amazementMList  = readResult(LiplisDefine.BODY_AMAZEMENT_M_11, LiplisDefine.BODY_AMAZEMENT_M_12, LiplisDefine.BODY_AMAZEMENT_M_21, LiplisDefine.BODY_AMAZEMENT_M_22, LiplisDefine.BODY_AMAZEMENT_M_31, LiplisDefine.BODY_AMAZEMENT_M_32, LiplisDefine.BODY_AMAZEMENT_M_TOUCH);
+			ragePList       = readResult(LiplisDefine.BODY_RAGE_P_11, LiplisDefine.BODY_RAGE_P_12, LiplisDefine.BODY_RAGE_P_21, LiplisDefine.BODY_RAGE_P_22, LiplisDefine.BODY_RAGE_P_31, LiplisDefine.BODY_RAGE_P_32, LiplisDefine.BODY_RAGE_P_TOUCH);
+			rageMList       = readResult(LiplisDefine.BODY_RAGE_M_11, LiplisDefine.BODY_RAGE_M_12, LiplisDefine.BODY_RAGE_M_21, LiplisDefine.BODY_RAGE_M_22, LiplisDefine.BODY_RAGE_M_31, LiplisDefine.BODY_RAGE_M_32, LiplisDefine.BODY_RAGE_M_TOUCH);
+			interestPList   = readResult(LiplisDefine.BODY_INTEREST_P_11, LiplisDefine.BODY_INTEREST_P_12, LiplisDefine.BODY_INTEREST_P_21, LiplisDefine.BODY_INTEREST_P_22, LiplisDefine.BODY_INTEREST_P_31, LiplisDefine.BODY_INTEREST_P_32, LiplisDefine.BODY_INTEREST_P_TOUCH);
+			interestMList   = readResult(LiplisDefine.BODY_INTEREST_M_11, LiplisDefine.BODY_INTEREST_M_12, LiplisDefine.BODY_INTEREST_M_21, LiplisDefine.BODY_INTEREST_M_22, LiplisDefine.BODY_INTEREST_M_31, LiplisDefine.BODY_INTEREST_M_32, LiplisDefine.BODY_INTEREST_M_TOUCH);
+			respectPList    = readResult(LiplisDefine.BODY_RESPECT_P_11, LiplisDefine.BODY_RESPECT_P_12, LiplisDefine.BODY_RESPECT_P_21, LiplisDefine.BODY_RESPECT_P_22, LiplisDefine.BODY_RESPECT_P_31, LiplisDefine.BODY_RESPECT_P_32, LiplisDefine.BODY_RESPECT_P_TOUCH);
+			respectMList    = readResult(LiplisDefine.BODY_RESPECT_M_11, LiplisDefine.BODY_RESPECT_M_12, LiplisDefine.BODY_RESPECT_M_21, LiplisDefine.BODY_RESPECT_M_22, LiplisDefine.BODY_RESPECT_M_31, LiplisDefine.BODY_RESPECT_M_32, LiplisDefine.BODY_RESPECT_M_TOUCH);
+			calmlyPList     = readResult(LiplisDefine.BODY_CLAMLY_P_11, LiplisDefine.BODY_CLAMLY_P_12, LiplisDefine.BODY_CLAMLY_P_21, LiplisDefine.BODY_CLAMLY_P_22, LiplisDefine.BODY_CLAMLY_P_31, LiplisDefine.BODY_CLAMLY_P_32, LiplisDefine.BODY_CLAMLY_P_TOUCH);
+			calmlyMList     = readResult(LiplisDefine.BODY_CLAMLY_M_11, LiplisDefine.BODY_CLAMLY_M_12, LiplisDefine.BODY_CLAMLY_M_21, LiplisDefine.BODY_CLAMLY_M_22, LiplisDefine.BODY_CLAMLY_M_31, LiplisDefine.BODY_CLAMLY_M_32, LiplisDefine.BODY_CLAMLY_M_TOUCH);
+			proudPList      = readResult(LiplisDefine.BODY_PROUD_P_11, LiplisDefine.BODY_PROUD_P_12, LiplisDefine.BODY_PROUD_P_21, LiplisDefine.BODY_PROUD_P_22, LiplisDefine.BODY_PROUD_P_31, LiplisDefine.BODY_PROUD_P_32, LiplisDefine.BODY_PROUD_P_TOUCH);
+			proudMList      = readResult(LiplisDefine.BODY_PROUD_M_11, LiplisDefine.BODY_PROUD_M_12, LiplisDefine.BODY_PROUD_M_21, LiplisDefine.BODY_PROUD_M_22, LiplisDefine.BODY_PROUD_M_31, LiplisDefine.BODY_PROUD_M_32, LiplisDefine.BODY_PROUD_M_TOUCH);
+            sitdownList     = readResult(LiplisDefine.BODY_SITDOWN_11, LiplisDefine.BODY_SITDOWN_12, LiplisDefine.BODY_SITDOWN_21, LiplisDefine.BODY_SITDOWN_22, LiplisDefine.BODY_SITDOWN_31, LiplisDefine.BODY_SITDOWN_32,"");
+            batteryHiList   = readResult(LiplisDefine.BODY_BATTERY_HI_11, LiplisDefine.BODY_BATTERY_HI_12, LiplisDefine.BODY_BATTERY_HI_21, LiplisDefine.BODY_BATTERY_HI_22, LiplisDefine.BODY_BATTERY_HI_31, LiplisDefine.BODY_BATTERY_HI_32, LiplisDefine.BODY_BATTERY_HI_TOUCH);			            //小破 2013/10/27 ver3.2.0
+            batteryMidList  = readResult(LiplisDefine.BODY_BATTERY_MID_11, LiplisDefine.BODY_BATTERY_MID_12, LiplisDefine.BODY_BATTERY_MID_21, LiplisDefine.BODY_BATTERY_MID_22, LiplisDefine.BODY_BATTERY_MID_31, LiplisDefine.BODY_BATTERY_MID_32, LiplisDefine.BODY_BATTERY_MID_TOUCH);			//中破 2013/10/27 ver3.2.0
+            batteryLowList = readResult(LiplisDefine.BODY_BATTERY_LOW_11, LiplisDefine.BODY_BATTERY_LOW_12, LiplisDefine.BODY_BATTERY_LOW_21, LiplisDefine.BODY_BATTERY_LOW_22, LiplisDefine.BODY_BATTERY_LOW_31, LiplisDefine.BODY_BATTERY_LOW_32, LiplisDefine.BODY_BATTERY_LOW_TOUCH);			//大破 2013/10/27 ver3.2.0
         }
 		#endregion
 
@@ -284,7 +284,7 @@ namespace Liplis.Msg
 		/// 設定読込
 		/// </summary>
 		#region readResult
-        protected virtual LstShufflableList<ObjBody> readResult(string b11, string b12, string b21, string b22, string b31, string b32)
+        protected virtual LstShufflableList<ObjBody> readResult(string b11, string b12, string b21, string b22, string b31, string b32, string touch)
 		{
 			LstShufflableList<ObjBody> result = new LstShufflableList<ObjBody>();
 			int idx = 0;
@@ -294,6 +294,7 @@ namespace Liplis.Msg
 			List<string> b22l = new List<string>();
 			List<string> b31l = new List<string>();
 			List<string> b32l = new List<string>();
+            List<string> tl = new List<string>();
 
 			readXmlList(xmlDoc.SelectNodes(b11), b11l);
 			readXmlList(xmlDoc.SelectNodes(b12), b12l);
@@ -302,12 +303,26 @@ namespace Liplis.Msg
 			readXmlList(xmlDoc.SelectNodes(b31), b31l);
 			readXmlList(xmlDoc.SelectNodes(b32), b32l);
 
+            //タッチリスト作成
+            if (touch.Length > 0)
+            {
+                readXmlList(xmlDoc.SelectNodes(touch), tl);
+            }
+            else
+            {
+                foreach (string r11 in b11l)
+                {
+                    tl.Add("");
+                }
+            }
+            
+
 			//リストを回してオブジェクト生成
 			foreach (string r11 in b11l)
 			{
 				try
 				{
-					result.Add(new ObjBodyGen(b11l[idx], b12l[idx], b21l[idx], b22l[idx], b31l[idx], b32l[idx], LpsPathControllerCus.getBodyPath(loadSkin)));
+					result.Add(new ObjBodyGen(b11l[idx], b12l[idx], b21l[idx], b22l[idx], b31l[idx], b32l[idx], tl[idx],LpsPathControllerCus.getBodyPath(loadSkin)));
 				}
 				catch
 				{
@@ -371,6 +386,9 @@ namespace Liplis.Msg
         #region getLiplisBody
         public ObjBody getLiplisBody(int emotion, int point)
 		{
+            //絶対値をとっておく。
+            emotion = Math.Abs(emotion);
+
 			if (emotion == 0)
 			{
                 return selectBody(normalList);

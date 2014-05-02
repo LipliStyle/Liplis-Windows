@@ -24,6 +24,7 @@ namespace Liplis.Msg
         public string body31 { get; set; }
         public string body32 { get; set; }
         public string bodyDir { get; set; }
+        public List<string> lstTouch { get; set; }
 
         /// <summary>
         /// コンストラクター
@@ -35,7 +36,7 @@ namespace Liplis.Msg
         /// <param name="body31">目閉、口デフォ</param>
         /// <param name="body32">目閉、口反</param>
         #region ObjBody
-        public ObjBodyGen(string body11, string body12, string body21, string body22, string body31, string  body32, string bodyDir)
+        public ObjBodyGen(string body11, string body12, string body21, string body22, string body31, string  body32, string touch, string bodyDir)
         {
             this.body11 = body11;
             this.body12 = body12;
@@ -44,6 +45,18 @@ namespace Liplis.Msg
             this.body31 = body31;
             this.body32 = body32;
             this.bodyDir = bodyDir;
+            this.lstTouch = new List<string>(touch.Split(','));
+        }
+        public ObjBodyGen(string body11, string body12, string body21, string body22, string body31, string body32, string bodyDir, List<string> lstTouch)
+        {
+            this.body11 = body11;
+            this.body12 = body12;
+            this.body21 = body21;
+            this.body22 = body22;
+            this.body31 = body31;
+            this.body32 = body32;
+            this.bodyDir = bodyDir;
+            this.lstTouch = lstTouch;
         }
         #endregion
 
@@ -108,7 +121,6 @@ namespace Liplis.Msg
         }
         #endregion
 
-
         /// <summary>
         /// 自分のインスタンスのコピーを返す
         /// </summary>
@@ -116,8 +128,20 @@ namespace Liplis.Msg
         #region copy
         public ObjBodyGen copy()
         {
-            return new ObjBodyGen(this.body11, this.body12, this.body21, this.body22, this.body31, this.body32, this.bodyDir);
+            return new ObjBodyGen(this.body11, this.body12, this.body21, this.body22, this.body31, this.body32, this.bodyDir, this.lstTouch);
         }
         #endregion
+
+        /// <summary>
+        /// タッチリストを取得する
+        /// </summary>
+        /// <returns></returns>
+        #region getLstTouch
+        public override List<string> getLstTouch()
+        {
+            return this.lstTouch;
+        }
+        #endregion
+
     }
 }

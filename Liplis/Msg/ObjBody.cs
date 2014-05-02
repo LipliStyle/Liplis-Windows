@@ -134,5 +134,14 @@ namespace Liplis.Msg
             return pic;
         }
         #endregion
+
+        /// <summary>
+        /// タッチリストのしょtク
+        /// </summary>
+        /// <returns></returns>
+        #region getLstTouch
+        public abstract List<string> getLstTouch();
+        #endregion
+        
     }
 }

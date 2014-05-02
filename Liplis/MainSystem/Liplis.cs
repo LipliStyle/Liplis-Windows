@@ -39,6 +39,8 @@
 //
 //  2014/04/28 Liplis4.0.1 ウインドウデザイン変更(ボタン、感情値追加)
 //                         ツイート機能追加  
+//  2014/05/01 Liplis4.0.2 タッチ定義追加
+//  2014/05/01 Liplis4.0.3 時報追加
 //
 //
 // ■運用
@@ -87,6 +89,7 @@ namespace Liplis.MainSystem
         protected ObjWindowFile       owf;
         protected ObjBattery          obtry;
         protected ObjLiplisChat       olc;
+        protected ObjLiplisTouch      olt;
         protected ObjTopic            otp;
         protected ObjBroom            obr;
 
@@ -300,6 +303,9 @@ namespace Liplis.MainSystem
 
             //チャットファイルの読み込み
             olc = new ObjLiplisChat(os.loadSkin);
+
+            //タッチ定義の追加
+            olt = new ObjLiplisTouch(os.loadSkin);
 
             //ウインドウファイルの初期化
             owf = new ObjWindowFile(os.loadSkin);
@@ -538,7 +544,7 @@ namespace Liplis.MainSystem
             {
                 //リフレッシュタイマーの初期化
                 timUpdate = new System.Threading.Timer(new TimerCallback(onUpdate), null, 0, 100);
-                timRefresh = new System.Threading.Timer(new TimerCallback(onProcess), null, 0, 100);
+                timRefresh = new System.Threading.Timer(new TimerCallback(onProcess), null, 0, 1000);
 
                 return true;
             }
@@ -743,6 +749,9 @@ namespace Liplis.MainSystem
             {
                 Application.DoEvents();
 
+                //時報チェック
+                onTimeSignal();
+
                 //サーフェス
                 Invoke(
                     (MethodInvoker)delegate()
@@ -841,6 +850,18 @@ namespace Liplis.MainSystem
         #region イベントハンドラ
 
         /// <summary>
+        /// リプリスクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region Liplis_Click
+        private void Liplis_Click(object sender, EventArgs e)
+        {
+            checkClick(1);
+        }
+        #endregion
+
+        /// <summary>
         /// Liplis_DoubleClick
         /// ダブルクリック
         /// </summary>
@@ -849,7 +870,7 @@ namespace Liplis.MainSystem
         #region Liplis_DoubleClick
         protected void Liplis_DoubleClick(object sender, EventArgs e)
         {
-
+            checkClick(2);
         }
         #endregion
 
@@ -1671,6 +1692,10 @@ namespace Liplis.MainSystem
                         this.li.setSurface(this.Left, this.Top, this.Width, this.Height);
                     }
                 }
+
+                //Liplis4.0.2 指定矩形チェック
+                checkTouch(e.X, e.Y);
+
             }
             catch (System.Exception err)
             {
@@ -1784,6 +1809,24 @@ namespace Liplis.MainSystem
             }
         }
         #endregion 
+
+        /// <summary>
+        /// 時報チェック
+        /// </summary>
+        #region onTimeSignal
+        protected void onTimeSignal()
+        {
+            //現在時刻取得
+            DateTime dt = DateTime.Now;
+
+            //時報チェック
+            if (dt.Minute == 0 && dt.Second == 0)
+            {
+                timeSignal(dt.Hour);
+            }
+        }
+        #endregion
+
 
         ///====================================================================
         ///
@@ -2336,6 +2379,30 @@ namespace Liplis.MainSystem
                 LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
             }
         }
+        protected void talk(MsgShortNews talkMessage)
+        {
+            try
+            {
+                //チャットを停止させておく
+                chatStop();
+
+                //なうトピックを上書き
+                liplisNowTopic = talkMessage;
+
+                //チャット情報の初期化
+                initChatInfo();
+
+                //トークアクティビティの初期化
+                initActivityTalk();
+
+                //おしゃべりスレッドスタート
+                chatStart();
+            }
+            catch (Exception err)
+            {
+                LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
+            }
+        }
         #endregion
 
         /// <summary>
@@ -2411,6 +2478,17 @@ namespace Liplis.MainSystem
         }
         #endregion
 
+        /// <summary>
+        /// 時報
+        /// </summary>
+        #region timeSignal
+        protected void timeSignal(int hour)
+        {
+            talk(this.olc.getTimeSignal(hour));
+        }
+        #endregion
+        
+        
         ///====================================================================
         ///
         ///                              話題収集
@@ -3524,10 +3602,6 @@ namespace Liplis.MainSystem
         }
         #endregion
 
-
-        
-
-
         ///====================================================================
         ///
         ///                       ボディ更新詳細処理
@@ -3725,6 +3799,79 @@ namespace Liplis.MainSystem
 
         ///====================================================================
         ///
+        ///                        タッチ関連処理
+        ///                         
+        ///====================================================================
+
+
+        /// <summary>
+        /// タッチチェック
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        protected void checkTouch(int x, int y)
+        {
+            objTouchResult result = olt.checkTouch(x, y, ob.getLstTouch());
+
+            if (result.result == 2)
+            {
+                this.Cursor = System.Windows.Forms.Cursors.Hand;
+
+                //チャットタイプを取得
+                MsgShortNews chatType = olc.getChatWord("touch" , result.obj.chatSelected);
+
+                if (chatType.nameList.Count > 0)
+                {
+                    //おしゃべり
+                    talk(chatType);
+                }
+            }
+            else if (result.result == 1)
+            {
+                this.Cursor = System.Windows.Forms.Cursors.Hand;
+            }
+            else
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        /// <summary>
+        /// タッチチェック
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        protected void checkClick(int mode)
+        {
+            //X座標を取得する
+            int x = System.Windows.Forms.Cursor.Position.X - this.Left;
+            //Y座標を取得する
+            int y = System.Windows.Forms.Cursor.Position.Y - this.Top;
+
+            objTouchResult result = olt.checkClick(x, y, ob.getLstTouch(), mode);
+
+            if (result.result == mode)
+            {
+                this.Cursor = System.Windows.Forms.Cursors.Hand;
+
+                //チャットタイプを取得
+                MsgShortNews chatType = olc.getChatWord("touch", result.obj.chatSelected);
+
+                if (chatType.nameList.Count > 0)
+                {
+                    //おしゃべり
+                    talk(chatType);
+                }
+            }
+            else
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+
+        ///====================================================================
+        ///
         ///                      他アクティビティの呼び出し
         ///                         
         ///====================================================================
@@ -3858,6 +4005,8 @@ namespace Liplis.MainSystem
         #endregion
         
 
+
+
         ///====================================================================
         ///
         ///                          他スレッド操作
@@ -3972,7 +4121,8 @@ namespace Liplis.MainSystem
             }
         }
         #endregion
-        
+
+
 
     }
 }

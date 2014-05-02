@@ -1,4 +1,5 @@
-﻿//=======================================================================
+﻿using System.Collections.Generic;
+//=======================================================================
 //  ClassName : ObjBody
 //  概要      : ボディオブジェクト
 //
@@ -73,6 +74,16 @@ namespace Liplis.Msg
         }
         #endregion
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        #region getLstTouch
+        public override List<string> getLstTouch()
+        {
+            return new List<string>();
+        }
+        #endregion
+        
     }
 }

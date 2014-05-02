@@ -222,157 +222,178 @@ namespace Liplis.Common
         ///=============================
         /// ボディ画像定義
         #region ボディ画像xpath定義
-        public const string BODY_HEIGHT = "/define/height";
-        public const string BODY_WIDHT = "/define/width";
+        public const string BODY_HEIGHT     = "/define/height";
+        public const string BODY_WIDHT      = "/define/width";
         public const string BODY_LOCATION_X = "/define/locationX";
         public const string BODY_LOCATION_Y = "/define/locationY";
 
-        public const string BODY_NORMAL_11 = "/define/normal/normal11";
-        public const string BODY_NORMAL_12 = "/define/normal/normal12";
-        public const string BODY_NORMAL_21 = "/define/normal/normal21";
-        public const string BODY_NORMAL_22 = "/define/normal/normal22";
-        public const string BODY_NORMAL_31 = "/define/normal/normal31";
-        public const string BODY_NORMAL_32 = "/define/normal/normal32";
+        public const string BODY_NORMAL_11    = "/define/normal/normal11";
+        public const string BODY_NORMAL_12    = "/define/normal/normal12";
+        public const string BODY_NORMAL_21    = "/define/normal/normal21";
+        public const string BODY_NORMAL_22    = "/define/normal/normal22";
+        public const string BODY_NORMAL_31    = "/define/normal/normal31";
+        public const string BODY_NORMAL_32    = "/define/normal/normal32";
+        public const string BODY_NORMAL_TOUCH = "/define/normal/touch";
 
-        public const string BODY_JOY_P_11 = "/define/joy_p/joy_p11";
-        public const string BODY_JOY_P_12 = "/define/joy_p/joy_p12";
-        public const string BODY_JOY_P_21 = "/define/joy_p/joy_p21";
-        public const string BODY_JOY_P_22 = "/define/joy_p/joy_p22";
-        public const string BODY_JOY_P_31 = "/define/joy_p/joy_p31";
-        public const string BODY_JOY_P_32 = "/define/joy_p/joy_p32";
+        public const string BODY_JOY_P_11    = "/define/joy_p/joy_p11";
+        public const string BODY_JOY_P_12    = "/define/joy_p/joy_p12";
+        public const string BODY_JOY_P_21    = "/define/joy_p/joy_p21";
+        public const string BODY_JOY_P_22    = "/define/joy_p/joy_p22";
+        public const string BODY_JOY_P_31    = "/define/joy_p/joy_p31";
+        public const string BODY_JOY_P_32    = "/define/joy_p/joy_p32";
+        public const string BODY_JOY_P_TOUCH = "/define/joy_p/touch";
 
-        public const string BODY_JOY_M_11 = "/define/joy_m/joy_m11";
-        public const string BODY_JOY_M_12 = "/define/joy_m/joy_m12";
-        public const string BODY_JOY_M_21 = "/define/joy_m/joy_m21";
-        public const string BODY_JOY_M_22 = "/define/joy_m/joy_m22";
-        public const string BODY_JOY_M_31 = "/define/joy_m/joy_m31";
-        public const string BODY_JOY_M_32 = "/define/joy_m/joy_m32";
+        public const string BODY_JOY_M_11    = "/define/joy_m/joy_m11";
+        public const string BODY_JOY_M_12    = "/define/joy_m/joy_m12";
+        public const string BODY_JOY_M_21    = "/define/joy_m/joy_m21";
+        public const string BODY_JOY_M_22    = "/define/joy_m/joy_m22";
+        public const string BODY_JOY_M_31    = "/define/joy_m/joy_m31";
+        public const string BODY_JOY_M_32    = "/define/joy_m/joy_m32";
+        public const string BODY_JOY_M_TOUCH = "/define/joy_m/touch";
 
-        public const string BODY_ADMIRATION_P_11 = "/define/admiration_p/admiration_p11";
-        public const string BODY_ADMIRATION_P_12 = "/define/admiration_p/admiration_p12";
-        public const string BODY_ADMIRATION_P_21 = "/define/admiration_p/admiration_p21";
-        public const string BODY_ADMIRATION_P_22 = "/define/admiration_p/admiration_p22";
-        public const string BODY_ADMIRATION_P_31 = "/define/admiration_p/admiration_p31";
-        public const string BODY_ADMIRATION_P_32 = "/define/admiration_p/admiration_p32";
+        public const string BODY_ADMIRATION_P_11    = "/define/admiration_p/admiration_p11";
+        public const string BODY_ADMIRATION_P_12    = "/define/admiration_p/admiration_p12";
+        public const string BODY_ADMIRATION_P_21    = "/define/admiration_p/admiration_p21";
+        public const string BODY_ADMIRATION_P_22    = "/define/admiration_p/admiration_p22";
+        public const string BODY_ADMIRATION_P_31    = "/define/admiration_p/admiration_p31";
+        public const string BODY_ADMIRATION_P_32    = "/define/admiration_p/admiration_p32";
+        public const string BODY_ADMIRATION_P_TOUCH = "/define/admiration_p/touch";
 
-        public const string BODY_ADMIRATION_M_11 = "/define/admiration_m/admiration_m11";
-        public const string BODY_ADMIRATION_M_12 = "/define/admiration_m/admiration_m12";
-        public const string BODY_ADMIRATION_M_21 = "/define/admiration_m/admiration_m21";
-        public const string BODY_ADMIRATION_M_22 = "/define/admiration_m/admiration_m22";
-        public const string BODY_ADMIRATION_M_31 = "/define/admiration_m/admiration_m31";
-        public const string BODY_ADMIRATION_M_32 = "/define/admiration_m/admiration_m32";
+        public const string BODY_ADMIRATION_M_11    = "/define/admiration_m/admiration_m11";
+        public const string BODY_ADMIRATION_M_12    = "/define/admiration_m/admiration_m12";
+        public const string BODY_ADMIRATION_M_21    = "/define/admiration_m/admiration_m21";
+        public const string BODY_ADMIRATION_M_22    = "/define/admiration_m/admiration_m22";
+        public const string BODY_ADMIRATION_M_31    = "/define/admiration_m/admiration_m31";
+        public const string BODY_ADMIRATION_M_32    = "/define/admiration_m/admiration_m32";
+        public const string BODY_ADMIRATION_M_TOUCH = "/define/admiration_m/touch";
 
-        public const string BODY_PEACE_P_11 = "/define/peace_p/peace_p11";
-        public const string BODY_PEACE_P_12 = "/define/peace_p/peace_p12";
-        public const string BODY_PEACE_P_21 = "/define/peace_p/peace_p21";
-        public const string BODY_PEACE_P_22 = "/define/peace_p/peace_p22";
-        public const string BODY_PEACE_P_31 = "/define/peace_p/peace_p31";
-        public const string BODY_PEACE_P_32 = "/define/peace_p/peace_p32";
+        public const string BODY_PEACE_P_11    = "/define/peace_p/peace_p11";
+        public const string BODY_PEACE_P_12    = "/define/peace_p/peace_p12";
+        public const string BODY_PEACE_P_21    = "/define/peace_p/peace_p21";
+        public const string BODY_PEACE_P_22    = "/define/peace_p/peace_p22";
+        public const string BODY_PEACE_P_31    = "/define/peace_p/peace_p31";
+        public const string BODY_PEACE_P_32    = "/define/peace_p/peace_p32";
+        public const string BODY_PEACE_P_TOUCH = "/define/peace_p/touch";
 
-        public const string BODY_PEACE_M_11 = "/define/peace_m/peace_m11";
-        public const string BODY_PEACE_M_12 = "/define/peace_m/peace_m12";
-        public const string BODY_PEACE_M_21 = "/define/peace_m/peace_m21";
-        public const string BODY_PEACE_M_22 = "/define/peace_m/peace_m22";
-        public const string BODY_PEACE_M_31 = "/define/peace_m/peace_m31";
-        public const string BODY_PEACE_M_32 = "/define/peace_m/peace_m32";
+        public const string BODY_PEACE_M_11    = "/define/peace_m/peace_m11";
+        public const string BODY_PEACE_M_12    = "/define/peace_m/peace_m12";
+        public const string BODY_PEACE_M_21    = "/define/peace_m/peace_m21";
+        public const string BODY_PEACE_M_22    = "/define/peace_m/peace_m22";
+        public const string BODY_PEACE_M_31    = "/define/peace_m/peace_m31";
+        public const string BODY_PEACE_M_32    = "/define/peace_m/peace_m32";
+        public const string BODY_PEACE_M_TOUCH = "/define/peace_m/touch";
 
-        public const string BODY_ECSTASY_P_11 = "/define/ecstasy_p/ecstasy_p11";
-        public const string BODY_ECSTASY_P_12 = "/define/ecstasy_p/ecstasy_p12";
-        public const string BODY_ECSTASY_P_21 = "/define/ecstasy_p/ecstasy_p21";
-        public const string BODY_ECSTASY_P_22 = "/define/ecstasy_p/ecstasy_p22";
-        public const string BODY_ECSTASY_P_31 = "/define/ecstasy_p/ecstasy_p31";
-        public const string BODY_ECSTASY_P_32 = "/define/ecstasy_p/ecstasy_p32";
+        public const string BODY_ECSTASY_P_11    = "/define/ecstasy_p/ecstasy_p11";
+        public const string BODY_ECSTASY_P_12    = "/define/ecstasy_p/ecstasy_p12";
+        public const string BODY_ECSTASY_P_21    = "/define/ecstasy_p/ecstasy_p21";
+        public const string BODY_ECSTASY_P_22    = "/define/ecstasy_p/ecstasy_p22";
+        public const string BODY_ECSTASY_P_31    = "/define/ecstasy_p/ecstasy_p31";
+        public const string BODY_ECSTASY_P_32    = "/define/ecstasy_p/ecstasy_p32";
+        public const string BODY_ECSTASY_P_TOUCH = "/define/ecstasy_p/touch";
 
-        public const string BODY_ECSTASY_M_11 = "/define/ecstasy_m/ecstasy_m11";
-        public const string BODY_ECSTASY_M_12 = "/define/ecstasy_m/ecstasy_m12";
-        public const string BODY_ECSTASY_M_21 = "/define/ecstasy_m/ecstasy_m21";
-        public const string BODY_ECSTASY_M_22 = "/define/ecstasy_m/ecstasy_m22";
-        public const string BODY_ECSTASY_M_31 = "/define/ecstasy_m/ecstasy_m31";
-        public const string BODY_ECSTASY_M_32 = "/define/ecstasy_m/ecstasy_m32";
+        public const string BODY_ECSTASY_M_11    = "/define/ecstasy_m/ecstasy_m11";
+        public const string BODY_ECSTASY_M_12    = "/define/ecstasy_m/ecstasy_m12";
+        public const string BODY_ECSTASY_M_21    = "/define/ecstasy_m/ecstasy_m21";
+        public const string BODY_ECSTASY_M_22    = "/define/ecstasy_m/ecstasy_m22";
+        public const string BODY_ECSTASY_M_31    = "/define/ecstasy_m/ecstasy_m31";
+        public const string BODY_ECSTASY_M_32    = "/define/ecstasy_m/ecstasy_m32";
+        public const string BODY_ECSTASY_M_TOUCH = "/define/ecstasy_m/touch";
 
-        public const string BODY_AMAZEMENT_P_11 = "/define/amazement_p/amazement_p11";
-        public const string BODY_AMAZEMENT_P_12 = "/define/amazement_p/amazement_p12";
-        public const string BODY_AMAZEMENT_P_21 = "/define/amazement_p/amazement_p21";
-        public const string BODY_AMAZEMENT_P_22 = "/define/amazement_p/amazement_p22";
-        public const string BODY_AMAZEMENT_P_31 = "/define/amazement_p/amazement_p31";
-        public const string BODY_AMAZEMENT_P_32 = "/define/amazement_p/amazement_p32";
+        public const string BODY_AMAZEMENT_P_11    = "/define/amazement_p/amazement_p11";
+        public const string BODY_AMAZEMENT_P_12    = "/define/amazement_p/amazement_p12";
+        public const string BODY_AMAZEMENT_P_21    = "/define/amazement_p/amazement_p21";
+        public const string BODY_AMAZEMENT_P_22    = "/define/amazement_p/amazement_p22";
+        public const string BODY_AMAZEMENT_P_31    = "/define/amazement_p/amazement_p31";
+        public const string BODY_AMAZEMENT_P_32    = "/define/amazement_p/amazement_p32";
+        public const string BODY_AMAZEMENT_P_TOUCH = "/define/amazement_p/touch";
 
-        public const string BODY_AMAZEMENT_M_11 = "/define/amazement_m/amazement_m11";
-        public const string BODY_AMAZEMENT_M_12 = "/define/amazement_m/amazement_m12";
-        public const string BODY_AMAZEMENT_M_21 = "/define/amazement_m/amazement_m21";
-        public const string BODY_AMAZEMENT_M_22 = "/define/amazement_m/amazement_m22";
-        public const string BODY_AMAZEMENT_M_31 = "/define/amazement_m/amazement_m31";
-        public const string BODY_AMAZEMENT_M_32 = "/define/amazement_m/amazement_m32";
+        public const string BODY_AMAZEMENT_M_11    = "/define/amazement_m/amazement_m11";
+        public const string BODY_AMAZEMENT_M_12    = "/define/amazement_m/amazement_m12";
+        public const string BODY_AMAZEMENT_M_21    = "/define/amazement_m/amazement_m21";
+        public const string BODY_AMAZEMENT_M_22    = "/define/amazement_m/amazement_m22";
+        public const string BODY_AMAZEMENT_M_31    = "/define/amazement_m/amazement_m31";
+        public const string BODY_AMAZEMENT_M_32    = "/define/amazement_m/amazement_m32";
+        public const string BODY_AMAZEMENT_M_TOUCH = "/define/amazement_m/touch";
 
-        public const string BODY_RAGE_P_11 = "/define/rage_p/rage_p11";
-        public const string BODY_RAGE_P_12 = "/define/rage_p/rage_p12";
-        public const string BODY_RAGE_P_21 = "/define/rage_p/rage_p21";
-        public const string BODY_RAGE_P_22 = "/define/rage_p/rage_p22";
-        public const string BODY_RAGE_P_31 = "/define/rage_p/rage_p31";
-        public const string BODY_RAGE_P_32 = "/define/rage_p/rage_p32";
+        public const string BODY_RAGE_P_11    = "/define/rage_p/rage_p11";
+        public const string BODY_RAGE_P_12    = "/define/rage_p/rage_p12";
+        public const string BODY_RAGE_P_21    = "/define/rage_p/rage_p21";
+        public const string BODY_RAGE_P_22    = "/define/rage_p/rage_p22";
+        public const string BODY_RAGE_P_31    = "/define/rage_p/rage_p31";
+        public const string BODY_RAGE_P_32    = "/define/rage_p/rage_p32";
+        public const string BODY_RAGE_P_TOUCH = "/define/rage_p/touch";
 
-        public const string BODY_RAGE_M_11 = "/define/rage_m/rage_m11";
-        public const string BODY_RAGE_M_12 = "/define/rage_m/rage_m12";
-        public const string BODY_RAGE_M_21 = "/define/rage_m/rage_m21";
-        public const string BODY_RAGE_M_22 = "/define/rage_m/rage_m22";
-        public const string BODY_RAGE_M_31 = "/define/rage_m/rage_m31";
-        public const string BODY_RAGE_M_32 = "/define/rage_m/rage_m32";
+        public const string BODY_RAGE_M_11    = "/define/rage_m/rage_m11";
+        public const string BODY_RAGE_M_12    = "/define/rage_m/rage_m12";
+        public const string BODY_RAGE_M_21    = "/define/rage_m/rage_m21";
+        public const string BODY_RAGE_M_22    = "/define/rage_m/rage_m22";
+        public const string BODY_RAGE_M_31    = "/define/rage_m/rage_m31";
+        public const string BODY_RAGE_M_32    = "/define/rage_m/rage_m32";
+        public const string BODY_RAGE_M_TOUCH = "/define/rage_m/touch";
 
-        public const string BODY_INTEREST_P_11 = "/define/interest_p/interest_p11";
-        public const string BODY_INTEREST_P_12 = "/define/interest_p/interest_p12";
-        public const string BODY_INTEREST_P_21 = "/define/interest_p/interest_p21";
-        public const string BODY_INTEREST_P_22 = "/define/interest_p/interest_p22";
-        public const string BODY_INTEREST_P_31 = "/define/interest_p/interest_p31";
-        public const string BODY_INTEREST_P_32 = "/define/interest_p/interest_p32";
+        public const string BODY_INTEREST_P_11    = "/define/interest_p/interest_p11";
+        public const string BODY_INTEREST_P_12    = "/define/interest_p/interest_p12";
+        public const string BODY_INTEREST_P_21    = "/define/interest_p/interest_p21";
+        public const string BODY_INTEREST_P_22    = "/define/interest_p/interest_p22";
+        public const string BODY_INTEREST_P_31    = "/define/interest_p/interest_p31";
+        public const string BODY_INTEREST_P_32    = "/define/interest_p/interest_p32";
+        public const string BODY_INTEREST_P_TOUCH = "/define/interest_p/touch";
 
-        public const string BODY_INTEREST_M_11 = "/define/interest_m/interest_m11";
-        public const string BODY_INTEREST_M_12 = "/define/interest_m/interest_m12";
-        public const string BODY_INTEREST_M_21 = "/define/interest_m/interest_m21";
-        public const string BODY_INTEREST_M_22 = "/define/interest_m/interest_m22";
-        public const string BODY_INTEREST_M_31 = "/define/interest_m/interest_m31";
-        public const string BODY_INTEREST_M_32 = "/define/interest_m/interest_m32";
+        public const string BODY_INTEREST_M_11    = "/define/interest_m/interest_m11";
+        public const string BODY_INTEREST_M_12    = "/define/interest_m/interest_m12";
+        public const string BODY_INTEREST_M_21    = "/define/interest_m/interest_m21";
+        public const string BODY_INTEREST_M_22    = "/define/interest_m/interest_m22";
+        public const string BODY_INTEREST_M_31    = "/define/interest_m/interest_m31";
+        public const string BODY_INTEREST_M_32    = "/define/interest_m/interest_m32";
+        public const string BODY_INTEREST_M_TOUCH = "/define/interest_m/touch";
 
-        public const string BODY_RESPECT_P_11 = "/define/respect_p/respect_p11";
-        public const string BODY_RESPECT_P_12 = "/define/respect_p/respect_p12";
-        public const string BODY_RESPECT_P_21 = "/define/respect_p/respect_p21";
-        public const string BODY_RESPECT_P_22 = "/define/respect_p/respect_p22";
-        public const string BODY_RESPECT_P_31 = "/define/respect_p/respect_p31";
-        public const string BODY_RESPECT_P_32 = "/define/respect_p/respect_p32";
+        public const string BODY_RESPECT_P_11    = "/define/respect_p/respect_p11";
+        public const string BODY_RESPECT_P_12    = "/define/respect_p/respect_p12";
+        public const string BODY_RESPECT_P_21    = "/define/respect_p/respect_p21";
+        public const string BODY_RESPECT_P_22    = "/define/respect_p/respect_p22";
+        public const string BODY_RESPECT_P_31    = "/define/respect_p/respect_p31";
+        public const string BODY_RESPECT_P_32    = "/define/respect_p/respect_p32";
+        public const string BODY_RESPECT_P_TOUCH = "/define/respect_p/touch";
 
-        public const string BODY_RESPECT_M_11 = "/define/respect_m/respect_m11";
-        public const string BODY_RESPECT_M_12 = "/define/respect_m/respect_m12";
-        public const string BODY_RESPECT_M_21 = "/define/respect_m/respect_m21";
-        public const string BODY_RESPECT_M_22 = "/define/respect_m/respect_m22";
-        public const string BODY_RESPECT_M_31 = "/define/respect_m/respect_m31";
-        public const string BODY_RESPECT_M_32 = "/define/respect_m/respect_m32";
+        public const string BODY_RESPECT_M_11    = "/define/respect_m/respect_m11";
+        public const string BODY_RESPECT_M_12    = "/define/respect_m/respect_m12";
+        public const string BODY_RESPECT_M_21    = "/define/respect_m/respect_m21";
+        public const string BODY_RESPECT_M_22    = "/define/respect_m/respect_m22";
+        public const string BODY_RESPECT_M_31    = "/define/respect_m/respect_m31";
+        public const string BODY_RESPECT_M_32    = "/define/respect_m/respect_m32";
+        public const string BODY_RESPECT_M_TOUCH = "/define/respect_m/touch";
 
-        public const string BODY_CLAMLY_P_11 = "/define/calmly_p/calmly_p11";
-        public const string BODY_CLAMLY_P_12 = "/define/calmly_p/calmly_p12";
-        public const string BODY_CLAMLY_P_21 = "/define/calmly_p/calmly_p21";
-        public const string BODY_CLAMLY_P_22 = "/define/calmly_p/calmly_p22";
-        public const string BODY_CLAMLY_P_31 = "/define/calmly_p/calmly_p31";
-        public const string BODY_CLAMLY_P_32 = "/define/calmly_p/calmly_p32";
+        public const string BODY_CLAMLY_P_11    = "/define/calmly_p/calmly_p11";
+        public const string BODY_CLAMLY_P_12    = "/define/calmly_p/calmly_p12";
+        public const string BODY_CLAMLY_P_21    = "/define/calmly_p/calmly_p21";
+        public const string BODY_CLAMLY_P_22    = "/define/calmly_p/calmly_p22";
+        public const string BODY_CLAMLY_P_31    = "/define/calmly_p/calmly_p31";
+        public const string BODY_CLAMLY_P_32    = "/define/calmly_p/calmly_p32";
+        public const string BODY_CLAMLY_P_TOUCH = "/define/calmly_p/touch";
 
-        public const string BODY_CLAMLY_M_11 = "/define/calmly_m/calmly_m11";
-        public const string BODY_CLAMLY_M_12 = "/define/calmly_m/calmly_m12";
-        public const string BODY_CLAMLY_M_21 = "/define/calmly_m/calmly_m21";
-        public const string BODY_CLAMLY_M_22 = "/define/calmly_m/calmly_m22";
-        public const string BODY_CLAMLY_M_31 = "/define/calmly_m/calmly_m31";
-        public const string BODY_CLAMLY_M_32 = "/define/calmly_m/calmly_m32";
+        public const string BODY_CLAMLY_M_11    = "/define/calmly_m/calmly_m11";
+        public const string BODY_CLAMLY_M_12    = "/define/calmly_m/calmly_m12";
+        public const string BODY_CLAMLY_M_21    = "/define/calmly_m/calmly_m21";
+        public const string BODY_CLAMLY_M_22    = "/define/calmly_m/calmly_m22";
+        public const string BODY_CLAMLY_M_31    = "/define/calmly_m/calmly_m31";
+        public const string BODY_CLAMLY_M_32    = "/define/calmly_m/calmly_m32";
+        public const string BODY_CLAMLY_M_TOUCH = "/define/calmly_m/touch";
 
-        public const string BODY_PROUD_P_11 = "/define/proud_p/proud_p11";
-        public const string BODY_PROUD_P_12 = "/define/proud_p/proud_p12";
-        public const string BODY_PROUD_P_21 = "/define/proud_p/proud_p21";
-        public const string BODY_PROUD_P_22 = "/define/proud_p/proud_p22";
-        public const string BODY_PROUD_P_31 = "/define/proud_p/proud_p31";
-        public const string BODY_PROUD_P_32 = "/define/proud_p/proud_p32";
+        public const string BODY_PROUD_P_11    = "/define/proud_p/proud_p11";
+        public const string BODY_PROUD_P_12    = "/define/proud_p/proud_p12";
+        public const string BODY_PROUD_P_21    = "/define/proud_p/proud_p21";
+        public const string BODY_PROUD_P_22    = "/define/proud_p/proud_p22";
+        public const string BODY_PROUD_P_31    = "/define/proud_p/proud_p31";
+        public const string BODY_PROUD_P_32    = "/define/proud_p/proud_p32";
+        public const string BODY_PROUD_P_TOUCH = "/define/proud_p/touch";
 
-        public const string BODY_PROUD_M_11 = "/define/proud_m/proud_m11";
-        public const string BODY_PROUD_M_12 = "/define/proud_m/proud_m12";
-        public const string BODY_PROUD_M_21 = "/define/proud_m/proud_m21";
-        public const string BODY_PROUD_M_22 = "/define/proud_m/proud_m22";
-        public const string BODY_PROUD_M_31 = "/define/proud_m/proud_m31";
-        public const string BODY_PROUD_M_32 = "/define/proud_m/proud_m32";
+        public const string BODY_PROUD_M_11    = "/define/proud_m/proud_m11";
+        public const string BODY_PROUD_M_12    = "/define/proud_m/proud_m12";
+        public const string BODY_PROUD_M_21    = "/define/proud_m/proud_m21";
+        public const string BODY_PROUD_M_22    = "/define/proud_m/proud_m22";
+        public const string BODY_PROUD_M_31    = "/define/proud_m/proud_m31";
+        public const string BODY_PROUD_M_32    = "/define/proud_m/proud_m32";
+        public const string BODY_PROUD_M_TOUCH = "/define/proud_m/touch";
 
         public const string BODY_SITDOWN_11 = "/define/sleep/sleep_11";
         public const string BODY_SITDOWN_12 = "/define/sleep/sleep_12";
@@ -381,26 +402,29 @@ namespace Liplis.Common
         public const string BODY_SITDOWN_31 = "/define/sleep/sleep_31";
         public const string BODY_SITDOWN_32 = "/define/sleep/sleep_32";
 
-        public const string BODY_BATTERY_HI_11 = "/define/batteryHi/batteryHi_11";
-        public const string BODY_BATTERY_HI_12 = "/define/batteryHi/batteryHi_12";
-        public const string BODY_BATTERY_HI_21 = "/define/batteryHi/batteryHi_21";
-        public const string BODY_BATTERY_HI_22 = "/define/batteryHi/batteryHi_22";
-        public const string BODY_BATTERY_HI_31 = "/define/batteryHi/batteryHi_31";
-        public const string BODY_BATTERY_HI_32 = "/define/batteryHi/batteryHi_32";
+        public const string BODY_BATTERY_HI_11    = "/define/batteryHi/batteryHi_11";
+        public const string BODY_BATTERY_HI_12    = "/define/batteryHi/batteryHi_12";
+        public const string BODY_BATTERY_HI_21    = "/define/batteryHi/batteryHi_21";
+        public const string BODY_BATTERY_HI_22    = "/define/batteryHi/batteryHi_22";
+        public const string BODY_BATTERY_HI_31    = "/define/batteryHi/batteryHi_31";
+        public const string BODY_BATTERY_HI_32    = "/define/batteryHi/batteryHi_32";
+        public const string BODY_BATTERY_HI_TOUCH = "/define/batteryHi/touch";
 
-        public const string BODY_BATTERY_MID_11 = "/define/batteryMid/batteryMid_11";
-        public const string BODY_BATTERY_MID_12 = "/define/batteryMid/batteryMid_12";
-        public const string BODY_BATTERY_MID_21 = "/define/batteryMid/batteryMid_21";
-        public const string BODY_BATTERY_MID_22 = "/define/batteryMid/batteryMid_22";
-        public const string BODY_BATTERY_MID_31 = "/define/batteryMid/batteryMid_31";
-        public const string BODY_BATTERY_MID_32 = "/define/batteryMid/batteryMid_32";
+        public const string BODY_BATTERY_MID_11    = "/define/batteryMid/batteryMid_11";
+        public const string BODY_BATTERY_MID_12    = "/define/batteryMid/batteryMid_12";
+        public const string BODY_BATTERY_MID_21    = "/define/batteryMid/batteryMid_21";
+        public const string BODY_BATTERY_MID_22    = "/define/batteryMid/batteryMid_22";
+        public const string BODY_BATTERY_MID_31    = "/define/batteryMid/batteryMid_31";
+        public const string BODY_BATTERY_MID_32    = "/define/batteryMid/batteryMid_32";
+        public const string BODY_BATTERY_MID_TOUCH = "/define/batteryMid/touch";
 
-        public const string BODY_BATTERY_LOW_11 = "/define/batteryLow/batteryLow_11";
-        public const string BODY_BATTERY_LOW_12 = "/define/batteryLow/batteryLow_12";
-        public const string BODY_BATTERY_LOW_21 = "/define/batteryLow/batteryLow_21";
-        public const string BODY_BATTERY_LOW_22 = "/define/batteryLow/batteryLow_22";
-        public const string BODY_BATTERY_LOW_31 = "/define/batteryLow/batteryLow_31";
-        public const string BODY_BATTERY_LOW_32 = "/define/batteryLow/batteryLow_32";
+        public const string BODY_BATTERY_LOW_11    = "/define/batteryLow/batteryLow_11";
+        public const string BODY_BATTERY_LOW_12    = "/define/batteryLow/batteryLow_12";
+        public const string BODY_BATTERY_LOW_21    = "/define/batteryLow/batteryLow_21";
+        public const string BODY_BATTERY_LOW_22    = "/define/batteryLow/batteryLow_22";
+        public const string BODY_BATTERY_LOW_31    = "/define/batteryLow/batteryLow_31";
+        public const string BODY_BATTERY_LOW_32    = "/define/batteryLow/batteryLow_32";
+        public const string BODY_BATTERY_LOW_TOUCH = "/define/batteryLow/touch";
 
         #endregion
 
@@ -441,6 +465,19 @@ namespace Liplis.Common
         public const string CHAT_DISCRIPTION = "/chat/chatDiscription/discription";
         public const string CHAT_EMOTION = "/chat/chatDiscription/emotion";
         public const string CHAT_PREREWUISITE = "/chat/chatDiscription/prerequisite";
+        #endregion
+
+        ///=============================
+        /// touchXpath定義
+        #region touchXpath定義
+        public const string TOUCH_NAME = "/touch/touchDiscription/name";
+        public const string TOUCH_TYPE = "/touch/touchDiscription/type";
+        public const string TOUCH_SENS = "/touch/touchDiscription/sens";
+        public const string TOUCH_TOP = "/touch/touchDiscription/top";
+        public const string TOUCH_LEFT = "/touch/touchDiscription/left";
+        public const string TOUCH_BOTTOM = "/touch/touchDiscription/bottom";
+        public const string TOUCH_RIGHT = "/touch/touchDiscription/right";
+        public const string TOUCH_CHAT = "/touch/touchDiscription/chat";
         #endregion
 
         ///=============================

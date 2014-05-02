@@ -157,6 +157,7 @@
     <Compile Include="Msg\ObjCat.cs" />
     <Compile Include="Msg\ObjDownloadHst.cs" />
     <Compile Include="Msg\ObjDownloadFile.cs" />
+    <Compile Include="Msg\ObjLiplisTouch.cs" />
     <Compile Include="Msg\RegisterRsUserInfo.cs" />
     <Compile Include="Msg\RegisterRsUserInfoCat.cs" />
     <Compile Include="Msg\RegisterTwUserInfo.cs" />

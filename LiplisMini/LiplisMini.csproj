@@ -189,6 +189,9 @@
     <Compile Include="..\Liplis\Fct\FctLiplisMsg.cs">
       <Link>Fct\FctLiplisMsg.cs</Link>
     </Compile>
+    <Compile Include="..\Liplis\Fct\FctLiplisTweet.cs">
+      <Link>Fct\FctLiplisTweet.cs</Link>
+    </Compile>
     <Compile Include="..\Liplis\Fct\FctRssObjectCreater.cs">
       <Link>Fct\FctRssObjectCreater.cs</Link>
     </Compile>
@@ -277,6 +280,9 @@
     </Compile>
     <Compile Include="..\Liplis\Msg\ObjLiplisChat.cs">
       <Link>Msg\ObjLiplisChat.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Msg\ObjLiplisTouch.cs">
+      <Link>Msg\ObjLiplisTouch.cs</Link>
     </Compile>
     <Compile Include="..\Liplis\Msg\ObjLog.cs">
       <Link>Msg\ObjLog.cs</Link>
