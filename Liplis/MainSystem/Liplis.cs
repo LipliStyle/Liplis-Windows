@@ -69,6 +69,7 @@ using Liplis.Common;
 using Liplis.Fct;
 using Liplis.Msg;
 using Liplis.Web;
+using Liplis.Xml;
 
 namespace Liplis.MainSystem
 {
@@ -417,6 +418,46 @@ namespace Liplis.MainSystem
             }
         }
         #endregion
+
+        /// <summary>
+        /// バージョンチェック
+        /// </summary>
+        /// <returns></returns>
+        #region versioncheck
+        protected void versionCheck()
+        {
+            //アップデートチェック
+            VersionXml version = new VersionXml(LiplisUpdaterDefine.getUrlVersion(flgDebug));
+
+            //自信のバージョン取得
+            FileVersionInfo ver =　FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+
+            //デバッグ表示
+            if (flgDebug)
+            {
+                Console.WriteLine("最新バージョン : " + version.version);
+                Console.WriteLine("現在バージョン : " + ver.ProductVersion);
+            }
+
+            //バージョン比較
+            if (!version.version.Equals(ver.ProductVersion))
+            {
+                //アップデート情報を追加する
+                liplisNowTopic.nameList.Add("@");
+                liplisNowTopic.emotionList.Add(0);
+                liplisNowTopic.pointList.Add(0);
+
+                liplisNowTopic.nameList.Add("最新バージョンが公開されています。バージョンアップして下さい。");
+                liplisNowTopic.emotionList.Add(0);
+                liplisNowTopic.pointList.Add(0);
+
+                liplisNowTopic.result = liplisNowTopic.result +  "最新バージョンが公開されています。バージョンアップして下さい。";
+                liplisNowTopic.sorce = liplisNowTopic.sorce + "最新バージョンが公開されています。バージョンアップして下さい。";
+            }
+
+        }
+        #endregion
+        
 
         ///====================================================================
         ///
@@ -1425,7 +1466,6 @@ namespace Liplis.MainSystem
         }
         #endregion
 
-
         /// <summary>
         /// onChange
         /// 交代処理
@@ -1827,7 +1867,6 @@ namespace Liplis.MainSystem
         }
         #endregion
 
-
         ///====================================================================
         ///
         ///                            メニュー制御
@@ -2031,7 +2070,6 @@ namespace Liplis.MainSystem
         }
         #endregion
         
-
         ///====================================================================
         ///
         ///                          状態取得
@@ -2090,7 +2128,6 @@ namespace Liplis.MainSystem
             return Screen.PrimaryScreen.Bounds;
         }
         #endregion
-
 
         /// <summary>
         /// リプリスの真横の座標を返す
@@ -2152,7 +2189,6 @@ namespace Liplis.MainSystem
         ///                            右クリック制御(廃止)
         ///                         
         ///====================================================================
-
 
         /// <summary>
         /// rcmを生成する
@@ -2241,6 +2277,9 @@ namespace Liplis.MainSystem
             //挨拶の選定
             liplisNowTopic = olc.getGreetMessage(LiplisDefine.CHAT_DEF_GREET);
 
+            //バージョンチェック
+            versionCheck();
+
             //空だったらろーでぃんぐなう♪
             if (liplisNowTopic.getMessage().Equals(""))
             {
@@ -2253,6 +2292,26 @@ namespace Liplis.MainSystem
             //トークアクティビティの初期化
             initActivityTalk();
             
+            //おしゃべりスレッドスタート
+            chatStart();
+        }
+        protected void standupGreet()
+        {
+            //挨拶の選定
+            liplisNowTopic = olc.getGreetMessage(LiplisDefine.CHAT_DEF_GREET);
+
+            //空だったらろーでぃんぐなう♪
+            if (liplisNowTopic.getMessage().Equals(""))
+            {
+                liplisNowTopic = new MsgShortNews("ろーでぃんぐなう♪", 0, 0);
+            }
+
+            //チャット情報の初期化
+            initChatInfo();
+
+            //トークアクティビティの初期化
+            initActivityTalk();
+
             //おしゃべりスレッドスタート
             chatStart();
         }
@@ -2487,14 +2546,12 @@ namespace Liplis.MainSystem
             talk(this.olc.getTimeSignal(hour));
         }
         #endregion
-        
-        
+
         ///====================================================================
         ///
         ///                              話題収集
         ///                         
         ///====================================================================
-
 
         /// <summary>
         //  MethodType : child
@@ -2535,8 +2592,6 @@ namespace Liplis.MainSystem
             }
         }
         #endregion
-
-
 
         ///====================================================================
         ///
@@ -2600,7 +2655,6 @@ namespace Liplis.MainSystem
         }
         #endregion
 
-
         /// <summary>
         //  MethodType : child
         /// MethodName : chatStop
@@ -2627,7 +2681,6 @@ namespace Liplis.MainSystem
             }
         }
         #endregion
-
 
         ///====================================================================
         ///
@@ -3022,7 +3075,6 @@ namespace Liplis.MainSystem
         
         }
         #endregion
-        
 
         /// <summary>
         //  MethodType : child
@@ -3413,7 +3465,6 @@ namespace Liplis.MainSystem
         }
         #endregion
 
-
         /// <summary>
         //  MethodType : child
         /// MethodName : setObjectBody
@@ -3786,7 +3837,7 @@ namespace Liplis.MainSystem
                 updateSleepIcon();
 
                 //あいさつ
-                greet();
+                standupGreet();
 
                 return true;
             }
@@ -3802,8 +3853,7 @@ namespace Liplis.MainSystem
         ///                        タッチ関連処理
         ///                         
         ///====================================================================
-
-
+        #region タッチ関連処理
         /// <summary>
         /// タッチチェック
         /// </summary>
@@ -3818,7 +3868,7 @@ namespace Liplis.MainSystem
                 this.Cursor = System.Windows.Forms.Cursors.Hand;
 
                 //チャットタイプを取得
-                MsgShortNews chatType = olc.getChatWord("touch" , result.obj.chatSelected);
+                MsgShortNews chatType = olc.getChatWord("touch", result.obj.chatSelected);
 
                 if (chatType.nameList.Count > 0)
                 {
@@ -3868,7 +3918,7 @@ namespace Liplis.MainSystem
                 this.Cursor = Cursors.Default;
             }
         }
-
+        #endregion
 
         ///====================================================================
         ///
@@ -4004,9 +4054,6 @@ namespace Liplis.MainSystem
         }
         #endregion
         
-
-
-
         ///====================================================================
         ///
         ///                          他スレッド操作

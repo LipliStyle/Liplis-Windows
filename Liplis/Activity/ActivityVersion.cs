@@ -1,4 +1,5 @@
-﻿//=======================================================================
+﻿using System.Diagnostics;
+//=======================================================================
 //  ClassName : ActivityVersion
 //  概要      : バージョンアクティヴィティ
 //
@@ -7,6 +8,7 @@
 //=======================================================================
 using System.Reflection;
 using System.Windows.Forms;
+using Liplis.Common;
 
 namespace Liplis.Activity
 {
@@ -46,6 +48,21 @@ namespace Liplis.Activity
         }
         #endregion
 
+        /// <summary>
+        /// バージョンチェック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region btnVersion_Click
+        private void btnVersion_Click(object sender, System.EventArgs e)
+        {
+            runUpdate();
+        }
+        #endregion
+        
+
+
+
         ///====================================================================
         ///
         ///                              onDelete
@@ -73,6 +90,19 @@ namespace Liplis.Activity
         }
         #endregion
 
+        /// <summary>
+        /// アップデートプログラム起動
+        /// </summary>
+        #region runUpdate
+        private void runUpdate()
+        {
+            if (LpsPathController.checkFileExist(LpsPathController.getUpdatePrgPath()))
+            {
+                Process p = Process.Start(LpsPathController.getUpdatePrgPath());
+            }
+
+        }
+        #endregion
 
     }
 }

@@ -11,6 +11,7 @@
 //=======================================================================
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -596,6 +597,11 @@ namespace Liplis.Activity
         {
             os.setLpsTwitterMode(LpsLiplisUtil.boolToBit(!rdoTwitterMode0.Checked));
             savePreference();
+        }
+
+        private void btnVersion_Click(object sender, EventArgs e)
+        {
+            runUpdate();
         }
         #endregion
 
@@ -1367,6 +1373,24 @@ namespace Liplis.Activity
             {
                 os.setPreferenceData();
             }
+        }
+        #endregion
+
+
+        ///====================================================================
+        ///
+        ///                             アップデート
+        ///                         
+        ///====================================================================
+        
+        #region 
+        private void runUpdate()
+        {
+            if (LpsPathController.checkFileExist(LpsPathController.getUpdatePrgPath()))
+            {
+                Process p = Process.Start(LpsPathController.getUpdatePrgPath());
+            }
+            
         }
         #endregion
 

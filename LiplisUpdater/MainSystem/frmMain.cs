@@ -6,18 +6,10 @@
 //　2014/04/26 Liplis4.0 アップデート機能
 // Copyright(c) 2014 LipliStyle さちん MITライセンス
 //=======================================================================
-
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 using Ionic.Zip;
 using Liplis.Common;
@@ -93,7 +85,6 @@ namespace LiplisUpdater
                         CenterMessageBox.Show(this, "アップデート可能なバージョンではありません。" + Environment.NewLine + "手動でアップデートして下さい。" + Environment.NewLine + "手順についてはLipliStyleのサイトを御覧ください。", this.Text,  MessageBoxButtons.OK, MessageBoxIcon.Error);
                         btnUpdate.Enabled = false;
                     }
-                    
                 }
             }
             else

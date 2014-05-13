@@ -391,7 +391,7 @@ namespace Liplis.Msg
 
 						try
 						{
-							result = new MsgShortNews(discriptionList[tarIdx] + " ", emotionList[tarIdx], 99);
+                            result = new MsgShortNews(discriptionList[tarIdx] + " ", emotionList[tarIdx], emotionList[tarIdx]);
 						}
 						catch
 						{

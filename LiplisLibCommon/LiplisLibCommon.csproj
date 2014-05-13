@@ -69,6 +69,7 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\BaseRandom.cs" />
+    <Compile Include="Common\LiplisUpdaterDefine.cs" />
     <Compile Include="Common\LpsCreateObject.cs" />
     <Compile Include="Common\LpsDiffResult.cs" />
     <Compile Include="Common\LpsArchiveUtil.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Fct\BaseTextFactoryBcp.cs" />
     <Compile Include="Maid\LiplisMaidSystem.cs" />
     <Compile Include="Msg\MsgShortNewsCm.cs" />
+    <Compile Include="Msg\msgTargetVersion.cs" />
     <Compile Include="Msg\msgVoiceRoid.cs" />
     <Compile Include="Msg\msgWetherDescription.cs" />
     <Compile Include="Msg\ObjLpsApiMsg.cs" />
@@ -227,6 +229,7 @@
     <Compile Include="Xml\mailSetting.cs" />
     <Compile Include="Xml\RssReaderEx.cs" />
     <Compile Include="Xml\RssReaderNative.cs" />
+    <Compile Include="Xml\VersionXml.cs" />
     <Compile Include="Xml\XmlTone.cs" />
     <Compile Include="Xml\RssReader.cs" />
     <Compile Include="Xml\XmlLinq.cs" />

@@ -150,6 +150,8 @@
             this.rboMeneBox = new System.Windows.Forms.RadioButton();
             this.rboMeneCricle = new System.Windows.Forms.RadioButton();
             this.grpSetSonota = new System.Windows.Forms.GroupBox();
+            this.cusCtlLabel2 = new Liplis.Control.CusCtlLabel();
+            this.chkOutrangeRecovery = new System.Windows.Forms.CheckBox();
             this.cusCtlLabel1 = new Liplis.Control.CusCtlLabel();
             this.chkHelth = new System.Windows.Forms.CheckBox();
             this.lblDiscWindow1 = new Liplis.Control.CusCtlLabel();
@@ -176,8 +178,7 @@
             this.tsmHelpLiplisWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmHelpLipliStyle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmVersion = new System.Windows.Forms.ToolStripMenuItem();
-            this.cusCtlLabel2 = new Liplis.Control.CusCtlLabel();
-            this.chkOutrangeRecovery = new System.Windows.Forms.CheckBox();
+            this.btnVersion = new System.Windows.Forms.Button();
             this.spc.Panel1.SuspendLayout();
             this.spc.Panel2.SuspendLayout();
             this.spc.SuspendLayout();
@@ -242,6 +243,7 @@
             this.flpButton.Controls.Add(this.btnTopic);
             this.flpButton.Controls.Add(this.btnVoice);
             this.flpButton.Controls.Add(this.btnSynchronism);
+            this.flpButton.Controls.Add(this.btnVersion);
             this.flpButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpButton.Location = new System.Drawing.Point(0, 0);
             this.flpButton.Name = "flpButton";
@@ -1633,6 +1635,28 @@
             this.grpSetSonota.TabStop = false;
             this.grpSetSonota.Text = "その他設定";
             // 
+            // cusCtlLabel2
+            // 
+            this.cusCtlLabel2.AutoSize = true;
+            this.cusCtlLabel2.Location = new System.Drawing.Point(5, 116);
+            this.cusCtlLabel2.Name = "cusCtlLabel2";
+            this.cusCtlLabel2.Size = new System.Drawing.Size(231, 12);
+            this.cusCtlLabel2.TabIndex = 9;
+            this.cusCtlLabel2.Text = "画面外に出てしまった時、自動的に復帰します。";
+            // 
+            // chkOutrangeRecovery
+            // 
+            this.chkOutrangeRecovery.AutoSize = true;
+            this.chkOutrangeRecovery.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkOutrangeRecovery.Location = new System.Drawing.Point(16, 131);
+            this.chkOutrangeRecovery.Name = "chkOutrangeRecovery";
+            this.chkOutrangeRecovery.Size = new System.Drawing.Size(145, 16);
+            this.chkOutrangeRecovery.TabIndex = 8;
+            this.chkOutrangeRecovery.Text = "画面外から自動復帰する";
+            this.chkOutrangeRecovery.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkOutrangeRecovery.UseVisualStyleBackColor = true;
+            this.chkOutrangeRecovery.CheckedChanged += new System.EventHandler(this.chkOutrangeRecovery_CheckedChanged);
+            // 
             // cusCtlLabel1
             // 
             this.cusCtlLabel1.AutoSize = true;
@@ -1907,27 +1931,16 @@
             this.tsmVersion.Text = "バージョン情報";
             this.tsmVersion.Click += new System.EventHandler(this.tsmVersion_Click);
             // 
-            // cusCtlLabel2
+            // btnVersion
             // 
-            this.cusCtlLabel2.AutoSize = true;
-            this.cusCtlLabel2.Location = new System.Drawing.Point(5, 116);
-            this.cusCtlLabel2.Name = "cusCtlLabel2";
-            this.cusCtlLabel2.Size = new System.Drawing.Size(231, 12);
-            this.cusCtlLabel2.TabIndex = 9;
-            this.cusCtlLabel2.Text = "画面外に出てしまった時、自動的に復帰します。";
-            // 
-            // chkOutrangeRecovery
-            // 
-            this.chkOutrangeRecovery.AutoSize = true;
-            this.chkOutrangeRecovery.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkOutrangeRecovery.Location = new System.Drawing.Point(16, 131);
-            this.chkOutrangeRecovery.Name = "chkOutrangeRecovery";
-            this.chkOutrangeRecovery.Size = new System.Drawing.Size(145, 16);
-            this.chkOutrangeRecovery.TabIndex = 8;
-            this.chkOutrangeRecovery.Text = "画面外から自動復帰する";
-            this.chkOutrangeRecovery.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkOutrangeRecovery.UseVisualStyleBackColor = true;
-            this.chkOutrangeRecovery.CheckedChanged += new System.EventHandler(this.chkOutrangeRecovery_CheckedChanged);
+            this.btnVersion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVersion.Location = new System.Drawing.Point(3, 211);
+            this.btnVersion.Name = "btnVersion";
+            this.btnVersion.Size = new System.Drawing.Size(85, 46);
+            this.btnVersion.TabIndex = 4;
+            this.btnVersion.Text = "バージョン\r\nチェック";
+            this.btnVersion.UseVisualStyleBackColor = true;
+            this.btnVersion.Click += new System.EventHandler(this.btnVersion_Click);
             // 
             // ActivitySetting
             // 
@@ -2156,5 +2169,6 @@
         private System.Windows.Forms.CheckBox chkHelth;
         private Control.CusCtlLabel cusCtlLabel2;
         private System.Windows.Forms.CheckBox chkOutrangeRecovery;
+        private System.Windows.Forms.Button btnVersion;
     }
 }

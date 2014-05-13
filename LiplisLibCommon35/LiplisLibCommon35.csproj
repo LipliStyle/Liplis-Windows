@@ -64,6 +64,9 @@
     <Compile Include="..\LiplisLibCommon\Common\BaseRandom.cs">
       <Link>Common\BaseRandom.cs</Link>
     </Compile>
+    <Compile Include="..\LiplisLibCommon\Common\LiplisUpdaterDefine.cs">
+      <Link>Common\LiplisUpdaterDefine.cs</Link>
+    </Compile>
     <Compile Include="..\LiplisLibCommon\Common\LpsCmdControl.cs">
       <Link>Common\LpsCmdControl.cs</Link>
     </Compile>
@@ -244,6 +247,9 @@
     <Compile Include="..\LiplisLibCommon\Msg\MsgShortNewsCm.cs">
       <Link>Msg\MsgShortNewsCm.cs</Link>
     </Compile>
+    <Compile Include="..\LiplisLibCommon\Msg\msgTargetVersion.cs">
+      <Link>Msg\msgTargetVersion.cs</Link>
+    </Compile>
     <Compile Include="..\LiplisLibCommon\Msg\msgVoiceRoid.cs">
       <Link>Msg\msgVoiceRoid.cs</Link>
     </Compile>
@@ -360,6 +366,9 @@
     </Compile>
     <Compile Include="..\LiplisLibCommon\Xml\RssReader.cs">
       <Link>Xml\RssReader.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Xml\VersionXml.cs">
+      <Link>Xml\VersionXml.cs</Link>
     </Compile>
     <Compile Include="..\LiplisLibCommon\Xml\XmlLinq.cs">
       <Link>Xml\XmlLinq.cs</Link>

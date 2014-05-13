@@ -36,12 +36,13 @@
             this.linkMail = new System.Windows.Forms.LinkLabel();
             this.lblVersion = new System.Windows.Forms.Label();
             this.btnClose = new Liplis.Control.CusCtlButton();
+            this.btnVersion = new Liplis.Control.CusCtlButton();
             ((System.ComponentModel.ISupportInitialize)(this.picVar)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl
             // 
-            this.lbl.Location = new System.Drawing.Point(21, 55);
+            this.lbl.Location = new System.Drawing.Point(21, 64);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(112, 24);
             this.lbl.TabIndex = 98;
@@ -112,11 +113,22 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnVersion
+            // 
+            this.btnVersion.Location = new System.Drawing.Point(38, 35);
+            this.btnVersion.Name = "btnVersion";
+            this.btnVersion.Size = new System.Drawing.Size(100, 23);
+            this.btnVersion.TabIndex = 100;
+            this.btnVersion.Text = "バージョン確認";
+            this.btnVersion.UseVisualStyleBackColor = true;
+            this.btnVersion.Click += new System.EventHandler(this.btnVersion_Click);
+            // 
             // ActivityVersion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 182);
+            this.Controls.Add(this.btnVersion);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.picVar);
@@ -144,5 +156,6 @@
         private System.Windows.Forms.LinkLabel linkMail;
         private System.Windows.Forms.Label lblVersion;
         private Control.CusCtlButton btnClose;
+        private Control.CusCtlButton btnVersion;
     }
 }

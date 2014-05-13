@@ -210,6 +210,17 @@ namespace Liplis.Common
         #endregion
 
         /// <summary>
+        /// アップデートプログラムの起動場所を返す
+        /// </summary>
+        /// <returns></returns>
+        #region getUpdatePrgPath
+        public static string getUpdatePrgPath()
+        {
+            return getAppPath() + "\\bin\\LiplisUpdater.exe";
+        }
+        #endregion
+
+        /// <summary>
         /// アプリケーションの起動パスを返す
         /// </summary>
         /// <returns></returns>
@@ -221,6 +232,8 @@ namespace Liplis.Common
         }
         #endregion
         
+
+
 
         /// <summary>
         /// ディレクトリの存在チェックを行い、無かったら生成する
