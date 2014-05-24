@@ -34,22 +34,30 @@
             this.tsmiEnd = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVersion = new System.Windows.Forms.ToolStripMenuItem();
-            this.prg = new System.Windows.Forms.ProgressBar();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.lblFile = new System.Windows.Forms.Label();
-            this.grpNew = new System.Windows.Forms.GroupBox();
-            this.btnCheck = new System.Windows.Forms.Button();
-            this.lblNewVer = new System.Windows.Forms.Label();
-            this.lblNewVerTitle = new System.Windows.Forms.Label();
+            this.grpLiplis = new System.Windows.Forms.GroupBox();
             this.grpNow = new System.Windows.Forms.GroupBox();
             this.lblNowVer = new System.Windows.Forms.Label();
             this.lblNowVerTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.picIcon = new System.Windows.Forms.PictureBox();
+            this.grpNew = new System.Windows.Forms.GroupBox();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.lblNewVer = new System.Windows.Forms.Label();
+            this.lblNewVerTitle = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.grpSkin = new System.Windows.Forms.GroupBox();
+            this.flpChar = new System.Windows.Forms.FlowLayoutPanel();
+            this.grpPrg = new System.Windows.Forms.GroupBox();
+            this.lblFile = new System.Windows.Forms.Label();
+            this.prg = new System.Windows.Forms.ProgressBar();
+            this.lblUpdateTitle = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.grpNew.SuspendLayout();
+            this.grpLiplis.SuspendLayout();
             this.grpNow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
+            this.grpNew.SuspendLayout();
+            this.grpSkin.SuspendLayout();
+            this.grpPrg.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -59,7 +67,7 @@
             this.ヘルプToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(464, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,72 +101,17 @@
             this.tsmiVersion.Text = "Liplis Update Toolバージョン情報";
             this.tsmiVersion.Click += new System.EventHandler(this.tsmiVersion_Click);
             // 
-            // prg
+            // grpLiplis
             // 
-            this.prg.Location = new System.Drawing.Point(12, 248);
-            this.prg.Name = "prg";
-            this.prg.Size = new System.Drawing.Size(440, 23);
-            this.prg.TabIndex = 2;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnUpdate.Location = new System.Drawing.Point(12, 176);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(440, 39);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "アップデート";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // lblFile
-            // 
-            this.lblFile.Location = new System.Drawing.Point(12, 226);
-            this.lblFile.Name = "lblFile";
-            this.lblFile.Size = new System.Drawing.Size(440, 16);
-            this.lblFile.TabIndex = 5;
-            this.lblFile.Text = "ファイル表示";
-            // 
-            // grpNew
-            // 
-            this.grpNew.Controls.Add(this.btnCheck);
-            this.grpNew.Controls.Add(this.lblNewVer);
-            this.grpNew.Controls.Add(this.lblNewVerTitle);
-            this.grpNew.Location = new System.Drawing.Point(12, 122);
-            this.grpNew.Name = "grpNew";
-            this.grpNew.Size = new System.Drawing.Size(440, 48);
-            this.grpNew.TabIndex = 15;
-            this.grpNew.TabStop = false;
-            this.grpNew.Text = "最新版情報";
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(6, 17);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(64, 23);
-            this.btnCheck.TabIndex = 17;
-            this.btnCheck.Text = "確認";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
-            // lblNewVer
-            // 
-            this.lblNewVer.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblNewVer.Location = new System.Drawing.Point(186, 17);
-            this.lblNewVer.Name = "lblNewVer";
-            this.lblNewVer.Size = new System.Drawing.Size(238, 24);
-            this.lblNewVer.TabIndex = 16;
-            this.lblNewVer.Text = "XXXXXXX";
-            // 
-            // lblNewVerTitle
-            // 
-            this.lblNewVerTitle.AutoSize = true;
-            this.lblNewVerTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblNewVerTitle.Location = new System.Drawing.Point(79, 17);
-            this.lblNewVerTitle.Name = "lblNewVerTitle";
-            this.lblNewVerTitle.Size = new System.Drawing.Size(100, 24);
-            this.lblNewVerTitle.TabIndex = 15;
-            this.lblNewVerTitle.Text = "バージョン";
+            this.grpLiplis.Controls.Add(this.grpNow);
+            this.grpLiplis.Controls.Add(this.grpNew);
+            this.grpLiplis.Controls.Add(this.btnUpdate);
+            this.grpLiplis.Location = new System.Drawing.Point(12, 29);
+            this.grpLiplis.Name = "grpLiplis";
+            this.grpLiplis.Size = new System.Drawing.Size(327, 434);
+            this.grpLiplis.TabIndex = 17;
+            this.grpLiplis.TabStop = false;
+            this.grpLiplis.Text = "本体アップデート";
             // 
             // grpNow
             // 
@@ -166,10 +119,10 @@
             this.grpNow.Controls.Add(this.lblNowVerTitle);
             this.grpNow.Controls.Add(this.lblTitle);
             this.grpNow.Controls.Add(this.picIcon);
-            this.grpNow.Location = new System.Drawing.Point(12, 29);
+            this.grpNow.Location = new System.Drawing.Point(6, 18);
             this.grpNow.Name = "grpNow";
-            this.grpNow.Size = new System.Drawing.Size(440, 87);
-            this.grpNow.TabIndex = 16;
+            this.grpNow.Size = new System.Drawing.Size(315, 87);
+            this.grpNow.TabIndex = 21;
             this.grpNow.TabStop = false;
             this.grpNow.Text = "インストール情報";
             // 
@@ -178,7 +131,7 @@
             this.lblNowVer.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblNowVer.Location = new System.Drawing.Point(186, 50);
             this.lblNowVer.Name = "lblNowVer";
-            this.lblNowVer.Size = new System.Drawing.Size(238, 24);
+            this.lblNowVer.Size = new System.Drawing.Size(121, 24);
             this.lblNowVer.TabIndex = 14;
             this.lblNowVer.Text = "XXXXXXX";
             // 
@@ -211,16 +164,118 @@
             this.picIcon.TabIndex = 11;
             this.picIcon.TabStop = false;
             // 
+            // grpNew
+            // 
+            this.grpNew.Controls.Add(this.btnCheck);
+            this.grpNew.Controls.Add(this.lblNewVer);
+            this.grpNew.Controls.Add(this.lblNewVerTitle);
+            this.grpNew.Location = new System.Drawing.Point(6, 111);
+            this.grpNew.Name = "grpNew";
+            this.grpNew.Size = new System.Drawing.Size(315, 48);
+            this.grpNew.TabIndex = 20;
+            this.grpNew.TabStop = false;
+            this.grpNew.Text = "最新版情報";
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(6, 17);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(64, 23);
+            this.btnCheck.TabIndex = 17;
+            this.btnCheck.Text = "確認";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            // 
+            // lblNewVer
+            // 
+            this.lblNewVer.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblNewVer.Location = new System.Drawing.Point(185, 16);
+            this.lblNewVer.Name = "lblNewVer";
+            this.lblNewVer.Size = new System.Drawing.Size(122, 24);
+            this.lblNewVer.TabIndex = 16;
+            this.lblNewVer.Text = "XXXXXXX";
+            // 
+            // lblNewVerTitle
+            // 
+            this.lblNewVerTitle.AutoSize = true;
+            this.lblNewVerTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblNewVerTitle.Location = new System.Drawing.Point(79, 17);
+            this.lblNewVerTitle.Name = "lblNewVerTitle";
+            this.lblNewVerTitle.Size = new System.Drawing.Size(100, 24);
+            this.lblNewVerTitle.TabIndex = 15;
+            this.lblNewVerTitle.Text = "バージョン";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnUpdate.Location = new System.Drawing.Point(6, 165);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(315, 39);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "アップデート";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // grpSkin
+            // 
+            this.grpSkin.Controls.Add(this.flpChar);
+            this.grpSkin.Location = new System.Drawing.Point(339, 29);
+            this.grpSkin.Name = "grpSkin";
+            this.grpSkin.Size = new System.Drawing.Size(433, 434);
+            this.grpSkin.TabIndex = 18;
+            this.grpSkin.TabStop = false;
+            this.grpSkin.Text = "スキンアップデート";
+            // 
+            // flpChar
+            // 
+            this.flpChar.AutoScroll = true;
+            this.flpChar.Location = new System.Drawing.Point(6, 18);
+            this.flpChar.Name = "flpChar";
+            this.flpChar.Size = new System.Drawing.Size(421, 410);
+            this.flpChar.TabIndex = 0;
+            // 
+            // grpPrg
+            // 
+            this.grpPrg.Controls.Add(this.lblUpdateTitle);
+            this.grpPrg.Controls.Add(this.lblFile);
+            this.grpPrg.Controls.Add(this.prg);
+            this.grpPrg.Location = new System.Drawing.Point(12, 469);
+            this.grpPrg.Name = "grpPrg";
+            this.grpPrg.Size = new System.Drawing.Size(754, 82);
+            this.grpPrg.TabIndex = 22;
+            this.grpPrg.TabStop = false;
+            this.grpPrg.Text = "進行状況";
+            // 
+            // lblFile
+            // 
+            this.lblFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFile.Location = new System.Drawing.Point(103, 22);
+            this.lblFile.Name = "lblFile";
+            this.lblFile.Size = new System.Drawing.Size(645, 16);
+            this.lblFile.TabIndex = 23;
+            // 
+            // prg
+            // 
+            this.prg.Location = new System.Drawing.Point(6, 50);
+            this.prg.Name = "prg";
+            this.prg.Size = new System.Drawing.Size(742, 23);
+            this.prg.TabIndex = 22;
+            // 
+            // lblUpdateTitle
+            // 
+            this.lblUpdateTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblUpdateTitle.Location = new System.Drawing.Point(6, 22);
+            this.lblUpdateTitle.Name = "lblUpdateTitle";
+            this.lblUpdateTitle.Size = new System.Drawing.Size(93, 16);
+            this.lblUpdateTitle.TabIndex = 24;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 283);
-            this.Controls.Add(this.grpNow);
-            this.Controls.Add(this.grpNew);
-            this.Controls.Add(this.lblFile);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.prg);
+            this.ClientSize = new System.Drawing.Size(784, 563);
+            this.Controls.Add(this.grpPrg);
+            this.Controls.Add(this.grpSkin);
+            this.Controls.Add(this.grpLiplis);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -231,11 +286,14 @@
             this.Shown += new System.EventHandler(this.frmMain_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.grpNew.ResumeLayout(false);
-            this.grpNew.PerformLayout();
+            this.grpLiplis.ResumeLayout(false);
             this.grpNow.ResumeLayout(false);
             this.grpNow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).EndInit();
+            this.grpNew.ResumeLayout(false);
+            this.grpNew.PerformLayout();
+            this.grpSkin.ResumeLayout(false);
+            this.grpPrg.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,20 +304,25 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fsmiFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiEnd;
-        private System.Windows.Forms.ProgressBar prg;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label lblFile;
-        private System.Windows.Forms.GroupBox grpNew;
-        private System.Windows.Forms.Button btnCheck;
-        private System.Windows.Forms.Label lblNewVer;
-        private System.Windows.Forms.Label lblNewVerTitle;
+        private System.Windows.Forms.ToolStripMenuItem ヘルプToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiVersion;
+        private System.Windows.Forms.GroupBox grpLiplis;
         private System.Windows.Forms.GroupBox grpNow;
         private System.Windows.Forms.Label lblNowVer;
         private System.Windows.Forms.Label lblNowVerTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox picIcon;
-        private System.Windows.Forms.ToolStripMenuItem ヘルプToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiVersion;
+        private System.Windows.Forms.GroupBox grpNew;
+        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Label lblNewVer;
+        private System.Windows.Forms.Label lblNewVerTitle;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.GroupBox grpSkin;
+        private System.Windows.Forms.FlowLayoutPanel flpChar;
+        private System.Windows.Forms.GroupBox grpPrg;
+        private System.Windows.Forms.Label lblUpdateTitle;
+        private System.Windows.Forms.Label lblFile;
+        private System.Windows.Forms.ProgressBar prg;
     }
 }
 

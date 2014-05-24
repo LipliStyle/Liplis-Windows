@@ -12,6 +12,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using Ionic.Zip;
+using Liplis.Cmp.Form;
 using Liplis.Common;
 using Liplis.Control;
 using Liplis.Msg;
@@ -25,6 +26,11 @@ namespace LiplisUpdater
         ///=====================================
         /// クラス
         private VersionXml version;
+
+        ///=====================================
+        /// オブジェクト
+        private ObjSkinSettingList ossList;
+
 
         ///=====================================
         /// フラグ
@@ -42,7 +48,26 @@ namespace LiplisUpdater
         {
             InitializeComponent();
             getCommand();
+            this.ossList = new ObjSkinSettingList();
+            this.ossList.loadAllSkinFile(LpsPathControllerCus.getSkinPath());
+            this.StartPosition = FormStartPosition.CenterScreen;
+            initCharList();
         }
+
+        /// <summary>
+        /// initCharList
+        /// キャラクターリストの初期化
+        /// </summary>
+        #region initCharList
+        private void initCharList()
+        {
+            //OSSリストをまわしてパネルを作成する
+            foreach (ObjSkinSetting oss in ossList.ossList)
+            {
+                addPanel(oss);
+            }
+        }
+        #endregion
 
         /// <summary>
         /// ウインドウの初期化
@@ -101,7 +126,7 @@ namespace LiplisUpdater
         /// </summary>
         private void getNowVersion()
         {
-            string liplisPath = LpsPathController.getAppPath().Substring(0,LpsPathController.getAppPath().Length - 3) + "Liplis.exe";
+            string liplisPath = LpsPathController.getAppPath() + "\\Liplis.exe";
 
             if (LpsPathController.checkFileExist(liplisPath))
             {
@@ -226,19 +251,33 @@ namespace LiplisUpdater
         {
             try
             {
+                lblUpdateTitle.Text = "Liplis";
+                lblFile.Text = "アップデート開始";
+
+                prg.Value = 0;
+                prg.Maximum = 100;
+
+                //フレームをロック
+                grpOn();
+
+                //URL取得
                 string url = LiplisUpdaterDefine.getUrlRoot(debug) + version.file;
 
-                string liplisPath = LpsPathController.getAppPath().Substring(0, LpsPathController.getAppPath().Length - 3);
-                string archivePath = liplisPath + "temp\\" + version.file;
-                string unZipPathRoot = liplisPath + "temp\\";
-                string unZipPath = liplisPath + "temp\\" + version.file.Substring(0, version.file.Length - 3);
+                //パスを取得
+                string liplisPath = LpsPathControllerCus.getAppPath();
+                string archivePath = liplisPath + "\\temp\\" + version.file;
+                string unZipPathRoot = liplisPath + "\\temp\\";
+                string unZipPath = liplisPath + "\\temp\\" + version.file.Substring(0, version.file.Length - 3);
 
+                prg.Value = 10;
                 //パッチをダウンロードする
                 if (downLoadNewLiplis(url, archivePath))
                 {
+                    prg.Value = 20;
                     //パッチの解凍
                     if (unZip(archivePath, unZipPathRoot))
                     {
+                        prg.Value = 30;
                         //ファイルの更新
                         if (doPatch(liplisPath, unZipPath))
                         {
@@ -270,7 +309,11 @@ namespace LiplisUpdater
             {
                 return false;
             }
-
+            finally
+            {
+                lblUpdateTitle.Text = "";
+                grpOff();
+            }
         }
 
         /// <summary>
@@ -389,6 +432,83 @@ namespace LiplisUpdater
                 return true;
             }
             
+        }
+        #endregion
+
+        ///====================================================================
+        ///
+        ///                          フォーム操作
+        ///                         
+        ///====================================================================
+
+        #region addPanel
+
+        /// <summary>
+        /// addLog
+        /// パネルの追加
+        /// </summary>
+        private void addPanel(ObjSkinSetting oss)
+        {
+            //新規要素の追加
+            CharPanelUpdate d = new CharPanelUpdate(this,oss);
+            flpChar.Controls.Add(d);
+            this.Refresh();
+        }
+        
+        /// <summary>
+        /// グループをロックする
+        /// </summary>
+        public void  grpOn()
+        {
+            grpLiplis.Enabled = false;
+            grpSkin.Enabled = false;
+        }
+
+        /// <summary>
+        /// グループのロックを解除する
+        /// </summary>
+        public void grpOff()
+        {
+            grpLiplis.Enabled = true;
+            grpSkin.Enabled = true;
+        }
+
+        /// <summary>
+        /// タイトルラベル
+        /// </summary>
+        /// <param name="str"></param>
+        public void setTitleLbl(string str)
+        {
+            lblUpdateTitle.Text = str;
+        }
+
+        /// <summary>
+        /// ファイルラベル
+        /// </summary>
+        /// <param name="str"></param>
+        public void setFileLbl(string str)
+        {
+            lblFile.Text = str;
+        }
+
+        /// <summary>
+        /// PRGを初期化する
+        /// </summary>
+        /// <param name="max"></param>
+        public void initPrg(int max)
+        {
+            prg.Value = 0;
+            prg.Minimum = 0;
+            prg.Maximum = max;
+        }
+
+        /// <summary>
+        /// PRGをセットする
+        /// </summary>
+        /// <param name="val"></param>
+        public void setPrgVal(int val)
+        {
+            prg.Value = val;
         }
 
         #endregion

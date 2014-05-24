@@ -64,9 +64,6 @@
     <Compile Include="..\LiplisLibCommon\Common\BaseRandom.cs">
       <Link>Common\BaseRandom.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Common\LiplisUpdaterDefine.cs">
-      <Link>Common\LiplisUpdaterDefine.cs</Link>
-    </Compile>
     <Compile Include="..\LiplisLibCommon\Common\LpsCmdControl.cs">
       <Link>Common\LpsCmdControl.cs</Link>
     </Compile>

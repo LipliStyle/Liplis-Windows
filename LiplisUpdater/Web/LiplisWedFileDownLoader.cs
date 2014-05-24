@@ -30,7 +30,7 @@ namespace Liplis.Web
             string fileName = "";
             try
             {
-                fileName = LpsPathController.getTempPath() + getJpgFileName(uri);
+                fileName = LpsPathControllerCus.getTempPath() + getJpgFileName(uri);
                 downLoad(uri, fileName);
 
                 return fileName;
@@ -85,11 +85,11 @@ namespace Liplis.Web
             }
             catch (System.Net.WebException)
             {
-
+                LpsLogControllerCus.d("downLoad_err");
             }
             catch 
             {
-
+                LpsLogControllerCus.d("downLoad_err");
             }
             finally
             {

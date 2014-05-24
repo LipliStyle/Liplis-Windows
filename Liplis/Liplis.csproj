@@ -139,6 +139,7 @@
     <Compile Include="Cmp\Tree\LiplisTreeNodeCld.cs" />
     <Compile Include="Cmp\Tree\LiplisTreeNodePar.cs" />
     <Compile Include="Common\LiplisLog.cs" />
+    <Compile Include="Common\LiplisUpdaterDefine.cs" />
     <Compile Include="Common\LpsBaseMovieConverter.cs" />
     <Compile Include="Common\LpsDelegate.cs" />
     <Compile Include="Common\LiplisDefine.cs" />

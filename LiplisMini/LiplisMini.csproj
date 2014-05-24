@@ -162,6 +162,9 @@
     <Compile Include="..\Liplis\Common\LiplisLog.cs">
       <Link>Common\LiplisLog.cs</Link>
     </Compile>
+    <Compile Include="..\Liplis\Common\LiplisUpdaterDefine.cs">
+      <Link>Common\LiplisUpdaterDefine.cs</Link>
+    </Compile>
     <Compile Include="..\Liplis\Common\LpsBaseMovieConverter.cs">
       <Link>Common\LpsBaseMovieConverter.cs</Link>
     </Compile>
