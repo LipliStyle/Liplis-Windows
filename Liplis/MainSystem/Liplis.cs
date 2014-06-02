@@ -305,7 +305,7 @@ namespace Liplis.MainSystem
             //チャットファイルの読み込み
             olc = new ObjLiplisChat(os.loadSkin);
 
-            //タッチ定義の追加
+            //2014/05/29 ver4.0.0 タッチ定義の追加
             olt = new ObjLiplisTouch(os.loadSkin);
 
             //ウインドウファイルの初期化
@@ -898,7 +898,8 @@ namespace Liplis.MainSystem
         #region Liplis_Click
         private void Liplis_Click(object sender, EventArgs e)
         {
-            checkClick(1);
+            //ここに処理を追記すると、マウスダウン、マウスアップの処理が潰れるため、個々には処理を書かない
+            //checkClick(1);
         }
         #endregion
 
@@ -1770,6 +1771,10 @@ namespace Liplis.MainSystem
             if (e.Button == MouseButtons.Right)
             {
                 onRightClick(); 
+            }
+            else if(e.Button == MouseButtons.Left)
+            {
+                checkClick(1);
             }
         }
         #endregion

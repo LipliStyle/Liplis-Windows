@@ -303,12 +303,14 @@ namespace Liplis.Msg
 			readXmlList(xmlDoc.SelectNodes(b31), b31l);
 			readXmlList(xmlDoc.SelectNodes(b32), b32l);
 
-            //タッチリスト作成
+            //タッチ設定のロード
             if (touch.Length > 0)
             {
                 readXmlList(xmlDoc.SelectNodes(touch), tl);
             }
-            else
+
+            //タッチ設定が無い場合は、空のタッチリスト作成
+            if (tl.Count < 1)
             {
                 foreach (string r11 in b11l)
                 {

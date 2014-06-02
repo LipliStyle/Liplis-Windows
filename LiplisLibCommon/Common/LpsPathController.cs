@@ -216,7 +216,7 @@ namespace Liplis.Common
         #region getUpdatePrgPath
         public static string getUpdatePrgPath()
         {
-            return getAppPath() + "\\bin\\LiplisUpdater.exe";
+            return getAppPath() + "\\LiplisUpdater.exe";
         }
         #endregion
 

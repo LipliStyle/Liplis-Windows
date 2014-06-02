@@ -3,6 +3,13 @@
 //  ClassName : ObjLiplisTouch
 //  概要      : タッチオブジェクト
 //
+//sens 10段階
+//type 0 なで
+//1 クリック
+//2 ダブルクリック
+// 各座標は必須設定
+// chat 設定は任意だが、指定しないと何も喋らない。chatに定義した定義名を設定する。
+// name
 //  Liplis4.0.2 2014/5/1 タッチ定義追加
 //  Copyright(c) 2010-2014 LipliStyle.Sachin
 //=======================================================================
@@ -177,19 +184,16 @@ namespace Liplis.Msg
                     continue;
                 }
 
-                int res = msg.checkClick(x, y);
-
-                if (res == 2)
+                if (mode == msg.type)
                 {
-                    result.result = 2;
-                    result.obj = msg;
-
-                    return result;
+                    result.result = mode;
+                    if (msg.checkClick(x, y))
+                    {
+                        result.obj = msg;
+                        return result;
+                    }
                 }
-                else if (res == 1)
-                {
-                    result.result = 1;
-                }
+               
             }
 
             return result;
@@ -368,10 +372,8 @@ namespace Liplis.Msg
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public int checkClick(int x, int y)
+        public bool checkClick(int x, int y)
         {
-            int result = 0;
-
             //句形範囲チェック
             if (rect.Contains(x, y))
             {
@@ -379,11 +381,11 @@ namespace Liplis.Msg
                 chatSelected = getChat();
 
                 //2を返す
-                result = 2;
+                return true;
             }
 
             //結果を返す
-            return result;
+            return false;
         }
 
         /// <summary>

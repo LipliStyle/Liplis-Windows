@@ -90,20 +90,22 @@ namespace Liplis.MainSystem
         #region initObject
         protected override void initObject()
         {
-            ps      = SystemInformation.PowerStatus;
-            os      = new ObjSetting();
-            ossList = new ObjSkinSettingList();
-            oss     = ossList.loadTargetSkin(os.loadSkin);
-            obl     = new ObjBodyListMini(os.loadSkin); this.fitMiniSize();             //ミニオーバーライド + サイズフィット
-            ob      = obl.getLiplisBody(0, 0);
-            olc     = new ObjLiplisChat(os.loadSkin);
-            owf     = new ObjWindowFile(os.loadSkin);
-            obtry   = new ObjBattery(os.loadSkin, this.ps);
-            otp     = new ObjTopicMini(os, oss);
-            li      = new LiplisIconMini(this);
-            lpi     = new LiplisPopIcon(this, 0);
-            ltb     = new LiplisTaskBar(this);
-            obr     = new ObjBroom();
+            ps         = SystemInformation.PowerStatus;
+            os         = new ObjSetting();
+            ossList    = new ObjSkinSettingList();
+            oss        = ossList.loadTargetSkin(os.loadSkin);
+            obl        = new ObjBodyListMini(os.loadSkin); this.fitMiniSize();             //ミニオーバーライド + サイズフィット
+            ob         = obl.getLiplisBody(0, 0);
+            olc        = new ObjLiplisChat(os.loadSkin);
+            olt        = new ObjLiplisTouch(os.loadSkin);
+            owf        = new ObjWindowFile(os.loadSkin);
+            obtry      = new ObjBattery(os.loadSkin, this.ps);
+            otp        = new ObjTopicMini(os, oss);
+            li         = new LiplisIconMini(this);
+            lpi        = new LiplisPopIcon(this, 0);
+            ltb        = new LiplisTaskBar(this);
+            obr        = new ObjBroom();
+            sumEmotion = new MsgEmotion();
             this.AddOwnedForm(li);
         }
         #endregion

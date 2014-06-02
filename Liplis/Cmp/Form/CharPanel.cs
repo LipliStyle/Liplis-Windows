@@ -119,7 +119,7 @@ namespace Liplis.Cmp.Form
             // 
             // pic
             // 
-            this.pic.Location = new System.Drawing.Point(2, 17);
+            this.pic.Location = new System.Drawing.Point(2, 2);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(75, 75);
             this.pic.TabIndex = 0;

@@ -10,6 +10,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using Ionic.Zip;
 using Liplis.Common;
@@ -115,7 +116,7 @@ namespace Liplis.Cmp.Form
             // 
             // pic
             // 
-            this.pic.Location = new System.Drawing.Point(2, 17);
+            this.pic.Location = new System.Drawing.Point(2, 2);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(75, 75);
             this.pic.TabIndex = 0;
@@ -161,10 +162,10 @@ namespace Liplis.Cmp.Form
             {
                 newOlv = new ObjLiplisVersion(oss.charName, nowOlv.versionUrl);
 
-                if (nowOlv.skinVersion != newOlv.skinVersion)
+                if (!newOlv.skinVersion.Equals("") && nowOlv.skinVersion != newOlv.skinVersion)
                 {
                     this.btnUpdate.Enabled = true;
-                    baseColor = Color.FromArgb(255,228,96);
+                    baseColor = Color.FromArgb(255, 228, 96);
                     this.BackColor = baseColor;
                 }
                 else
@@ -172,7 +173,7 @@ namespace Liplis.Cmp.Form
                     baseColor = Color.Azure;
                     this.BackColor = baseColor;
                     this.btnUpdate.Enabled = false;
-                }                
+                }  
             }
             else
             {
@@ -416,8 +417,9 @@ namespace Liplis.Cmp.Form
             try
             {
                 Invoke(new LpsDelegate.dlgS1ToVoid(main.setFileLbl), "パッチ展開中");
+
                 Application.DoEvents();
-                using (ZipFile zip = ZipFile.Read(archivePath))
+                using (ZipFile zip = ZipFile.Read(archivePath, getReadOptions()))
                 {
                     //(2)解凍時に既にファイルがあったら上書きする設定
                     zip.ExtractExistingFile = ExtractExistingFileAction.OverwriteSilently;
@@ -431,6 +433,20 @@ namespace Liplis.Cmp.Form
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// getReadOptions
+        /// エンコーディングをsift-jisにしないと文字化けするため、オプション指定
+        /// </summary>
+        /// <returns></returns>
+        private ReadOptions getReadOptions()
+        {
+            ReadOptions ro = new ReadOptions();
+
+            ro.Encoding = Encoding.GetEncoding("shift_jis");
+
+            return ro;
         }
 
         /// <summary>

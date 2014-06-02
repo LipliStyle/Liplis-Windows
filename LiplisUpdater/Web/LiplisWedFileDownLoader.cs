@@ -13,6 +13,7 @@ using Liplis.Common;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Liplis.Web
 {
@@ -62,12 +63,13 @@ namespace Liplis.Web
                 st = Res.GetResponseStream();
 
                 //応答データをファイルに書き込む
-                byte[] readData = new byte[10240];
+                byte[] readData = new byte[102400];
                 int readSize = 0;
 
                 //このフォウには意味があるようです。
                 for (; ; )
                 {
+                    Application.DoEvents();
                     readSize = st.Read(readData, 0, readData.Length);
                     if (readSize == 0){ break; }
                     fs.Write(readData, 0, readSize);
