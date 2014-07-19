@@ -143,5 +143,30 @@ namespace Liplis.Msg
         }
         #endregion
 
+        /// <summary>
+        /// タッチリストを取得する
+        /// </summary>
+        /// <returns></returns>
+        #region getTouch
+        public string getTouch()
+        {
+            string result = "";
+
+            //コンマ区切りで設定
+            foreach (string touch in lstTouch)
+            {
+                result = result + touch + ",";
+            }
+
+            //最後のコンマ除去
+            if (result.Length > 0)
+            {
+                result = result.Substring(0, result.Length - 1);
+            }
+
+            return result;
+        }
+        #endregion
+
     }
 }

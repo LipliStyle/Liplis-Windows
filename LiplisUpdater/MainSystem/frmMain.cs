@@ -95,6 +95,7 @@ namespace LiplisUpdater
                 if (lblNewVer.Text.Equals(lblNowVer.Text))
                 {
                     CenterMessageBox.Show(this, "最新バージョンです。" + Environment.NewLine + "アップデートの必要はありません。", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnUpdate.Enabled = false;
                 }
                 else
                 {
