@@ -43,8 +43,30 @@ namespace Liplis.MainSystem
             this.Width = this.obl.width;
             this.Height = this.obl.height;
             this.cmp.Radius = 100;
+
+            this.StartPosition = FormStartPosition.Manual;
+
+            //横位置の調整
+            //fixLocationX();
         }
         #endregion
+
+        //private void fixLocationX()
+        //{
+        //    if (this.Width == 200)
+        //    {
+        //        this.Location = new System.Drawing.Point(0,0);
+        //    }
+        //    else if (this.Width > 200)
+        //    {
+        //        this.Location = new System.Drawing.Point(this.Width - 200, 0);
+        //    }
+        //    else
+        //    {
+        //        this.Location = new System.Drawing.Point(200 - this.Width, 0);
+        //    }
+
+        //}
         
 
         ///====================================================================

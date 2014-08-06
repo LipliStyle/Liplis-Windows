@@ -144,7 +144,7 @@ namespace Liplis.Activity
         {
             int ftLocX = this.Left;
             int ftLocY = this.Top;
-            int targetX = liplisX;
+            int targetX = liplisX + ((liplisWidth - 200)/2);
             int targetY = liplisY - this.Height;
             int moveValX = 0;
             int moveValY = 0;
