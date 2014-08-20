@@ -193,7 +193,6 @@ namespace Liplis.Msg
                         return result;
                     }
                 }
-               
             }
 
             return result;

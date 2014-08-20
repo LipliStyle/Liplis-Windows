@@ -42,6 +42,10 @@
 //  2014/05/01 Liplis4.0.2 タッチ定義追加
 //  2014/05/01 Liplis4.0.3 時報追加
 //  2014/08/07 Liplis4.0.4 LiplisMiniのトークウインドウ表示位置を調整
+//  2014/08/20 Liplis4.0.5 設定画面で、「環境設定」をクリックしたときに「その他設定」が出てこない問題修正
+//                         LiplisMiniにタッチ機能追加
+//                         公開最新版以上のバージョンのときに、最新版が有る旨のメッセージを出さないように修正
+//                         アイコンを整列設定にした場合、立ち絵の幅が少ないと切れてしまう問題修正
 //
 //
 // ■運用
@@ -441,7 +445,7 @@ namespace Liplis.MainSystem
             }
 
             //バージョン比較
-            if (!version.version.Equals(ver.ProductVersion))
+            if (version.version.CompareTo(ver.ProductVersion) > 0)
             {
                 //アップデート情報を追加する
                 liplisNowTopic.nameList.Add("@");
@@ -1664,11 +1668,12 @@ namespace Liplis.MainSystem
 
         /// <summary>
         /// マウスダウン時処理
+        /// ☆Miniオーバーライド
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">MouseEventArgs</param>
         #region onMouseDown
-        protected void onMouseDown(object sender, MouseEventArgs e)
+        protected virtual void onMouseDown(object sender, MouseEventArgs e)
         {
             try
             {
@@ -1706,11 +1711,12 @@ namespace Liplis.MainSystem
 
         /// <summary>
         /// マウスムーブ時処理
+        /// ☆Miniオーバーライド
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">MouseEventArgs</param>
         #region onMouseMove
-        protected void onMouseMove(object sender, MouseEventArgs e)
+        protected virtual void onMouseMove(object sender, MouseEventArgs e)
         {
             try
             {
@@ -3862,16 +3868,17 @@ namespace Liplis.MainSystem
         #region タッチ関連処理
         /// <summary>
         /// タッチチェック
+        /// ☆Miniオーバーライド
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        protected void checkTouch(int x, int y)
+        protected virtual void checkTouch(int x, int y)
         {
             objTouchResult result = olt.checkTouch(x, y, ob.getLstTouch());
 
             if (result.result == 2)
             {
-                this.Cursor = System.Windows.Forms.Cursors.Hand;
+                this.Cursor = Cursors.Hand;
 
                 //チャットタイプを取得
                 MsgShortNews chatType = olc.getChatWord("touch", result.obj.chatSelected);
@@ -3884,7 +3891,7 @@ namespace Liplis.MainSystem
             }
             else if (result.result == 1)
             {
-                this.Cursor = System.Windows.Forms.Cursors.Hand;
+                this.Cursor = Cursors.Hand;
             }
             else
             {
@@ -3894,10 +3901,11 @@ namespace Liplis.MainSystem
 
         /// <summary>
         /// タッチチェック
+        /// ☆Miniオーバーライド
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        protected void checkClick(int mode)
+        protected virtual void checkClick(int mode)
         {
             //X座標を取得する
             int x = System.Windows.Forms.Cursor.Position.X - this.Left;
@@ -3908,7 +3916,7 @@ namespace Liplis.MainSystem
 
             if (result.result == mode)
             {
-                this.Cursor = System.Windows.Forms.Cursors.Hand;
+                this.Cursor = Cursors.Hand;
 
                 //チャットタイプを取得
                 MsgShortNews chatType = olc.getChatWord("touch", result.obj.chatSelected);

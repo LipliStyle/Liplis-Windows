@@ -432,7 +432,7 @@ namespace Liplis.Activity
             grpSetDownLoad.Visible = false;
             grpMenu.Visible        = true;
             grpWindow.Visible      = true;
-            grpSetSonota.Visible   = false;
+            grpSetSonota.Visible    = true;
             grpReginon.Visible     = false;
             grpTopicJump.Visible   = false;
             grpVoice.Visible       = false;

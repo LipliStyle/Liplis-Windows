@@ -15,6 +15,7 @@ using Liplis.Activity;
 using Liplis.Common;
 using Liplis.Msg;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Liplis.MainSystem
 {
@@ -225,6 +226,53 @@ namespace Liplis.MainSystem
             {
                 onRightClick();
             }
+            else if (e.Button == MouseButtons.Left)
+            {
+                checkClick(1);
+            }
+        }
+        #endregion
+
+
+        /// <summary>
+        /// マウスムーブ時処理
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">MouseEventArgs</param>
+        #region onMouseMove
+        protected void onMouseMove(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+                {
+                    if (os.mouseCtrl == 1)
+                    {
+                        //コントロールロックチェック
+                        if (ctrlKeyFlg)
+                        {
+                            this.Left += e.X - mousePoint.X;
+                            this.Top += e.Y - mousePoint.Y;
+                            this.li.setSurface(this.Left, this.Top, this.Width, this.Height);
+                        }
+                    }
+                    else
+                    {
+                        //位置を記憶する
+                        this.Left += e.X - mousePoint.X;
+                        this.Top += e.Y - mousePoint.Y;
+                        this.li.setSurface(this.Left, this.Top, this.Width, this.Height);
+                    }
+                }
+
+                //Liplis4.0.2 指定矩形チェック
+                checkTouch(e.X * 3 / 2, e.Y * 3 / 2);
+
+            }
+            catch (System.Exception err)
+            {
+                LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
+            }
         }
         #endregion
 
@@ -375,6 +423,82 @@ namespace Liplis.MainSystem
             }
         }
         #endregion
+
+        ///====================================================================
+        ///
+        ///                        タッチ関連処理
+        ///                         
+        ///====================================================================
+        #region タッチ関連処理
+        /// <summary>
+        /// タッチチェック
+        /// ☆Miniオーバーライド
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        protected override void checkTouch(int x, int y)
+        {
+            objTouchResult result = olt.checkTouch(x, y, ob.getLstTouch());
+
+            if (result.result == 2)
+            {
+                this.Cursor = Cursors.Hand;
+
+                //チャットタイプを取得
+                MsgShortNews chatType = olc.getChatWord("touch", result.obj.chatSelected);
+
+                if (chatType.nameList.Count > 0)
+                {
+                    //おしゃべり
+                    talk(chatType);
+                }
+            }
+            else if (result.result == 1)
+            {
+                this.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        /// <summary>
+        /// タッチチェック
+        /// ☆Miniオーバーライド
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        protected override void checkClick(int mode)
+        {
+            //X座標を取得する
+            int x = System.Windows.Forms.Cursor.Position.X - this.Left;
+            //Y座標を取得する
+            int y = System.Windows.Forms.Cursor.Position.Y - this.Top;
+
+            objTouchResult result = olt.checkClick(x, y, ob.getLstTouch(), mode);
+
+            if (result.result == mode)
+            {
+                this.Cursor = Cursors.Hand;
+
+                //チャットタイプを取得
+                MsgShortNews chatType = olc.getChatWord("touch", result.obj.chatSelected);
+
+                if (chatType.nameList.Count > 0)
+                {
+                    //おしゃべり
+                    talk(chatType);
+                }
+            }
+            else
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+        #endregion
+
+
 
     }
 }

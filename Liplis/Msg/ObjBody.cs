@@ -136,7 +136,7 @@ namespace Liplis.Msg
         #endregion
 
         /// <summary>
-        /// タッチリストのしょtク
+        /// タッチリストの取得
         /// </summary>
         /// <returns></returns>
         #region getLstTouch

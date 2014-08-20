@@ -135,6 +135,9 @@ namespace Liplis.MainSystem
             //画面サイズの調整と
             setWindowProperty(FctCreateBackground.createTransParentBgi(this.wid,this.hi));
 
+            //リプリスのWIDTHと合わせる
+            this.Width = lips.Width;
+
             //サーフェスの設定
             this.btnNext.Top        = this.Height - 124;
             this.btnNext.Left       = this.Width / 5 - 16;
