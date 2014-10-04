@@ -1660,15 +1660,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LiplisLibCircMen\LiplisLibCircMen.csproj">
-      <Project>{3CCE5DDC-F9F5-408B-B1B8-A456F0FC698F}</Project>
+      <Project>{3cce5ddc-f9f5-408b-b1b8-a456f0fc698f}</Project>
       <Name>LiplisLibCircMen</Name>
     </ProjectReference>
     <ProjectReference Include="..\LiplisLibCommon35\LiplisLibCommon35.csproj">
-      <Project>{95675FF2-9139-4ED1-B93A-A5D1F3E33072}</Project>
+      <Project>{95675ff2-9139-4ed1-b93a-a5d1f3e33072}</Project>
       <Name>LiplisLibCommon35</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

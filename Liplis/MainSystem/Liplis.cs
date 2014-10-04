@@ -1089,7 +1089,7 @@ namespace Liplis.MainSystem
         /// <param name="sender">sender</param>
         /// <param name="e">EventArgs</param>
         #region Liplis_Load
-        protected void Liplis_Load(object sender, EventArgs e)
+        protected virtual void Liplis_Load(object sender, EventArgs e)
         {
             //まずアラームフラグを0に退避
             flgAlarm = 0;
@@ -2284,7 +2284,7 @@ namespace Liplis.MainSystem
         /// 挨拶する
         /// </summary>
         #region greet
-        protected void greet()
+        protected virtual void greet()
         {
             //挨拶の選定
             liplisNowTopic = olc.getGreetMessage(LiplisDefine.CHAT_DEF_GREET);
@@ -2673,7 +2673,7 @@ namespace Liplis.MainSystem
         /// チャットストップ
         /// </summary>
         #region chatStop
-        protected void chatStop()
+        protected virtual void chatStop()
         {
             try{
                 //スルーカウントに移行

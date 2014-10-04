@@ -240,7 +240,7 @@ namespace Liplis.MainSystem
         /// <param name="sender">sender</param>
         /// <param name="e">MouseEventArgs</param>
         #region onMouseMove
-        protected void onMouseMove(object sender, MouseEventArgs e)
+        protected override void onMouseMove(object sender, MouseEventArgs e)
         {
             try
             {

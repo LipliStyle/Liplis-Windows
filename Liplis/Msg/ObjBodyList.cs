@@ -14,12 +14,12 @@ using Liplis.Xml;
 
 namespace Liplis.Msg
 {
-    [Serializable]
+	[Serializable]
 	public class ObjBodyList : XmlReadList
 	{
-        ///==========================
-        /// スキンパス
-        protected string loadSkin;
+		///==========================
+		/// スキンパス
+		protected string loadSkin;
 
 		///==========================
 		/// ボディプロパティ
@@ -52,13 +52,13 @@ namespace Liplis.Msg
 		public LstShufflableList<ObjBody> proudPList { get; set; }
 		public LstShufflableList<ObjBody> proudMList { get; set; }
 
-        public LstShufflableList<ObjBody> sitdownList { get; set; }
+		public LstShufflableList<ObjBody> sitdownList { get; set; }
 
-        ///=============================
-        /// 破損ボディ
-        public LstShufflableList<ObjBody> batteryHiList { get; set; }			//小破 2013/10/27 ver3.2.0
-        public LstShufflableList<ObjBody> batteryMidList { get; set; }			//中破 2013/10/27 ver3.2.0
-        public LstShufflableList<ObjBody> batteryLowList { get; set; }			//大破 2013/10/27 ver3.2.0
+		///=============================
+		/// 破損ボディ
+		public LstShufflableList<ObjBody> batteryHiList { get; set; }			//小破 2013/10/27 ver3.2.0
+		public LstShufflableList<ObjBody> batteryMidList { get; set; }			//中破 2013/10/27 ver3.2.0
+		public LstShufflableList<ObjBody> batteryLowList { get; set; }			//大破 2013/10/27 ver3.2.0
 
 		///==========================
 		/// インデックス
@@ -73,8 +73,8 @@ namespace Liplis.Msg
 		{
 			try
 			{
-                //ロードスキン
-                this.loadSkin = loadSkin;
+				//ロードスキン
+				this.loadSkin = loadSkin;
 
 				//xmlドキュメント
 				xmlDoc = new XmlDocument();
@@ -107,32 +107,32 @@ namespace Liplis.Msg
 			}
 			catch (System.Exception err)
 			{
-                LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
+				LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
 				createDefault();
 			}
 		}
 		#endregion
 
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        #region ObjBodyList
-        public ObjBodyList()
-        {
-            try
-            {
-                this.height = 0;
-                this.width = 0;
-                this.locX = 0;
-                this.locY = 0;
-            }
-            catch (System.Exception err)
-            {
-                LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
-                createDefault();
-            }
-        }
-        #endregion
+		/// <summary>
+		/// コンストラクター
+		/// </summary>
+		#region ObjBodyList
+		public ObjBodyList()
+		{
+			try
+			{
+				this.height = 0;
+				this.width = 0;
+				this.locX = 0;
+				this.locY = 0;
+			}
+			catch (System.Exception err)
+			{
+				LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
+				createDefault();
+			}
+		}
+		#endregion
 
 		///====================================================================
 		///
@@ -143,10 +143,10 @@ namespace Liplis.Msg
 		/// <summary>
 		/// getSizeAndLocation
 		/// ロケーションとサイズを取得する
-        /// ☆Miniオーバーライド
-        /// </summary>
-        #region getSizeAndLocation
-        protected virtual void getSizeAndLocation()
+		/// ☆Miniオーバーライド
+		/// </summary>
+		#region getSizeAndLocation
+		protected virtual void getSizeAndLocation()
 		{
 			this.height = rXLMSInt(xmlDoc.SelectNodes(LiplisDefine.BODY_HEIGHT));
 			this.width = rXLMSInt(xmlDoc.SelectNodes(LiplisDefine.BODY_WIDHT));
@@ -182,7 +182,7 @@ namespace Liplis.Msg
 			calmlyMList = new LstShufflableList<ObjBody>();
 			proudPList = new LstShufflableList<ObjBody>();
 			proudMList = new LstShufflableList<ObjBody>();
-            sitdownList = new LstShufflableList<ObjBody>();
+			sitdownList = new LstShufflableList<ObjBody>();
 		}
 		#endregion
 
@@ -213,70 +213,70 @@ namespace Liplis.Msg
 			calmlyMList     = readResult(LiplisDefine.BODY_CLAMLY_M_11, LiplisDefine.BODY_CLAMLY_M_12, LiplisDefine.BODY_CLAMLY_M_21, LiplisDefine.BODY_CLAMLY_M_22, LiplisDefine.BODY_CLAMLY_M_31, LiplisDefine.BODY_CLAMLY_M_32, LiplisDefine.BODY_CLAMLY_M_TOUCH);
 			proudPList      = readResult(LiplisDefine.BODY_PROUD_P_11, LiplisDefine.BODY_PROUD_P_12, LiplisDefine.BODY_PROUD_P_21, LiplisDefine.BODY_PROUD_P_22, LiplisDefine.BODY_PROUD_P_31, LiplisDefine.BODY_PROUD_P_32, LiplisDefine.BODY_PROUD_P_TOUCH);
 			proudMList      = readResult(LiplisDefine.BODY_PROUD_M_11, LiplisDefine.BODY_PROUD_M_12, LiplisDefine.BODY_PROUD_M_21, LiplisDefine.BODY_PROUD_M_22, LiplisDefine.BODY_PROUD_M_31, LiplisDefine.BODY_PROUD_M_32, LiplisDefine.BODY_PROUD_M_TOUCH);
-            sitdownList     = readResult(LiplisDefine.BODY_SITDOWN_11, LiplisDefine.BODY_SITDOWN_12, LiplisDefine.BODY_SITDOWN_21, LiplisDefine.BODY_SITDOWN_22, LiplisDefine.BODY_SITDOWN_31, LiplisDefine.BODY_SITDOWN_32,"");
-            batteryHiList   = readResult(LiplisDefine.BODY_BATTERY_HI_11, LiplisDefine.BODY_BATTERY_HI_12, LiplisDefine.BODY_BATTERY_HI_21, LiplisDefine.BODY_BATTERY_HI_22, LiplisDefine.BODY_BATTERY_HI_31, LiplisDefine.BODY_BATTERY_HI_32, LiplisDefine.BODY_BATTERY_HI_TOUCH);			            //小破 2013/10/27 ver3.2.0
-            batteryMidList  = readResult(LiplisDefine.BODY_BATTERY_MID_11, LiplisDefine.BODY_BATTERY_MID_12, LiplisDefine.BODY_BATTERY_MID_21, LiplisDefine.BODY_BATTERY_MID_22, LiplisDefine.BODY_BATTERY_MID_31, LiplisDefine.BODY_BATTERY_MID_32, LiplisDefine.BODY_BATTERY_MID_TOUCH);			//中破 2013/10/27 ver3.2.0
-            batteryLowList = readResult(LiplisDefine.BODY_BATTERY_LOW_11, LiplisDefine.BODY_BATTERY_LOW_12, LiplisDefine.BODY_BATTERY_LOW_21, LiplisDefine.BODY_BATTERY_LOW_22, LiplisDefine.BODY_BATTERY_LOW_31, LiplisDefine.BODY_BATTERY_LOW_32, LiplisDefine.BODY_BATTERY_LOW_TOUCH);			//大破 2013/10/27 ver3.2.0
-        }
+			sitdownList     = readResult(LiplisDefine.BODY_SITDOWN_11, LiplisDefine.BODY_SITDOWN_12, LiplisDefine.BODY_SITDOWN_21, LiplisDefine.BODY_SITDOWN_22, LiplisDefine.BODY_SITDOWN_31, LiplisDefine.BODY_SITDOWN_32,"");
+			batteryHiList   = readResult(LiplisDefine.BODY_BATTERY_HI_11, LiplisDefine.BODY_BATTERY_HI_12, LiplisDefine.BODY_BATTERY_HI_21, LiplisDefine.BODY_BATTERY_HI_22, LiplisDefine.BODY_BATTERY_HI_31, LiplisDefine.BODY_BATTERY_HI_32, LiplisDefine.BODY_BATTERY_HI_TOUCH);			            //小破 2013/10/27 ver3.2.0
+			batteryMidList  = readResult(LiplisDefine.BODY_BATTERY_MID_11, LiplisDefine.BODY_BATTERY_MID_12, LiplisDefine.BODY_BATTERY_MID_21, LiplisDefine.BODY_BATTERY_MID_22, LiplisDefine.BODY_BATTERY_MID_31, LiplisDefine.BODY_BATTERY_MID_32, LiplisDefine.BODY_BATTERY_MID_TOUCH);			//中破 2013/10/27 ver3.2.0
+			batteryLowList = readResult(LiplisDefine.BODY_BATTERY_LOW_11, LiplisDefine.BODY_BATTERY_LOW_12, LiplisDefine.BODY_BATTERY_LOW_21, LiplisDefine.BODY_BATTERY_LOW_22, LiplisDefine.BODY_BATTERY_LOW_31, LiplisDefine.BODY_BATTERY_LOW_32, LiplisDefine.BODY_BATTERY_LOW_TOUCH);			//大破 2013/10/27 ver3.2.0
+		}
 		#endregion
 
 		/// <summary>
 		/// デフォルトリストの作成
 		/// </summary>
 		#region createDefault
-        protected void createDefault()
+		protected void createDefault()
 		{
 			this.height = 300;
 			this.width = 300;
 			this.locX = 0;
 			this.locY = 0;
 
-            normalList      = readResultDef(LiplisDefine.EMOTION_NORMAL, 1);
-            joyPList        = readResultDef(LiplisDefine.EMOTION_JOY_P, 1);
-            joyMList        = readResultDef(LiplisDefine.EMOTION_JOY_M, 1);
-            admirationPList = readResultDef(LiplisDefine.EMOTION_ADMIRATION_P, 1);
-            admirationMList = readResultDef(LiplisDefine.EMOTION_ADMIRATION_M, 1);
-            peacePList      = readResultDef(LiplisDefine.EMOTION_PEACE_P, 1);
-            peaceMList      = readResultDef(LiplisDefine.EMOTION_PEACE_M, 1);
-            ecstasyPList    = readResultDef(LiplisDefine.EMOTION_ECSTASY_P, 1);
-            ecstasyMList    = readResultDef(LiplisDefine.EMOTION_ECSTASY_M, 1);
-            amazementPList  = readResultDef(LiplisDefine.EMOTION_AMAZEMENT_P, 1);
-            amazementMList  = readResultDef(LiplisDefine.EMOTION_AMAZEMENT_M, 1);
-            ragePList       = readResultDef(LiplisDefine.EMOTION_RAGE_P, 1);
-            rageMList       = readResultDef(LiplisDefine.EMOTION_RAGE_M, 1);
-            interestPList   = readResultDef(LiplisDefine.EMOTION_INTEREST_P, 1);
-            interestMList   = readResultDef(LiplisDefine.EMOTION_INTEREST_M, 1);
-            respectPList    = readResultDef(LiplisDefine.EMOTION_RESPECT_P, 1);
-            respectMList    = readResultDef(LiplisDefine.EMOTION_RESPECT_M, 1);
-            calmlyPList     = readResultDef(LiplisDefine.EMOTION_CLAMLY_P, 1);
-            calmlyMList     = readResultDef(LiplisDefine.EMOTION_CLAMLY_M, 1);
-            proudPList      = readResultDef(LiplisDefine.EMOTION_PROUD_P, 1);
-            proudMList      = readResultDef(LiplisDefine.EMOTION_PROUD_M, 1);
-            batteryHiList   = readResultDef(LiplisDefine.EMOTION_BATTERY_HI, 1);
-            batteryMidList  = readResultDef(LiplisDefine.EMOTION_BATTERY_MID, 1);
-            batteryLowList  = readResultDef(LiplisDefine.EMOTION_BATTERY_LOW, 1);
+			normalList      = readResultDef(LiplisDefine.EMOTION_NORMAL, 1);
+			joyPList        = readResultDef(LiplisDefine.EMOTION_JOY_P, 1);
+			joyMList        = readResultDef(LiplisDefine.EMOTION_JOY_M, 1);
+			admirationPList = readResultDef(LiplisDefine.EMOTION_ADMIRATION_P, 1);
+			admirationMList = readResultDef(LiplisDefine.EMOTION_ADMIRATION_M, 1);
+			peacePList      = readResultDef(LiplisDefine.EMOTION_PEACE_P, 1);
+			peaceMList      = readResultDef(LiplisDefine.EMOTION_PEACE_M, 1);
+			ecstasyPList    = readResultDef(LiplisDefine.EMOTION_ECSTASY_P, 1);
+			ecstasyMList    = readResultDef(LiplisDefine.EMOTION_ECSTASY_M, 1);
+			amazementPList  = readResultDef(LiplisDefine.EMOTION_AMAZEMENT_P, 1);
+			amazementMList  = readResultDef(LiplisDefine.EMOTION_AMAZEMENT_M, 1);
+			ragePList       = readResultDef(LiplisDefine.EMOTION_RAGE_P, 1);
+			rageMList       = readResultDef(LiplisDefine.EMOTION_RAGE_M, 1);
+			interestPList   = readResultDef(LiplisDefine.EMOTION_INTEREST_P, 1);
+			interestMList   = readResultDef(LiplisDefine.EMOTION_INTEREST_M, 1);
+			respectPList    = readResultDef(LiplisDefine.EMOTION_RESPECT_P, 1);
+			respectMList    = readResultDef(LiplisDefine.EMOTION_RESPECT_M, 1);
+			calmlyPList     = readResultDef(LiplisDefine.EMOTION_CLAMLY_P, 1);
+			calmlyMList     = readResultDef(LiplisDefine.EMOTION_CLAMLY_M, 1);
+			proudPList      = readResultDef(LiplisDefine.EMOTION_PROUD_P, 1);
+			proudMList      = readResultDef(LiplisDefine.EMOTION_PROUD_M, 1);
+			batteryHiList   = readResultDef(LiplisDefine.EMOTION_BATTERY_HI, 1);
+			batteryMidList  = readResultDef(LiplisDefine.EMOTION_BATTERY_MID, 1);
+			batteryLowList  = readResultDef(LiplisDefine.EMOTION_BATTERY_LOW, 1);
 
-            //normalList = readResultDef(LiplisDefine.EMOTION_NORMAL, 5);
-            //joyPList = readResultDef(LiplisDefine.EMOTION_JOY_P, 4);
-            //joyMList = readResultDef(LiplisDefine.EMOTION_JOY_M, 4);
-            //admirationPList = readResultDef(LiplisDefine.EMOTION_ADMIRATION_P, 3);
-            //admirationMList = readResultDef(LiplisDefine.EMOTION_ADMIRATION_M, 5);
-            //peacePList = readResultDef(LiplisDefine.EMOTION_PEACE_P, 2);
-            //peaceMList = readResultDef(LiplisDefine.EMOTION_PEACE_M, 3);
-            //ecstasyPList = readResultDef(LiplisDefine.EMOTION_ECSTASY_P, 3);
-            //ecstasyMList = readResultDef(LiplisDefine.EMOTION_ECSTASY_M, 3);
-            //amazementPList = readResultDef(LiplisDefine.EMOTION_AMAZEMENT_P, 3);
-            //amazementMList = readResultDef(LiplisDefine.EMOTION_AMAZEMENT_M, 3);
-            //ragePList = readResultDef(LiplisDefine.EMOTION_RAGE_P, 3);
-            //rageMList = readResultDef(LiplisDefine.EMOTION_RAGE_M, 2);
-            //interestPList = readResultDef(LiplisDefine.EMOTION_INTEREST_P, 5);
-            //interestMList = readResultDef(LiplisDefine.EMOTION_INTEREST_M, 2);
-            //respectPList = readResultDef(LiplisDefine.EMOTION_RESPECT_P, 3);
-            //respectMList = readResultDef(LiplisDefine.EMOTION_RESPECT_M, 2);
-            //calmlyPList = readResultDef(LiplisDefine.EMOTION_CLAMLY_P, 2);
-            //calmlyMList = readResultDef(LiplisDefine.EMOTION_CLAMLY_M, 4);
-            //proudPList = readResultDef(LiplisDefine.EMOTION_PROUD_P, 1);
-            //proudMList = readResultDef(LiplisDefine.EMOTION_PROUD_M, 3);
+			//normalList = readResultDef(LiplisDefine.EMOTION_NORMAL, 5);
+			//joyPList = readResultDef(LiplisDefine.EMOTION_JOY_P, 4);
+			//joyMList = readResultDef(LiplisDefine.EMOTION_JOY_M, 4);
+			//admirationPList = readResultDef(LiplisDefine.EMOTION_ADMIRATION_P, 3);
+			//admirationMList = readResultDef(LiplisDefine.EMOTION_ADMIRATION_M, 5);
+			//peacePList = readResultDef(LiplisDefine.EMOTION_PEACE_P, 2);
+			//peaceMList = readResultDef(LiplisDefine.EMOTION_PEACE_M, 3);
+			//ecstasyPList = readResultDef(LiplisDefine.EMOTION_ECSTASY_P, 3);
+			//ecstasyMList = readResultDef(LiplisDefine.EMOTION_ECSTASY_M, 3);
+			//amazementPList = readResultDef(LiplisDefine.EMOTION_AMAZEMENT_P, 3);
+			//amazementMList = readResultDef(LiplisDefine.EMOTION_AMAZEMENT_M, 3);
+			//ragePList = readResultDef(LiplisDefine.EMOTION_RAGE_P, 3);
+			//rageMList = readResultDef(LiplisDefine.EMOTION_RAGE_M, 2);
+			//interestPList = readResultDef(LiplisDefine.EMOTION_INTEREST_P, 5);
+			//interestMList = readResultDef(LiplisDefine.EMOTION_INTEREST_M, 2);
+			//respectPList = readResultDef(LiplisDefine.EMOTION_RESPECT_P, 3);
+			//respectMList = readResultDef(LiplisDefine.EMOTION_RESPECT_M, 2);
+			//calmlyPList = readResultDef(LiplisDefine.EMOTION_CLAMLY_P, 2);
+			//calmlyMList = readResultDef(LiplisDefine.EMOTION_CLAMLY_M, 4);
+			//proudPList = readResultDef(LiplisDefine.EMOTION_PROUD_P, 1);
+			//proudMList = readResultDef(LiplisDefine.EMOTION_PROUD_M, 3);
 		}
 		#endregion
 
@@ -284,7 +284,7 @@ namespace Liplis.Msg
 		/// 設定読込
 		/// </summary>
 		#region readResult
-        protected virtual LstShufflableList<ObjBody> readResult(string b11, string b12, string b21, string b22, string b31, string b32, string touch)
+		protected virtual LstShufflableList<ObjBody> readResult(string b11, string b12, string b21, string b22, string b31, string b32, string touch)
 		{
 			LstShufflableList<ObjBody> result = new LstShufflableList<ObjBody>();
 			int idx = 0;
@@ -294,7 +294,7 @@ namespace Liplis.Msg
 			List<string> b22l = new List<string>();
 			List<string> b31l = new List<string>();
 			List<string> b32l = new List<string>();
-            List<string> tl = new List<string>();
+			List<string> tl = new List<string>();
 
 			readXmlList(xmlDoc.SelectNodes(b11), b11l);
 			readXmlList(xmlDoc.SelectNodes(b12), b12l);
@@ -303,21 +303,21 @@ namespace Liplis.Msg
 			readXmlList(xmlDoc.SelectNodes(b31), b31l);
 			readXmlList(xmlDoc.SelectNodes(b32), b32l);
 
-            //タッチ設定のロード
-            if (touch.Length > 0)
-            {
-                readXmlList(xmlDoc.SelectNodes(touch), tl);
-            }
+			//タッチ設定のロード
+			if (touch.Length > 0)
+			{
+				readXmlList(xmlDoc.SelectNodes(touch), tl);
+			}
 
-            //タッチ設定が無い場合は、空のタッチリスト作成
-            if (tl.Count < 1)
-            {
-                foreach (string r11 in b11l)
-                {
-                    tl.Add("");
-                }
-            }
-            
+			//タッチ設定が無い場合は、空のタッチリスト作成
+			if (tl.Count < 1)
+			{
+				foreach (string r11 in b11l)
+				{
+					tl.Add("");
+				}
+			}
+			
 
 			//リストを回してオブジェクト生成
 			foreach (string r11 in b11l)
@@ -363,16 +363,16 @@ namespace Liplis.Msg
 		}
 		#endregion
 
-        /// <summary>
-        /// setPreferenceData
-        /// セーブ
-        /// </summary>
-        #region saveSettings
-        public virtual void saveSettings()
-        {
+		/// <summary>
+		/// setPreferenceData
+		/// セーブ
+		/// </summary>
+		#region saveSettings
+		public virtual void saveSettings()
+		{
 
-        }
-        #endregion
+		}
+		#endregion
 
 		///====================================================================
 		///
@@ -384,203 +384,203 @@ namespace Liplis.Msg
 		/// bodyの取得
 		/// </summary>
 		/// <param name="emotion"></param>
-        /// <returns></returns>
-        #region getLiplisBody
-        public ObjBody getLiplisBody(int emotion, int point)
+		/// <returns></returns>
+		#region getLiplisBody
+		public ObjBody getLiplisBody(int emotion, int point)
 		{
-            //絶対値をとっておく。
-            emotion = Math.Abs(emotion);
+			//絶対値をとっておく。
+			emotion = Math.Abs(emotion);
 
 			if (emotion == 0)
 			{
-                return selectBody(normalList);
+				return selectBody(normalList);
 			}
 			else if (emotion == 1)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(joyPList);
+					return selectBody(joyPList);
 				}
 				else
 				{
-                    return selectBody(joyMList);
+					return selectBody(joyMList);
 				}
 			}
 			else if (emotion == 2)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(admirationPList);
+					return selectBody(admirationPList);
 				}
 				else
 				{
-                    return selectBody(admirationMList);
+					return selectBody(admirationMList);
 				}
 			}
 			else if (emotion == 3)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(peacePList);
+					return selectBody(peacePList);
 				}
 				else
 				{
-                    return selectBody(peaceMList);
+					return selectBody(peaceMList);
 				}
 			}
 			else if (emotion == 4)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(ecstasyPList);
+					return selectBody(ecstasyPList);
 				}
 				else
 				{
-                    return selectBody(ecstasyMList);
+					return selectBody(ecstasyMList);
 				}
 			}
 			else if (emotion == 5)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(amazementPList);
+					return selectBody(amazementPList);
 				}
 				else
 				{
-                    return selectBody(amazementMList);
+					return selectBody(amazementMList);
 				}
 			}
 			else if (emotion == 6)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(ragePList);
+					return selectBody(ragePList);
 				}
 				else
 				{
-                    return selectBody(rageMList);
+					return selectBody(rageMList);
 				}
 			}
 			else if (emotion == 7)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(interestPList);
+					return selectBody(interestPList);
 				}
 				else
 				{
-                    return selectBody(interestMList);
-                }
+					return selectBody(interestMList);
+				}
 			}
 			else if (emotion == 8)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(respectPList);
+					return selectBody(respectPList);
 				}
 				else
 				{
-                    return selectBody(respectMList);
+					return selectBody(respectMList);
 				}
 			}
 			else if (emotion == 9)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(calmlyPList);
+					return selectBody(calmlyPList);
 				}
 				else
 				{
-                    return selectBody(calmlyMList);
+					return selectBody(calmlyMList);
 				}
 			}
 			else if (emotion == 10)
 			{
 				if (point >= 0)
 				{
-                    return selectBody(proudPList);
+					return selectBody(proudPList);
 				}
 				else
 				{
-                    return selectBody(proudMList);
+					return selectBody(proudMList);
 				}
 			}
-            else if (emotion == 100)
-            {
-                return selectBody(sitdownList);
-            }
+			else if (emotion == 100)
+			{
+				return selectBody(sitdownList);
+			}
 			else
 			{
-                return selectBody(normalList);
+				return selectBody(normalList);
 			}
 		}
 		#endregion
 
-        /// <summary>
-        /// ボティをランダムに取得する
-        /// </summary>
-        #region selectBody
-        protected ObjBody selectBody(LstShufflableList<ObjBody> lst)
-        {
-            if (lst.Count > 0)
-            {
-                lst.Shuffle();
-                return lst[LpsLiplisUtil.getRandamInt(0, lst.Count)];
-            }
-            return normalList[0];
-        }
-        #endregion
-        
-        /// <summary>
-        /// 健康状態状態からIDを取得する
-        /// </summary>
-        #region getLiplisBodyHelth
-        public ObjBody getLiplisBodyHelth(int helth, int emotion, int point)
-        {
-            try
-            {
-                //小破以上
-                if (helth > 50)
-                {
-                    if (batteryHiList.Count == 0)
-                    {
-                        return getLiplisBody(emotion, point);
-                    }
-                    else
-                    {
-                        return selectBody(batteryHiList);
-                    }
-                }
-                //中破
-                else if (helth > 25)
-                {
-                    if (batteryMidList.Count == 0)
-                    {
-                        return getLiplisBody(emotion, point);
-                    }
-                    else
-                    {
-                        return selectBody(batteryMidList);
-                    }
-                }
-                //大破
-                else
-                {
-                    if (batteryLowList.Count == 0)
-                    {
-                        return getLiplisBody(emotion, point);
-                    }
-                    else
-                    {
-                        return selectBody(batteryLowList);
-                    }
-                }
-            }
-            catch
-            {
-                return normalList[0];
-            }
-        }
-        #endregion        
+		/// <summary>
+		/// ボティをランダムに取得する
+		/// </summary>
+		#region selectBody
+		protected ObjBody selectBody(LstShufflableList<ObjBody> lst)
+		{
+			if (lst.Count > 0)
+			{
+				lst.Shuffle();
+				return lst[LpsLiplisUtil.getRandamInt(0, lst.Count)];
+			}
+			return normalList[0];
+		}
+		#endregion
+		
+		/// <summary>
+		/// 健康状態状態からIDを取得する
+		/// </summary>
+		#region getLiplisBodyHelth
+		public ObjBody getLiplisBodyHelth(int helth, int emotion, int point)
+		{
+			try
+			{
+				//小破以上
+				if (helth > 50)
+				{
+					if (batteryHiList.Count == 0)
+					{
+						return getLiplisBody(emotion, point);
+					}
+					else
+					{
+						return selectBody(batteryHiList);
+					}
+				}
+				//中破
+				else if (helth > 25)
+				{
+					if (batteryMidList.Count == 0)
+					{
+						return getLiplisBody(emotion, point);
+					}
+					else
+					{
+						return selectBody(batteryMidList);
+					}
+				}
+				//大破
+				else
+				{
+					if (batteryLowList.Count == 0)
+					{
+						return getLiplisBody(emotion, point);
+					}
+					else
+					{
+						return selectBody(batteryLowList);
+					}
+				}
+			}
+			catch
+			{
+				return normalList[0];
+			}
+		}
+		#endregion        
 	}
 }
