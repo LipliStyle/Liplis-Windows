@@ -49,12 +49,14 @@ namespace Liplis.Activity
             this.btnTweet = new System.Windows.Forms.PictureBox();
             this.lblEmotion = new System.Windows.Forms.Label();
             this.lblPoint = new System.Windows.Forms.Label();
+            this.btnTell = new System.Windows.Forms.PictureBox();
             this.cms.SuspendLayout();
             this.cmst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUrlCopy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnWebJump)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTweet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTell)).BeginInit();
             this.SuspendLayout();
             // 
             // cms
@@ -183,10 +185,20 @@ namespace Liplis.Activity
             resources.ApplyResources(this.lblPoint, "lblPoint");
             this.lblPoint.Name = "lblPoint";
             // 
+            // btnTell
+            // 
+            this.btnTell.BackColor = System.Drawing.Color.Transparent;
+            this.btnTell.Image = global::Liplis.Properties.Resources.ico_talk_tell;
+            resources.ApplyResources(this.btnTell, "btnTell");
+            this.btnTell.Name = "btnTell";
+            this.btnTell.TabStop = false;
+            this.btnTell.Click += new System.EventHandler(this.btnTell_Click);
+            // 
             // ActivityTalk
             // 
             resources.ApplyResources(this, "$this");
             this.BackgroundImage = global::Liplis.Properties.Resources.window;
+            this.Controls.Add(this.btnTell);
             this.Controls.Add(this.lblPoint);
             this.Controls.Add(this.lblEmotion);
             this.Controls.Add(this.btnTweet);
@@ -206,6 +218,7 @@ namespace Liplis.Activity
             ((System.ComponentModel.ISupportInitialize)(this.btnUrlCopy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnWebJump)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTweet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTell)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,5 +243,6 @@ namespace Liplis.Activity
         private System.Windows.Forms.PictureBox btnTweet;
         private System.Windows.Forms.Label lblEmotion;
         private System.Windows.Forms.Label lblPoint;
+        private System.Windows.Forms.PictureBox btnTell;
     }
 }

@@ -5,13 +5,8 @@
 //  Liplisシステム      
 //  Copyright(c) 2010-2012 sachin.Sachin
 //=======================================================================
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Security.Cryptography;
-using Liplis.Msg;
 
 namespace Liplis.Maid
 {

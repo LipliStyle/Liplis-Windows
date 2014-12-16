@@ -110,6 +110,13 @@
       <Link>Activity\ActivityTalk.designer.cs</Link>
       <DependentUpon>ActivityTalk.cs</DependentUpon>
     </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityTell.cs">
+      <Link>Activity\ActivityTell.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityTell.Designer.cs">
+      <Link>Activity\ActivityTell.Designer.cs</Link>
+    </Compile>
     <Compile Include="..\Liplis\Activity\ActivityTopicRegist.cs">
       <Link>Activity\ActivityTopicRegist.cs</Link>
       <SubType>Form</SubType>
@@ -389,6 +396,12 @@
     <Compile Include="..\Liplis\Ser\SerialRssObject.cs">
       <Link>Ser\SerialRssObject.cs</Link>
     </Compile>
+    <Compile Include="..\Liplis\Web\Clalis\LiplisApiBase.cs">
+      <Link>Web\Clalis\LiplisApiBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Liplis\Web\Clalis\LiplisApiTell.cs">
+      <Link>Web\Clalis\LiplisApiTell.cs</Link>
+    </Compile>
     <Compile Include="..\Liplis\Web\LiplisApi.cs">
       <Link>Web\LiplisApi.cs</Link>
     </Compile>
@@ -463,6 +476,9 @@
       <Link>Activity\ActivityTalk.resx</Link>
       <DependentUpon>ActivityTalk.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityTell.resx">
+      <Link>Activity\ActivityTell.resx</Link>
+    </EmbeddedResource>
     <EmbeddedResource Include="..\Liplis\Activity\ActivityTopicRegist.resx">
       <Link>Activity\ActivityTopicRegist.resx</Link>
       <DependentUpon>ActivityTopicRegist.cs</DependentUpon>
@@ -515,6 +531,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\ico_talk_tell.png" />
     <None Include="Resources\sel_search.png" />
     <None Include="Resources\picRdoFrqChangeable.png" />
     <None Include="Resources\picRdoFrqVerryNoisy.png" />

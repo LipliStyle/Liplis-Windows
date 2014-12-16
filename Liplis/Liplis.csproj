@@ -100,6 +100,12 @@
     <Compile Include="Activity\ActivityNicoBrowser.designer.cs">
       <DependentUpon>ActivityNicoBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Activity\ActivityTell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityTell.Designer.cs">
+      <DependentUpon>ActivityTell.cs</DependentUpon>
+    </Compile>
     <Compile Include="Activity\ActivityTwitterActivation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     <Compile Include="MainSystem\LiplisUpdate.cs" />
     <Compile Include="Msg\MsgShortNews.cs" />
     <Compile Include="Ser\SerialCatObject.cs" />
+    <Compile Include="Web\Clalis\LiplisApiBase.cs" />
+    <Compile Include="Web\Clalis\LiplisApiGetSummaryNews.cs" />
+    <Compile Include="Web\Clalis\LiplisApiTell.cs" />
     <Compile Include="Web\LiplisNicoDownLoader.cs" />
     <Compile Include="Msg\ObjBody.cs" />
     <Compile Include="Msg\ObjBodyGen.cs" />
@@ -257,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activity\ActivityNicoBrowser.resx">
       <DependentUpon>ActivityNicoBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityTell.resx">
+      <DependentUpon>ActivityTell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activity\ActivityTwitterActivation.resx">
       <DependentUpon>ActivityTwitterActivation.cs</DependentUpon>
@@ -1592,6 +1604,8 @@
     <None Include="Resources\ico_char.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\transe30.png" />
+    <None Include="Resources\ico_talk_tell.png" />
     <None Include="Resources\ico_talk_next.png" />
     <None Include="Resources\version.png" />
     <None Include="Resources\sel_search.png" />

@@ -40,8 +40,8 @@ namespace Liplis.Fct
         #endregion
 
         /// <summary>
-        /// getResourceXml
-        /// リソースからXmlを取得する
+        /// getTranse
+        /// 透明の画像を取得する
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
@@ -50,6 +50,20 @@ namespace Liplis.Fct
         {
             ResourceManager rm = new ResourceManager("Liplis.Properties.Resources", typeof(Resources).Assembly);
             return (Bitmap)rm.GetObject(LiplisDefine.TRANSE);
+        }
+        #endregion
+
+        /// <summary>
+        /// getTranse30
+        /// ちょっと不透明の画像を取得する
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        #region getTranse
+        public static Bitmap getTranse30()
+        {
+            ResourceManager rm = new ResourceManager("Liplis.Properties.Resources", typeof(Resources).Assembly);
+            return (Bitmap)rm.GetObject(LiplisDefine.TRANSE30);
         }
         #endregion
 

@@ -213,7 +213,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lnkLbl.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="wbTalk.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 16</value>
@@ -237,7 +237,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;wbTalk.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="btnNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -274,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnNext.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnUrlCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -314,12 +314,12 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnUrlCopy.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnWebJump.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NC
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjExR/NC
         NwAAAXxJREFUOE+NksHLAVEUxV9KTU1ZqImaEgtlUkoolIWUbJTCgiymZGthYy07G8WGpY1SbPyD5/vO
         rfd6TxYWv7n3nnPum3ozCoDD+/3GarVCtVp1oEbvM+8M0+kUlUrlK4PBQCoz9o5pms0myuUy1uv1/wjF
         vt/vI45j0dlTH4/HYJY9kcdoNEKpVEKv1zMG50ajgdvtJh4z2mOvZ/V6vVAsFlGr1UxgsVhgu92KbnM6
@@ -354,7 +354,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnWebJump.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnTweet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -392,7 +392,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnTweet.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblEmotion.Location" type="System.Drawing.Point, System.Drawing">
     <value>220, 119</value>
@@ -419,7 +419,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblEmotion.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblPoint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -449,6 +449,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPoint.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnTell.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTell.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 118</value>
+  </data>
+  <data name="btnTell.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="btnTell.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
+  </data>
+  <data name="btnTell.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnTell.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnTell.Name" xml:space="preserve">
+    <value>btnTell</value>
+  </data>
+  <data name="&gt;&gt;btnTell.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTell.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTell.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -512,6 +542,6 @@
     <value>ActivityTalk</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Liplis.MainSystem.BaseSystem, Liplis, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Liplis.MainSystem.BaseSystem, Liplis, Version=4.0.5.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

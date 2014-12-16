@@ -173,9 +173,10 @@ namespace Liplis.Cmp.Form
             // 
             // picChar
             // 
+            //int wid = 50 * (lips.Width/lips.Height);
             this.picChar.Location = new System.Drawing.Point(3, 11);
             this.picChar.Name = "picChar";
-            this.picChar.Size = new System.Drawing.Size(75, 50);
+            this.picChar.Size = new System.Drawing.Size(75, 75);
             this.picChar.TabIndex = 3;
             this.picChar.TabStop = false;
             this.picChar.Image = charBody;

@@ -85,7 +85,7 @@ namespace Liplis.Activity
 
             //デリゲートの初期化
             initDelegate();
-
+            
             //スタートポジションの設定を任せる
             this.StartPosition = FormStartPosition.Manual;
 
@@ -225,7 +225,6 @@ namespace Liplis.Activity
         ///                         
         ///====================================================================
         
-
         /// <summary>
         /// ロードイベント
         /// </summary>
@@ -283,7 +282,6 @@ namespace Liplis.Activity
         }
         #endregion
 
-
         /// <summary>
         /// pnlIn_MouseEnter
         /// マウスエンターイベント
@@ -326,7 +324,7 @@ namespace Liplis.Activity
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        #region
+        #region btnNext_Click
         private void btnNext_Click(object sender, EventArgs e)
         {
             lips.onRecive(LiplisDefine.LM_NEXT, "");
@@ -338,7 +336,7 @@ namespace Liplis.Activity
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        #region
+        #region btnUrlCopy_Click
         private void btnUrlCopy_Click(object sender, EventArgs e)
         {
             LpsLiplisUtil.setDataToClipBord(url);
@@ -350,7 +348,7 @@ namespace Liplis.Activity
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        #region
+        #region btnWebJump_Click
         private void btnWebJump_Click(object sender, EventArgs e)
         {
             callBrowser();
@@ -362,12 +360,25 @@ namespace Liplis.Activity
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        #region
+        #region btnTweet_Click
         private void btnTweet_Click(object sender, EventArgs e)
         {
             lips.onRecive(LiplisDefine.LM_TWEET, "");
         }
         #endregion
+
+        /// <summary>
+        /// テルクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region btnTell_Click
+        private void btnTell_Click(object sender, EventArgs e)
+        {
+            lips.onRecive(LiplisDefine.LM_SHOW_TELL_WIN, "");
+        }
+        #endregion
+
 
         ///====================================================================
         ///
@@ -468,6 +479,9 @@ namespace Liplis.Activity
             cmst.Items[4].Enabled = cmst.Items[3].Enabled = LpsLiplisUtil.domainCheck(this.url, LpsDefineMost.URL_NICO_DOMAIN);
         }
         #endregion
+
+
+
 
         ///====================================================================
         ///
@@ -1058,6 +1072,7 @@ namespace Liplis.Activity
             e.ReturnValue = false;
         }
         #endregion
+
 
 
     }

@@ -46,6 +46,8 @@
 //                         LiplisMiniにタッチ機能追加
 //                         公開最新版以上のバージョンのときに、最新版が有る旨のメッセージを出さないように修正
 //                         アイコンを整列設定にした場合、立ち絵の幅が少ないと切れてしまう問題修正
+//  2014/11/30 Liplis4.5.0 会話ウインドウ追加
+//                         会話機能追加
 //
 //
 // ■運用
@@ -67,6 +69,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Liplis.Activity;
@@ -74,7 +77,9 @@ using Liplis.Common;
 using Liplis.Fct;
 using Liplis.Msg;
 using Liplis.Web;
+using Liplis.Web.Clalis;
 using Liplis.Xml;
+using Newtonsoft.Json;
 
 namespace Liplis.MainSystem
 {
@@ -117,6 +122,7 @@ namespace Liplis.MainSystem
         protected ActivityChar           ac;
         internal  ActivityTopicRegist    ar;
         protected ActivityNicoBrowser    anb;
+        protected ActivityTell           atel;
          
 
         ///=====================================
@@ -217,6 +223,11 @@ namespace Liplis.MainSystem
         protected int liplisBatteryLevel    { get; set; }
         protected PowerStatus ps;
         #endregion
+
+        ///=====================================
+        /// API関連オブジェクト
+        protected LiplisApiTell lat { get; set; } 
+
 
         ///====================================================================
         ///
@@ -334,6 +345,9 @@ namespace Liplis.MainSystem
             //ほうきオブジェクトの初期化
             obr = new ObjBroom();
 
+            //APITELLの呼び出し
+            lat = new LiplisApiTell(this);
+
             ///2014/04/20 Liplis4.0 総合エモーション追加
             //総合エモーション
             sumEmotion = new MsgEmotion();
@@ -409,6 +423,9 @@ namespace Liplis.MainSystem
 
                 //設定
                 ast = new ActivitySetting(this, this.os, this.owf);
+                
+                //
+                atel = new ActivityTell(this, os, oss);
 
                 //オーナーフォーム登録
                 this.AddOwnedForm(at);
@@ -503,6 +520,7 @@ namespace Liplis.MainSystem
                 if (at != null) Invoke(new LpsDelegate.dlgVoidToVoid(al.dispose));
                 if (ac != null) Invoke(new LpsDelegate.dlgVoidToVoid(ac.dispose));
                 if (ast != null) Invoke(new LpsDelegate.dlgVoidToVoid(ast.dispose));
+                if (atel != null) Invoke(new LpsDelegate.dlgVoidToVoid(atel.dispose));
 
                 //オブジェクトの破棄
                 os = null;
@@ -1221,6 +1239,13 @@ namespace Liplis.MainSystem
                 case LiplisDefine.LM_TWEET:
                     tweet(param[0]);
                     break;
+                case LiplisDefine.LM_SHOW_TELL_WIN:
+                    tell(param[0]);
+                    break;
+                case LiplisDefine.LM_TELL_SEND:
+                    tellSend(param[0]);
+                    break;
+                    
 
                 //ウインドウズ実行コマンド
                 #region ウインドウズ実行コマンド
@@ -1652,6 +1677,12 @@ namespace Liplis.MainSystem
 
                 //カウントダウン
                 cntUpdate--;
+
+                //ver4.2 ニュートラルに戻す
+                if (cntUpdate == 30)
+                {
+                    setObjectBodyNeutral();
+                }
 
                 //チャットフェーズに以降
                 if (cntUpdate <= 0)
@@ -2487,6 +2518,9 @@ namespace Liplis.MainSystem
         {
             try
             {
+                //4.2.0 ノーマルに戻す
+                setObjectBodyNeutral();
+
                 //話題取得フェーズ終了まで0に設定
                 flgAlarm = 0;
                 //チャット中かつなうトピックがNullでなければ回避
@@ -3511,7 +3545,53 @@ namespace Liplis.MainSystem
                 return false;
             }
         }
-         #endregion
+        #endregion
+
+        /// <summary>
+        //  MethodType : child
+        /// MethodName : setObjectBodyNeutral
+        /// 2014/12/01 ver4.2.0
+        /// ニュートラル状態に戻す
+        /// </summary>
+        #region setObjectBodyNeutral
+        protected bool setObjectBodyNeutral()
+        {
+            try
+            {
+                if (flgSitdown)
+                {
+                    return true;
+                }
+
+
+                //感情初期化
+                cntMouth = 1;
+                cntBlink = 0;
+                nowEmotion = 0;
+                nowPoint = 0;
+
+                //感情変化
+                if (os.lpsHelth == 1 && liplisBatteryLevel < 75)
+                {
+                    //ヘルス設定ONでバッテリー残量75%以下なら、小破以下の画像取得
+                    ob = obl.getLiplisBodyHelth(liplisBatteryLevel, nowEmotion, nowPoint);
+                }
+                else
+                {
+                    ob = obl.getLiplisBody(nowEmotion, nowPoint);
+                    Console.WriteLine("c" + prvEmotion + " : " + nowEmotion);
+                }
+
+                Invoke(reqReflesh);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        #endregion
 
         /// <summary>
         /// MethodType : child
@@ -3907,29 +3987,36 @@ namespace Liplis.MainSystem
         /// <param name="y"></param>
         protected virtual void checkClick(int mode)
         {
-            //X座標を取得する
-            int x = System.Windows.Forms.Cursor.Position.X - this.Left;
-            //Y座標を取得する
-            int y = System.Windows.Forms.Cursor.Position.Y - this.Top;
-
-            objTouchResult result = olt.checkClick(x, y, ob.getLstTouch(), mode);
-
-            if (result.result == mode)
+            try
             {
-                this.Cursor = Cursors.Hand;
+                //X座標を取得する
+                int x = System.Windows.Forms.Cursor.Position.X - this.Left;
+                //Y座標を取得する
+                int y = System.Windows.Forms.Cursor.Position.Y - this.Top;
 
-                //チャットタイプを取得
-                MsgShortNews chatType = olc.getChatWord("touch", result.obj.chatSelected);
+                objTouchResult result = olt.checkClick(x, y, ob.getLstTouch(), mode);
 
-                if (chatType.nameList.Count > 0)
+                if (result.result == mode)
                 {
-                    //おしゃべり
-                    talk(chatType);
+                    this.Cursor = Cursors.Hand;
+
+                    //チャットタイプを取得
+                    MsgShortNews chatType = olc.getChatWord("touch", result.obj.chatSelected);
+
+                    if (chatType.nameList.Count > 0)
+                    {
+                        //おしゃべり
+                        talk(chatType);
+                    }
+                }
+                else
+                {
+                    this.Cursor = Cursors.Default;
                 }
             }
-            else
+            catch
             {
-                this.Cursor = Cursors.Default;
+
             }
         }
         #endregion
@@ -4082,11 +4169,12 @@ namespace Liplis.MainSystem
         #region appendLog
         protected void appendLog()
         {
-            Bitmap charBody = new Bitmap(75, 75);
+            double wid = 75.0 * (double)((double)this.Width / (double)this.Height);
+            Bitmap charBody = new Bitmap(75, (int)wid);
             using (Graphics g = Graphics.FromImage(charBody))
             {
                 g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                g.DrawImage(obl.getLiplisBody(liplisNowTopic.newsEmotion, liplisNowTopic.newsPoint).getBody(0, 0, 0), 0, 0, 75, 75);
+                g.DrawImage(obl.getLiplisBody(liplisNowTopic.newsEmotion, liplisNowTopic.newsPoint).getBody(0, 0, 0), 0, 0, (int)wid,75);
             }
             Invoke(new LpsDelegate.dlgMsnToVoid(al.addLog), liplisNowTopic, charBody);
         }
@@ -4183,7 +4271,78 @@ namespace Liplis.MainSystem
         }
         #endregion
 
+        ///====================================================================
+        ///
+        ///                           話しかけ機能
+        ///                         
+        ///====================================================================
 
+
+        /// <summary>
+        /// 話しかけ機能
+        /// </summary>
+        #region tell
+        private void tell(string msg)
+        {
+            atel.Show();
+        }
+        #endregion
+
+        /// <summary>
+        /// 話しかけワードを送信する
+        /// </summary>
+        /// <param name="sendMsg"></param>
+        #region tellSend
+        private void tellSend(string sendMsg)
+        {
+            lat.apiPost(os.uid, oss.toneUrl, "w" + Assembly.GetExecutingAssembly().GetName().Version.ToString(), sendMsg);
+        }
+        #endregion
+
+        /// <summary>
+        /// 話しかけ応答の受信結果を処理する
+        /// </summary>
+        /// <param name="sendMsg"></param>
+        #region tellGetResponse
+        public void tellGetResponse(MsgShortNews msn)
+        {
+             //応答が0件以上なら
+            if (msn.nameList.Count > 0)
+            {
+                //返答をしゃべる。
+                talk(msn);
+
+                StringBuilder sb = new StringBuilder();
+
+                foreach (string name in msn.nameList)
+                {
+                    sb.Append(name);
+                }
+
+                //ウインドウに表示
+                atel.setResponse(sb.ToString());
+
+            }
+            //応答件数が0なら
+            else
+            {
+                //何をおっしゃられているか分かりません・・・・。
+
+                //ウインドウに表示
+                atel.setResponse(olc.getChatWordStr("noreply"));
+            }
+        }
+
+        /// <summary>
+        /// OLCを取得する
+        /// </summary>
+        /// <returns></returns>
+        public ObjLiplisChat getOlc()
+        {
+            return this.olc;
+        }
+        #endregion
+        
 
     }
 }

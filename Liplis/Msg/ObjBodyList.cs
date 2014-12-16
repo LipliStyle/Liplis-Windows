@@ -388,6 +388,13 @@ namespace Liplis.Msg
 		#region getLiplisBody
 		public ObjBody getLiplisBody(int emotion, int point)
 		{
+			//2014/10/04 emotionが0でなく、ポイントが0の場合、エモーションの値をポイントにセットする。
+			//文章の場合は、エモーションのみの設定となるため。
+			if (emotion != 0 && point == 0)
+			{
+				point = emotion;
+			}
+
 			//絶対値をとっておく。
 			emotion = Math.Abs(emotion);
 

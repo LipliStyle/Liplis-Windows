@@ -1,5 +1,4 @@
-﻿using System;
-//=======================================================================
+﻿//=======================================================================
 //  ClassName : LiplisApi
 //  概要      : LiplisApiとのインターフェースクラス
 //
@@ -9,6 +8,7 @@
 //
 //  2014/04/07 Liplis4.0 Clalis4.0対応
 //=======================================================================
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Text;
@@ -183,6 +183,7 @@ namespace Liplis.Web
             }
         }
         #endregion
+
 
         ///====================================================================
         ///
@@ -723,7 +724,7 @@ namespace Liplis.Web
         /// <param name="ols"></param>
         /// <returns></returns>
         #region convertRlSumNjToMsg
-        private static MsgShortNews convertRlSumNjToMsg(ResLpsSummaryNews2Json rlsn2)
+        protected static MsgShortNews convertRlSumNjToMsg(ResLpsSummaryNews2Json rlsn2)
         {
             //ディスクリプションチェック
             if (rlsn2.descriptionList.Count < 1)

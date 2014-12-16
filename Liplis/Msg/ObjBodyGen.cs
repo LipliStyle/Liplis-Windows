@@ -92,6 +92,66 @@ namespace Liplis.Msg
         #endregion
 
         /// <summary>
+        /// インデックスからパスを取得する
+        /// </summary>
+        /// <returns></returns>
+        #region getPathFromIdx
+        public string getPathFromIdx(int idx)
+        {
+            switch(idx)
+            {
+                case 1:
+                    return this.body11;
+                case 2:
+                    return this.body12;
+                case 3:
+                    return this.body21;
+                case 4:
+                    return this.body22;
+                case 5:
+                    return this.body31;
+                case 6:
+                    return this.body32;
+                default:
+                    return "";
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// インデックスからパスをセットする
+        /// </summary>
+        /// <returns></returns>
+        #region setPathFromIdx
+        public void setPathFromIdx(int idx, string newPath)
+        {
+            switch (idx)
+            {
+                case 1:
+                    this.body11 = newPath;
+                    break;
+                case 2:
+                    this.body12 = newPath;
+                    break;
+                case 3:
+                    this.body21 = newPath;
+                    break;
+                case 4:
+                    this.body22 = newPath;
+                    break;
+                case 5:
+                    this.body31 = newPath;
+                    break;
+                case 6:
+                    this.body32 = newPath;
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
+        /// <summary>
         /// reductionBitmap
         /// 画像を縮小する
         /// </summary>

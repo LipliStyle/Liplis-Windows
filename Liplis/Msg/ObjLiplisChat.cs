@@ -179,6 +179,8 @@ namespace Liplis.Msg
 				{
 					Random rnd = new Random();
 
+                    
+
 					int ran = rnd.Next(resList.Count);
 					int tarIdx = resList[ran];
 
@@ -203,7 +205,7 @@ namespace Liplis.Msg
 
 			return result;
 		}
-        public MsgShortNews getChatWord(String pType)
+        public MsgShortNews getChatWord(string pType)
         {
             MsgShortNews result = new MsgShortNews();
             int idx = 0;
