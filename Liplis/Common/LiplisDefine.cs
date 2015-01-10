@@ -142,7 +142,7 @@ namespace Liplis.Common
         public const string LIPLIS_FREE_TALK                      = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisFreeTalk.aspx";
 
         public const string LIPLIS_TWEET                          = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplisTweet.aspx";
-        public const string LIPLIS_TELL                           = @"http://localhost:56926/Clalis/v40/Liplis/ClalisForLiplisTalk.aspx";
+        public const string LIPLIS_CHAT                           = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplisTalk.aspx";
 
         #endregion
 
@@ -803,7 +803,7 @@ namespace Liplis.Common
         public const int LM_OUTRANGE_RECOVERY= 23;
         public const int LM_TWEET            = 24;
         public const int LM_SHOW_TELL_WIN    = 25;
-        public const int LM_TELL_SEND        = 26;
+        public const int LM_CHAT_SEND        = 26;
 
         public const int LM_WIN_FONTS　                 =　1001;
         public const int LM_WIN_IEXPLORE　              =　1002;

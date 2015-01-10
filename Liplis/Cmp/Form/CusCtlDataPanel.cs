@@ -123,7 +123,7 @@ namespace Liplis.Cmp.Form
 
             this.Location = new System.Drawing.Point(3, 3);
             this.Name = "panel";
-            this.Size = new System.Drawing.Size(460, 60);
+            this.Size = new System.Drawing.Size(445, 60);
             this.TabIndex = 0;
             this.MouseEnter += new System.EventHandler(enter);
 
@@ -245,8 +245,18 @@ namespace Liplis.Cmp.Form
             this.btnTweet.Click += new System.EventHandler(this.btnTweet_Click);
         }
         #endregion
-        
 
+        /// <summary>
+        /// スモールアイコンOFF
+        /// </summary>
+        #region smallIconOff
+        public void smallIconOff()
+        {
+            btnUrlCopy.Visible = false;
+            btnWebJump.Visible = false;
+            btnTweet.Visible = false;
+        }
+        #endregion
 
         /// <summary>
         /// CMSの初期化

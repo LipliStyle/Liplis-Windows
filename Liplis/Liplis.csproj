@@ -64,6 +64,12 @@
     <Compile Include="Activity\ActivityChar.Designer.cs">
       <DependentUpon>ActivityChar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Activity\ActivityChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activity\ActivityChat.Designer.cs">
+      <DependentUpon>ActivityChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Activity\ActivityLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,12 +106,6 @@
     <Compile Include="Activity\ActivityNicoBrowser.designer.cs">
       <DependentUpon>ActivityNicoBrowser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Activity\ActivityTell.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activity\ActivityTell.Designer.cs">
-      <DependentUpon>ActivityTell.cs</DependentUpon>
-    </Compile>
     <Compile Include="Activity\ActivityTwitterActivation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +140,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Cmp\Form\CusCtlDataPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cmp\Form\CusCtlTellPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cmp\Form\CusCtlTellPanelChar.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Cmp\Tree\LiplisTreeNodeCld.cs" />
@@ -178,6 +184,7 @@
     <Compile Include="Msg\ResLpsShortNews2JsonList.cs" />
     <Compile Include="Msg\ResLpsSummaryNews2Json.cs" />
     <Compile Include="Msg\ResLpsSummaryNews2JsonList.cs" />
+    <Compile Include="Msg\ResLpsTalkResponse.cs" />
     <Compile Include="Msg\ResLpsTopicSearchWord.cs" />
     <Compile Include="Msg\ResLpsTopicSearchWordList.cs" />
     <Compile Include="Msg\ResUserOnetimePass.cs" />
@@ -214,7 +221,7 @@
     <Compile Include="Ser\SerialCatObject.cs" />
     <Compile Include="Web\Clalis\LiplisApiBase.cs" />
     <Compile Include="Web\Clalis\LiplisApiGetSummaryNews.cs" />
-    <Compile Include="Web\Clalis\LiplisApiTell.cs" />
+    <Compile Include="Web\Clalis\LiplisApiChat.cs" />
     <Compile Include="Web\LiplisNicoDownLoader.cs" />
     <Compile Include="Msg\ObjBody.cs" />
     <Compile Include="Msg\ObjBodyGen.cs" />
@@ -248,6 +255,9 @@
     <EmbeddedResource Include="Activity\ActivityChar.resx">
       <DependentUpon>ActivityChar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Activity\ActivityChat.resx">
+      <DependentUpon>ActivityChat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activity\ActivityLog.resx">
       <DependentUpon>ActivityLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,9 +276,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activity\ActivityNicoBrowser.resx">
       <DependentUpon>ActivityNicoBrowser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activity\ActivityTell.resx">
-      <DependentUpon>ActivityTell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activity\ActivityTwitterActivation.resx">
       <DependentUpon>ActivityTwitterActivation.cs</DependentUpon>

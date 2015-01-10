@@ -771,8 +771,8 @@ namespace Liplis.Web
             string result = sbResult.ToString().Replace("EOS", "");
 
             //結果をメッセージに格納
-            msg.url = rlsn2.url;
-            msg.title = rlsn2.title;
+            msg.url = LpsLiplisUtil.nullCheck(rlsn2.url);
+            msg.title = LpsLiplisUtil.nullCheck(rlsn2.title);
             msg.result = result;
             msg.sorce = result;
             msg.calcNewsEmotion();

@@ -1,9 +1,9 @@
 ﻿//=======================================================================
-//  ClassName : LiplisApiTell
-//  概要      : テルAPI
+//  ClassName : LiplisApiChat
+//  概要      : チャットAPI
 //
 //  Liplis4.5
-//  Copyright(c) 2010-2014 LipliStyle.Sachin
+//  Copyright(c) 2010-2015 LipliStyle.Sachin
 //=======================================================================
 using System;
 using System.Collections.Specialized;
@@ -15,15 +15,21 @@ using Newtonsoft.Json;
 
 namespace Liplis.Web.Clalis
 {
-    public class LiplisApiTell : LiplisApiBase
+    public class LiplisApiChat : LiplisApiBase
     {
+        ///=====================================
+        /// 会話継続コンテキスト
+        private string mode { get; set; }
+        private string context { get; set; }
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LiplisApiTell(Liplis.MainSystem.Liplis lips)
+        public LiplisApiChat(Liplis.MainSystem.Liplis lips)
         {
             this.lips = lips;
+            this.mode = "";
+            this.context = "";
         }
 
         /// <summary>
@@ -37,14 +43,16 @@ namespace Liplis.Web.Clalis
         {
             LpsLogControllerCus.d("getTellResponse");
             NameValueCollection ps = new NameValueCollection();
-            ps.Add("userid", uid);                  //TONE_URLの指定
+            ps.Add("userid", uid);                    //TONE_URLの指定
             ps.Add("tone", toneUrl);                  //TONE_URLの指定
             ps.Add("version", version);               //TONE_URLの指定
             ps.Add("sentence", sentence);             //NEWS_FLGの指定
+            ps.Add("mode", mode);                 //MODEの指定
+            ps.Add("context", context);              //CONTEXTの指定
 
             object[] obj = new object[5];
 
-            obj[0] = LiplisDefine.LIPLIS_TELL;
+            obj[0] = LiplisDefine.LIPLIS_CHAT;
             obj[1] = ps;
 
             Thread thread = new Thread(new ParameterizedThreadStart(postThread));
@@ -71,10 +79,9 @@ namespace Liplis.Web.Clalis
         protected override void action(string source)
         {
             Console.WriteLine(source);
-            ResLpsSummaryNews2Json result = JsonConvert.DeserializeObject<ResLpsSummaryNews2Json>(source);
+            ResLpsChatResponse result = JsonConvert.DeserializeObject<ResLpsChatResponse>(source);
 
-            lips.tellGetResponse(convertRlSumNjToMsg(JsonConvert.DeserializeObject<ResLpsSummaryNews2Json>(source)));
-
+            lips.chatGetResponse(convertRlSumNjToMsg(result));
         }
 
 
@@ -85,7 +92,7 @@ namespace Liplis.Web.Clalis
         /// <param name="ols"></param>
         /// <returns></returns>
         #region convertRlSumNjToMsg
-        protected override MsgShortNews convertRlSumNjToMsg(ResLpsSummaryNews2Json rlsn2)
+        protected MsgShortNews convertRlSumNjToMsg(ResLpsChatResponse rlsn2)
         {
             //ディスクリプションチェック
             if (rlsn2 == null || rlsn2.descriptionList.Count < 1)
@@ -136,6 +143,19 @@ namespace Liplis.Web.Clalis
 
             string result = sbResult.ToString().Replace("EOS", "");
 
+            //結果をメッセージに格納
+            msg.url = LpsLiplisUtil.nullCheck(rlsn2.url);
+            msg.title = LpsLiplisUtil.nullCheck(rlsn2.title);
+            msg.result = result;
+            msg.sorce = result;
+            msg.calcNewsEmotion();
+
+            //
+            if(rlsn2.opList.Count == 2)
+            {
+                this.context = rlsn2.opList[0];
+                this.mode = rlsn2.opList[1];
+            }
 
             return msg;
         }

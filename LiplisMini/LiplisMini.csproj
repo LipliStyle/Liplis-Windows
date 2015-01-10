@@ -62,6 +62,13 @@
       <Link>Activity\ActivityChar.designer.cs</Link>
       <DependentUpon>ActivityChar.cs</DependentUpon>
     </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityChat.cs">
+      <Link>Activity\ActivityChat.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Activity\ActivityChat.Designer.cs">
+      <Link>Activity\ActivityChat.Designer.cs</Link>
+    </Compile>
     <Compile Include="..\Liplis\Activity\ActivityLog.cs">
       <Link>Activity\ActivityLog.cs</Link>
       <SubType>Form</SubType>
@@ -110,13 +117,6 @@
       <Link>Activity\ActivityTalk.designer.cs</Link>
       <DependentUpon>ActivityTalk.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\Liplis\Activity\ActivityTell.cs">
-      <Link>Activity\ActivityTell.cs</Link>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="..\Liplis\Activity\ActivityTell.Designer.cs">
-      <Link>Activity\ActivityTell.Designer.cs</Link>
-    </Compile>
     <Compile Include="..\Liplis\Activity\ActivityTopicRegist.cs">
       <Link>Activity\ActivityTopicRegist.cs</Link>
       <SubType>Form</SubType>
@@ -151,6 +151,14 @@
     </Compile>
     <Compile Include="..\Liplis\Cmp\Form\CusCtlDataPanelNonThum.cs">
       <Link>Cmp\Form\CusCtlDataPanelNonThum.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Cmp\Form\CusCtlTellPanel.cs">
+      <Link>Cmp\Form\CusCtlTellPanel.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Liplis\Cmp\Form\CusCtlTellPanelChar.cs">
+      <Link>Cmp\Form\CusCtlTellPanelChar.cs</Link>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\Liplis\Cmp\Form\CustomTextBox.cs">
@@ -378,6 +386,9 @@
     <Compile Include="..\Liplis\Msg\ResLpsSummaryNews2JsonList.cs">
       <Link>Msg\ResLpsSummaryNews2JsonList.cs</Link>
     </Compile>
+    <Compile Include="..\Liplis\Msg\ResLpsTalkResponse.cs">
+      <Link>Msg\ResLpsTalkResponse.cs</Link>
+    </Compile>
     <Compile Include="..\Liplis\Msg\ResLpsTopicSearchWord.cs">
       <Link>Msg\ResLpsTopicSearchWord.cs</Link>
     </Compile>
@@ -399,8 +410,8 @@
     <Compile Include="..\Liplis\Web\Clalis\LiplisApiBase.cs">
       <Link>Web\Clalis\LiplisApiBase.cs</Link>
     </Compile>
-    <Compile Include="..\Liplis\Web\Clalis\LiplisApiTell.cs">
-      <Link>Web\Clalis\LiplisApiTell.cs</Link>
+    <Compile Include="..\Liplis\Web\Clalis\LiplisApiChat.cs">
+      <Link>Web\Clalis\LiplisApiChat.cs</Link>
     </Compile>
     <Compile Include="..\Liplis\Web\LiplisApi.cs">
       <Link>Web\LiplisApi.cs</Link>
@@ -452,6 +463,9 @@
       <Link>Activity\ActivityChar.resx</Link>
       <DependentUpon>ActivityChar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\Liplis\Activity\ActivityChat.resx">
+      <Link>Activity\ActivityChat.resx</Link>
+    </EmbeddedResource>
     <EmbeddedResource Include="..\Liplis\Activity\ActivityLog.resx">
       <Link>Activity\ActivityLog.resx</Link>
       <DependentUpon>ActivityLog.cs</DependentUpon>
@@ -475,9 +489,6 @@
     <EmbeddedResource Include="..\Liplis\Activity\ActivityTalk.resx">
       <Link>Activity\ActivityTalk.resx</Link>
       <DependentUpon>ActivityTalk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\Liplis\Activity\ActivityTell.resx">
-      <Link>Activity\ActivityTell.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\Liplis\Activity\ActivityTopicRegist.resx">
       <Link>Activity\ActivityTopicRegist.resx</Link>

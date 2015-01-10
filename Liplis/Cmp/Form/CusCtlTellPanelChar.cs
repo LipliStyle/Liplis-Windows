@@ -14,7 +14,7 @@ using Liplis.Msg;
 
 namespace Liplis.Cmp.Form
 {
-    public class CusCtlDataPanelNonThum : CusCtlDataPanel
+    public class CusCtlTellPanelChar : CusCtlDataPanel
     {
         ///====================================================================
         ///
@@ -25,8 +25,8 @@ namespace Liplis.Cmp.Form
         /// <summary>
         /// コンストラクター
         /// </summary>
-        #region DataPanelNonThum
-        public CusCtlDataPanelNonThum(Liplis.MainSystem.Liplis lips, ObjSetting os, string url, string title, string discription, int newsEmotion, int newsPoint, Bitmap charBody, EventHandler enter, IContainer components)
+        #region CusCtlTellPanelChar
+        public CusCtlTellPanelChar(Liplis.MainSystem.Liplis lips, ObjSetting os, string url, string title, string discription, int newsEmotion, int newsPoint, Bitmap charBody, EventHandler enter, IContainer components)
         {
             this.lips = lips;
             this.os = os;
@@ -62,18 +62,18 @@ namespace Liplis.Cmp.Form
             this.picChar    = new CusCtlPictureBox();
             this.lblEmotion = new CusCtlLabel();
             this.lblPoint   = new CusCtlLabel();
-            this.btnUrlCopy = new System.Windows.Forms.PictureBox();
-            this.btnWebJump = new System.Windows.Forms.PictureBox();
-            this.btnTweet = new System.Windows.Forms.PictureBox();
+            //this.btnUrlCopy = new System.Windows.Forms.PictureBox();
+            //this.btnWebJump = new System.Windows.Forms.PictureBox();
+            //this.btnTweet = new System.Windows.Forms.PictureBox();
 
             // 
             // panel
             // 
             this.BackColor = Color.Azure;
             //this.Controls.Add(this.lblText);
-            this.Controls.Add(this.btnUrlCopy);
-            this.Controls.Add(this.btnWebJump);
-            this.Controls.Add(this.btnTweet);
+            //this.Controls.Add(this.btnUrlCopy);
+            //this.Controls.Add(this.btnWebJump);
+            //this.Controls.Add(this.btnTweet);
 
             this.Controls.Add(this.lnkLbl);
             this.Controls.Add(this.lblPoint);
@@ -88,15 +88,15 @@ namespace Liplis.Cmp.Form
             // 
             // lnkLbl
             // 
-            this.lnkLbl.ContextMenuStrip = cms;
-            this.lnkLbl.Location = new System.Drawing.Point(85, 14);
+            this.lnkLbl.AutoSize = false;
+            this.lnkLbl.Location = new System.Drawing.Point(85, 0);
             this.lnkLbl.Name = "lnkLbl";
-            this.lnkLbl.Size = new System.Drawing.Size(355, 12);
+            this.lnkLbl.Size = new System.Drawing.Size(360, 30);
             this.lnkLbl.TabIndex = 1;
             this.lnkLbl.TabStop = true;
-            this.lnkLbl.Text = title;
-            this.lnkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnlLbl_LinkClicked);
-            this.lnkLbl.MouseEnter += new System.EventHandler(enter);
+            this.lnkLbl.Text = discription;
+            this.lnkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lnkLbl.BackColor = Color.AliceBlue;
 
             // 
             // lblText
@@ -139,9 +139,6 @@ namespace Liplis.Cmp.Form
             this.lblPoint.TabIndex = 5;
             this.lblPoint.Text = newsPoint.ToString();
             this.lblPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-            //スモールアイコンの初期化
-            initSmallIcon();
         }
         #endregion
 

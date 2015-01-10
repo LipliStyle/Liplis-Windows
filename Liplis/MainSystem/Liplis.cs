@@ -48,7 +48,7 @@
 //                         アイコンを整列設定にした場合、立ち絵の幅が少ないと切れてしまう問題修正
 //  2014/11/30 Liplis4.5.0 会話ウインドウ追加
 //                         会話機能追加
-//
+//                         気まぐれモードのときにおしゃべりが止まるバグ修正
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -122,7 +122,7 @@ namespace Liplis.MainSystem
         protected ActivityChar           ac;
         internal  ActivityTopicRegist    ar;
         protected ActivityNicoBrowser    anb;
-        protected ActivityTell           atel;
+        protected ActivityChat           act;
          
 
         ///=====================================
@@ -189,6 +189,7 @@ namespace Liplis.MainSystem
         protected bool flgRestart     = false;
         protected bool flgMinimize    = false;
         protected bool flgTagCheck    = false;
+        protected bool flgChatTalk    = false;    //2015/01/09 チャットトーク中フラグ追加
         protected bool flgDebug       = false;    //2013/05/28 デバッグモード追加
         protected bool flgOutputDemo  = false;    //2013/05/28 デバッグモード追加
         #endregion
@@ -226,7 +227,7 @@ namespace Liplis.MainSystem
 
         ///=====================================
         /// API関連オブジェクト
-        protected LiplisApiTell lat { get; set; } 
+        protected LiplisApiChat lat { get; set; } 
 
 
         ///====================================================================
@@ -346,7 +347,7 @@ namespace Liplis.MainSystem
             obr = new ObjBroom();
 
             //APITELLの呼び出し
-            lat = new LiplisApiTell(this);
+            lat = new LiplisApiChat(this);
 
             ///2014/04/20 Liplis4.0 総合エモーション追加
             //総合エモーション
@@ -425,7 +426,7 @@ namespace Liplis.MainSystem
                 ast = new ActivitySetting(this, this.os, this.owf);
                 
                 //
-                atel = new ActivityTell(this, os, oss);
+                act = new ActivityChat(this, this.os, this.obr,this.owf);
 
                 //オーナーフォーム登録
                 this.AddOwnedForm(at);
@@ -520,7 +521,7 @@ namespace Liplis.MainSystem
                 if (at != null) Invoke(new LpsDelegate.dlgVoidToVoid(al.dispose));
                 if (ac != null) Invoke(new LpsDelegate.dlgVoidToVoid(ac.dispose));
                 if (ast != null) Invoke(new LpsDelegate.dlgVoidToVoid(ast.dispose));
-                if (atel != null) Invoke(new LpsDelegate.dlgVoidToVoid(atel.dispose));
+                if (act != null) Invoke(new LpsDelegate.dlgVoidToVoid(act.dispose));
 
                 //オブジェクトの破棄
                 os = null;
@@ -742,17 +743,29 @@ namespace Liplis.MainSystem
             {
                 if (liplisInterval == 0)
                 {
-                }
-                else if (liplisInterval == 9999)
-                {
-                    cntUpdate = LpsLiplisUtil.getRandamInt(50, 600);
+
                 }
                 else
                 {
-                    cntUpdate = liplisInterval;
+                    //ver4.5 チャットトークフラグ条件追加
+                    if (!flgChatTalk)
+                    {
+                        if (liplisInterval == 9999)
+                        {
+                            cntUpdate = LpsLiplisUtil.getRandamInt(50, 600);
+                        }
+                        else
+                        {
+                            cntUpdate = liplisInterval;
+                        }
+                    }
+                    else
+                    {
+                        //チャットトークなら、インターバルを強制的に1分に固定
+                        cntUpdate = 600;
+                    }
                     flgAlarm = 10;
-                }
-                
+                }                
             }
             catch (Exception err)
             {
@@ -1240,10 +1253,10 @@ namespace Liplis.MainSystem
                     tweet(param[0]);
                     break;
                 case LiplisDefine.LM_SHOW_TELL_WIN:
-                    tell(param[0]);
+                    callChatWindow(param[0]);
                     break;
-                case LiplisDefine.LM_TELL_SEND:
-                    tellSend(param[0]);
+                case LiplisDefine.LM_CHAT_SEND:
+                    chatSend(param[0]);
                     break;
                     
 
@@ -2520,7 +2533,8 @@ namespace Liplis.MainSystem
             {
                 //4.2.0 ノーマルに戻す
                 setObjectBodyNeutral();
-
+                //トークチャットではないので、フラグをオフ
+                flgChatTalk = false;
                 //話題取得フェーズ終了まで0に設定
                 flgAlarm = 0;
                 //チャット中かつなうトピックがNullでなければ回避
@@ -3135,7 +3149,17 @@ namespace Liplis.MainSystem
                 chatStop();
                 flgSkipping = false;
                 herfEyeCheck();
-                if (liplisNowTopic != null) { appendLog(); }
+                if (liplisNowTopic != null) 
+                {
+                    if (!flgChatTalk)
+                    {
+                        appendLog();
+                    }
+                    else
+                    {
+                        appendChatTalk(); 
+                    }
+                }
                 liplisNowTopic = null;
                 return true;
             }
@@ -4169,14 +4193,29 @@ namespace Liplis.MainSystem
         #region appendLog
         protected void appendLog()
         {
+            Bitmap charBody = getCharBody();
+            Invoke(new LpsDelegate.dlgMsnToVoid(al.addLog), liplisNowTopic, charBody);
+        }
+        protected void appendChatTalk()
+        {
+            Bitmap charBody = getCharBody();
+            MsgShortNews msg = liplisNowTopic;
+            msg.title = msg.result;
+
+            Invoke(new LpsDelegate.dlgMsnToVoid(al.addLog), msg, charBody);
+            Invoke(new LpsDelegate.dlgMsnToVoid(act.addLog), msg, charBody);
+        }
+        protected Bitmap getCharBody()
+        {
             double wid = 75.0 * (double)((double)this.Width / (double)this.Height);
             Bitmap charBody = new Bitmap(75, (int)wid);
             using (Graphics g = Graphics.FromImage(charBody))
             {
                 g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                g.DrawImage(obl.getLiplisBody(liplisNowTopic.newsEmotion, liplisNowTopic.newsPoint).getBody(0, 0, 0), 0, 0, (int)wid,75);
+                g.DrawImage(obl.getLiplisBody(liplisNowTopic.newsEmotion, liplisNowTopic.newsPoint).getBody(0, 0, 0), 0, 0, (int)wid, 75);
             }
-            Invoke(new LpsDelegate.dlgMsnToVoid(al.addLog), liplisNowTopic, charBody);
+
+            return charBody;
         }
         #endregion
 
@@ -4282,18 +4321,18 @@ namespace Liplis.MainSystem
         /// 話しかけ機能
         /// </summary>
         #region tell
-        private void tell(string msg)
+        private void callChatWindow(string msg)
         {
-            atel.Show();
+            act.Show();
         }
         #endregion
 
         /// <summary>
-        /// 話しかけワードを送信する
+        /// はなしかける
         /// </summary>
         /// <param name="sendMsg"></param>
-        #region tellSend
-        private void tellSend(string sendMsg)
+        #region chatSend
+        private void chatSend(string sendMsg)
         {
             lat.apiPost(os.uid, oss.toneUrl, "w" + Assembly.GetExecutingAssembly().GetName().Version.ToString(), sendMsg);
         }
@@ -4304,11 +4343,15 @@ namespace Liplis.MainSystem
         /// </summary>
         /// <param name="sendMsg"></param>
         #region tellGetResponse
-        public void tellGetResponse(MsgShortNews msn)
+        public void chatGetResponse(MsgShortNews msn)
         {
              //応答が0件以上なら
             if (msn.nameList.Count > 0)
             {
+                //ニュートラルに戻しておく
+                setObjectBodyNeutral();
+                //チャットトークなのでフラグをオン
+                flgChatTalk = true;
                 //返答をしゃべる。
                 talk(msn);
 
@@ -4318,10 +4361,6 @@ namespace Liplis.MainSystem
                 {
                     sb.Append(name);
                 }
-
-                //ウインドウに表示
-                atel.setResponse(sb.ToString());
-
             }
             //応答件数が0なら
             else
@@ -4329,7 +4368,7 @@ namespace Liplis.MainSystem
                 //何をおっしゃられているか分かりません・・・・。
 
                 //ウインドウに表示
-                atel.setResponse(olc.getChatWordStr("noreply"));
+                //act.setResponse(olc.getChatWordStr("noreply"));
             }
         }
 

@@ -466,9 +466,6 @@
   <data name="btnTell.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="btnTell.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;btnTell.Name" xml:space="preserve">
     <value>btnTell</value>
   </data>
@@ -542,6 +539,6 @@
     <value>ActivityTalk</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Liplis.MainSystem.BaseSystem, Liplis, Version=4.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Liplis.MainSystem.BaseSystem, Liplis, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

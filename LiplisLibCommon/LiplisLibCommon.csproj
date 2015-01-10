@@ -224,6 +224,7 @@
     <Compile Include="Web\WebSummary.cs" />
     <Compile Include="Web\WetherInfo\WetherInfoLiveDoor.cs" />
     <Compile Include="Web\WetherInfo\WetherInfoYahoo.cs" />
+    <Compile Include="Web\WetherInfo\WetherUtil.cs" />
     <Compile Include="Xml\AppConfig.cs" />
     <Compile Include="Xml\mailSetting.cs" />
     <Compile Include="Xml\RssReaderEx.cs" />
