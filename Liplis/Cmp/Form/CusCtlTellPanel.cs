@@ -68,9 +68,9 @@ namespace Liplis.Cmp.Form
             // lnkLbl
             // 
             this.lnkLbl.AutoSize = false;
-            this.lnkLbl.Location = new System.Drawing.Point(85, 0);
+            this.lnkLbl.Location = new System.Drawing.Point(100, 0);
             this.lnkLbl.Name = "lnkLbl";
-            this.lnkLbl.Size = new System.Drawing.Size(360, 30);
+            this.lnkLbl.Size = new System.Drawing.Size(345, 30);
             this.lnkLbl.TabIndex = 1;
             this.lnkLbl.TabStop = true;
             this.lnkLbl.Text = discription;
