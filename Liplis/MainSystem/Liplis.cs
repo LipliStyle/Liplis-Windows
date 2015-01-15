@@ -4334,7 +4334,7 @@ namespace Liplis.MainSystem
         #region chatSend
         private void chatSend(string sendMsg)
         {
-            lat.apiPost(os.uid, oss.toneUrl, "w" + Assembly.GetExecutingAssembly().GetName().Version.ToString(), sendMsg);
+            lat.apiPost(os.uid, oss.toneUrl, "W" + Assembly.GetExecutingAssembly().GetName().Version.ToString(), sendMsg);
         }
         #endregion
 
