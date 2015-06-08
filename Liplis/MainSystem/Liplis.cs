@@ -49,6 +49,7 @@
 //  2014/11/30 Liplis4.5.0 会話ウインドウ追加
 //                         会話機能追加
 //                         気まぐれモードのときにおしゃべりが止まるバグ修正
+//  2014/11/30 Liplis4.5.1 Clalis4.1対応
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -79,7 +80,6 @@ using Liplis.Msg;
 using Liplis.Web;
 using Liplis.Web.Clalis;
 using Liplis.Xml;
-using Newtonsoft.Json;
 
 namespace Liplis.MainSystem
 {
@@ -734,7 +734,7 @@ namespace Liplis.MainSystem
         /// <summary>
         //  MethodType : child
         /// MethodName : reSetUpdateCount
-        /// チャットの開始
+        /// アップデートカウントのリセット
         /// </summary>
         #region reSetUpdateCount
         protected void reSetUpdateCount()
@@ -2759,19 +2759,19 @@ namespace Liplis.MainSystem
                 switch (liplisRefresh)
                 {
                     case 0:
-                        if (flgAlarm != 0) { refleshLiplis(); }
+                        if (flgAlarm != 0) { refreshLiplis(); }
                         Thread.Sleep(33);
-                        if (flgAlarm != 0) { refleshLiplis(); }
+                        if (flgAlarm != 0) { refreshLiplis(); }
                         Thread.Sleep(33);
-                        if (flgAlarm != 0) { refleshLiplis(); }
+                        if (flgAlarm != 0) { refreshLiplis(); }
                         break;
                     case 1:
-                        refleshLiplis();
+                        refreshLiplis();
                         break;
                     case 2:
                         if (cntSlow >= 1)
                         {
-                            refleshLiplis();
+                            refreshLiplis();
                             cntSlow = 0;
                         }
                         else
@@ -2801,7 +2801,7 @@ namespace Liplis.MainSystem
         /// 終了していたらfalseを返す
         /// </summary>
         #region refleshLiplis
-        protected bool refleshLiplis()
+        protected bool refreshLiplis()
         {
             try
             {
