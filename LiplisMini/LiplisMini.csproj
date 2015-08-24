@@ -39,6 +39,10 @@
     <StartupObject>Liplis.MainSystem.EntryPoint</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoreTweet, Version=0.5.2.200, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LibDll\CoreTweet\net35\CoreTweet.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\DLL\Newtonsoft.Json\Net35\Newtonsoft.Json.dll</HintPath>
     </Reference>
