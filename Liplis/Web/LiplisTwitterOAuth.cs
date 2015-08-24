@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using Liplis.Common;
-using Liplis.Activity;
-using System.Windows.Forms;
 using System.Threading;
+using System.Windows.Forms;
+using CoreTweet;
+using Liplis.Activity;
+using Liplis.Common;
 
 
 namespace Liplis.Web
@@ -15,6 +15,50 @@ namespace Liplis.Web
     public class LiplisTwitterOAuth
     {
         public static void lpsWitterOAuth(Liplis.MainSystem.Liplis lips)
+        {
+            
+
+            try
+            {
+                //---------------------------
+                // 1.オーサライズセッション取得
+                //---------------------------
+                var session = OAuth.Authorize(LiplisDefine.TWITTER_OAUTH_CONSUMERKEY, LiplisDefine.TWITTER_OAUTH_CONSUMERSECRET);
+
+                // ブラウザ起動しPINコードを表示
+                System.Diagnostics.Process.Start(session.AuthorizeUri.ToString());
+
+                //---------------------------
+                // 2.PINコード認証
+                //---------------------------
+                string pin;
+
+                //ピンコード入力画面を表示する
+                using (ActivityTwitterActivation ftip = new ActivityTwitterActivation())
+                {
+                    //画面表示
+                    ftip.ShowDialog();
+
+                    pin = ftip.pin;
+                }
+
+                //---------------------------
+                // 3.アクセストークン取得
+                //---------------------------
+                var tokens = session.GetTokens(pin);
+
+                //登録
+                lips.registerTwitterInfo(tokens.AccessToken, tokens.AccessTokenSecret, tokens.UserId.ToString(), tokens.ScreenName);
+
+                MessageBox.Show("アクセストークンの取得に成功しました。", "TwitterPinコード送信");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("アクセストークンの取得に失敗しました。", "TwitterPinコード送信");
+            }
+        }
+
+        public static void lpsWitterOAuthOld(Liplis.MainSystem.Liplis lips)
         {
             LiplisTwitterOAuthBase oauth = new LiplisTwitterOAuthBase();
 
@@ -70,7 +114,7 @@ namespace Liplis.Web
                     Thread.Sleep(1000);
                     sr = new StreamReader(st, Encoding.GetEncoding("Shift_JIS"));
                 }
-                catch 
+                catch
                 {
                     client = new WebClient();
                     Thread.Sleep(1000);
@@ -78,7 +122,7 @@ namespace Liplis.Web
                     Thread.Sleep(1000);
                     sr = new StreamReader(st, Encoding.GetEncoding("Shift_JIS"));
                 }
-                
+
 
                 tokens = convertToTokenForOauth(sr.ReadToEnd());
 

@@ -583,7 +583,7 @@ namespace Liplis.Web
         #endregion
 
         /// <summary>
-        /// 
+        /// ツイートする
         /// </summary>
         /// <param name="uid"></param>
         /// <param name="topicId"></param>

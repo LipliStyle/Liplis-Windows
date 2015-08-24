@@ -43,6 +43,9 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="CoreTweet">
+      <HintPath>..\..\LibDll\CoreTweet\net35\CoreTweet.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\DLL\Newtonsoft.Json\Net35\Newtonsoft.Json.dll</HintPath>
     </Reference>
