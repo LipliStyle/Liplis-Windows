@@ -1,4 +1,5 @@
-﻿using Liplis.Voice;
+﻿using Liplis.Option.Voice;
+using Liplis.Voice;
 using System.Collections.Generic;
 
 namespace Liplis.Msg

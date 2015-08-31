@@ -1,11 +1,12 @@
 ﻿using Liplis.Msg;
+using Liplis.Voice;
 using System;
 using System.Collections;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Liplis.Voice
+namespace Liplis.Option.Voice
 { 
     public class VRMessage
     {
@@ -62,7 +63,7 @@ namespace Liplis.Voice
         }
         else
         {
-            OptionManager.Instance.saveOption();
+            
         }
         return text;
     }

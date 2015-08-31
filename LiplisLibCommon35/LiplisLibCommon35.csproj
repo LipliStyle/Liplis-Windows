@@ -271,29 +271,26 @@
     <Compile Include="..\LiplisLibCommon\Sys\TranserateInfoClass.cs">
       <Link>Sys\TranserateInfoClass.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\ECallType.cs">
-      <Link>Voice\ECallType.cs</Link>
-    </Compile>
     <Compile Include="..\LiplisLibCommon\Voice\LpsVoiceRoid.cs">
       <Link>Voice\LpsVoiceRoid.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\OptionManager.cs">
-      <Link>Voice\OptionManager.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\ECallType.cs">
+      <Link>Voice\Option\ECallType.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\TRegReplace.cs">
-      <Link>Voice\TRegReplace.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\TRegReplace.cs">
+      <Link>Voice\Option\TRegReplace.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\TSimpleReplace.cs">
-      <Link>Voice\TSimpleReplace.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\TSimpleReplace.cs">
+      <Link>Voice\Option\TSimpleReplace.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\TSwitchKeyword.cs">
-      <Link>Voice\TSwitchKeyword.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\TSwitchKeyword.cs">
+      <Link>Voice\Option\TSwitchKeyword.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\TVoiceRoidInfo.cs">
-      <Link>Voice\TVoiceRoidInfo.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\TVoiceRoidInfo.cs">
+      <Link>Voice\Option\TVoiceRoidInfo.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\VRMessage.cs">
-      <Link>Voice\VRMessage.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\VRMessage.cs">
+      <Link>Voice\Option\VRMessage.cs</Link>
     </Compile>
     <Compile Include="..\LiplisLibCommon\Web\HtmlDownloader.cs">
       <Link>Web\HtmlDownloader.cs</Link>
