@@ -15,7 +15,7 @@ namespace Liplis.Common
         public const int WM_CREATE = 0x0001;             //初期化    0を返さなければwindowが破棄される
         public const int WM_DESTROY = 0x0002;            //ウインドウが破棄されようとしている
         public const int WM_MOVE = 0x0003;               //ウインドウが移動した直後
-        public const int WM_SIZE = 0x0005;             //ウインドウがサイズを変更した直後  SIZE_MAXHIDE等のフラグ判別可能
+        public const int WM_SIZE = 0x0005;               //ウインドウがサイズを変更した直後  SIZE_MAXHIDE等のフラグ判別可能
         public const int WM_ACTIVATE = 0x0006;           //
         public const int WM_SETFOCUS = 0x0007;
         public const int WM_KILLFOCUS = 0x0008;

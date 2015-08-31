@@ -297,6 +297,8 @@ namespace Liplis.Common
         public static extern int SendMessage(IntPtr hWnd, int msg, int Param, StringBuilder text);
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int msg, int Param, string s);
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern int SendMessageTimeout(IntPtr hWnd, int uMsg, int wParam, int lParam, int fuFlags, int uTimeout, out IntPtr lpdwResult);
 
         public delegate int EnumWindowsDelegate(IntPtr hWnd, int lParam);
 
@@ -309,6 +311,17 @@ namespace Liplis.Common
         [DllImport("user32.dll")]
         public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out int lpdwProcessId);
 
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool IsWindowEnabled(IntPtr hWnd);
+
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool TerminateProcess(IntPtr hProcess, uint uExitCode);
+
+        [DllImport("user32.dll")]
+        public static extern int MoveWindow(IntPtr hwnd, int x, int y, int nWidth, int nHeight, int bRepaint);
         #endregion
 
 

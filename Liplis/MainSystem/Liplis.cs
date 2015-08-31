@@ -50,6 +50,8 @@
 //                         会話機能追加
 //                         気まぐれモードのときにおしゃべりが止まるバグ修正
 //  2014/11/30 Liplis4.5.1 Clalis4.1対応
+//  2015/08/18 Liplis4.5.2 Twitter登録機能バグ修正
+//  2015/08/31 Liplis4.5.3 VoiceLoid最新版対応
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -80,6 +82,7 @@ using Liplis.Msg;
 using Liplis.Web;
 using Liplis.Web.Clalis;
 using Liplis.Xml;
+using Liplis.Voice;
 
 namespace Liplis.MainSystem
 {

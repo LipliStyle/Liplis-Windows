@@ -88,7 +88,8 @@
     <Compile Include="Common\LpsResourceController.cs" />
     <Compile Include="Common\LpsSqlServerBalkCopy.cs" />
     <Compile Include="Common\LpsTimeController.cs" />
-    <Compile Include="Common\LpsVoiceRoid.cs" />
+    <Compile Include="Voice\ECallType.cs" />
+    <Compile Include="Voice\LpsVoiceRoid.cs" />
     <Compile Include="Common\LpsWindowsApi.cs" />
     <Compile Include="Common\LpsWindowsApiDefine.cs" />
     <Compile Include="Common\LpsLanguage.cs" />
@@ -178,7 +179,6 @@
     <Compile Include="Maid\LiplisMaidSystem.cs" />
     <Compile Include="Msg\MsgShortNewsCm.cs" />
     <Compile Include="Msg\msgTargetVersion.cs" />
-    <Compile Include="Msg\msgVoiceRoid.cs" />
     <Compile Include="Msg\msgWetherDescription.cs" />
     <Compile Include="Msg\ObjLpsApiMsg.cs" />
     <Compile Include="Pic\ComImageController.cs" />
@@ -191,6 +191,13 @@
     <Compile Include="Sys\MemoryInfoClass.cs" />
     <Compile Include="Sys\NetworkInfoClass.cs" />
     <Compile Include="Sys\TranserateInfoClass.cs" />
+    <Compile Include="Msg\msgVoiceRoid.cs" />
+    <Compile Include="Voice\OptionManager.cs" />
+    <Compile Include="Voice\TRegReplace.cs" />
+    <Compile Include="Voice\TSimpleReplace.cs" />
+    <Compile Include="Voice\TSwitchKeyword.cs" />
+    <Compile Include="Voice\TVoiceRoidInfo.cs" />
+    <Compile Include="Voice\VRMessage.cs" />
     <Compile Include="Web\HtmlDownloader.cs" />
     <Compile Include="Web\HtmlParseController.cs" />
     <Compile Include="Web\HtmlParser.cs" />
@@ -248,9 +255,7 @@
       <DependentUpon>UsrCtlLoadingImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Voice\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

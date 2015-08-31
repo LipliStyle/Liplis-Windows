@@ -109,9 +109,6 @@
     <Compile Include="..\LiplisLibCommon\Common\LpsTimeController.cs">
       <Link>Common\LpsTimeController.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Common\LpsVoiceRoid.cs">
-      <Link>Common\LpsVoiceRoid.cs</Link>
-    </Compile>
     <Compile Include="..\LiplisLibCommon\Common\LpsWindowsApi.cs">
       <Link>Common\LpsWindowsApi.cs</Link>
     </Compile>
@@ -273,6 +270,30 @@
     </Compile>
     <Compile Include="..\LiplisLibCommon\Sys\TranserateInfoClass.cs">
       <Link>Sys\TranserateInfoClass.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\ECallType.cs">
+      <Link>Voice\ECallType.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\LpsVoiceRoid.cs">
+      <Link>Voice\LpsVoiceRoid.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\OptionManager.cs">
+      <Link>Voice\OptionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\TRegReplace.cs">
+      <Link>Voice\TRegReplace.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\TSimpleReplace.cs">
+      <Link>Voice\TSimpleReplace.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\TSwitchKeyword.cs">
+      <Link>Voice\TSwitchKeyword.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\TVoiceRoidInfo.cs">
+      <Link>Voice\TVoiceRoidInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\VRMessage.cs">
+      <Link>Voice\VRMessage.cs</Link>
     </Compile>
     <Compile Include="..\LiplisLibCommon\Web\HtmlDownloader.cs">
       <Link>Web\HtmlDownloader.cs</Link>

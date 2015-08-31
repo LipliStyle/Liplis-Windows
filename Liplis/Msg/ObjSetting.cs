@@ -12,6 +12,7 @@ using Liplis.Fct;
 using Liplis.Xml;
 using System.Drawing;
 using Liplis.Web;
+using Liplis.Voice;
 
 namespace Liplis.Msg
 {
