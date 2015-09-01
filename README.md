@@ -75,6 +75,6 @@ http://json.codeplex.com/
 http://www.codeproject.com/Articles/9369/Circular-Menu-Component  
   
 * CoreTweet  
-ユーザーがツイッター登録できるようにするために、使用させて頂いております。
-MITライセンスにもとづき、使用させて頂きます。
+ユーザーがツイッター登録できるようにするために、使用させて頂いております。  
+MITライセンスにもとづき、使用させて頂きます。  
 https://github.com/CoreTweet/CoreTweet
