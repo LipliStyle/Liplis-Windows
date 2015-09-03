@@ -52,6 +52,8 @@
 //  2014/11/30 Liplis4.5.1 Clalis4.1対応
 //  2015/08/18 Liplis4.5.2 Twitter登録機能バグ修正
 //  2015/08/31 Liplis4.5.3 VoiceLoid最新版対応
+//  2015/09/04 Liplis4.5.4 話題設定変更した時に即時反映されるように修正
+//                         次の話題ボタン連打対策
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -201,8 +203,7 @@ namespace Liplis.MainSystem
         /// 設定値
         //NOTE : liplisRefreshRate * liplisRate = 更新間隔 (updateCntに関連)
         #region 設定値
-        protected static int liplisInterval = 100;		    //インターバル
-        protected static int liplisRefresh = 10;			//リフレッシュレート
+        protected static int liplisInterval = 300;		    //インターバル
         #endregion
 
         ///=====================================
@@ -369,7 +370,6 @@ namespace Liplis.MainSystem
         protected void loadSetting()
         {
             liplisInterval = os.lpsInterval;
-            liplisRefresh = os.lpsReftesh;
             liplisBatteryLevel = (int)(ps.BatteryLifePercent * 100);
             prevBatteryLevel = (int)(ps.BatteryLifePercent * 100);
         }
@@ -1261,7 +1261,10 @@ namespace Liplis.MainSystem
                 case LiplisDefine.LM_CHAT_SEND:
                     chatSend(param[0]);
                     break;
-                    
+                case LiplisDefine.LM_TOPIC_RELOAD:          //2015/09/04 Liplis4.5.4 話題をリロードするように変更
+                    otp.doReloadThread();
+                    break;
+
 
                 //ウインドウズ実行コマンド
                 #region ウインドウズ実行コマンド
@@ -1481,6 +1484,12 @@ namespace Liplis.MainSystem
             //チャット中チェック
             if (!flgChatting)
             {
+                nextLiplis();
+            }
+            //2015/09/04 Liplis4.5.4 連打対策
+            else if (flgChatting && flgSkip)
+            {
+                flgSkip = false;
                 nextLiplis();
             }
             else
@@ -2685,7 +2694,7 @@ namespace Liplis.MainSystem
                 Invoke(new LpsDelegate.dlgVoidToVoid(at.Show));
 
                 //即表示判定
-                if (os.speed == 3)
+                if (os.lpsReftesh == LiplisDefine.ACCTIVE_ECO)
                 {
                     immediatelyReflesh();
                 }
@@ -2759,19 +2768,30 @@ namespace Liplis.MainSystem
         {
             try
             {
-                switch (liplisRefresh)
+                switch (os.lpsReftesh)
                 {
-                    case 0:
+                    case LiplisDefine.ACCTIVE_OTENBA:
+                        if (flgAlarm != 0) { refreshLiplis(); }
+                        Thread.Sleep(33);
+                        if (flgAlarm != 0) { refreshLiplis(); }
+                        Thread.Sleep(33);
+                        if (flgAlarm != 0) { refreshLiplis(); }
+                        Thread.Sleep(33);
                         if (flgAlarm != 0) { refreshLiplis(); }
                         Thread.Sleep(33);
                         if (flgAlarm != 0) { refreshLiplis(); }
                         Thread.Sleep(33);
                         if (flgAlarm != 0) { refreshLiplis(); }
                         break;
-                    case 1:
+                    case LiplisDefine.ACCTIVE_NORMAL:
+                        if (flgAlarm != 0) { refreshLiplis(); }
+                        Thread.Sleep(33);
+                        if (flgAlarm != 0) { refreshLiplis(); }
+                        break;
+                    case LiplisDefine.ACCTIVE_LITTLE_YUKKURI:
                         refreshLiplis();
                         break;
-                    case 2:
+                    case LiplisDefine.ACCTIVE_YUKKURI:
                         if (cntSlow >= 1)
                         {
                             refreshLiplis();
@@ -2782,7 +2802,7 @@ namespace Liplis.MainSystem
                             cntSlow++;
                         }
                         break;
-                    case 3:
+                    case LiplisDefine.ACCTIVE_ECO:
                         //瞬間表示
                         immediatelyReflesh();
                         break;

@@ -68,10 +68,87 @@ namespace Liplis.Web
         /// サマリーニュースリストの取得
         /// Liplis3.1.0 URL変更、引数追加
         /// Liplis4.0.0 キューに直接投入するように変更
+        /// Liplis4.5.4 メソッド分割
         /// </summary>
         /// <returns></returns>
         #region getSummaryNewsList
         public static void getSummaryNewsList(Queue<MsgShortNews> newsQ, string uid, string toneUrl, string newsFlg, string num, string hour, string already, string twitterMode, string runout)
+        {
+            try
+            {
+                //APIの結果受け取り用クラス
+                ResLpsSummaryNews2JsonList result = getSummaryNewsList(uid, toneUrl, newsFlg, num, hour, already, twitterMode, runout);
+
+                //取得したリストをメッセージリストに変換する
+                foreach (ResLpsSummaryNews2Json rlsn2 in result.lstNews)
+                {
+                    MsgShortNews msg = convertRlSumNjToMsg(rlsn2);
+                    FctTagFactory.setTag(msg);
+                    newsQ.Enqueue(msg);
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("");
+            }
+            return;
+        }
+        /// <summary>
+        /// リストをリロードする
+        /// Liplis4.5.4 作成
+        /// </summary>
+        /// <param name="newsQ"></param>
+        /// <param name="uid"></param>
+        /// <param name="toneUrl"></param>
+        /// <param name="newsFlg"></param>
+        /// <param name="num"></param>
+        /// <param name="hour"></param>
+        /// <param name="already"></param>
+        /// <param name="twitterMode"></param>
+        /// <param name="runout"></param>
+        public static void reloadSummaryNewsList(Queue<MsgShortNews> newsQ, string uid, string toneUrl, string newsFlg, string num, string hour, string already, string twitterMode, string runout)
+        {
+            try
+            {
+                //APIの結果受け取り用クラス
+                ResLpsSummaryNews2JsonList result = getSummaryNewsList(uid, toneUrl, newsFlg, num, hour, already, twitterMode, runout);
+
+                //一旦クリア
+                newsQ.Clear();
+
+                //取得したリストをメッセージリストに変換する
+                foreach (ResLpsSummaryNews2Json rlsn2 in result.lstNews)
+                {
+                    MsgShortNews msg = convertRlSumNjToMsg(rlsn2);
+                    FctTagFactory.setTag(msg);
+                    newsQ.Enqueue(msg);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("");
+            }
+            return;
+        }
+
+
+
+        /// <summary>
+        /// getSummaryNewsList
+        /// サマリーニュースリストの取得
+        /// ResLpsSummaryNews2JsonListで返すように変更
+        /// Liplis4.5.4 作成
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="toneUrl"></param>
+        /// <param name="newsFlg"></param>
+        /// <param name="num"></param>
+        /// <param name="hour"></param>
+        /// <param name="already"></param>
+        /// <param name="twitterMode"></param>
+        /// <param name="runout"></param>
+        /// <returns></returns>
+        public static ResLpsSummaryNews2JsonList getSummaryNewsList(string uid, string toneUrl, string newsFlg, string num, string hour, string already, string twitterMode, string runout)
         {
             try
             {
@@ -89,19 +166,14 @@ namespace Liplis.Web
                 string jsonText = HttpPost.sendPost(LiplisDefine.LIPLIS_API_SUMMARY_NEWS_LIST, ps);
 
                 //APIの結果受け取り用クラス
-                ResLpsSummaryNews2JsonList result = JsonConvert.DeserializeObject<ResLpsSummaryNews2JsonList>(jsonText);
-
-                //取得したリストをメッセージリストに変換する
-                foreach (ResLpsSummaryNews2Json rlsn2 in result.lstNews)
-                {
-                    MsgShortNews msg = convertRlSumNjToMsg(rlsn2);
-                    FctTagFactory.setTag(msg);
-                    newsQ.Enqueue(msg);
-                }
+                return JsonConvert.DeserializeObject<ResLpsSummaryNews2JsonList>(jsonText);
             }
-            catch{}
-            return;
+            catch
+            {
+                return new ResLpsSummaryNews2JsonList();
+            }
         }
+
         #endregion
 
         ///====================================================================

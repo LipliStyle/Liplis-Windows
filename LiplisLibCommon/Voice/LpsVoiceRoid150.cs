@@ -443,6 +443,7 @@ namespace Liplis.Voice
                 {
                     this.clearMessage();
                     MessageBox.Show("VOICEROIDの起動が確認できませんでした", "Liplis", MessageBoxButtons.OK);
+                    flgNotFound = true;
                     return false;
                 }
                 flag = flag2;

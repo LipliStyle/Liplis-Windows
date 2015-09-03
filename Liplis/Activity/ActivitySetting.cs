@@ -108,25 +108,27 @@ namespace Liplis.Activity
             //おしゃべりモード
             switch (os.mode)
             {
-                case 1: rdoFrqMachen.Checked = true; break;
-                case 2: rdoFrqVerryNoisy.Checked = true; break;
-                case 3: rdoFrqNoisy.Checked = true; break;
-                case 4: rdoFrqTalkative.Checked = true; break;
-                case 5: rdoFrqNormal.Checked = true; break;
-                case 6: rdoFrqQuiet.Checked = true; break;
-                case 7: rdoFrqKeeps.Checked = true; break;
-                case 8: rdoFrqRefined.Checked = true; break;
-                case 9: rdoFrqChangeable.Checked = true; break;
+                case 1: rdoFrqMachen.Checked      = true; break;
+                case 2: rdoFrqVerryNoisy.Checked  = true; break;
+                case 3: rdoFrqNoisy.Checked       = true; break;
+                case 4: rdoFrqTalkative.Checked   = true; break;
+                case 5: rdoFrqNormal.Checked      = true; break;
+                case 6: rdoFrqQuiet.Checked       = true; break;
+                case 7: rdoFrqKeeps.Checked       = true; break;
+                case 8: rdoFrqRefined.Checked     = true; break;
+                case 9: rdoFrqChangeable.Checked  = true; break;
                 default: rdoFrqVerryNoisy.Checked = true; break;
             }
 
             //アクティブ度
-            switch (os.speed)
+            switch (os.lpsReftesh)
             {
-                case 0: rboOtenba.Checked = true; break;
-                case 1: rboNormal.Checked = true; break;
-                case 2: rboYukkuri.Checked = true; break;
-                case 3: rboEco.Checked = true; break;
+                case LiplisDefine.ACCTIVE_OTENBA: rboOtenba.Checked = true; break;
+                case LiplisDefine.ACCTIVE_NORMAL: rboNormal.Checked = true; break;
+                case LiplisDefine.ACCTIVE_YUKKURI: rboYukkuri.Checked = true; break;
+                case LiplisDefine.ACCTIVE_LITTLE_YUKKURI: rboLittleYukkuri.Checked = true; break;
+
+                case LiplisDefine.ACCTIVE_ECO: rboEco.Checked = true; break;
             }
 
             //ボックス/サークル表示
@@ -534,46 +536,55 @@ namespace Liplis.Activity
             dlgCallBrowser(LiplisDefine.LIPLIS_LIPLISTYLE);
         }
 
+
+
         private void chkNews_CheckedChanged(object sender, EventArgs e)
         {
             os.lpsTopicNews = LpsLiplisUtil.boolToBit(chkNews.Checked);
             savePreference();
+            reloadTopic();
         }
 
         private void chk2ch_CheckedChanged(object sender, EventArgs e)
         {
             os.lpsTopic2ch = LpsLiplisUtil.boolToBit(chk2ch.Checked);
             savePreference();
+            reloadTopic();
         }
 
         private void chkNico_CheckedChanged(object sender, EventArgs e)
         {
             os.lpsTopicNico = LpsLiplisUtil.boolToBit(chkNico.Checked);
             savePreference();
+            reloadTopic();
         }
 
         private void chkRss_CheckedChanged(object sender, EventArgs e)
         {
             os.lpsTopicRss = LpsLiplisUtil.boolToBit(chkRss.Checked);
             savePreference();
+            reloadTopic();
         }
 
         private void chkTwitter_CheckedChanged(object sender, EventArgs e)
         {
             os.lpsTopicTwitter = LpsLiplisUtil.boolToBit(chkTwitter.Checked);
             savePreference();
+            reloadTopic();
         }
 
         private void chkTwitterMy_CheckedChanged(object sender, EventArgs e)
         {
             os.lpsTopicTwitterMy = LpsLiplisUtil.boolToBit(chkTwitterMy.Checked);
             savePreference();
+            reloadTopic();
         }
 
         private void chkTwitterPb_CheckedChanged(object sender, EventArgs e)
         {
             os.lpsTopicTwitterPu = LpsLiplisUtil.boolToBit(chkTwitterPb.Checked);
             savePreference();
+            reloadTopic();
         }
 
         private void cboTopicHour_SelectedIndexChanged(object sender, EventArgs e)
@@ -749,28 +760,35 @@ namespace Liplis.Activity
         #region setting スピード変更
         private void rboOtenba_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(0);
+            os.setSpeed(LiplisDefine.ACCTIVE_OTENBA);
             savePreference();
             lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
         }
 
         private void rboNormal_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(1);
+            os.setSpeed(LiplisDefine.ACCTIVE_NORMAL);
+            savePreference();
+            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+        }
+
+        private void rboLittleYukkuri_CheckedChanged(object sender, EventArgs e)
+        {
+            os.setSpeed(LiplisDefine.ACCTIVE_LITTLE_YUKKURI);
             savePreference();
             lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
         }
 
         private void rboYukkuri_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(2);
+            os.setSpeed(LiplisDefine.ACCTIVE_YUKKURI);
             savePreference();
             lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
         }
 
         private void rboEco_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(3);
+            os.setSpeed(LiplisDefine.ACCTIVE_ECO);
             savePreference();
             lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
         }
@@ -1035,21 +1053,21 @@ namespace Liplis.Activity
                         cmbVoiceSelect.SelectedIndex = 0;
                     }
                     break;
-                case 5://結月ゆかり
+                case 5://結月ゆかりEX
                     if (os.lpsVoiceVRPathYukariEx.Equals(""))
                     {
                         LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 結月ゆかり EXのパスが設定されていません。");
                         cmbVoiceSelect.SelectedIndex = 0;
                     }
                     break;
-                case 6://民安ともえ
+                case 6://民安ともえEX
                     if (os.lpsVoiceVRPathTomoeEx.Equals(""))
                     {
                         LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 民安ともえ EXのパスが設定されていません。");
                         cmbVoiceSelect.SelectedIndex = 0;
                     }
                     break;
-                case 7://東北ずん子
+                case 7://東北ずん子EX
                     if (os.lpsVoiceVRPathZunkoEx.Equals(""))
                     {
                         LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 東北ずん子 EXのパスが設定されていません。");
@@ -1493,5 +1511,23 @@ namespace Liplis.Activity
 
         #endregion
 
+
+        ///====================================================================
+        ///
+        ///                          話題のリロード
+        ///                         
+        ///====================================================================
+
+        #region 話題のリロード
+        /// <summary>
+        /// 話題のリロード
+        /// </summary>
+        private void reloadTopic()
+        {
+            if (!flgLoad) { return; }
+            lips.onRecive(LiplisDefine.LM_TOPIC_RELOAD, "");
+        }
+
+        #endregion
     }
 }

@@ -32,7 +32,7 @@ namespace Liplis.MainSystem
 
         ///============================
         ///各種インターバル
-        protected int autoEndInterval = LiplisDefine.autoEndInterval;
+        protected int autoEndInterval = LiplisDefine.AUTO_EN_INTERVAL;
         protected int faidStartInterval = LiplisDefine.faidStartInterval;
         protected int faidEndInterval = LiplisDefine.faidEndInterval;
 

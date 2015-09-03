@@ -29,7 +29,7 @@ namespace Liplis.Msg
         public int locationX            { get; set; }       //ロケーションX
         public int locationY            { get; set; }       //ロケーションY
         public int mode                 { get; set; }       //チャット頻度
-        public int speed                { get; set; }       //表示速度
+        public int lpsReftesh           { get; set; }       //表示速度
         public int mouseCtrl            { get; set; }       //マウス移動コントロール入力
         public int talkChase            { get; set; }       //会話ウインドウの追随
         public int alwaysTop            { get; set; }       //常にトップ
@@ -70,7 +70,6 @@ namespace Liplis.Msg
         ///=============================
         /// 対応設定値
         public int lpsInterval          { get; set; }       //インターバル
-        public int lpsReftesh           { get; set; }       //リフレッシュレート
 
         ///=============================
         /// 音声設定
@@ -216,7 +215,7 @@ namespace Liplis.Msg
             setting.setInt(LiplisDefine.PREFS_LOCATION_X, this.locationX);
             setting.setInt(LiplisDefine.PREFS_LOCATION_Y, this.locationY);
             setting.setInt(LiplisDefine.PREFS_MODE, this.mode);
-            setting.setInt(LiplisDefine.PREFS_SPEED, this.speed);
+            setting.setInt(LiplisDefine.PREFS_SPEED, this.lpsReftesh);
             setting.setInt(LiplisDefine.PREFS_TALK_CHASE, this.talkChase);
             setting.setInt(LiplisDefine.PREFS_ALWAYSTOP, this.alwaysTop);//
             setting.setInt(LiplisDefine.PREFS_MOUSE_CTLS, this.mouseCtrl);
@@ -491,25 +490,10 @@ namespace Liplis.Msg
         /// <summary>
         /// 話速度セッター
         /// </summary>
-        /// <param name="speed"></param>
-        public void setSpeed(int speed)
+        /// <param name="lpsReftesh"></param>
+        public void setSpeed(int lpsReftesh)
         {
-            this.speed = speed;
-            switch (speed)
-            {
-                case 0:
-                    lpsReftesh = 0;
-                    break;
-                case 1:
-                    lpsReftesh = 1;
-                    break;
-                case 2:
-                    lpsReftesh = 2;
-                    break;
-                default:
-                    lpsReftesh = 3;
-                    break;
-            }
+            this.lpsReftesh = lpsReftesh;
         }
 
         /// <summary>

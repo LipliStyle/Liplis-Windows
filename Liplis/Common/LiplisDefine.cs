@@ -118,7 +118,7 @@ namespace Liplis.Common
         /// URL定義
         #region URL定義
         public const string LIPLIS_API_SUMMARY_NEWS               = @"http://liplis.mine.nu/Clalis/v41/Liplis/ClalisForLiplis.aspx";                        //2014/04/07 ver4.0.0 Clalis4.0採用
-        public const string LIPLIS_API_SUMMARY_NEWS_LIST          = @"http://liplis.mine.nu/Clalis/v41/Liplis/ClalisForLiplisFx.aspx";                      //2014/04/07 ver4.0.0 Clalis4.0採用
+        public const string LIPLIS_API_SUMMARY_NEWS_LIST          = @"http://liplis.mine.nu/Clalis/v41/Liplis/ClalisForLiplisFx.aspx";                      //2014/04/07 ver4.0.0 Clalis4.0採用                  //2014/04/07 ver4.0.0 Clalis4.0採用
         public const string LIPLIS_API_SHORT_NEWS                 = @"http://liplis.mine.nu/Clalis/v41/Liplis/ClalisForLiplisWeb.aspx";                     //2014/04/07 ver4.0.0 Clalis4.0採用         
         public const string LIPLIS_API_SHORT_NEWS_LIST            = @"http://liplis.mine.nu/Clalis/v41/Liplis/ClalisForLiplisWebFx.aspx";
         public const string LIPLIS_API_REGISTER_RSS               = @"http://liplis.mine.nu/Clalis/v31/Liplis/ClalisForLiplisRegisterAddRssUrl.aspx";
@@ -155,7 +155,6 @@ namespace Liplis.Common
         #region ツイッター認証コード
         public const string TWITTER_OAUTH_CONSUMERKEY = "W1tQBXDr3pQu1atfIwp6A";
         public const string TWITTER_OAUTH_CONSUMERSECRET = "eTFat5surbln3MH7f0uIlwmpOcQdjlkyg7vUk90eG8";
-
 
         public static readonly string REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token";
         public static readonly string AUTHORIZE_URL = "https://api.twitter.com/oauth/authorize";
@@ -767,7 +766,7 @@ namespace Liplis.Common
         ///=============================
         /// インターバル定義
         #region インターバル定義
-        public const int autoEndInterval       = 30000;
+        public const int AUTO_EN_INTERVAL       = 30000;
         public const int faidStartInterval     = 5;
         public const int faidEndInterval       = 5;
         public const int ACTION_TIMER_INTERVAL = 100;
@@ -807,6 +806,7 @@ namespace Liplis.Common
         public const int LM_TWEET            = 24;
         public const int LM_SHOW_TELL_WIN    = 25;
         public const int LM_CHAT_SEND        = 26;
+        public const int LM_TOPIC_RELOAD     = 27;
 
         public const int LM_WIN_FONTS　                 =　1001;
         public const int LM_WIN_IEXPLORE　              =　1002;
@@ -998,6 +998,20 @@ namespace Liplis.Common
         public const string LPS_TOPIC_HOUR_RANGE_3DAY = "3日";
         public const string LPS_TOPIC_HOUR_RANGE_7DAY = "7日";
         public const string LPS_TOPIC_HOUR_RANGE_UNLIMITED = "無制限";
+        #endregion
+
+        ///=============================
+        /// アクティブ度
+        #region アクティブ度
+        public const int ACCTIVE_OTENBA = 0;
+        public const int ACCTIVE_NORMAL = 1;
+        public const int ACCTIVE_LITTLE_YUKKURI = 2;
+        public const int ACCTIVE_YUKKURI = 3;
+        
+
+        public const int ACCTIVE_ECO = 99;
+
+        public const int TALK_INTERVAL = 33;
         #endregion
 
     }

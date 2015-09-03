@@ -62,6 +62,7 @@
             this.rdoFrqQuiet = new System.Windows.Forms.RadioButton();
             this.rdoFrqReticent = new System.Windows.Forms.RadioButton();
             this.grpSetActive = new System.Windows.Forms.GroupBox();
+            this.rboLittleYukkuri = new System.Windows.Forms.RadioButton();
             this.rboEco = new System.Windows.Forms.RadioButton();
             this.rboYukkuri = new System.Windows.Forms.RadioButton();
             this.rboNormal = new System.Windows.Forms.RadioButton();
@@ -118,6 +119,18 @@
             this.chkNews = new System.Windows.Forms.CheckBox();
             this.grpVoice = new System.Windows.Forms.GroupBox();
             this.grpVoiceExePath = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblEx01 = new System.Windows.Forms.Label();
+            this.btnVoiceLoidPathZunkoEx = new System.Windows.Forms.Button();
+            this.txtVoiceLoidPathZunkoEx = new System.Windows.Forms.TextBox();
+            this.lblVoiceLoidPathZunkoEx = new System.Windows.Forms.Label();
+            this.btnVoiceLoidPathTomoeEx = new System.Windows.Forms.Button();
+            this.txtVoiceLoidPathTomoeEx = new System.Windows.Forms.TextBox();
+            this.lblVoiceLoidPathTomoeEx = new System.Windows.Forms.Label();
+            this.btnVoiceLoidPathYudukiEx = new System.Windows.Forms.Button();
+            this.txtVoiceLoidPathYudukiEx = new System.Windows.Forms.TextBox();
+            this.lblVoiceLoidPathYudukiEx = new System.Windows.Forms.Label();
             this.btnVoiceLoidPathZunko = new System.Windows.Forms.Button();
             this.txtVoiceLoidPathZunko = new System.Windows.Forms.TextBox();
             this.lblVoiceLoidPathZunko = new System.Windows.Forms.Label();
@@ -179,18 +192,6 @@
             this.tsmHelpLiplisWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmHelpLipliStyle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmVersion = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVoiceLoidPathZunkoEx = new System.Windows.Forms.Button();
-            this.txtVoiceLoidPathZunkoEx = new System.Windows.Forms.TextBox();
-            this.lblVoiceLoidPathZunkoEx = new System.Windows.Forms.Label();
-            this.btnVoiceLoidPathTomoeEx = new System.Windows.Forms.Button();
-            this.txtVoiceLoidPathTomoeEx = new System.Windows.Forms.TextBox();
-            this.lblVoiceLoidPathTomoeEx = new System.Windows.Forms.Label();
-            this.btnVoiceLoidPathYudukiEx = new System.Windows.Forms.Button();
-            this.txtVoiceLoidPathYudukiEx = new System.Windows.Forms.TextBox();
-            this.lblVoiceLoidPathYudukiEx = new System.Windows.Forms.Label();
-            this.lblEx01 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.spc.Panel1.SuspendLayout();
             this.spc.Panel2.SuspendLayout();
             this.spc.SuspendLayout();
@@ -613,6 +614,7 @@
             // 
             // grpSetActive
             // 
+            this.grpSetActive.Controls.Add(this.rboLittleYukkuri);
             this.grpSetActive.Controls.Add(this.rboEco);
             this.grpSetActive.Controls.Add(this.rboYukkuri);
             this.grpSetActive.Controls.Add(this.rboNormal);
@@ -625,10 +627,22 @@
             this.grpSetActive.TabStop = false;
             this.grpSetActive.Text = "アクティブ度";
             // 
+            // rboLittleYukkuri
+            // 
+            this.rboLittleYukkuri.AutoSize = true;
+            this.rboLittleYukkuri.Location = new System.Drawing.Point(157, 18);
+            this.rboLittleYukkuri.Name = "rboLittleYukkuri";
+            this.rboLittleYukkuri.Size = new System.Drawing.Size(76, 16);
+            this.rboLittleYukkuri.TabIndex = 4;
+            this.rboLittleYukkuri.TabStop = true;
+            this.rboLittleYukkuri.Text = "少しゆっくり";
+            this.rboLittleYukkuri.UseVisualStyleBackColor = true;
+            this.rboLittleYukkuri.CheckedChanged += new System.EventHandler(this.rboLittleYukkuri_CheckedChanged);
+            // 
             // rboEco
             // 
             this.rboEco.AutoSize = true;
-            this.rboEco.Location = new System.Drawing.Point(216, 18);
+            this.rboEco.Location = new System.Drawing.Point(313, 18);
             this.rboEco.Name = "rboEco";
             this.rboEco.Size = new System.Drawing.Size(40, 16);
             this.rboEco.TabIndex = 3;
@@ -640,7 +654,7 @@
             // rboYukkuri
             // 
             this.rboYukkuri.AutoSize = true;
-            this.rboYukkuri.Location = new System.Drawing.Point(155, 18);
+            this.rboYukkuri.Location = new System.Drawing.Point(248, 18);
             this.rboYukkuri.Name = "rboYukkuri";
             this.rboYukkuri.Size = new System.Drawing.Size(55, 16);
             this.rboYukkuri.TabIndex = 2;
@@ -652,7 +666,7 @@
             // rboNormal
             // 
             this.rboNormal.AutoSize = true;
-            this.rboNormal.Location = new System.Drawing.Point(92, 18);
+            this.rboNormal.Location = new System.Drawing.Point(91, 18);
             this.rboNormal.Name = "rboNormal";
             this.rboNormal.Size = new System.Drawing.Size(49, 16);
             this.rboNormal.TabIndex = 1;
@@ -1327,6 +1341,114 @@
             this.grpVoiceExePath.TabStop = false;
             this.grpVoiceExePath.Text = "音声エンジンパス";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(134, 172);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(18, 12);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Ex";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(134, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 12);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Ex";
+            // 
+            // lblEx01
+            // 
+            this.lblEx01.AutoSize = true;
+            this.lblEx01.Location = new System.Drawing.Point(134, 122);
+            this.lblEx01.Name = "lblEx01";
+            this.lblEx01.Size = new System.Drawing.Size(18, 12);
+            this.lblEx01.TabIndex = 25;
+            this.lblEx01.Text = "Ex";
+            // 
+            // btnVoiceLoidPathZunkoEx
+            // 
+            this.btnVoiceLoidPathZunkoEx.Location = new System.Drawing.Point(474, 169);
+            this.btnVoiceLoidPathZunkoEx.Name = "btnVoiceLoidPathZunkoEx";
+            this.btnVoiceLoidPathZunkoEx.Size = new System.Drawing.Size(25, 18);
+            this.btnVoiceLoidPathZunkoEx.TabIndex = 24;
+            this.btnVoiceLoidPathZunkoEx.Text = "...";
+            this.btnVoiceLoidPathZunkoEx.UseVisualStyleBackColor = true;
+            this.btnVoiceLoidPathZunkoEx.Click += new System.EventHandler(this.btnVoiceLoidPathZunkoEx_Click);
+            // 
+            // txtVoiceLoidPathZunkoEx
+            // 
+            this.txtVoiceLoidPathZunkoEx.Location = new System.Drawing.Point(158, 169);
+            this.txtVoiceLoidPathZunkoEx.Name = "txtVoiceLoidPathZunkoEx";
+            this.txtVoiceLoidPathZunkoEx.ReadOnly = true;
+            this.txtVoiceLoidPathZunkoEx.Size = new System.Drawing.Size(310, 19);
+            this.txtVoiceLoidPathZunkoEx.TabIndex = 23;
+            // 
+            // lblVoiceLoidPathZunkoEx
+            // 
+            this.lblVoiceLoidPathZunkoEx.AutoSize = true;
+            this.lblVoiceLoidPathZunkoEx.Location = new System.Drawing.Point(3, 172);
+            this.lblVoiceLoidPathZunkoEx.Name = "lblVoiceLoidPathZunkoEx";
+            this.lblVoiceLoidPathZunkoEx.Size = new System.Drawing.Size(132, 12);
+            this.lblVoiceLoidPathZunkoEx.TabIndex = 22;
+            this.lblVoiceLoidPathZunkoEx.Text = "VOICEROID+ 東北ずん子";
+            // 
+            // btnVoiceLoidPathTomoeEx
+            // 
+            this.btnVoiceLoidPathTomoeEx.Location = new System.Drawing.Point(474, 144);
+            this.btnVoiceLoidPathTomoeEx.Name = "btnVoiceLoidPathTomoeEx";
+            this.btnVoiceLoidPathTomoeEx.Size = new System.Drawing.Size(25, 18);
+            this.btnVoiceLoidPathTomoeEx.TabIndex = 21;
+            this.btnVoiceLoidPathTomoeEx.Text = "...";
+            this.btnVoiceLoidPathTomoeEx.UseVisualStyleBackColor = true;
+            this.btnVoiceLoidPathTomoeEx.Click += new System.EventHandler(this.btnVoiceLoidPathTomoeEx_Click);
+            // 
+            // txtVoiceLoidPathTomoeEx
+            // 
+            this.txtVoiceLoidPathTomoeEx.Location = new System.Drawing.Point(158, 144);
+            this.txtVoiceLoidPathTomoeEx.Name = "txtVoiceLoidPathTomoeEx";
+            this.txtVoiceLoidPathTomoeEx.ReadOnly = true;
+            this.txtVoiceLoidPathTomoeEx.Size = new System.Drawing.Size(310, 19);
+            this.txtVoiceLoidPathTomoeEx.TabIndex = 20;
+            // 
+            // lblVoiceLoidPathTomoeEx
+            // 
+            this.lblVoiceLoidPathTomoeEx.AutoSize = true;
+            this.lblVoiceLoidPathTomoeEx.Location = new System.Drawing.Point(3, 147);
+            this.lblVoiceLoidPathTomoeEx.Name = "lblVoiceLoidPathTomoeEx";
+            this.lblVoiceLoidPathTomoeEx.Size = new System.Drawing.Size(126, 12);
+            this.lblVoiceLoidPathTomoeEx.TabIndex = 19;
+            this.lblVoiceLoidPathTomoeEx.Text = "VOICEROID+ 民安ともえ";
+            // 
+            // btnVoiceLoidPathYudukiEx
+            // 
+            this.btnVoiceLoidPathYudukiEx.Location = new System.Drawing.Point(474, 119);
+            this.btnVoiceLoidPathYudukiEx.Name = "btnVoiceLoidPathYudukiEx";
+            this.btnVoiceLoidPathYudukiEx.Size = new System.Drawing.Size(25, 18);
+            this.btnVoiceLoidPathYudukiEx.TabIndex = 18;
+            this.btnVoiceLoidPathYudukiEx.Text = "...";
+            this.btnVoiceLoidPathYudukiEx.UseVisualStyleBackColor = true;
+            this.btnVoiceLoidPathYudukiEx.Click += new System.EventHandler(this.btnVoiceLoidPathYudukiEx_Click);
+            // 
+            // txtVoiceLoidPathYudukiEx
+            // 
+            this.txtVoiceLoidPathYudukiEx.Location = new System.Drawing.Point(158, 119);
+            this.txtVoiceLoidPathYudukiEx.Name = "txtVoiceLoidPathYudukiEx";
+            this.txtVoiceLoidPathYudukiEx.ReadOnly = true;
+            this.txtVoiceLoidPathYudukiEx.Size = new System.Drawing.Size(310, 19);
+            this.txtVoiceLoidPathYudukiEx.TabIndex = 17;
+            // 
+            // lblVoiceLoidPathYudukiEx
+            // 
+            this.lblVoiceLoidPathYudukiEx.AutoSize = true;
+            this.lblVoiceLoidPathYudukiEx.Location = new System.Drawing.Point(3, 122);
+            this.lblVoiceLoidPathYudukiEx.Name = "lblVoiceLoidPathYudukiEx";
+            this.lblVoiceLoidPathYudukiEx.Size = new System.Drawing.Size(132, 12);
+            this.lblVoiceLoidPathYudukiEx.TabIndex = 16;
+            this.lblVoiceLoidPathYudukiEx.Text = "VOICEROID+ 結月ゆかり ";
+            // 
             // btnVoiceLoidPathZunko
             // 
             this.btnVoiceLoidPathZunko.Location = new System.Drawing.Point(474, 94);
@@ -1969,114 +2091,6 @@
             this.tsmVersion.Text = "バージョン情報";
             this.tsmVersion.Click += new System.EventHandler(this.tsmVersion_Click);
             // 
-            // btnVoiceLoidPathZunkoEx
-            // 
-            this.btnVoiceLoidPathZunkoEx.Location = new System.Drawing.Point(474, 169);
-            this.btnVoiceLoidPathZunkoEx.Name = "btnVoiceLoidPathZunkoEx";
-            this.btnVoiceLoidPathZunkoEx.Size = new System.Drawing.Size(25, 18);
-            this.btnVoiceLoidPathZunkoEx.TabIndex = 24;
-            this.btnVoiceLoidPathZunkoEx.Text = "...";
-            this.btnVoiceLoidPathZunkoEx.UseVisualStyleBackColor = true;
-            this.btnVoiceLoidPathZunkoEx.Click += new System.EventHandler(this.btnVoiceLoidPathZunkoEx_Click);
-            // 
-            // txtVoiceLoidPathZunkoEx
-            // 
-            this.txtVoiceLoidPathZunkoEx.Location = new System.Drawing.Point(158, 169);
-            this.txtVoiceLoidPathZunkoEx.Name = "txtVoiceLoidPathZunkoEx";
-            this.txtVoiceLoidPathZunkoEx.ReadOnly = true;
-            this.txtVoiceLoidPathZunkoEx.Size = new System.Drawing.Size(310, 19);
-            this.txtVoiceLoidPathZunkoEx.TabIndex = 23;
-            // 
-            // lblVoiceLoidPathZunkoEx
-            // 
-            this.lblVoiceLoidPathZunkoEx.AutoSize = true;
-            this.lblVoiceLoidPathZunkoEx.Location = new System.Drawing.Point(3, 172);
-            this.lblVoiceLoidPathZunkoEx.Name = "lblVoiceLoidPathZunkoEx";
-            this.lblVoiceLoidPathZunkoEx.Size = new System.Drawing.Size(132, 12);
-            this.lblVoiceLoidPathZunkoEx.TabIndex = 22;
-            this.lblVoiceLoidPathZunkoEx.Text = "VOICEROID+ 東北ずん子";
-            // 
-            // btnVoiceLoidPathTomoeEx
-            // 
-            this.btnVoiceLoidPathTomoeEx.Location = new System.Drawing.Point(474, 144);
-            this.btnVoiceLoidPathTomoeEx.Name = "btnVoiceLoidPathTomoeEx";
-            this.btnVoiceLoidPathTomoeEx.Size = new System.Drawing.Size(25, 18);
-            this.btnVoiceLoidPathTomoeEx.TabIndex = 21;
-            this.btnVoiceLoidPathTomoeEx.Text = "...";
-            this.btnVoiceLoidPathTomoeEx.UseVisualStyleBackColor = true;
-            this.btnVoiceLoidPathTomoeEx.Click += new System.EventHandler(this.btnVoiceLoidPathTomoeEx_Click);
-            // 
-            // txtVoiceLoidPathTomoeEx
-            // 
-            this.txtVoiceLoidPathTomoeEx.Location = new System.Drawing.Point(158, 144);
-            this.txtVoiceLoidPathTomoeEx.Name = "txtVoiceLoidPathTomoeEx";
-            this.txtVoiceLoidPathTomoeEx.ReadOnly = true;
-            this.txtVoiceLoidPathTomoeEx.Size = new System.Drawing.Size(310, 19);
-            this.txtVoiceLoidPathTomoeEx.TabIndex = 20;
-            // 
-            // lblVoiceLoidPathTomoeEx
-            // 
-            this.lblVoiceLoidPathTomoeEx.AutoSize = true;
-            this.lblVoiceLoidPathTomoeEx.Location = new System.Drawing.Point(3, 147);
-            this.lblVoiceLoidPathTomoeEx.Name = "lblVoiceLoidPathTomoeEx";
-            this.lblVoiceLoidPathTomoeEx.Size = new System.Drawing.Size(126, 12);
-            this.lblVoiceLoidPathTomoeEx.TabIndex = 19;
-            this.lblVoiceLoidPathTomoeEx.Text = "VOICEROID+ 民安ともえ";
-            // 
-            // btnVoiceLoidPathYudukiEx
-            // 
-            this.btnVoiceLoidPathYudukiEx.Location = new System.Drawing.Point(474, 119);
-            this.btnVoiceLoidPathYudukiEx.Name = "btnVoiceLoidPathYudukiEx";
-            this.btnVoiceLoidPathYudukiEx.Size = new System.Drawing.Size(25, 18);
-            this.btnVoiceLoidPathYudukiEx.TabIndex = 18;
-            this.btnVoiceLoidPathYudukiEx.Text = "...";
-            this.btnVoiceLoidPathYudukiEx.UseVisualStyleBackColor = true;
-            this.btnVoiceLoidPathYudukiEx.Click += new System.EventHandler(this.btnVoiceLoidPathYudukiEx_Click);
-            // 
-            // txtVoiceLoidPathYudukiEx
-            // 
-            this.txtVoiceLoidPathYudukiEx.Location = new System.Drawing.Point(158, 119);
-            this.txtVoiceLoidPathYudukiEx.Name = "txtVoiceLoidPathYudukiEx";
-            this.txtVoiceLoidPathYudukiEx.ReadOnly = true;
-            this.txtVoiceLoidPathYudukiEx.Size = new System.Drawing.Size(310, 19);
-            this.txtVoiceLoidPathYudukiEx.TabIndex = 17;
-            // 
-            // lblVoiceLoidPathYudukiEx
-            // 
-            this.lblVoiceLoidPathYudukiEx.AutoSize = true;
-            this.lblVoiceLoidPathYudukiEx.Location = new System.Drawing.Point(3, 122);
-            this.lblVoiceLoidPathYudukiEx.Name = "lblVoiceLoidPathYudukiEx";
-            this.lblVoiceLoidPathYudukiEx.Size = new System.Drawing.Size(132, 12);
-            this.lblVoiceLoidPathYudukiEx.TabIndex = 16;
-            this.lblVoiceLoidPathYudukiEx.Text = "VOICEROID+ 結月ゆかり ";
-            // 
-            // lblEx01
-            // 
-            this.lblEx01.AutoSize = true;
-            this.lblEx01.Location = new System.Drawing.Point(134, 122);
-            this.lblEx01.Name = "lblEx01";
-            this.lblEx01.Size = new System.Drawing.Size(18, 12);
-            this.lblEx01.TabIndex = 25;
-            this.lblEx01.Text = "Ex";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(134, 147);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 12);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Ex";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(134, 172);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 12);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Ex";
-            // 
             // ActivitySetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2317,5 +2331,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblEx01;
+        private System.Windows.Forms.RadioButton rboLittleYukkuri;
     }
 }

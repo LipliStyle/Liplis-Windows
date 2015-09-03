@@ -142,13 +142,20 @@ namespace Liplis.Msg
         }
         #endregion
 
+
+        ///====================================================================
+        ///
+        ///                              話題収集
+        ///                         
+        ///====================================================================
+
+        #region 話題収集
         /// <summary>
         /// doCollectThread
         /// コレクトメソッドをスレッドを実行する
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        #region doCollectThread
         public void doCollectThread()
         {
             if (!flgCollect)
@@ -165,7 +172,6 @@ namespace Liplis.Msg
 
             return;
         }
-        #endregion
 
         /// <summary>
         /// collect
@@ -175,7 +181,6 @@ namespace Liplis.Msg
         /// 
         /// 2014/04/20 Liplis4.0 キューに直接投入するように変更 
         /// </summary>
-        #region collect
         public virtual void collect()
         {
             if (!flgCollect)
@@ -186,6 +191,63 @@ namespace Liplis.Msg
                     flgCollect = true;
 
                     LiplisApiCus.getSummaryNewsList(newsQ, os.uid, oss.toneUrl, os.getNewsFlg(), "100", os.lpsTopicHour.ToString(), os.lpsAlready.ToString(), os.lpsTwitterMode.ToString(), os.lpsRunout.ToString());
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    //完了時OFF
+                    flgCollect = false;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// doCollectThread
+        /// コレクトメソッドをスレッドを実行する
+        /// 
+        ///2015/09/04 Liplis4.5.4 話題をリロードするように変更 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public void doReloadThread()
+        {
+            if (!flgCollect)
+            {
+                //画像作成するスレッドを生成
+                Thread imgThread = new Thread(new ThreadStart(reload));
+
+                //WebBrowserはシングルスレッドアパートメントモードでのみ実行可能なのでスレッドのモードを設定して実行する
+                imgThread.SetApartmentState(ApartmentState.STA);
+
+                //スレッドスタート
+                imgThread.Start();
+            }
+
+            return;
+        }
+
+        /// <summary>
+        /// collect
+        /// 話題を非同期で収集する
+        /// (非同期実行)
+        /// ☆Miniオーバーライド
+        /// 
+        ///2015/09/04 Liplis4.5.4 話題をリロードするように変更 
+        /// </summary>
+        public virtual void reload()
+        {
+            if (!flgCollect)
+            {
+                try
+                {
+                    //開始時ON
+                    flgCollect = true;
+
+                    LiplisApiCus.reloadSummaryNewsList(newsQ, os.uid, oss.toneUrl, os.getNewsFlg(), "100", os.lpsTopicHour.ToString(), os.lpsAlready.ToString(), os.lpsTwitterMode.ToString(), os.lpsRunout.ToString());
                 }
                 catch
                 {
