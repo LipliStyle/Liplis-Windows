@@ -74,9 +74,7 @@ http://json.codeplex.com/
 著作権表記が見つかりませんでしたが、使用させて頂いています。  
 http://www.codeproject.com/Articles/9369/Circular-Menu-Component  
   
-* TweetSharp.dll  
-ライセンス表記より、自由に使用および改変を行なって良いとの記述がありますので、  
-ライセンス条文に従い、使用させて頂きます。  
-https://github.com/danielcrenna/tweetsharp  
-
-
+* CoreTweet  
+ユーザーがツイッター登録できるようにするために、使用させて頂いております。  
+MITライセンスにもとづき、使用させて頂きます。  
+https://github.com/CoreTweet/CoreTweet
