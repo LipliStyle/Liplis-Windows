@@ -1,12 +1,12 @@
 ﻿using Liplis.Msg;
-using Liplis.Voice;
+using Liplis.Voice.Option;
 using System;
 using System.Collections;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Liplis.Option.Voice
+namespace Liplis.Voice.Option
 { 
     public class VRMessage
     {
@@ -15,13 +15,13 @@ namespace Liplis.Option.Voice
         string result = msg;
         switch (option.eCallType)
         {
-            case ECallType.Nico:
+            case LpsCallType.Nico:
                 if (msg.Length >= 3)
                 {
                     result = msg.Remove(0, 3);
                 }
                 break;
-            case ECallType.Auto:
+            case LpsCallType.Auto:
                 if (msg.Length >= 3 && msg.Substring(0, 3) == "/W:")
                 {
                     result = msg.Remove(0, 3);
@@ -85,7 +85,7 @@ namespace Liplis.Option.Voice
         IEnumerator enumerator = option.lstSimpleReplace.GetEnumerator();
         while (enumerator.MoveNext())
         {
-            TSimpleReplace tSimpleReplace = (TSimpleReplace)enumerator.Current;
+                LpsSimpleReplace tSimpleReplace = (LpsSimpleReplace)enumerator.Current;
             if (tSimpleReplace.sRead == text2)
             {
                 flag = true;
@@ -143,7 +143,7 @@ namespace Liplis.Option.Voice
         IEnumerator enumerator = option.lstSimpleReplace.GetEnumerator();
         while (enumerator.MoveNext())
         {
-            TSimpleReplace tSimpleReplace = (TSimpleReplace)enumerator.Current;
+                LpsSimpleReplace tSimpleReplace = (LpsSimpleReplace)enumerator.Current;
             if (tSimpleReplace.sRead == text)
             {
                 flag = true;
@@ -153,7 +153,7 @@ namespace Liplis.Option.Voice
         }
         if (!flag)
         {
-            TSimpleReplace item;
+            LpsSimpleReplace item;
             item.sRead = text;
             item.sReplace = text2;
             item.bIgnore = true;
@@ -253,7 +253,7 @@ namespace Liplis.Option.Voice
     }
     private static string replaceReg(string msg, msgVoiceRoid option)
     {
-        foreach (TRegReplace current in option.lstRegReplace)
+        foreach (LpsRegReplace current in option.lstRegReplace)
         {
             RegexOptions regexOptions = RegexOptions.None;
             if (current.bIgnore)
@@ -275,7 +275,7 @@ namespace Liplis.Option.Voice
     }
     private static string replaceSimple(string msg, msgVoiceRoid option)
     {
-        foreach (TSimpleReplace current in option.lstSimpleReplace)
+        foreach (LpsSimpleReplace current in option.lstSimpleReplace)
         {
             msg = VRMessage.StringReplace(msg, current.sRead, current.sReplace, -1, CultureInfo.InvariantCulture.CompareInfo, CompareOptions.IgnoreWidth);
         }

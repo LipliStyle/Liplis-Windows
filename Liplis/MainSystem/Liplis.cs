@@ -716,7 +716,7 @@ namespace Liplis.MainSystem
                 lvr.Dispose();
             }
 
-            lvr = new LpsVoiceRoid(os.getSelectedVoiceRoid());
+            lvr = os.getSelectedVoiceRoid();
         }
         #endregion
 
@@ -3435,6 +3435,7 @@ namespace Liplis.MainSystem
         // <summary>
         //  MethodType : child
         /// MethodName : speechText
+        /// 2015/09/02 改行用@を除去する
         /// 音声出力
         /// </summary>
         #region speechText
@@ -3442,7 +3443,7 @@ namespace Liplis.MainSystem
         {
             if (liplisNowTopic != null)
             {
-                lvr.addMessage(liplisNowTopic.sorce);
+                lvr.addMessage(liplisNowTopic.sorce.Replace("@",""));
             }
         }  
         #endregion

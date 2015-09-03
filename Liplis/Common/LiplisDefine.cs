@@ -62,13 +62,16 @@ namespace Liplis.Common
         public const string PREFS_TOPIC_TWITTER_MODE   = "lpsTwitterMode";
         public const string PREFS_TOPIC_RUNOUT         = "lpsRunout";
 
-        public const string PREFS_VOICE_ON             = "lpsVoiceOn";
-        public const string PREFS_VOICE_SELECT         = "lpsVoiceSelect";
-        public const string PREFS_VOICE_VRPATH_SOFTALK = "lpsVoiceVRPathSofTalk";
-        public const string PREFS_VOICE_VRPATH_YUKARI  = "lpsVoiceVRPathYukari";
-        public const string PREFS_VOICE_VRPATH_TOMOE   = "lpsVoiceVRPathTomoe";
-        public const string PREFS_VOICE_VRPATH_ZUNKO   = "lpsVoiceVRPathZunko";
-        public const string PREFS_TWITTER_ACTIVATE     = "lpsTwitterActivate";
+        public const string PREFS_VOICE_ON               = "lpsVoiceOn";
+        public const string PREFS_VOICE_SELECT           = "lpsVoiceSelect";
+        public const string PREFS_VOICE_VRPATH_SOFTALK   = "lpsVoiceVRPathSofTalk";
+        public const string PREFS_VOICE_VRPATH_YUKARI    = "lpsVoiceVRPathYukari";
+        public const string PREFS_VOICE_VRPATH_TOMOE     = "lpsVoiceVRPathTomoe";
+        public const string PREFS_VOICE_VRPATH_ZUNKO     = "lpsVoiceVRPathZunko";
+        public const string PREFS_VOICE_VRPATH_YUKARI_EX = "lpsVoiceVRPathYukariEx";    // 2015/09/02 Lipli4.5.3
+        public const string PREFS_VOICE_VRPATH_TOMOE_EX  = "lpsVoiceVRPathTomoeEx";     // 2015/09/02 Lipli4.5.3
+        public const string PREFS_VOICE_VRPATH_ZUNKO_EX  = "lpsVoiceVRPathZunkoEx";     // 2015/09/02 Lipli4.5.3
+        public const string PREFS_TWITTER_ACTIVATE       = "lpsTwitterActivate";
 
         #endregion
 
@@ -979,6 +982,9 @@ namespace Liplis.Common
         public const string LPS_VOICE_ROID_YUKARI = "VOICEROID＋ 結月ゆかり";
         public const string LPS_VOICE_ROID_TOMOE = "VOICEROID＋ 民安ともえ";
         public const string LPS_VOICE_ROID_ZUNKO = "VOICEROID＋ 東北ずん子";
+        public const string LPS_VOICE_ROID_YUKARI_EX = "VOICEROID＋ 結月ゆかり EX";   // 2015/09/02 Lipli4.5.3
+        public const string LPS_VOICE_ROID_TOMOE_EX = "VOICEROID＋ 民安ともえ EX";    // 2015/09/02 Lipli4.5.3
+        public const string LPS_VOICE_ROID_ZUNKO_EX = "VOICEROID＋ 東北ずん子 EX";    // 2015/09/02 Lipli4.5.3
         #endregion
 
         ///=============================

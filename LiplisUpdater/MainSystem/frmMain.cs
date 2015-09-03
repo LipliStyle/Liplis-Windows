@@ -31,10 +31,8 @@ namespace LiplisUpdater
         /// オブジェクト
         private ObjSkinSettingList ossList;
 
-
         ///=====================================
         /// フラグ
-        private bool updateEnable = false;
         private bool debug = false;
 
         ///====================================================================
@@ -117,7 +115,6 @@ namespace LiplisUpdater
             {
                 CenterMessageBox.Show(this, "最新バージョンが取得できません", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lblNewVer.Text = "最新バージョン取得失敗";
-                updateEnable = false;
                 btnUpdate.Enabled = false;
             }
         }

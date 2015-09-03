@@ -1,5 +1,5 @@
-﻿using Liplis.Option.Voice;
-using Liplis.Voice;
+﻿using Liplis.Voice;
+using Liplis.Voice.Option;
 using System.Collections.Generic;
 
 namespace Liplis.Msg
@@ -8,8 +8,8 @@ namespace Liplis.Msg
     {
         public List<TVoiceRoidInfo> lstVoideRoidInfo = new List<TVoiceRoidInfo>();
         public List<TSwitchKeyword> lstSwitchKeyword = new List<TSwitchKeyword>();
-        public List<TSimpleReplace> lstSimpleReplace = new List<TSimpleReplace>();
-        public List<TRegReplace> lstRegReplace = new List<TRegReplace>();
+        public List<LpsSimpleReplace> lstSimpleReplace = new List<LpsSimpleReplace>();
+        public List<LpsRegReplace> lstRegReplace = new List<LpsRegReplace>();
 
         public string sWindowTitle = "VOICEROID＋ 民安ともえ";
         public string sExePath = "VOICEROID.exe";
@@ -21,7 +21,7 @@ namespace Liplis.Msg
         public int nTryInterval = 100;
         public int nPlayInterval;
 
-        public ECallType eCallType = ECallType.Auto;
+        public LpsCallType eCallType = LpsCallType.Auto;
         
         public bool bPlayStop;
         public bool bStudy;
@@ -35,9 +35,6 @@ namespace Liplis.Msg
         public string strCmdIntervalText = "/I:";
         public string strCmdFileText = "/F:";
 
-
-
-
         /// <summary>
         /// コンストラクター
         /// </summary>
@@ -47,6 +44,9 @@ namespace Liplis.Msg
         {
             this.sWindowTitle = windowTitle;
             this.sExePath = path;
+
+            //ボイスロイドインフォ追加
+            lstVoideRoidInfo.Add(new TVoiceRoidInfo(windowTitle, path,100));
         }
 
         /// <summary>

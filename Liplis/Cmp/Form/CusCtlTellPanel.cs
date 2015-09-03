@@ -89,7 +89,7 @@ namespace Liplis.Cmp.Form
         /// 破棄処理
         /// </summary>
         #region dispose
-        public virtual void dispose()
+        public override void dispose()
         {
             //lblText.Dispose();
             lnkLbl.Dispose();

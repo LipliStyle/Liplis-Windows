@@ -1,7 +1,7 @@
 ﻿using System;
-namespace Liplis.Option.Voice
+namespace Liplis.Voice.Option
 {
-    public enum ECallType
+    public enum LpsCallType
     {
         Normal,
         Nico,

@@ -248,8 +248,9 @@ namespace Liplis.Activity
             txtVoiceLoidPathYuduki.Text = os.lpsVoiceVRPathYukari;
             txtVoiceLoidPathTomoe.Text = os.lpsVoiceVRPathTomoe;
             txtVoiceLoidPathZunko.Text = os.lpsVoiceVRPathZunko;
-
-
+            txtVoiceLoidPathYudukiEx.Text = os.lpsVoiceVRPathYukariEx;
+            txtVoiceLoidPathTomoeEx.Text = os.lpsVoiceVRPathTomoeEx;
+            txtVoiceLoidPathZunkoEx.Text = os.lpsVoiceVRPathZunkoEx;
 
             //話題チェック
             chkNews.Checked = os.lpsTopicNews == 1;
@@ -1034,6 +1035,27 @@ namespace Liplis.Activity
                         cmbVoiceSelect.SelectedIndex = 0;
                     }
                     break;
+                case 5://結月ゆかり
+                    if (os.lpsVoiceVRPathYukariEx.Equals(""))
+                    {
+                        LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 結月ゆかり EXのパスが設定されていません。");
+                        cmbVoiceSelect.SelectedIndex = 0;
+                    }
+                    break;
+                case 6://民安ともえ
+                    if (os.lpsVoiceVRPathTomoeEx.Equals(""))
+                    {
+                        LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 民安ともえ EXのパスが設定されていません。");
+                        cmbVoiceSelect.SelectedIndex = 0;
+                    }
+                    break;
+                case 7://東北ずん子
+                    if (os.lpsVoiceVRPathZunkoEx.Equals(""))
+                    {
+                        LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 東北ずん子 EXのパスが設定されていません。");
+                        cmbVoiceSelect.SelectedIndex = 0;
+                    }
+                    break;
                 default:
                     break;
             }
@@ -1143,6 +1165,82 @@ namespace Liplis.Activity
             //OKならプリファレンスに記録してテキストに表示
             txtVoiceLoidPathZunko.Text = filePath;
             os.lpsVoiceVRPathZunko = filePath;
+            savePreference();
+        }
+
+
+        private void btnVoiceLoidPathYudukiEx_Click(object sender, EventArgs e)
+        {
+            //ファイル名取得
+            string filePath = getVRPath("VOICEROID+ 結月ゆかり EX", "VOICEROID.exe");
+
+            //ファイル名チェック
+            if (filePath.Equals(""))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("ファイルが選択されませんでした。");
+                return;
+            }
+
+            //存在チェック
+            if (!LpsLiplisUtil.ExistsFile(filePath))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("対象のファイルは存在しません！");
+                return;
+            }
+
+            //OKならプリファレンスに記録してテキストに表示
+            txtVoiceLoidPathYudukiEx.Text = filePath;
+            os.lpsVoiceVRPathYukariEx = filePath;
+            savePreference();
+        }
+
+        private void btnVoiceLoidPathTomoeEx_Click(object sender, EventArgs e)
+        {
+            //ファイル名取得
+            string filePath = getVRPath("VOICEROID+ 民安ともえ EX", "VOICEROID.exe");
+
+            //ファイル名チェック
+            if (filePath.Equals(""))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("ファイルが選択されませんでした。");
+                return;
+            }
+
+            //存在チェック
+            if (!LpsLiplisUtil.ExistsFile(filePath))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("対象のファイルは存在しません！");
+                return;
+            }
+
+            //OKならプリファレンスに記録してテキストに表示
+            txtVoiceLoidPathTomoeEx.Text = filePath;
+            os.lpsVoiceVRPathTomoeEx = filePath;
+            savePreference();
+        }
+
+        private void btnVoiceLoidPathZunkoEx_Click(object sender, EventArgs e)
+        {
+            //ファイル名取得
+            string filePath = getVRPath("VOICEROID+ 東北ずん子 EX", "VOICEROID.exe");
+
+            //ファイル名チェック
+            if (filePath.Equals(""))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("ファイルが選択されませんでした。");
+                return;
+            }
+
+            //存在チェック
+            if (!LpsLiplisUtil.ExistsFile(filePath))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("対象のファイルは存在しません！");
+                return;
+            }
+
+            //OKならプリファレンスに記録してテキストに表示
+            txtVoiceLoidPathZunkoEx.Text = filePath;
+            os.lpsVoiceVRPathZunkoEx = filePath;
             savePreference();
         }
         #endregion
@@ -1392,8 +1490,8 @@ namespace Liplis.Activity
             }
             
         }
-        #endregion
 
+        #endregion
 
     }
 }

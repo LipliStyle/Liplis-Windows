@@ -76,8 +76,10 @@ namespace Liplis.Web
 
                 try
                 {
-                    //まずは要約データからボディの取得を試みる
+#pragma warning disable CS0618 // 型またはメンバーが古い形式です
+                              //まずは要約データからボディの取得を試みる
                     nb.NavigateAndWaitFromSource(hp.getHtmlPlainTextFromSourceWB(nReadabilityTranscoder.Transcode(source, out mainContentExtracted)));
+#pragma warning restore CS0618 // 型またはメンバーが古い形式です
                     title = nb.Document.Title;
                     result = nb.Document.Body.InnerText.Replace(title, "");
 
@@ -162,7 +164,9 @@ namespace Liplis.Web
 
             try
             {
+#pragma warning disable CS0618 // 型またはメンバーが古い形式です
                 nb.NavigateAndWaitFromSource(hp.getHtmlPlainTextFromSourceWB(nReadabilityTranscoder.Transcode(source, out mainContentExtracted)));
+#pragma warning restore CS0618 // 型またはメンバーが古い形式です
                 title = nb.Document.Title;
             }
             catch

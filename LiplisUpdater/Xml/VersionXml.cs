@@ -52,7 +52,7 @@ namespace Liplis.Xml
                 readXml();
                 readResult();
             }
-            catch (System.Exception err)
+            catch
             {
                 createDefault();
             }

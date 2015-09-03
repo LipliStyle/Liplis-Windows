@@ -249,7 +249,9 @@ namespace Liplis.Web
 
             [return: MarshalAs(UnmanagedType.I4)]
             [PreserveSig]
+#pragma warning disable CS0618 // 型またはメンバーが古い形式です
             int GetZoneMappings(int dwZone, out UCOMIEnumString ppenumString, int dwFlags);
+#pragma warning restore CS0618 // 型またはメンバーが古い形式です
         }
     }
 }

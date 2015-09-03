@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Liplis.Option.Voice
+namespace Liplis.Voice.Option
 {
     public struct TSwitchKeyword
     {

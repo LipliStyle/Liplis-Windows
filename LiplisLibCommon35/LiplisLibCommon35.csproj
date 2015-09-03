@@ -24,11 +24,11 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>1</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -274,20 +274,23 @@
     <Compile Include="..\LiplisLibCommon\Voice\LpsVoiceRoid.cs">
       <Link>Voice\LpsVoiceRoid.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\ECallType.cs">
-      <Link>Voice\Option\ECallType.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\LpsVoiceRoid150.cs">
+      <Link>Voice\LpsVoiceRoid150.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\TRegReplace.cs">
-      <Link>Voice\Option\TRegReplace.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsCallType.cs">
+      <Link>Voice\Option\LpsCallType.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\TSimpleReplace.cs">
-      <Link>Voice\Option\TSimpleReplace.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsRegReplace.cs">
+      <Link>Voice\Option\LpsRegReplace.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\TSwitchKeyword.cs">
-      <Link>Voice\Option\TSwitchKeyword.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsSimpleReplace.cs">
+      <Link>Voice\Option\LpsSimpleReplace.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\TVoiceRoidInfo.cs">
-      <Link>Voice\Option\TVoiceRoidInfo.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsSwitchKeyword.cs">
+      <Link>Voice\Option\LpsSwitchKeyword.cs</Link>
+    </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsVoiceRoidInfo.cs">
+      <Link>Voice\Option\LpsVoiceRoidInfo.cs</Link>
     </Compile>
     <Compile Include="..\LiplisLibCommon\Voice\Option\VRMessage.cs">
       <Link>Voice\Option\VRMessage.cs</Link>

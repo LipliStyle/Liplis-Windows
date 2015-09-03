@@ -1,7 +1,7 @@
 ﻿using System;
-namespace Liplis.Voice
+namespace Liplis.Voice.Option
 {
-    public struct TRegReplace
+    public struct LpsRegReplace
     {
         public string sRead;
         public string sReplace;
