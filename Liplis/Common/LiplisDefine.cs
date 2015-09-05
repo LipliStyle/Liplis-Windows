@@ -71,6 +71,9 @@ namespace Liplis.Common
         public const string PREFS_VOICE_VRPATH_YUKARI_EX = "lpsVoiceVRPathYukariEx";    // 2015/09/02 Lipli4.5.3
         public const string PREFS_VOICE_VRPATH_TOMOE_EX  = "lpsVoiceVRPathTomoeEx";     // 2015/09/02 Lipli4.5.3
         public const string PREFS_VOICE_VRPATH_ZUNKO_EX  = "lpsVoiceVRPathZunkoEx";     // 2015/09/02 Lipli4.5.3
+        public const string PREFS_VOICE_VRPATH_AKANE     = "lpsVoiceVRPathAKANE";       // 2015/09/02 Lipli4.5.5
+        public const string PREFS_VOICE_VRPATH_AOI       = "lpsVoiceVRPathAOI";         // 2015/09/02 Lipli4.5.5
+
         public const string PREFS_TWITTER_ACTIVATE       = "lpsTwitterActivate";
 
         #endregion
@@ -985,6 +988,9 @@ namespace Liplis.Common
         public const string LPS_VOICE_ROID_YUKARI_EX = "VOICEROID＋ 結月ゆかり EX";   // 2015/09/02 Lipli4.5.3
         public const string LPS_VOICE_ROID_TOMOE_EX = "VOICEROID＋ 民安ともえ EX";    // 2015/09/02 Lipli4.5.3
         public const string LPS_VOICE_ROID_ZUNKO_EX = "VOICEROID＋ 東北ずん子 EX";    // 2015/09/02 Lipli4.5.3
+
+        public const string LPS_VOICE_ROID_AKANE = "VOICEROID＋ 琴葉茜";           // 2015/09/02 Lipli4.5.5
+        public const string LPS_VOICE_ROID_AOI = "VOICEROID＋ 琴葉葵";             // 2015/09/02 Lipli4.5.5
         #endregion
 
         ///=============================

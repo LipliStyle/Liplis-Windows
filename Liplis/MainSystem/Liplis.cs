@@ -97,64 +97,73 @@ namespace Liplis.MainSystem
         ///====================================================================
 
         ///=====================================
-        /// オブジェクト
-        protected ObjSetting          os;
-        protected ObjSkinSetting      oss;
-        protected ObjSkinSettingList  ossList;
-        protected ObjBodyList         obl;
-        protected ObjWindowFile       owf;
-        protected ObjBattery          obtry;
-        protected ObjLiplisChat       olc;
-        protected ObjLiplisTouch      olt;
-        protected ObjTopic            otp;
-        protected ObjBroom            obr;
+        /// リプリスオブジェクト
+        #region リプリスオブジェクト
+        protected ObjSetting os;
+        protected ObjSkinSetting oss;
+        protected ObjSkinSettingList ossList;
+        protected ObjBodyList obl;
+        protected ObjWindowFile owf;
+        protected ObjBattery obtry;
+        protected ObjLiplisChat olc;
+        protected ObjLiplisTouch olt;
+        protected ObjTopic otp;
+        protected ObjBroom obr;
+        #endregion
 
         ///=====================================
         /// Liplis制御オブジェクト
-        protected ObjBody                 ob;
-        protected LiplisIcon              li;
-        protected LiplisPopIcon           lpi;
-        protected LiplisTaskBar           ltb;
-        public LpsVoiceRoid               lvr;
-        protected Bitmap                  paintBuffBmp;
+        #region Liplis制御オブジェクト
+        protected ObjBody ob;
+        protected LiplisIcon li;
+        protected LiplisPopIcon lpi;
+        protected LiplisTaskBar ltb;
+        public LpsVoiceRoid lvr;
+        protected Bitmap paintBuffBmp;
+        #endregion
 
         ///=====================================
         /// Activity
-        protected ActivityTalk           at;
-        protected ActivityPic            ap;
-        protected ActivitySetting        ast;
-        protected ActivityLog            al;
-        protected ActivityChar           ac;
-        internal  ActivityTopicRegist    ar;
-        protected ActivityNicoBrowser    anb;
-        protected ActivityChat           act;
-         
+        #region Activity
+        protected ActivityTalk at;
+        protected ActivityPic ap;
+        protected ActivitySetting ast;
+        protected ActivityLog al;
+        protected ActivityChar ac;
+        internal ActivityTopicRegist ar;
+        protected ActivityNicoBrowser anb;
+        protected ActivityChat act;
+        #endregion
 
         ///=====================================
         /// 制御プロパティ
+        #region 制御プロパティ
         protected MsgShortNews liplisNowTopic;
-        protected string liplisNowWord  = "";	    //現在読み込みの単語(cntLnwでカウント)
+        protected string liplisNowWord = "";	    //現在読み込みの単語(cntLnwでカウント)
         protected string liplisChatText = "";		//現在読み込みの文字(cntLctでカウント)
-        protected int cntLct            = 0;		//リプリスチャットテキストカウント
-        protected int cntLnw            = 0;		//リプリスナウワードカウント
-        protected int nowPoint          = 0;		//現在感情ポイント
-        protected int nowPos            = 0;		//現在品詞ポイント
-        protected int cntMouth          = 0;        //1回/1s
-        protected int cntBlink          = 0;        //1回/5～10s
-        protected int nowBlink          = 0;        //まばたき現在値
-        protected int prvBlink          = 0;        //まばたき前回値
-        protected int nowDirection      = 0;        //方向 0:左向き　1:右向き
-        protected int prvDirection      = 0;        //方向 前回値
-        protected int cntSlow           = 0;        //スローカウント
+        protected int cntLct = 0;		//リプリスチャットテキストカウント
+        protected int cntLnw = 0;		//リプリスナウワードカウント
+        protected int nowPoint = 0;		//現在感情ポイント
+        protected int nowPos = 0;		//現在品詞ポイント
+        protected int cntMouth = 0;        //1回/1s
+        protected int cntBlink = 0;        //1回/5～10s
+        protected int nowBlink = 0;        //まばたき現在値
+        protected int prvBlink = 0;        //まばたき前回値
+        protected int nowDirection = 0;        //方向 0:左向き　1:右向き
+        protected int prvDirection = 0;        //方向 前回値
+        protected int cntSlow = 0;        //スローカウント
 
         protected int nowEmotion = 0;		//感情現在値
         protected int prvEmotion = 0;		//感情前回値
         protected MsgEmotion sumEmotion;    //感情蓄積値
+        #endregion
 
         ///=====================================
         /// ツイッター発言控え
+        #region ツイッター発言控え
         protected string liplisTweetMessege = "";
         protected string liplisTweetMessegeTitle = "";
+        #endregion
 
         ///=====================================
         /// 発言数
@@ -203,7 +212,7 @@ namespace Liplis.MainSystem
         /// 設定値
         //NOTE : liplisRefreshRate * liplisRate = 更新間隔 (updateCntに関連)
         #region 設定値
-        protected static int liplisInterval = 300;		    //インターバル
+        protected static int liplisInterval = 1000;		    //インターバル
         #endregion
 
         ///=====================================
@@ -2784,6 +2793,8 @@ namespace Liplis.MainSystem
                         if (flgAlarm != 0) { refreshLiplis(); }
                         break;
                     case LiplisDefine.ACCTIVE_NORMAL:
+                        if (flgAlarm != 0) { refreshLiplis(); }
+                        Thread.Sleep(33);
                         if (flgAlarm != 0) { refreshLiplis(); }
                         Thread.Sleep(33);
                         if (flgAlarm != 0) { refreshLiplis(); }

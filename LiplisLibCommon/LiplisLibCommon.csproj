@@ -89,7 +89,6 @@
     <Compile Include="Common\LpsSqlServerBalkCopy.cs" />
     <Compile Include="Common\LpsTimeController.cs" />
     <Compile Include="Voice\LpsVoiceRoid150.cs" />
-    <Compile Include="Voice\Option\LpsCallType.cs" />
     <Compile Include="Voice\LpsVoiceRoid.cs" />
     <Compile Include="Common\LpsWindowsApi.cs" />
     <Compile Include="Common\LpsWindowsApiDefine.cs" />
@@ -193,11 +192,8 @@
     <Compile Include="Sys\NetworkInfoClass.cs" />
     <Compile Include="Sys\TranserateInfoClass.cs" />
     <Compile Include="Msg\msgVoiceRoid.cs" />
-    <Compile Include="Voice\Option\LpsRegReplace.cs" />
-    <Compile Include="Voice\Option\LpsSimpleReplace.cs" />
-    <Compile Include="Voice\Option\LpsSwitchKeyword.cs" />
+    <Compile Include="Voice\Option\LpsVoiceRoidDefine.cs" />
     <Compile Include="Voice\Option\LpsVoiceRoidInfo.cs" />
-    <Compile Include="Voice\Option\VRMessage.cs" />
     <Compile Include="Web\HtmlDownloader.cs" />
     <Compile Include="Web\HtmlParseController.cs" />
     <Compile Include="Web\HtmlParser.cs" />

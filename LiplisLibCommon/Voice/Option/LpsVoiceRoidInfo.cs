@@ -1,16 +1,14 @@
 ﻿namespace Liplis.Voice.Option
 {
-    public class TVoiceRoidInfo
+    public class LpsVoiceRoidInfo
     {
-        public string sWindowTitle;
-        public string sExePath;
-        public int nFreq;
+        public string windowTitle;
+        public string voiceRoidPath;
 
-        public TVoiceRoidInfo(string sWindowTitle, string sExePath, int nFreq)
+        public LpsVoiceRoidInfo(string windowTitle, string voiceRoidPath)
         {
-            this.sWindowTitle = sWindowTitle;
-            this.sExePath = sExePath;
-            this.nFreq = nFreq;
+            this.windowTitle = windowTitle;
+            this.voiceRoidPath = voiceRoidPath;
         }
     }
 }

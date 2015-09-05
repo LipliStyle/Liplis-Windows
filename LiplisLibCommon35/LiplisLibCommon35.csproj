@@ -277,23 +277,11 @@
     <Compile Include="..\LiplisLibCommon\Voice\LpsVoiceRoid150.cs">
       <Link>Voice\LpsVoiceRoid150.cs</Link>
     </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsCallType.cs">
-      <Link>Voice\Option\LpsCallType.cs</Link>
-    </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsRegReplace.cs">
-      <Link>Voice\Option\LpsRegReplace.cs</Link>
-    </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsSimpleReplace.cs">
-      <Link>Voice\Option\LpsSimpleReplace.cs</Link>
-    </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsSwitchKeyword.cs">
-      <Link>Voice\Option\LpsSwitchKeyword.cs</Link>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsVoiceRoidDefine.cs">
+      <Link>Voice\Option\LpsVoiceRoidDefine.cs</Link>
     </Compile>
     <Compile Include="..\LiplisLibCommon\Voice\Option\LpsVoiceRoidInfo.cs">
       <Link>Voice\Option\LpsVoiceRoidInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\LiplisLibCommon\Voice\Option\VRMessage.cs">
-      <Link>Voice\Option\VRMessage.cs</Link>
     </Compile>
     <Compile Include="..\LiplisLibCommon\Web\HtmlDownloader.cs">
       <Link>Web\HtmlDownloader.cs</Link>

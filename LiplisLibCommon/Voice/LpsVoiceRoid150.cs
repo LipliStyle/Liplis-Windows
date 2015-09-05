@@ -45,7 +45,7 @@ namespace Liplis.Voice
             this.initThread();
 
             //空以外の場合にスレッド起動
-            if (option.sWindowTitle == "")
+            if (option.windowTitle == "")
             {
                 flgNotFound = true;
             }
@@ -193,16 +193,16 @@ namespace Liplis.Voice
                 if (text.Length <= 0) { this.lstMessage.RemoveAt(0); continue; }
 
                 //ソフトークの場合
-                if (this.setting.sWindowTitle == "SofTalk")
+                if (this.setting.windowTitle == "SofTalk")
                 {
-                    if (!File.Exists(this.setting.sExePath))
+                    if (!File.Exists(this.setting.voiceRoidPath))
                     {
                         MessageBox.Show("SofTalkが見つかりませんでした", "error");
                     }
                     else
                     {
                         Process process2 = new Process();
-                        process2.StartInfo.FileName = this.setting.sExePath;
+                        process2.StartInfo.FileName = this.setting.voiceRoidPath;
                         process2.StartInfo.Arguments = "/W:" + text;
                         process2.Start();
                         process2.WaitForInputIdle(TRY_INTERVAL * TRY_CNT);
@@ -225,7 +225,7 @@ namespace Liplis.Voice
                     else
                     {
                         //東北ずん子
-                        if (this.setting.sWindowTitle == "VOICEROID＋ 東北ずん子")
+                        if (this.setting.windowTitle == "VOICEROID＋ 東北ずん子")
                         {
                             LpsWindowsApi.SendMessage(this.hEdit, 12, 0, text);
                             Thread.Sleep(TRY_INTERVAL);
@@ -321,7 +321,7 @@ namespace Liplis.Voice
                         int num = 0;
 
                         //東北ずん子の場合
-                        if (this.setting.sWindowTitle == "VOICEROID＋ 東北ずん子")
+                        if (this.setting.windowTitle == "VOICEROID＋ 東北ずん子")
                         {
                             num = 0;
                             while (LpsWindowsApi.SendMessage(okButton, 513, IntPtr.Zero, IntPtr.Zero) != IntPtr.Zero && ++num <= TRY_CNT)
@@ -412,7 +412,7 @@ namespace Liplis.Voice
                 bool flag2 = false;
 
                 //ファイル存在チェック
-                if (!File.Exists(option.sExePath))
+                if (!File.Exists(option.voiceRoidPath))
                 {
                     this.clearMessage();
                     if (MessageBox.Show("VOICEROID.exeが見つかりません。\n設定を行なってください。", "Liplis", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -424,12 +424,13 @@ namespace Liplis.Voice
                 }
 
                 //起動して待つ
-                if (new Process { StartInfo = { FileName = option.sExePath, WorkingDirectory = Path.GetDirectoryName(option.sExePath) } }.Start())
+                if (new Process { StartInfo = { FileName = option.voiceRoidPath, WorkingDirectory = Path.GetDirectoryName(option.voiceRoidPath) } }.Start())
                 {
-                    int num = 30;
+                    int num = 1000;
                     do
                     {
-                        Thread.Sleep(500);
+                        Application.DoEvents();
+                        Thread.Sleep(10);
                         num--;
                     }
                     while (num >= 0 && !this.findVoiceroidWindow(option, false));
@@ -465,7 +466,7 @@ namespace Liplis.Voice
             Process[] processes = Process.GetProcesses();
 
             //東北ずん子の場合
-            if (this.setting.sWindowTitle == "VOICEROID＋ 東北ずん子")
+            if (this.setting.windowTitle == "VOICEROID＋ 東北ずん子")
             {
                 this.hWindow = IntPtr.Zero;
                 Process[] array = processes;
@@ -474,7 +475,7 @@ namespace Liplis.Voice
                     Process process = array[i];
                     try
                     {
-                        if (Path.GetFileName(process.MainModule.FileName) == Path.GetFileName(this.setting.sExePath))
+                        if (Path.GetFileName(process.MainModule.FileName) == Path.GetFileName(this.setting.voiceRoidPath))
                         {
                             string mainWindowTitle = process.MainWindowTitle;
 
@@ -491,7 +492,7 @@ namespace Liplis.Voice
                 }
             }
             //ソフトーク
-            else if (this.setting.sWindowTitle == "SofTalk")
+            else if (this.setting.windowTitle == "SofTalk")
             {
                 this.hWindow = IntPtr.Zero;
                 foreach (Process p in processes)
@@ -512,7 +513,7 @@ namespace Liplis.Voice
             //東北ずん子以外の場合
             else
             {
-                this.hWindow = LpsWindowsApi.FindWindow("TkTopLevel", this.setting.sWindowTitle);
+                this.hWindow = LpsWindowsApi.FindWindow("TkTopLevel", this.setting.windowTitle);
             }
 
 
@@ -523,7 +524,7 @@ namespace Liplis.Voice
             //以降の処理について順番を変えるとバグル
             //----------------------------------------------------------------------
             //東北ずん子の場合
-            if (this.setting.sWindowTitle == "VOICEROID＋ 東北ずん子")
+            if (this.setting.windowTitle == "VOICEROID＋ 東北ずん子")
             {
                 this.hPlayButton = LpsWindowsApi.GetWindow(this.hWindow, 5u);
                 this.hPlayButton = LpsWindowsApi.GetWindow(this.hPlayButton, 5u);
@@ -585,7 +586,7 @@ namespace Liplis.Voice
         public override void callStopButtonDown()
         {
             //東北ずんこの場合
-            if (this.setting.sWindowTitle == "VOICEROID＋ 東北ずん子")
+            if (this.setting.windowTitle == "VOICEROID＋ 東北ずん子")
             {
                 int num = 0;
                 while (LpsWindowsApi.PostMessage(this.hStopButton, 513, IntPtr.Zero, IntPtr.Zero) != IntPtr.Zero && ++num <= TRY_CNT)
@@ -603,7 +604,7 @@ namespace Liplis.Voice
             }
 
             //ソフトーク以外のボイスロイドの場合
-            if (!(this.setting.sWindowTitle == "SofTalk"))
+            if (!(this.setting.windowTitle == "SofTalk"))
             {
                 bool flag = this.findVoiceroidWindow(this.setting, true);
                 if (flag)
@@ -621,14 +622,14 @@ namespace Liplis.Voice
             }
 
             //エグゼが存在しない場合
-            if (!File.Exists(this.setting.sExePath))
+            if (!File.Exists(this.setting.voiceRoidPath))
             {
                 return;
             }
 
             //ソフトークの場合
             Process process = new Process();
-            process.StartInfo.FileName = this.setting.sExePath;
+            process.StartInfo.FileName = this.setting.voiceRoidPath;
             process.StartInfo.Arguments = "/stop";
             process.Start();
             process.WaitForInputIdle(TRY_CNT * TRY_INTERVAL);

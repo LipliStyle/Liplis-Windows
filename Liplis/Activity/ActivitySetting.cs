@@ -253,6 +253,8 @@ namespace Liplis.Activity
             txtVoiceLoidPathYudukiEx.Text = os.lpsVoiceVRPathYukariEx;
             txtVoiceLoidPathTomoeEx.Text = os.lpsVoiceVRPathTomoeEx;
             txtVoiceLoidPathZunkoEx.Text = os.lpsVoiceVRPathZunkoEx;
+            txtVoiceLoidPathAkane.Text = os.lpsVoiceVRPathAkane;
+            txtVoiceLoidPathAoi.Text = os.lpsVoiceVRPathAoi;
 
             //話題チェック
             chkNews.Checked = os.lpsTopicNews == 1;
@@ -1060,17 +1062,17 @@ namespace Liplis.Activity
                         cmbVoiceSelect.SelectedIndex = 0;
                     }
                     break;
-                case 6://民安ともえEX
-                    if (os.lpsVoiceVRPathTomoeEx.Equals(""))
+                case 6://琴葉茜
+                    if (os.lpsVoiceVRPathAkane.Equals(""))
                     {
-                        LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 民安ともえ EXのパスが設定されていません。");
+                        LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 琴葉茜のパスが設定されていません。");
                         cmbVoiceSelect.SelectedIndex = 0;
                     }
                     break;
-                case 7://東北ずん子EX
-                    if (os.lpsVoiceVRPathZunkoEx.Equals(""))
+                case 7://琴葉葵
+                    if (os.lpsVoiceVRPathAoi.Equals(""))
                     {
-                        LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 東北ずん子 EXのパスが設定されていません。");
+                        LpsLiplisUtil.LiplisMessageOkOnly("VOICEROID+ 琴葉葵のパスが設定されていません。");
                         cmbVoiceSelect.SelectedIndex = 0;
                     }
                     break;
@@ -1261,6 +1263,59 @@ namespace Liplis.Activity
             os.lpsVoiceVRPathZunkoEx = filePath;
             savePreference();
         }
+
+
+
+        private void btnVoiceLoidPathAkane_Click(object sender, EventArgs e)
+        {
+            //ファイル名取得
+            string filePath = getVRPath("VOICEROID+ 琴葉茜", "VOICEROID.exe");
+
+            //ファイル名チェック
+            if (filePath.Equals(""))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("ファイルが選択されませんでした。");
+                return;
+            }
+
+            //存在チェック
+            if (!LpsLiplisUtil.ExistsFile(filePath))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("対象のファイルは存在しません！");
+                return;
+            }
+
+            //OKならプリファレンスに記録してテキストに表示
+            txtVoiceLoidPathAkane.Text = filePath;
+            os.lpsVoiceVRPathAkane = filePath;
+            savePreference();
+        }
+
+        private void btnVoiceLoidPathAoi_Click(object sender, EventArgs e)
+        {
+            //ファイル名取得
+            string filePath = getVRPath("VOICEROID+ 琴葉葵", "VOICEROID.exe");
+
+            //ファイル名チェック
+            if (filePath.Equals(""))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("ファイルが選択されませんでした。");
+                return;
+            }
+
+            //存在チェック
+            if (!LpsLiplisUtil.ExistsFile(filePath))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("対象のファイルは存在しません！");
+                return;
+            }
+
+            //OKならプリファレンスに記録してテキストに表示
+            txtVoiceLoidPathAoi.Text = filePath;
+            os.lpsVoiceVRPathAoi = filePath;
+            savePreference();
+        }
+
         #endregion
 
         /// <summary>
@@ -1498,8 +1553,8 @@ namespace Liplis.Activity
         ///                             アップデート
         ///                         
         ///====================================================================
-        
-        #region 
+
+        #region runUpdate
         private void runUpdate()
         {
             if (LpsPathController.checkFileExist(LpsPathController.getUpdatePrgPath()))
@@ -1517,7 +1572,6 @@ namespace Liplis.Activity
         ///                          話題のリロード
         ///                         
         ///====================================================================
-
         #region 話題のリロード
         /// <summary>
         /// 話題のリロード
@@ -1529,5 +1583,6 @@ namespace Liplis.Activity
         }
 
         #endregion
+
     }
 }

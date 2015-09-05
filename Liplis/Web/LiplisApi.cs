@@ -87,9 +87,9 @@ namespace Liplis.Web
                     newsQ.Enqueue(msg);
                 }
             }
-            catch(Exception ex)
+            catch
             {
-                Console.WriteLine("");
+                
             }
             return;
         }
@@ -124,9 +124,9 @@ namespace Liplis.Web
                     newsQ.Enqueue(msg);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine("");
+                
             }
             return;
         }

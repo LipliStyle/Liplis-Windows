@@ -6,47 +6,32 @@ namespace Liplis.Msg
 {
     public class msgVoiceRoid
     {
-        public List<TVoiceRoidInfo> lstVoideRoidInfo = new List<TVoiceRoidInfo>();
-        public List<TSwitchKeyword> lstSwitchKeyword = new List<TSwitchKeyword>();
-        public List<LpsSimpleReplace> lstSimpleReplace = new List<LpsSimpleReplace>();
-        public List<LpsRegReplace> lstRegReplace = new List<LpsRegReplace>();
+        //必須プロパティ
+        public List<LpsVoiceRoidInfo> lstVoideRoidInfo = new List<LpsVoiceRoidInfo>();
+        public string windowTitle = "VOICEROID＋ 民安ともえ";
+        public string voiceRoidPath = "VOICEROID.exe";
 
-        public string sWindowTitle = "VOICEROID＋ 民安ともえ";
-        public string sExePath = "VOICEROID.exe";
-
-
+        //設定
         public int nWaitOfChar = 750;
         public int nHangBehavior;
         public int nTryCount = 5;
         public int nTryInterval = 100;
-        public int nPlayInterval;
 
-        public LpsCallType eCallType = LpsCallType.Auto;
-        
-        public bool bPlayStop;
-        public bool bStudy;
-        public bool bSelWord;
+        //ボタン定義
         public bool bSizeChange = true;
-        public bool bCmdInterval;
-        public bool bCmdIntervalRead;
-        public bool bCmdFile;
-        public bool bCmdFileRead;
-
-        public string strCmdIntervalText = "/I:";
-        public string strCmdFileText = "/F:";
 
         /// <summary>
         /// コンストラクター
         /// </summary>
         /// <param name="windowTitle"></param>
         /// <param name="path"></param>
-        public msgVoiceRoid(string windowTitle, string path)
+        public msgVoiceRoid(string windowTitle, string voiceRoidPath)
         {
-            this.sWindowTitle = windowTitle;
-            this.sExePath = path;
+            this.windowTitle = windowTitle;
+            this.voiceRoidPath = voiceRoidPath;
 
             //ボイスロイドインフォ追加
-            lstVoideRoidInfo.Add(new TVoiceRoidInfo(windowTitle, path,100));
+            lstVoideRoidInfo.Add(new LpsVoiceRoidInfo(windowTitle, voiceRoidPath));
         }
 
         /// <summary>

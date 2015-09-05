@@ -5,14 +5,14 @@
 //  Liplis2.0
 //  Copyright(c) 2010-2011 LipliStyle.Sachin
 //=======================================================================
-using System;
-using System.Reflection;
 using Liplis.Common;
 using Liplis.Fct;
-using Liplis.Xml;
-using System.Drawing;
-using Liplis.Web;
 using Liplis.Voice;
+using Liplis.Web;
+using Liplis.Xml;
+using System;
+using System.Drawing;
+using System.Reflection;
 
 namespace Liplis.Msg
 {
@@ -69,19 +69,22 @@ namespace Liplis.Msg
 
         ///=============================
         /// 対応設定値
-        public int lpsInterval          { get; set; }       //インターバル
+        public int lpsInterval                  { get; set; }       //インターバル
 
         ///=============================
         /// 音声設定
-        public int lpsVoiceOn           { get; set; }		//ボイス設定
-        public int lpsVoiceSelect       { get; set; }		//0:なし、1:ソフトーク、2:結月ゆかり、3:民安ともえ、4:東北ずん子
-        public string lpsVoiceVRPathSofTalk { get; set; }		//ソフトークパス
-        public string lpsVoiceVRPathYukari  { get; set; }		//ゆかりパス
-        public string lpsVoiceVRPathTomoe   { get; set; }		//ともえパス
-        public string lpsVoiceVRPathZunko   { get; set; }		//ずんこパス
-        public string lpsVoiceVRPathYukariEx { get; set; }		//ゆかりパス 2015/09/02 Lipli4.5.3
-        public string lpsVoiceVRPathTomoeEx { get; set; }		//ともえパス 2015/09/02 Lipli4.5.3
-        public string lpsVoiceVRPathZunkoEx { get; set; }		//ずんこパス 2015/09/02 Lipli4.5.3
+        public int lpsVoiceOn                   { get; set; }	//ボイス設定
+        public int lpsVoiceSelect               { get; set; }	//0:なし、1:ソフトーク、2:結月ゆかり、3:民安ともえ、4:東北ずん子
+        public string lpsVoiceVRPathSofTalk     { get; set; }	//ソフトークパス
+        public string lpsVoiceVRPathYukari      { get; set; }	//ゆかりパス
+        public string lpsVoiceVRPathTomoe       { get; set; }	//ともえパス
+        public string lpsVoiceVRPathZunko       { get; set; }	//ずんこパス
+        public string lpsVoiceVRPathYukariEx    { get; set; }	//ゆかりパス 2015/09/02 Lipli4.5.3
+        public string lpsVoiceVRPathTomoeEx     { get; set; }	//ともえパス 2015/09/02 Lipli4.5.3
+        public string lpsVoiceVRPathZunkoEx     { get; set; }   //ずんこパス 2015/09/02 Lipli4.5.3
+        public string lpsVoiceVRPathAkane       { get; set; }	//琴葉茜 2015/09/02 Lipli4.5.5
+        public string lpsVoiceVRPathAoi         { get; set; }	//琴葉葵 2015/09/02 Lipli4.5.5
+
 
         ///=============================
         /// twitter認証設定済み
@@ -165,6 +168,8 @@ namespace Liplis.Msg
                 setLpsVoiceVRPathYukariEx(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_YUKARI_EX, "")); //2015/09/02 Lipli4.5.3
                 setLpsVoiceVRPathTomoeEx(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_TOMOE_EX, ""));   //2015/09/02 Lipli4.5.3
                 setLpsVoiceVRPathZunkoEx(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_ZUNKO_EX, ""));   //2015/09/02 Lipli4.5.3
+                setLpsVoiceVRPathAkane(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_AKANE, ""));        //2015/09/02 Lipli4.5.5
+                setLpsVoiceVRPathAoi(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_AOI, ""));            //2015/09/02 Lipli4.5.5
 
                 setTwitterActivate(setting.getInt(LiplisDefine.PREFS_TWITTER_ACTIVATE, 0));
 
@@ -254,6 +259,8 @@ namespace Liplis.Msg
             setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_YUKARI_EX, this.lpsVoiceVRPathYukariEx);  //2015/09/02 Lipli4.5.3
             setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_TOMOE_EX, this.lpsVoiceVRPathTomoeEx);    //2015/09/02 Lipli4.5.3
             setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_ZUNKO_EX, this.lpsVoiceVRPathZunkoEx);    //2015/09/02 Lipli4.5.3
+            setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_AKANE, this.lpsVoiceVRPathAkane);         //2015/09/02 Lipli4.5.3
+            setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_AOI, this.lpsVoiceVRPathAoi);             //2015/09/02 Lipli4.5.3
 
             setting.setInt(LiplisDefine.PREFS_TWITTER_ACTIVATE, this.twitterActivate);
 
@@ -831,6 +838,28 @@ namespace Liplis.Msg
         }
 
         /// <summary>
+        /// 琴葉茜パス
+        /// 2015/09/02 Lipli4.5.5
+        /// </summary>
+        /// <param name="path"></param>
+        private void setLpsVoiceVRPathAkane(string lpsVoiceVRPathAkane)
+        {
+            this.lpsVoiceVRPathAkane = lpsVoiceVRPathAkane;
+        }
+
+        /// <summary>
+        /// 琴葉葵パス
+        /// 2015/09/02 Lipli4.5.5
+        /// </summary>
+        /// <param name="path"></param>
+        private void setLpsVoiceVRPathAoi(string lpsVoiceVRPathAoi)
+        {
+            this.lpsVoiceVRPathAoi = lpsVoiceVRPathAoi;
+        }
+
+
+
+        /// <summary>
         /// 選択されているボイスロイドを取得する
         /// </summary>
         /// <returns></returns>
@@ -854,6 +883,11 @@ namespace Liplis.Msg
                     return new LpsVoiceRoid(new msgVoiceRoid(LiplisDefine.LPS_VOICE_ROID_TOMOE_EX, lpsVoiceVRPathTomoeEx));
                 case 7://東北ずん子 EX
                     return new LpsVoiceRoid(new msgVoiceRoid(LiplisDefine.LPS_VOICE_ROID_ZUNKO_EX, lpsVoiceVRPathZunkoEx));
+                case 8://琴葉茜
+                    return new LpsVoiceRoid(new msgVoiceRoid(LiplisDefine.LPS_VOICE_ROID_AKANE, lpsVoiceVRPathAkane));
+                case 9://琴葉葵
+                    return new LpsVoiceRoid(new msgVoiceRoid(LiplisDefine.LPS_VOICE_ROID_AOI, lpsVoiceVRPathAoi));
+
                 default:
                     return new LpsVoiceRoid(new msgVoiceRoid("", ""));
             }
