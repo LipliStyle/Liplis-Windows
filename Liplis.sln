@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Liplis", "Liplis\Liplis.csproj", "{AC881F65-C436-4052-BEFD-BF39CF95B466}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiplisLibCommon35", "LiplisLibCommon35\LiplisLibCommon35.csproj", "{95675FF2-9139-4ED1-B93A-A5D1F3E33072}"
