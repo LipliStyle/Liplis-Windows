@@ -280,6 +280,9 @@
     <Compile Include="..\LiplisLibCommon\Voice\Option\LpsVoiceRoidDefine.cs">
       <Link>Voice\Option\LpsVoiceRoidDefine.cs</Link>
     </Compile>
+    <Compile Include="..\LiplisLibCommon\Voice\Option\LpsVoiceRoidHandle.cs">
+      <Link>Voice\Option\LpsVoiceRoidHandle.cs</Link>
+    </Compile>
     <Compile Include="..\LiplisLibCommon\Voice\Option\LpsVoiceRoidInfo.cs">
       <Link>Voice\Option\LpsVoiceRoidInfo.cs</Link>
     </Compile>

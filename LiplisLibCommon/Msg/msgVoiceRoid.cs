@@ -7,7 +7,7 @@ namespace Liplis.Msg
     public class msgVoiceRoid
     {
         //必須プロパティ
-        public List<LpsVoiceRoidInfo> lstVoideRoidInfo = new List<LpsVoiceRoidInfo>();
+        public LpsVoiceRoidInfo vrInfo;
         public string windowTitle = "VOICEROID＋ 民安ともえ";
         public string voiceRoidPath = "VOICEROID.exe";
 
@@ -16,9 +16,6 @@ namespace Liplis.Msg
         public int nHangBehavior;
         public int nTryCount = 5;
         public int nTryInterval = 100;
-
-        //ボタン定義
-        public bool bSizeChange = true;
 
         /// <summary>
         /// コンストラクター
@@ -31,7 +28,7 @@ namespace Liplis.Msg
             this.voiceRoidPath = voiceRoidPath;
 
             //ボイスロイドインフォ追加
-            lstVoideRoidInfo.Add(new LpsVoiceRoidInfo(windowTitle, voiceRoidPath));
+            vrInfo = new LpsVoiceRoidInfo(windowTitle, voiceRoidPath);
         }
 
         /// <summary>

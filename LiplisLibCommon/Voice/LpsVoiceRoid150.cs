@@ -112,7 +112,7 @@ namespace Liplis.Voice
                 searchErrorWindow();
                 Thread.Sleep(TRY_INTERVAL);
             }
-            LpsWindowsApi.SetEvent(LpsVoiceRoid150.hEvent);
+            LpsWindowsApi.SetEvent(LpsVoiceRoid150.LpsVoiceEvent);
         }
         #endregion
 
@@ -128,7 +128,7 @@ namespace Liplis.Voice
         protected override void clearMessage()
         {
             this.lstMessage.Clear();
-            LpsWindowsApi.SetEvent(LpsVoiceRoid150.hEvent);
+            LpsWindowsApi.SetEvent(LpsVoiceRoid150.LpsVoiceEvent);
         }
         #endregion
 
@@ -166,7 +166,7 @@ namespace Liplis.Voice
                     //2013/06/24 ver3.0.2
                     //負荷低減のため、スリープ
                     Thread.Sleep(100);
-                    LpsWindowsApi.WaitForSingleObject(LpsVoiceRoid150.hEvent, -1);
+                    LpsWindowsApi.WaitForSingleObject(LpsVoiceRoid150.LpsVoiceEvent, -1);
                     if (this.bKillThread || this.thread.ThreadState == System.Threading.ThreadState.StopRequested)
                     {
                         return;
@@ -175,7 +175,7 @@ namespace Liplis.Voice
                 }
 
                 //イベントを発生させる
-                LpsWindowsApi.ResetEvent(LpsVoiceRoid150.hEvent);
+                LpsWindowsApi.ResetEvent(LpsVoiceRoid150.LpsVoiceEvent);
 
                 string text = "";
 

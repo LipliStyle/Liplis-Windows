@@ -193,6 +193,7 @@
     <Compile Include="Sys\TranserateInfoClass.cs" />
     <Compile Include="Msg\msgVoiceRoid.cs" />
     <Compile Include="Voice\Option\LpsVoiceRoidDefine.cs" />
+    <Compile Include="Voice\Option\LpsVoiceRoidHandle.cs" />
     <Compile Include="Voice\Option\LpsVoiceRoidInfo.cs" />
     <Compile Include="Web\HtmlDownloader.cs" />
     <Compile Include="Web\HtmlParseController.cs" />
