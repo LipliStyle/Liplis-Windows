@@ -1662,24 +1662,6 @@
     <None Include="Resources\widWet.png" />
     <None Include="Resources\widRss.png" />
     <None Include="Resources\widSys.png" />
-    <None Include="bin\Release\skin\Lili\window\talkWin.png" />
-    <None Include="bin\Release\skin\Lili\window\settingWin.png" />
-    <None Include="bin\Release\skin\Lili\window\ico_char.png" />
-    <None Include="bin\Release\skin\Lili\window\ico_brw.png" />
-    <None Include="bin\Release\skin\Lili\window\ico_wid.png" />
-    <None Include="bin\Release\skin\Lili\window\window.png" />
-    <None Include="bin\Release\skin\Lili\window\setting.png" />
-    <None Include="bin\Release\skin\Lili\window\ico_zzz.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_0.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_100.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_12.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_25.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_37.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_50.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_62.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_75.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_87.png" />
-    <None Include="bin\Release\skin\Lili\window\battery_non.png" />
     <Content Include="liplis.ico" />
   </ItemGroup>
   <ItemGroup>
