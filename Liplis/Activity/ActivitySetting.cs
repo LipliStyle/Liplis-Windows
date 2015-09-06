@@ -121,14 +121,37 @@ namespace Liplis.Activity
             }
 
             //アクティブ度
-            switch (os.lpsReftesh)
-            {
-                case LiplisDefine.ACCTIVE_OTENBA: rboOtenba.Checked = true; break;
-                case LiplisDefine.ACCTIVE_NORMAL: rboNormal.Checked = true; break;
-                case LiplisDefine.ACCTIVE_YUKKURI: rboYukkuri.Checked = true; break;
-                case LiplisDefine.ACCTIVE_LITTLE_YUKKURI: rboLittleYukkuri.Checked = true; break;
+            //switch (os.lpsReftesh)
+            //{
+            //    case LiplisDefine.ACCTIVE_OTENBA: rboOtenba.Checked = true; break;
+            //    case LiplisDefine.ACCTIVE_NORMAL: rboNormal.Checked = true; break;
+            //    case LiplisDefine.ACCTIVE_YUKKURI: rboYukkuri.Checked = true; break;
+            //    case LiplisDefine.ACCTIVE_LITTLE_YUKKURI: rboLittleYukkuri.Checked = true; break;
 
-                case LiplisDefine.ACCTIVE_ECO: rboEco.Checked = true; break;
+            //    case LiplisDefine.ACCTIVE_ECO: rboEco.Checked = true; break;
+            //}
+            this.trackSpeed.Value = reversePercent(os.lpsReftesh);
+            this.txtSpeed.Text = os.lpsReftesh.ToString();
+            if (os.lpsReftesh == 0)
+            {
+                rboEco.Checked = true;
+
+            }
+            else if (os.lpsReftesh <= 25)
+            {
+                rboYukkuri.Checked = true;
+            }
+            else if (os.lpsReftesh <= 50)
+            {
+                rboLittleYukkuri.Checked = true;
+            }
+            else if (os.lpsReftesh <= 75)
+            {
+                rboNormal.Checked = true;
+            }
+            else
+            {
+                rboOtenba.Checked = true;
             }
 
             //ボックス/サークル表示
@@ -762,37 +785,133 @@ namespace Liplis.Activity
         #region setting スピード変更
         private void rboOtenba_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(LiplisDefine.ACCTIVE_OTENBA);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            if(flgLoad && rboOtenba.Checked)
+            {
+                trackSpeed.Value = reversePercent(100);
+                setSpeed();
+            }
         }
 
         private void rboNormal_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(LiplisDefine.ACCTIVE_NORMAL);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            if(flgLoad && rboNormal.Checked)
+            {
+                trackSpeed.Value = reversePercent(75);
+                setSpeed();
+            }
         }
 
         private void rboLittleYukkuri_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(LiplisDefine.ACCTIVE_LITTLE_YUKKURI);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            if (flgLoad && rboLittleYukkuri.Checked)
+            {
+                trackSpeed.Value = 50;
+                setSpeed();
+            }  
         }
 
         private void rboYukkuri_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(LiplisDefine.ACCTIVE_YUKKURI);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            if (flgLoad && rboYukkuri.Checked)
+            {
+                trackSpeed.Value = reversePercent(25);
+                setSpeed();
+            }   
         }
 
         private void rboEco_CheckedChanged(object sender, EventArgs e)
         {
-            os.setSpeed(LiplisDefine.ACCTIVE_ECO);
+            if (flgLoad && rboEco.Checked)
+            {
+                trackSpeed.Value = reversePercent(0);
+                setSpeed();
+            }
+        }
+
+
+
+        private void trackSpeed_Scroll(object sender, EventArgs e)
+        {
+            if(flgLoad)
+            {
+                setSpeed();
+
+                if (os.lpsReftesh == 0)
+                {
+                    rboEco.Checked = true;
+
+                }
+                else if (os.lpsReftesh <= 25)
+                {
+                    rboYukkuri.Checked = true;
+                }
+                else if (os.lpsReftesh <= 50)
+                {
+                    rboLittleYukkuri.Checked = true;
+                }
+                else if (os.lpsReftesh <= 75)
+                {
+                    rboNormal.Checked = true;
+                }
+                else
+                {
+                    rboOtenba.Checked = true;
+                }
+            }
+        }
+
+        private void setSpeed()
+        {
+            os.setSpeed(reversePercent(trackSpeed.Value));
+            txtSpeed.Text = os.lpsReftesh.ToString();
             savePreference();
             lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            lips.onRecive(LiplisDefine.LM_CHANGE_SPEED, "");
+        }
+
+        private void txtSpeed_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (flgLoad)
+            {
+                if ((e.KeyChar < '0' || '9' < e.KeyChar) && e.KeyChar != '\b')
+                {
+                    e.Handled = true;
+                }
+
+                if (flgLoad)
+                {
+                    try
+                    {
+                        if (Int32.Parse(txtSpeed.Text) < 0)
+                        {
+                            txtSpeed.Text = "0";
+                        }
+                        else if (Int32.Parse(txtSpeed.Text) > 100)
+                        {
+                            txtSpeed.Text = "100";
+                        }
+
+                        trackSpeed.Value = reversePercent(Int32.Parse(txtSpeed.Text));
+                        setSpeed();
+
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+            
+        }
+
+        /// <summary>
+        /// 100分率を反転して返す
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        private Int32 reversePercent(Int32 val)
+        {
+            return 100-val;
         }
 
         #endregion
@@ -1581,6 +1700,7 @@ namespace Liplis.Activity
             if (!flgLoad) { return; }
             lips.onRecive(LiplisDefine.LM_TOPIC_RELOAD, "");
         }
+
 
         #endregion
 

@@ -810,6 +810,7 @@ namespace Liplis.Common
         public const int LM_SHOW_TELL_WIN    = 25;
         public const int LM_CHAT_SEND        = 26;
         public const int LM_TOPIC_RELOAD     = 27;
+        public const int LM_CHANGE_SPEED     = 28;
 
         public const int LM_WIN_FONTS　                 =　1001;
         public const int LM_WIN_IEXPLORE　              =　1002;

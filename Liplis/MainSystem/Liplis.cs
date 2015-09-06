@@ -54,6 +54,8 @@
 //  2015/08/31 Liplis4.5.3 VoiceLoid最新版対応
 //  2015/09/04 Liplis4.5.4 話題設定変更した時に即時反映されるように修正
 //                         次の話題ボタン連打対策
+//  2015/09/04 Liplis4.5.5 おしゃべり速度の設定の仕様変更、細分化
+//                         (VoiceRoidの読み速度に細かく対応できるように変更)
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -378,9 +380,30 @@ namespace Liplis.MainSystem
         #region loadSetting
         protected void loadSetting()
         {
-            liplisInterval = os.lpsInterval;
+            //チャットスピード計算
+            chatSpeedCulc();
+
             liplisBatteryLevel = (int)(ps.BatteryLifePercent * 100);
             prevBatteryLevel = (int)(ps.BatteryLifePercent * 100);
+        }
+
+        /// <summary>
+        /// チャットスピードの変更
+        /// </summary>
+        protected void chatSpeedChange()
+        {
+            //チャットスピード計算
+            chatSpeedCulc();
+            timUpdate.Change(0, liplisInterval);
+        }
+
+        /// <summary>
+        /// チャットスピードを計算する
+        /// 設定リフレッシュレート(100分率)から33-200換算のリフレッシュレートに変換する
+        /// </summary>
+        protected void chatSpeedCulc()
+        {
+            liplisInterval = (int)((100 - os.lpsReftesh) * 1.66 + 33);
         }
         #endregion
 
@@ -620,7 +643,7 @@ namespace Liplis.MainSystem
             try
             {
                 //リフレッシュタイマーの初期化
-                timUpdate = new System.Threading.Timer(new TimerCallback(onUpdate), null, 0, 100);
+                timUpdate = new System.Threading.Timer(new TimerCallback(onUpdate), null, 0, liplisInterval);
                 timRefresh = new System.Threading.Timer(new TimerCallback(onProcess), null, 0, 1000);
 
                 return true;
@@ -807,7 +830,7 @@ namespace Liplis.MainSystem
             }
             else if (flgAlarm == 10)
             {
-                //カウントダウンフェーズ
+                //待機フェーズ
                 onCountDown();
             }
             else if (flgAlarm == 11)
@@ -1272,6 +1295,9 @@ namespace Liplis.MainSystem
                     break;
                 case LiplisDefine.LM_TOPIC_RELOAD:          //2015/09/04 Liplis4.5.4 話題をリロードするように変更
                     otp.doReloadThread();
+                    break;
+                case LiplisDefine.LM_CHANGE_SPEED:          //2015/09/04 Liplis4.5.5 おしゃべりスピード設定ロジック変更
+                    chatSpeedChange();
                     break;
 
 
@@ -2703,7 +2729,8 @@ namespace Liplis.MainSystem
                 Invoke(new LpsDelegate.dlgVoidToVoid(at.Show));
 
                 //即表示判定
-                if (os.lpsReftesh == LiplisDefine.ACCTIVE_ECO)
+                //if (os.lpsReftesh == LiplisDefine.ACCTIVE_ECO)
+                if (os.lpsReftesh == 0)
                 {
                     immediatelyReflesh();
                 }
@@ -2769,6 +2796,9 @@ namespace Liplis.MainSystem
         ///                         
         ///====================================================================
 
+
+
+
         /// <summary>
         /// アップデイトリプリス
         /// </summary>
@@ -2777,50 +2807,60 @@ namespace Liplis.MainSystem
         {
             try
             {
-                switch (os.lpsReftesh)
+                if( os.lpsReftesh != 0)
                 {
-                    case LiplisDefine.ACCTIVE_OTENBA:
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        Thread.Sleep(33);
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        Thread.Sleep(33);
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        Thread.Sleep(33);
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        Thread.Sleep(33);
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        Thread.Sleep(33);
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        break;
-                    case LiplisDefine.ACCTIVE_NORMAL:
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        Thread.Sleep(33);
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        Thread.Sleep(33);
-                        if (flgAlarm != 0) { refreshLiplis(); }
-                        break;
-                    case LiplisDefine.ACCTIVE_LITTLE_YUKKURI:
-                        refreshLiplis();
-                        break;
-                    case LiplisDefine.ACCTIVE_YUKKURI:
-                        if (cntSlow >= 1)
-                        {
-                            refreshLiplis();
-                            cntSlow = 0;
-                        }
-                        else
-                        {
-                            cntSlow++;
-                        }
-                        break;
-                    case LiplisDefine.ACCTIVE_ECO:
-                        //瞬間表示
-                        immediatelyReflesh();
-                        break;
-                    default:
-                        immediatelyReflesh();
-                        break;
+                    refreshLiplis();
                 }
+                else
+                {
+                    immediatelyReflesh();
+                }
+
+
+                //switch (os.lpsReftesh)
+                //{
+                //    case LiplisDefine.ACCTIVE_OTENBA:
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        Thread.Sleep(33);
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        Thread.Sleep(33);
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        Thread.Sleep(33);
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        Thread.Sleep(33);
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        Thread.Sleep(33);
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        break;
+                //    case LiplisDefine.ACCTIVE_NORMAL:
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        Thread.Sleep(33);
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        Thread.Sleep(33);
+                //        if (flgAlarm != 0) { refreshLiplis(); }
+                //        break;
+                //    case LiplisDefine.ACCTIVE_LITTLE_YUKKURI:
+                //        refreshLiplis();
+                //        break;
+                //    case LiplisDefine.ACCTIVE_YUKKURI:
+                //        if (cntSlow >= 1)
+                //        {
+                //            refreshLiplis();
+                //            cntSlow = 0;
+                //        }
+                //        else
+                //        {
+                //            cntSlow++;
+                //        }
+                //        break;
+                //    case LiplisDefine.ACCTIVE_ECO:
+                //        //瞬間表示
+                //        immediatelyReflesh();
+                //        break;
+                //    default:
+                //        immediatelyReflesh();
+                //        break;
+                //}
             }
             catch
             {

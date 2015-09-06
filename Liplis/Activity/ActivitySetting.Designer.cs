@@ -62,6 +62,8 @@
             this.rdoFrqQuiet = new System.Windows.Forms.RadioButton();
             this.rdoFrqReticent = new System.Windows.Forms.RadioButton();
             this.grpSetActive = new System.Windows.Forms.GroupBox();
+            this.txtSpeed = new System.Windows.Forms.TextBox();
+            this.trackSpeed = new System.Windows.Forms.TrackBar();
             this.rboLittleYukkuri = new System.Windows.Forms.RadioButton();
             this.rboEco = new System.Windows.Forms.RadioButton();
             this.rboYukkuri = new System.Windows.Forms.RadioButton();
@@ -119,6 +121,12 @@
             this.chkNews = new System.Windows.Forms.CheckBox();
             this.grpVoice = new System.Windows.Forms.GroupBox();
             this.grpVoiceExePath = new System.Windows.Forms.GroupBox();
+            this.btnVoiceLoidPathAoi = new System.Windows.Forms.Button();
+            this.txtVoiceLoidPathAoi = new System.Windows.Forms.TextBox();
+            this.lblVoiceLoidPathAoi = new System.Windows.Forms.Label();
+            this.btnVoiceLoidPathAkane = new System.Windows.Forms.Button();
+            this.txtVoiceLoidPathAkane = new System.Windows.Forms.TextBox();
+            this.lblVoiceLoidPathAkane = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblEx01 = new System.Windows.Forms.Label();
@@ -192,12 +200,6 @@
             this.tsmHelpLiplisWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmHelpLipliStyle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmVersion = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVoiceLoidPathAoi = new System.Windows.Forms.Button();
-            this.txtVoiceLoidPathAoi = new System.Windows.Forms.TextBox();
-            this.lblVoiceLoidPathAoi = new System.Windows.Forms.Label();
-            this.btnVoiceLoidPathAkane = new System.Windows.Forms.Button();
-            this.txtVoiceLoidPathAkane = new System.Windows.Forms.TextBox();
-            this.lblVoiceLoidPathAkane = new System.Windows.Forms.Label();
             this.spc.Panel1.SuspendLayout();
             this.spc.Panel2.SuspendLayout();
             this.spc.SuspendLayout();
@@ -206,6 +208,7 @@
             this.grpSetHatsugen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFrq)).BeginInit();
             this.grpSetActive.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackSpeed)).BeginInit();
             this.grpSetNico.SuspendLayout();
             this.grpSetDownLoad.SuspendLayout();
             this.grpReginon.SuspendLayout();
@@ -620,6 +623,8 @@
             // 
             // grpSetActive
             // 
+            this.grpSetActive.Controls.Add(this.txtSpeed);
+            this.grpSetActive.Controls.Add(this.trackSpeed);
             this.grpSetActive.Controls.Add(this.rboLittleYukkuri);
             this.grpSetActive.Controls.Add(this.rboEco);
             this.grpSetActive.Controls.Add(this.rboYukkuri);
@@ -628,10 +633,29 @@
             this.grpSetActive.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpSetActive.Location = new System.Drawing.Point(3, 292);
             this.grpSetActive.Name = "grpSetActive";
-            this.grpSetActive.Size = new System.Drawing.Size(517, 46);
+            this.grpSetActive.Size = new System.Drawing.Size(517, 70);
             this.grpSetActive.TabIndex = 91;
             this.grpSetActive.TabStop = false;
             this.grpSetActive.Text = "アクティブ度";
+            // 
+            // txtSpeed
+            // 
+            this.txtSpeed.Location = new System.Drawing.Point(472, 15);
+            this.txtSpeed.Name = "txtSpeed";
+            this.txtSpeed.ReadOnly = true;
+            this.txtSpeed.Size = new System.Drawing.Size(37, 19);
+            this.txtSpeed.TabIndex = 6;
+            this.txtSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSpeed_KeyPress);
+            // 
+            // trackSpeed
+            // 
+            this.trackSpeed.AutoSize = false;
+            this.trackSpeed.Location = new System.Drawing.Point(362, 15);
+            this.trackSpeed.Maximum = 100;
+            this.trackSpeed.Name = "trackSpeed";
+            this.trackSpeed.Size = new System.Drawing.Size(104, 19);
+            this.trackSpeed.TabIndex = 5;
+            this.trackSpeed.Scroll += new System.EventHandler(this.trackSpeed_Scroll);
             // 
             // rboLittleYukkuri
             // 
@@ -702,7 +726,7 @@
             this.grpSetNico.Controls.Add(this.lblSetNico4);
             this.grpSetNico.Controls.Add(this.lblSetNico3);
             this.grpSetNico.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpSetNico.Location = new System.Drawing.Point(3, 344);
+            this.grpSetNico.Location = new System.Drawing.Point(3, 368);
             this.grpSetNico.Name = "grpSetNico";
             this.grpSetNico.Size = new System.Drawing.Size(517, 118);
             this.grpSetNico.TabIndex = 94;
@@ -770,7 +794,7 @@
             this.grpSetDownLoad.Controls.Add(this.lblSetDown2);
             this.grpSetDownLoad.Controls.Add(this.lblSetDownPath);
             this.grpSetDownLoad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpSetDownLoad.Location = new System.Drawing.Point(3, 468);
+            this.grpSetDownLoad.Location = new System.Drawing.Point(3, 492);
             this.grpSetDownLoad.Name = "grpSetDownLoad";
             this.grpSetDownLoad.Size = new System.Drawing.Size(517, 120);
             this.grpSetDownLoad.TabIndex = 93;
@@ -830,7 +854,7 @@
             // 
             this.grpReginon.Controls.Add(this.cboRegion);
             this.grpReginon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpReginon.Location = new System.Drawing.Point(3, 594);
+            this.grpReginon.Location = new System.Drawing.Point(3, 618);
             this.grpReginon.Name = "grpReginon";
             this.grpReginon.Size = new System.Drawing.Size(517, 49);
             this.grpReginon.TabIndex = 98;
@@ -904,7 +928,7 @@
             this.grpTopicJump.Controls.Add(this.groupBox3);
             this.grpTopicJump.Controls.Add(this.grpTopic);
             this.grpTopicJump.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpTopicJump.Location = new System.Drawing.Point(3, 649);
+            this.grpTopicJump.Location = new System.Drawing.Point(3, 673);
             this.grpTopicJump.Name = "grpTopicJump";
             this.grpTopicJump.Size = new System.Drawing.Size(517, 557);
             this.grpTopicJump.TabIndex = 102;
@@ -1306,7 +1330,7 @@
             this.grpVoice.Controls.Add(this.cmbVoiceSelect);
             this.grpVoice.Controls.Add(this.chkVoice);
             this.grpVoice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpVoice.Location = new System.Drawing.Point(3, 1212);
+            this.grpVoice.Location = new System.Drawing.Point(3, 1236);
             this.grpVoice.Name = "grpVoice";
             this.grpVoice.Size = new System.Drawing.Size(517, 316);
             this.grpVoice.TabIndex = 100;
@@ -1352,6 +1376,60 @@
             this.grpVoiceExePath.TabIndex = 5;
             this.grpVoiceExePath.TabStop = false;
             this.grpVoiceExePath.Text = "音声エンジンパス";
+            // 
+            // btnVoiceLoidPathAoi
+            // 
+            this.btnVoiceLoidPathAoi.Location = new System.Drawing.Point(474, 219);
+            this.btnVoiceLoidPathAoi.Name = "btnVoiceLoidPathAoi";
+            this.btnVoiceLoidPathAoi.Size = new System.Drawing.Size(25, 18);
+            this.btnVoiceLoidPathAoi.TabIndex = 33;
+            this.btnVoiceLoidPathAoi.Text = "...";
+            this.btnVoiceLoidPathAoi.UseVisualStyleBackColor = true;
+            this.btnVoiceLoidPathAoi.Click += new System.EventHandler(this.btnVoiceLoidPathAoi_Click);
+            // 
+            // txtVoiceLoidPathAoi
+            // 
+            this.txtVoiceLoidPathAoi.Location = new System.Drawing.Point(158, 219);
+            this.txtVoiceLoidPathAoi.Name = "txtVoiceLoidPathAoi";
+            this.txtVoiceLoidPathAoi.ReadOnly = true;
+            this.txtVoiceLoidPathAoi.Size = new System.Drawing.Size(310, 19);
+            this.txtVoiceLoidPathAoi.TabIndex = 32;
+            // 
+            // lblVoiceLoidPathAoi
+            // 
+            this.lblVoiceLoidPathAoi.AutoSize = true;
+            this.lblVoiceLoidPathAoi.Location = new System.Drawing.Point(3, 222);
+            this.lblVoiceLoidPathAoi.Name = "lblVoiceLoidPathAoi";
+            this.lblVoiceLoidPathAoi.Size = new System.Drawing.Size(112, 12);
+            this.lblVoiceLoidPathAoi.TabIndex = 31;
+            this.lblVoiceLoidPathAoi.Text = "VOICEROID+ 琴葉葵";
+            // 
+            // btnVoiceLoidPathAkane
+            // 
+            this.btnVoiceLoidPathAkane.Location = new System.Drawing.Point(474, 194);
+            this.btnVoiceLoidPathAkane.Name = "btnVoiceLoidPathAkane";
+            this.btnVoiceLoidPathAkane.Size = new System.Drawing.Size(25, 18);
+            this.btnVoiceLoidPathAkane.TabIndex = 30;
+            this.btnVoiceLoidPathAkane.Text = "...";
+            this.btnVoiceLoidPathAkane.UseVisualStyleBackColor = true;
+            this.btnVoiceLoidPathAkane.Click += new System.EventHandler(this.btnVoiceLoidPathAkane_Click);
+            // 
+            // txtVoiceLoidPathAkane
+            // 
+            this.txtVoiceLoidPathAkane.Location = new System.Drawing.Point(158, 194);
+            this.txtVoiceLoidPathAkane.Name = "txtVoiceLoidPathAkane";
+            this.txtVoiceLoidPathAkane.ReadOnly = true;
+            this.txtVoiceLoidPathAkane.Size = new System.Drawing.Size(310, 19);
+            this.txtVoiceLoidPathAkane.TabIndex = 29;
+            // 
+            // lblVoiceLoidPathAkane
+            // 
+            this.lblVoiceLoidPathAkane.AutoSize = true;
+            this.lblVoiceLoidPathAkane.Location = new System.Drawing.Point(3, 197);
+            this.lblVoiceLoidPathAkane.Name = "lblVoiceLoidPathAkane";
+            this.lblVoiceLoidPathAkane.Size = new System.Drawing.Size(112, 12);
+            this.lblVoiceLoidPathAkane.TabIndex = 28;
+            this.lblVoiceLoidPathAkane.Text = "VOICEROID+ 琴葉茜";
             // 
             // label7
             // 
@@ -1605,7 +1683,7 @@
             this.grpSynchronism.Controls.Add(this.groupBox2);
             this.grpSynchronism.Controls.Add(this.groupBox1);
             this.grpSynchronism.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpSynchronism.Location = new System.Drawing.Point(3, 1534);
+            this.grpSynchronism.Location = new System.Drawing.Point(3, 1558);
             this.grpSynchronism.Name = "grpSynchronism";
             this.grpSynchronism.Size = new System.Drawing.Size(517, 177);
             this.grpSynchronism.TabIndex = 101;
@@ -1716,7 +1794,7 @@
             this.grpMenu.Controls.Add(this.grpSetMenuAction);
             this.grpMenu.Controls.Add(this.grpSetMenu);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpMenu.Location = new System.Drawing.Point(3, 1717);
+            this.grpMenu.Location = new System.Drawing.Point(3, 1741);
             this.grpMenu.Name = "grpMenu";
             this.grpMenu.Size = new System.Drawing.Size(517, 70);
             this.grpMenu.TabIndex = 98;
@@ -1802,7 +1880,7 @@
             this.grpSetSonota.Controls.Add(this.lblDiscWindow1);
             this.grpSetSonota.Controls.Add(this.chkDiscWindow);
             this.grpSetSonota.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpSetSonota.Location = new System.Drawing.Point(3, 1793);
+            this.grpSetSonota.Location = new System.Drawing.Point(3, 1817);
             this.grpSetSonota.Name = "grpSetSonota";
             this.grpSetSonota.Size = new System.Drawing.Size(517, 165);
             this.grpSetSonota.TabIndex = 95;
@@ -1892,7 +1970,7 @@
             this.grpWindow.Controls.Add(this.picWindow1);
             this.grpWindow.Controls.Add(this.rbWindow1);
             this.grpWindow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpWindow.Location = new System.Drawing.Point(3, 1964);
+            this.grpWindow.Location = new System.Drawing.Point(3, 1988);
             this.grpWindow.Name = "grpWindow";
             this.grpWindow.Size = new System.Drawing.Size(517, 172);
             this.grpWindow.TabIndex = 103;
@@ -2105,60 +2183,6 @@
             this.tsmVersion.Text = "バージョン情報";
             this.tsmVersion.Click += new System.EventHandler(this.tsmVersion_Click);
             // 
-            // btnVoiceLoidPathAoi
-            // 
-            this.btnVoiceLoidPathAoi.Location = new System.Drawing.Point(474, 219);
-            this.btnVoiceLoidPathAoi.Name = "btnVoiceLoidPathAoi";
-            this.btnVoiceLoidPathAoi.Size = new System.Drawing.Size(25, 18);
-            this.btnVoiceLoidPathAoi.TabIndex = 33;
-            this.btnVoiceLoidPathAoi.Text = "...";
-            this.btnVoiceLoidPathAoi.UseVisualStyleBackColor = true;
-            this.btnVoiceLoidPathAoi.Click += new System.EventHandler(this.btnVoiceLoidPathAoi_Click);
-            // 
-            // txtVoiceLoidPathAoi
-            // 
-            this.txtVoiceLoidPathAoi.Location = new System.Drawing.Point(158, 219);
-            this.txtVoiceLoidPathAoi.Name = "txtVoiceLoidPathAoi";
-            this.txtVoiceLoidPathAoi.ReadOnly = true;
-            this.txtVoiceLoidPathAoi.Size = new System.Drawing.Size(310, 19);
-            this.txtVoiceLoidPathAoi.TabIndex = 32;
-            // 
-            // lblVoiceLoidPathAoi
-            // 
-            this.lblVoiceLoidPathAoi.AutoSize = true;
-            this.lblVoiceLoidPathAoi.Location = new System.Drawing.Point(3, 222);
-            this.lblVoiceLoidPathAoi.Name = "lblVoiceLoidPathAoi";
-            this.lblVoiceLoidPathAoi.Size = new System.Drawing.Size(112, 12);
-            this.lblVoiceLoidPathAoi.TabIndex = 31;
-            this.lblVoiceLoidPathAoi.Text = "VOICEROID+ 琴葉葵";
-            // 
-            // btnVoiceLoidPathAkane
-            // 
-            this.btnVoiceLoidPathAkane.Location = new System.Drawing.Point(474, 194);
-            this.btnVoiceLoidPathAkane.Name = "btnVoiceLoidPathAkane";
-            this.btnVoiceLoidPathAkane.Size = new System.Drawing.Size(25, 18);
-            this.btnVoiceLoidPathAkane.TabIndex = 30;
-            this.btnVoiceLoidPathAkane.Text = "...";
-            this.btnVoiceLoidPathAkane.UseVisualStyleBackColor = true;
-            this.btnVoiceLoidPathAkane.Click += new System.EventHandler(this.btnVoiceLoidPathAkane_Click);
-            // 
-            // txtVoiceLoidPathAkane
-            // 
-            this.txtVoiceLoidPathAkane.Location = new System.Drawing.Point(158, 194);
-            this.txtVoiceLoidPathAkane.Name = "txtVoiceLoidPathAkane";
-            this.txtVoiceLoidPathAkane.ReadOnly = true;
-            this.txtVoiceLoidPathAkane.Size = new System.Drawing.Size(310, 19);
-            this.txtVoiceLoidPathAkane.TabIndex = 29;
-            // 
-            // lblVoiceLoidPathAkane
-            // 
-            this.lblVoiceLoidPathAkane.AutoSize = true;
-            this.lblVoiceLoidPathAkane.Location = new System.Drawing.Point(3, 197);
-            this.lblVoiceLoidPathAkane.Name = "lblVoiceLoidPathAkane";
-            this.lblVoiceLoidPathAkane.Size = new System.Drawing.Size(112, 12);
-            this.lblVoiceLoidPathAkane.TabIndex = 28;
-            this.lblVoiceLoidPathAkane.Text = "VOICEROID+ 琴葉茜";
-            // 
             // ActivitySetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2183,6 +2207,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFrq)).EndInit();
             this.grpSetActive.ResumeLayout(false);
             this.grpSetActive.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackSpeed)).EndInit();
             this.grpSetNico.ResumeLayout(false);
             this.grpSetNico.PerformLayout();
             this.grpSetDownLoad.ResumeLayout(false);
@@ -2406,5 +2431,7 @@
         private System.Windows.Forms.Button btnVoiceLoidPathAkane;
         private System.Windows.Forms.TextBox txtVoiceLoidPathAkane;
         private System.Windows.Forms.Label lblVoiceLoidPathAkane;
+        private System.Windows.Forms.TextBox txtSpeed;
+        private System.Windows.Forms.TrackBar trackSpeed;
     }
 }
