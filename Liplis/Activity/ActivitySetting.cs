@@ -121,15 +121,6 @@ namespace Liplis.Activity
             }
 
             //アクティブ度
-            //switch (os.lpsReftesh)
-            //{
-            //    case LiplisDefine.ACCTIVE_OTENBA: rboOtenba.Checked = true; break;
-            //    case LiplisDefine.ACCTIVE_NORMAL: rboNormal.Checked = true; break;
-            //    case LiplisDefine.ACCTIVE_YUKKURI: rboYukkuri.Checked = true; break;
-            //    case LiplisDefine.ACCTIVE_LITTLE_YUKKURI: rboLittleYukkuri.Checked = true; break;
-
-            //    case LiplisDefine.ACCTIVE_ECO: rboEco.Checked = true; break;
-            //}
             this.trackSpeed.Value = reversePercent(os.lpsReftesh);
             this.txtSpeed.Text = os.lpsReftesh.ToString();
             if (os.lpsReftesh == 0)
@@ -699,81 +690,69 @@ namespace Liplis.Activity
         private void rdoFrqMachen_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_MACHEN);
-            os.setMode(1);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(1);
         }
 
         private void rdoFrqVerryNoisy_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_VERRYNOISY);
-            os.setMode(2);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(2);
         }
 
         private void rdoFrqNoisy_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_NOISY);
-            os.setMode(3);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(3);
         }
 
         private void rdoFrqTalkative_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_TALKACTIV);
-            os.setMode(4);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(4);
         }
 
         private void rdoFrqNormal_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_NORMAL);
-            os.setMode(5);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(5);
         }
 
         private void rdoFrqQuiet_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_QUIET);
-            os.setMode(6);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(6);
         }
 
         private void rdoFrqKeeps_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_KEEPS);
-            os.setMode(7);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(7);
         }
 
         private void rdoFrqRefined_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_REFINED);
-            os.setMode(8);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(8);
         }
 
         private void rdoFrqReticent_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_RETIVENT);
-            os.setMode(9);
-            savePreference();
-            lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            setMode(9);
         }
 
         private void rdoFrqChangeable_CheckedChanged(object sender, EventArgs e)
         {
             picFrq.Image = FctCreateFromResource.getResourceBitmap(LiplisDefine.FRQ_CHANGEABLE);
-            os.setMode(0);
+            setMode(0);
+        }
+
+        protected void setMode(int mode)
+        {
+            os.setMode(mode);
             savePreference();
             lips.onRecive(LiplisDefine.LM_LOAD_SETTING, LiplisDefine.LMP_NONOP);
+            lips.onRecive(LiplisDefine.LM_CHANGE_MODE, "");
         }
         #endregion
 
@@ -814,7 +793,7 @@ namespace Liplis.Activity
         {
             if (flgLoad && rboYukkuri.Checked)
             {
-                trackSpeed.Value = reversePercent(25);
+                trackSpeed.Value = reversePercent(24);
                 setSpeed();
             }   
         }
@@ -841,7 +820,7 @@ namespace Liplis.Activity
                     rboEco.Checked = true;
 
                 }
-                else if (os.lpsReftesh <= 25)
+                else if (os.lpsReftesh <= 24)
                 {
                     rboYukkuri.Checked = true;
                 }

@@ -200,6 +200,7 @@
             this.tsmHelpLiplisWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmHelpLipliStyle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmVersion = new System.Windows.Forms.ToolStripMenuItem();
+            this.label9 = new System.Windows.Forms.Label();
             this.spc.Panel1.SuspendLayout();
             this.spc.Panel2.SuspendLayout();
             this.spc.SuspendLayout();
@@ -623,6 +624,7 @@
             // 
             // grpSetActive
             // 
+            this.grpSetActive.Controls.Add(this.label9);
             this.grpSetActive.Controls.Add(this.txtSpeed);
             this.grpSetActive.Controls.Add(this.trackSpeed);
             this.grpSetActive.Controls.Add(this.rboLittleYukkuri);
@@ -2183,6 +2185,15 @@
             this.tsmVersion.Text = "バージョン情報";
             this.tsmVersion.Click += new System.EventHandler(this.tsmVersion_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 44);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(354, 12);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "※VoiceRoidと同じ速度でおしゃべりさせるには、「ゆっくり」を選んで下さい。";
+            // 
             // ActivitySetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2433,5 +2444,6 @@
         private System.Windows.Forms.Label lblVoiceLoidPathAkane;
         private System.Windows.Forms.TextBox txtSpeed;
         private System.Windows.Forms.TrackBar trackSpeed;
+        private System.Windows.Forms.Label label9;
     }
 }

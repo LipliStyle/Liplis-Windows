@@ -69,7 +69,7 @@ namespace Liplis.Msg
 
         ///=============================
         /// 対応設定値
-        public int lpsInterval                  { get; set; }       //インターバル
+        public int lpsChatInterval                  { get; set; }       //インターバル
 
         ///=============================
         /// 音声設定
@@ -393,12 +393,29 @@ namespace Liplis.Msg
         }
         #endregion
 
+        /// <summary>
+        /// チャットインターバルを取得する
+        /// </summary>
+        /// <returns></returns>
+        public int getLpsChatInterval()
+        {
+            if(this.mode == 0)
+            {
+                return LpsLiplisUtil.getRandamInt(5000, 60000);
+            }
+            else
+            {
+                return lpsChatInterval;
+            }
+            
+        }
+
         //===========================================================
         //　　　　　　　　　　　セッター
         //===========================================================
 
         #region セッター
-        
+
         /// <summary>
         /// UIDセッター
         /// setUid
@@ -458,38 +475,37 @@ namespace Liplis.Msg
             switch(mode)
             {
                 case 0:
-                    lpsInterval = 0;
-                    mode = 9;
+                    lpsChatInterval = 999999; //きまぐれ
                     break;
                 case 1:
-                    lpsInterval = 50;
+                    lpsChatInterval = 5000;
                     break;
                 case 2:
-                    lpsInterval = 100;
+                    lpsChatInterval = 10000;
                     break;
                 case 3:
-                    lpsInterval = 200;
+                    lpsChatInterval = 20000;
                     break;
                 case 4:
-                    lpsInterval = 300;
+                    lpsChatInterval = 30000;
                     break;
                 case 5:
-                    lpsInterval = 600;
+                    lpsChatInterval = 60000;
                     break;
                 case 6:
-                    lpsInterval = 1200;
+                    lpsChatInterval = 120000;
                     break;
                 case 7:
-                    lpsInterval = 1800;
+                    lpsChatInterval = 180000;
                     break;
                 case 8:
-                    lpsInterval = 3000;
+                    lpsChatInterval = 300000;
                     break;
                 case 9:
-                    lpsInterval = 0;
+                    lpsChatInterval = 0;
                     break;
                 default:
-                    lpsInterval = 100;
+                    lpsChatInterval = 10000;
                     break;
             }
         }

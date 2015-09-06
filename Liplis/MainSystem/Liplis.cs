@@ -54,7 +54,7 @@
 //  2015/08/31 Liplis4.5.3 VoiceLoid最新版対応
 //  2015/09/04 Liplis4.5.4 話題設定変更した時に即時反映されるように修正
 //                         次の話題ボタン連打対策
-//  2015/09/04 Liplis4.5.5 おしゃべり速度の設定の仕様変更、細分化
+//  2015/09/04 Liplis4.5.6 おしゃべり速度の設定の仕様変更、細分化
 //                         (VoiceRoidの読み速度に細かく対応できるように変更)
 //
 // ■運用
@@ -214,13 +214,14 @@ namespace Liplis.MainSystem
         /// 設定値
         //NOTE : liplisRefreshRate * liplisRate = 更新間隔 (updateCntに関連)
         #region 設定値
-        protected static int liplisInterval = 1000;		    //インターバル
+        protected static int liplisInterval = 100;		    //インターバル
         #endregion
 
         ///=====================================
         /// チャット制御カウント
         #region チャット制御カウント
-        protected static int cntUpdate = 10;
+        protected int waitTime = 10;
+        protected DateTime startUpTime;                 //次処理 待機開始時間
         #endregion
 
         ///=====================================
@@ -385,25 +386,6 @@ namespace Liplis.MainSystem
 
             liplisBatteryLevel = (int)(ps.BatteryLifePercent * 100);
             prevBatteryLevel = (int)(ps.BatteryLifePercent * 100);
-        }
-
-        /// <summary>
-        /// チャットスピードの変更
-        /// </summary>
-        protected void chatSpeedChange()
-        {
-            //チャットスピード計算
-            chatSpeedCulc();
-            timUpdate.Change(0, liplisInterval);
-        }
-
-        /// <summary>
-        /// チャットスピードを計算する
-        /// 設定リフレッシュレート(100分率)から33-200換算のリフレッシュレートに変換する
-        /// </summary>
-        protected void chatSpeedCulc()
-        {
-            liplisInterval = (int)((100 - os.lpsReftesh) * 1.66 + 33);
         }
         #endregion
 
@@ -776,7 +758,8 @@ namespace Liplis.MainSystem
         {
             try
             {
-                if (liplisInterval == 0)
+                //無口の場合、次の話題をしゃべらない。
+                if (os.mode == 9)
                 {
 
                 }
@@ -785,20 +768,17 @@ namespace Liplis.MainSystem
                     //ver4.5 チャットトークフラグ条件追加
                     if (!flgChatTalk)
                     {
-                        if (liplisInterval == 9999)
-                        {
-                            cntUpdate = LpsLiplisUtil.getRandamInt(50, 600);
-                        }
-                        else
-                        {
-                            cntUpdate = liplisInterval;
-                        }
+                        waitTime = os.getLpsChatInterval();
                     }
                     else
                     {
                         //チャットトークなら、インターバルを強制的に1分に固定
-                        cntUpdate = 600;
+                        waitTime = 60000;
                     }
+
+                    //スタータップ時刻を現在に設定する。
+                    this.startUpTime = DateTime.Now;
+
                     flgAlarm = 10;
                 }                
             }
@@ -807,6 +787,41 @@ namespace Liplis.MainSystem
                 LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
             }
         }
+        //protected void reSetUpdateCount()
+        //{
+        //    try
+        //    {
+        //        if (liplisInterval == 0)
+        //        {
+
+        //        }
+        //        else
+        //        {
+        //            //ver4.5 チャットトークフラグ条件追加
+        //            if (!flgChatTalk)
+        //            {
+        //                if (liplisInterval == 9999)
+        //                {
+        //                    cntUpdate = LpsLiplisUtil.getRandamInt(50, 600);
+        //                }
+        //                else
+        //                {
+        //                    cntUpdate = liplisInterval;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                //チャットトークなら、インターバルを強制的に1分に固定
+        //                cntUpdate = 600;
+        //            }
+        //            flgAlarm = 10;
+        //        }
+        //    }
+        //    catch (Exception err)
+        //    {
+        //        LpsLogControllerCus.writingLog(this.GetType().Name, MethodBase.GetCurrentMethod().Name, err.ToString());
+        //    }
+        //}
         #endregion
 
         ///====================================================================
@@ -831,7 +846,7 @@ namespace Liplis.MainSystem
             else if (flgAlarm == 10)
             {
                 //待機フェーズ
-                onCountDown();
+                onNextWait();
             }
             else if (flgAlarm == 11)
             {
@@ -840,7 +855,8 @@ namespace Liplis.MainSystem
             }
             else
             {
-
+                Thread.Sleep(100);
+                Application.DoEvents();
             }
 
             //トゥルーエンドカウント
@@ -1299,7 +1315,11 @@ namespace Liplis.MainSystem
                 case LiplisDefine.LM_CHANGE_SPEED:          //2015/09/04 Liplis4.5.5 おしゃべりスピード設定ロジック変更
                     chatSpeedChange();
                     break;
+                case LiplisDefine.LM_CHANGE_MODE:          //2015/09/04 Liplis4.5.7 おしゃべり品どう更新ロジック変更
+                    chatFreqChange();
+                    break;
 
+                    
 
                 //ウインドウズ実行コマンド
                 #region ウインドウズ実行コマンド
@@ -1547,7 +1567,7 @@ namespace Liplis.MainSystem
             flgEnd = true;
 
             //アップデートカウントをほぼ無限に設定
-            cntUpdate = 99999;
+            waitTime = 99999;
 
             //チャットを停止しておく
             chatStop();
@@ -1573,7 +1593,7 @@ namespace Liplis.MainSystem
             flgEnd = true; flgRestart = true;
 
             //アップデートカウントをほぼ無限に設定
-            cntUpdate = 99999;
+            waitTime = 99999;
 
             //チャットを停止しておく
             chatStop();
@@ -1687,6 +1707,45 @@ namespace Liplis.MainSystem
         }
         #endregion
 
+
+        ///====================================================================
+        ///
+        ///                            動作設定変更
+        ///                         
+        ///====================================================================
+        #region 動作設定変更
+        /// <summary>
+        /// チャットスピードの変更
+        /// </summary>
+        protected void chatSpeedChange()
+        {
+            //チャットスピード計算
+            chatSpeedCulc();
+            timUpdate.Change(0, liplisInterval);
+        }
+
+        /// <summary>
+        /// おしゃべり頻度変更
+        /// </summary>
+        protected void chatFreqChange()
+        {
+            //おしゃべり中でなければ、更新時間を変更する
+            if (!flgChatting)
+            {
+                reSetUpdateCount();
+            }
+        }
+
+        /// <summary>
+        /// チャットスピードを計算する
+        /// 設定リフレッシュレート(100分率)から33-200換算のリフレッシュレートに変換する
+        /// </summary>
+        protected void chatSpeedCulc()
+        {
+            liplisInterval = (int)((100 - os.lpsReftesh) * 1.66 + 33);
+        }
+        #endregion
+
         ///====================================================================
         ///
         ///                            Liplis制御
@@ -1723,29 +1782,33 @@ namespace Liplis.MainSystem
         #endregion
 
         /// <summary>
-        /// onCountDown
-        /// カウントダウンイベント
+        /// onNextWait
+        /// 次おしゃべり待機
+        /// 2015/09/06 Liplis4.6.0 おしゃべり使用変更
         /// </summary>
-        #region onCountDown
-        protected void onCountDown()
+        #region onNextWait
+        protected void onNextWait()
         {
             try
             {
+                //終了チェック
                 if (flgEnd) { return; }
 
+                //待つ
                 Thread.Sleep(10);
+                Application.DoEvents();
 
-                //カウントダウン
-                cntUpdate--;
+                //スタートアップからの経過時間を取得する
+                TimeSpan ts = DateTime.Now - this.startUpTime;
 
-                //ver4.2 ニュートラルに戻す
-                if (cntUpdate == 30)
+                //30秒経過したら、ver4.2 ニュートラルに戻す
+                if (ts.TotalSeconds > 30)
                 {
                     setObjectBodyNeutral();
                 }
 
-                //チャットフェーズに以降
-                if (cntUpdate <= 0)
+                //待機時間を経過していたら、次の話題に移行する。
+                if (ts.TotalMilliseconds > waitTime)
                 {
                     flgAlarm = 11;
                 }
@@ -3657,11 +3720,17 @@ namespace Liplis.MainSystem
         {
             try
             {
+                //座り中の場合は何もしない
                 if (flgSitdown)
                 {
                     return true;
                 }
 
+                //すでにノーマルであれば何もしない
+                if(nowEmotion == 0)
+                {
+                    return true;
+                }
 
                 //感情初期化
                 cntMouth = 1;
@@ -4023,6 +4092,9 @@ namespace Liplis.MainSystem
             try
             {
                 flgSitdown = false;
+
+                //ニュートラルに戻す
+                setObjectBodyNeutral();
 
                 //アイコン変更
                 updateSleepIcon();
