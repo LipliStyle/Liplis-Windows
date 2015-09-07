@@ -9,7 +9,7 @@
 //
 //  2015/08/31 Liplis4.5.3 VoiceLoid最新バージョン対応
 //
-//  Liplisシステム      
+//  Liplisシステム       
 //  Copyright(c) 2010-2015 LipliStyle Sachin
 //=======================================================================
 using Liplis.Common;
