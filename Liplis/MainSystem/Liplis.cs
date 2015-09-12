@@ -33,6 +33,7 @@
 //　2014/01/14 Liplis3.2.3 再起動時、話題取得範囲が正しく設定されなかったバグを修正
 //　2014/02/02 Liplis3.2.4 ツイッター認証が行えないバグを修正
 //
+//■ Liplis4.0
 //  2014/04/07 Liplis4.0.0 Clalis4.0対応
 //  2014/04/16             おしゃべり内容の解析方法修正
 //  2014/04/20             データ受信処理修正(リアルタイム受信)    
@@ -56,6 +57,7 @@
 //                         次の話題ボタン連打対策
 //  2015/09/04 Liplis4.5.6 おしゃべり速度の設定の仕様変更、細分化
 //                         (VoiceRoidの読み速度に細かく対応できるように変更)
+//  2015/09/04 Liplis4.6.0 リリース
 //
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
@@ -69,7 +71,7 @@
 //
 //
 //
-// Copyright(c) 2014 LipliStyle さちん MITライセンス
+// Copyright(c) 2015 LipliStyle さちん MITライセンス
 //=======================================================================
 using System;
 using System.Collections.Generic;
@@ -2859,11 +2861,9 @@ namespace Liplis.MainSystem
         ///                         
         ///====================================================================
 
-
-
-
         /// <summary>
         /// アップデイトリプリス
+        /// 2015/09/04 Liplis4.5.6 おしゃべり速度の設定の仕様変更、細分化
         /// </summary>
         #region updateLiplis
         protected void updateLiplis()
@@ -2872,6 +2872,7 @@ namespace Liplis.MainSystem
             {
                 if( os.lpsReftesh != 0)
                 {
+
                     refreshLiplis();
                 }
                 else
@@ -2879,51 +2880,6 @@ namespace Liplis.MainSystem
                     immediatelyReflesh();
                 }
 
-
-                //switch (os.lpsReftesh)
-                //{
-                //    case LiplisDefine.ACCTIVE_OTENBA:
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        Thread.Sleep(33);
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        Thread.Sleep(33);
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        Thread.Sleep(33);
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        Thread.Sleep(33);
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        Thread.Sleep(33);
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        break;
-                //    case LiplisDefine.ACCTIVE_NORMAL:
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        Thread.Sleep(33);
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        Thread.Sleep(33);
-                //        if (flgAlarm != 0) { refreshLiplis(); }
-                //        break;
-                //    case LiplisDefine.ACCTIVE_LITTLE_YUKKURI:
-                //        refreshLiplis();
-                //        break;
-                //    case LiplisDefine.ACCTIVE_YUKKURI:
-                //        if (cntSlow >= 1)
-                //        {
-                //            refreshLiplis();
-                //            cntSlow = 0;
-                //        }
-                //        else
-                //        {
-                //            cntSlow++;
-                //        }
-                //        break;
-                //    case LiplisDefine.ACCTIVE_ECO:
-                //        //瞬間表示
-                //        immediatelyReflesh();
-                //        break;
-                //    default:
-                //        immediatelyReflesh();
-                //        break;
-                //}
             }
             catch
             {
@@ -4306,23 +4262,9 @@ namespace Liplis.MainSystem
         /// 2014/02/02 ver3.2.4 ツイッターの認証方式変更
         /// </summary>
         #region callTwitterActivation
-        //protected void callTwitterActivation()
-        //{
-        //    TwitterService tokenGetObject = new TwitterService(LiplisDefine.TWITTER_OAUTH_CONSUMERKEY, LiplisDefine.TWITTER_OAUTH_CONSUMERSECRET);
-        //    OAuthRequestToken reqToken = tokenGetObject.GetRequestToken();
-        //    Uri uri = tokenGetObject.GetAuthenticationUrl(reqToken);
-        //    Process.Start(uri.ToString());
-
-        //    //ピンコード入力画面を表示する
-        //    using (ActivityTwitterActivation ftip = new ActivityTwitterActivation(this, tokenGetObject, reqToken))
-        //    {
-        //        //画面表示
-        //        ftip.ShowDialog();
-        //    }
-        //}
         protected void callTwitterActivation()
         {
-            LiplisTwitterOAuth.lpsWitterOAuth(this);
+            LiplisTwitterOAuth.lpsTwitterOAuth(this);
         }
         #endregion
         

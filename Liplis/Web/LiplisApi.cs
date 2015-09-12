@@ -3,7 +3,7 @@
 //  概要      : LiplisApiとのインターフェースクラス
 //
 //  Liplis4.0
-//  Copyright(c) 2010-2014 LipliStyle.Sachin
+//  Copyright(c) 2010-2015 LipliStyle.Sachin
 //
 //
 //  2014/04/07 Liplis4.0 Clalis4.0対応

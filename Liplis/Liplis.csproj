@@ -252,7 +252,6 @@
     <Compile Include="Web\LiplisTwitterOAuth.cs" />
     <Compile Include="Web\LiplisWebUrl.cs" />
     <Compile Include="Web\LiplisWedFileDownLoader.cs" />
-    <Compile Include="Web\LiplisTwitterOAuthBase.cs" />
     <Compile Include="Xml\SharedPreferences.cs" />
     <Compile Include="Xml\XmlSettingObject.cs" />
     <EmbeddedResource Include="Activity\ActivityChar.resx">

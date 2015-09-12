@@ -426,9 +426,6 @@
     <Compile Include="..\Liplis\Web\LiplisTwitterOAuth.cs">
       <Link>Web\LiplisTwitterOAuth.cs</Link>
     </Compile>
-    <Compile Include="..\Liplis\Web\LiplisTwitterOAuthBase.cs">
-      <Link>Web\LiplisTwitterOAuthBase.cs</Link>
-    </Compile>
     <Compile Include="..\Liplis\Web\LiplisWebUrl.cs">
       <Link>Web\LiplisWebUrl.cs</Link>
     </Compile>
