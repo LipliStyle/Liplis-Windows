@@ -8,6 +8,7 @@
 using System;
 using System.Windows.Forms;
 using Liplis.Common;
+using System.Reflection;
 
 namespace Liplis.MainSystem
 {
@@ -44,6 +45,7 @@ namespace Liplis.MainSystem
         private void initTaskBar()
         {
             this.Opacity = 0;
+            this.Text = "Liplis " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             //this.AddOwnedForm(lips);
             //this.AddOwnedForm(lips.getAt());
         }
