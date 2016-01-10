@@ -392,7 +392,10 @@ namespace Liplis.Common
         [DllImport("user32.dll")]
         public static extern int MoveWindow(IntPtr hwnd, int x, int y, int nWidth, int nHeight, int bRepaint);
 
-
+        //ダイアログボックス内の指定されたコントロールへメッセージを送信します。
+        //https://msdn.microsoft.com/ja-jp/library/cc411002.aspx
+        [DllImport("user32.dll")]
+        private static extern IntPtr SendDlgItemMessage(IntPtr hDlg, int nIDDlgItem, uint Msg, UIntPtr wParam, IntPtr lParam);
 
         //指定されたウインドウタイトルを持つプロセスの一覧を取得する
         public delegate int EnumWindowsDelegate(IntPtr hWnd, int lParam);

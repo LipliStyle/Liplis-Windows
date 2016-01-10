@@ -145,7 +145,7 @@ namespace Liplis.Common
         public const string LIPLIS_HELP                           = @"http://liplis.mine.nu/lipliswiki/webroot/?LiplisWindows%20Manual";
         public const string LIPLIS_LIPLISTYLE                     = @"http://liplis.mine.nu/";
 
-        public const string LIPLIS_FREE_TALK                      = @"http://liplis.mine.nu/Clalis/v32/Liplis/ClalisForLiplisFreeTalk.aspx";
+        public const string LIPLIS_FREE_TALK                      = @"http://liplis.mine.nu/Clalis/v41/Liplis/ClalisForLiplisFreeTalk.aspx";
 
         public const string LIPLIS_TWEET                          = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplisTweet.aspx";
         public const string LIPLIS_CHAT                           = @"http://liplis.mine.nu/Clalis/v40/Liplis/ClalisForLiplisTalk.aspx";

@@ -392,6 +392,9 @@ namespace Liplis.Voice
 
                         if (flag)
                         {
+                            //☆
+                            //this.procVoiceroidEXCommand(text, this.m_hWindow);
+
                             int num4 = 0;
                             while (LpsWindowsApi.SendMessage(this.msgHEdit, 12, 0, chatText) == 0 && ++num4 <= this.setting.nTryCount)
                             {

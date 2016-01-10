@@ -1021,6 +1021,40 @@ namespace Liplis.Common
         }
         #endregion
 
+        /// <summary>
+        /// ストリングを文字数で分割する
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        #region stringSplitAtCount
+        public static string[] stringSplitAtCount(this string self, int count)
+        {
+            var result = new List<string>();
+            var length = (int)Math.Ceiling((double)self.Length / count);
+
+            for (int i = 0; i < length; i++)
+            {
+                int start = count * i;
+                if (self.Length <= start)
+                {
+                    break;
+                }
+                if (self.Length < start + count)
+                {
+                    result.Add(self.Substring(start));
+                }
+                else
+                {
+                    result.Add(self.Substring(start, count));
+                }
+            }
+
+            return result.ToArray();
+        }
+        #endregion
+
+
 
         /// <summary>
         /// ニコニコドメインのURLかチェックする

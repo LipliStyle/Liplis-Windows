@@ -883,14 +883,21 @@ namespace Liplis.Web
 
             foreach (string buf in bufList)
             {
-                string[] bufList2 = buf.Split(',');
+                try
+                {
+                    string[] bufList2 = buf.Split(',');
 
-                if (buf.Length < 3) { break; }
+                    if (buf.Length < 3) { break; }
 
-                msg.nameList.Add(bufList2[0]);
-                msg.emotionList.Add(int.Parse(bufList2[1]));
-                msg.pointList.Add(int.Parse(bufList2[2]));
-                sbResult.Append(bufList2[0]);
+                    msg.nameList.Add(bufList2[0]);
+                    msg.emotionList.Add(int.Parse(bufList2[1]));
+                    msg.pointList.Add(int.Parse(bufList2[2]));
+                    sbResult.Append(bufList2[0]);
+                }
+                catch
+                {
+
+                }
             }
 
             string result = sbResult.ToString().Replace("EOS", "");
