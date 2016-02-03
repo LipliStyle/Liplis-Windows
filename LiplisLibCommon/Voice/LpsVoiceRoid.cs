@@ -393,29 +393,40 @@ namespace Liplis.Voice
                         if (flag)
                         {
                             //☆
-                            //this.procVoiceroidEXCommand(text, this.m_hWindow);
+                            int tryCount = 0;
 
-                            int num4 = 0;
-                            while (LpsWindowsApi.SendMessage(this.msgHEdit, 12, 0, chatText) == 0 && ++num4 <= this.setting.nTryCount)
+                            //VoiceRoidにおしゃべりメッセージを送信
+                            while (LpsWindowsApi.SendMessage(this.msgHEdit, 12, 0, chatText) == 0 && ++tryCount <= this.setting.nTryCount)
                             {
                             }
-                            Thread.Sleep(this.setting.nTryInterval);
-                            int dlgCtrlID = LpsWindowsApi.GetDlgCtrlID(this.msgHPlayButton);
-                            bool flag2 = this.isEnabledPlayButton(this.msgHPlayButton);
 
-                            while (!flag2)
+                            //待ち
+                            Thread.Sleep(this.setting.nTryInterval);
+
+                            //ボタンのIDを取得
+                            int dlgCtrlID = LpsWindowsApi.GetDlgCtrlID(this.msgHPlayButton);
+
+                            //再生ボタンの有効チェック
+                            bool flgEnablePlayButton = this.isEnabledPlayButton(this.msgHPlayButton);
+
+                            //再生ボタンが有効になるまで待つ
+                            while (!flgEnablePlayButton)
                             {
-                                flag2 = this.isEnabledPlayButton(this.msgHPlayButton);
+                                flgEnablePlayButton = this.isEnabledPlayButton(this.msgHPlayButton);
                                 Thread.Sleep(this.setting.nTryInterval);
                             }
+
+                            //プレイボタンを押す
                             LpsWindowsApi.SendMessage(this.msgHWindow, 273, new IntPtr(this.MakeWParam((short)dlgCtrlID, 0)), this.msgHPlayButton);
 
+                            //ボタン有効フラグを寝かす
+                            flgEnablePlayButton = false;
 
-                            flag2 = false;
-                            while (!flag2)
+                            //再度、再生ボタンが有効になるの待つ
+                            while (!flgEnablePlayButton)
                             {
                                 Thread.Sleep(this.setting.nTryInterval);
-                                flag2 = this.isEnabledPlayButton(this.msgHPlayButton);
+                                flgEnablePlayButton = this.isEnabledPlayButton(this.msgHPlayButton);
                             }
                         }
                         else
