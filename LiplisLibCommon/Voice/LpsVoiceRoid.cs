@@ -469,7 +469,10 @@ namespace Liplis.Voice
             object obj;
             lock(obj = this.objlock)
             {
-                this.lstMessage.RemoveAt(0);
+                if(this.lstMessage.Count > 0)
+                {
+                    this.lstMessage.RemoveAt(0);
+                }         
             }
         }
         #endregion

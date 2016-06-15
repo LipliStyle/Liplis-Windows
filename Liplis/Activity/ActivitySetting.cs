@@ -269,6 +269,7 @@ namespace Liplis.Activity
             txtVoiceLoidPathZunkoEx.Text = os.lpsVoiceVRPathZunkoEx;
             txtVoiceLoidPathAkane.Text = os.lpsVoiceVRPathAkane;
             txtVoiceLoidPathAoi.Text = os.lpsVoiceVRPathAoi;
+            txtVoiceLoidPathSeika.Text = os.lpsVoiceVRPathSeika;
 
             //話題チェック
             chkNews.Checked = os.lpsTopicNews == 1;
