@@ -392,7 +392,6 @@ namespace Liplis.Voice
 
                         if (flag)
                         {
-                            //☆
                             int tryCount = 0;
 
                             //VoiceRoidにおしゃべりメッセージを送信
@@ -416,7 +415,7 @@ namespace Liplis.Voice
                                 Thread.Sleep(this.setting.nTryInterval);
                             }
 
-                            //プレイボタンを押す
+                            //再生ボタンを押す
                             LpsWindowsApi.SendMessage(this.msgHWindow, 273, new IntPtr(this.MakeWParam((short)dlgCtrlID, 0)), this.msgHPlayButton);
 
                             //ボタン有効フラグを寝かす

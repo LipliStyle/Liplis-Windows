@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LipliStyle")]
 [assembly: AssemblyProduct("Liplis")]
-[assembly: AssemblyCopyright("Copyright © LipliStyle Sachin")]
+[assembly: AssemblyCopyright("Copyright © LipliStyle Sachin 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +33,6 @@ using System.Resources;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.6.2.*")]
-[assembly: AssemblyFileVersion("4.6.2.0")]
+[assembly: AssemblyVersion("4.7.0.*")]
+[assembly: AssemblyFileVersion("4.7.0.0")]
 [assembly: NeutralResourcesLanguageAttribute("ja")]

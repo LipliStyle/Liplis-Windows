@@ -18,7 +18,8 @@ namespace Liplis.Voice.Option
             "VOICEROID＋ 月読ショウタ EX",
             "VOICEROID＋ 民安ともえ EX",
             "VOICEROID＋ 東北ずん子 EX",
-            "VOICEROID＋ 結月ゆかり EX"
+            "VOICEROID＋ 結月ゆかり EX",
+            "VOICEROID＋ 京町セイカ EX"
         };
     }
 }

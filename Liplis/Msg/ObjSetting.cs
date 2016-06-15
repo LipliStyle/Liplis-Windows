@@ -84,7 +84,7 @@ namespace Liplis.Msg
         public string lpsVoiceVRPathZunkoEx     { get; set; }   //ずんこパス 2015/09/02 Lipli4.5.3
         public string lpsVoiceVRPathAkane       { get; set; }	//琴葉茜 2015/09/02 Lipli4.5.5
         public string lpsVoiceVRPathAoi         { get; set; }	//琴葉葵 2015/09/02 Lipli4.5.5
-
+        public string lpsVoiceVRPathSeika       { get; set; }	//京町セイカ 2016/06/15 Lipli4.7.0
 
         ///=============================
         /// twitter認証設定済み
@@ -170,6 +170,8 @@ namespace Liplis.Msg
                 setLpsVoiceVRPathZunkoEx(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_ZUNKO_EX, ""));   //2015/09/02 Lipli4.5.3
                 setLpsVoiceVRPathAkane(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_AKANE, ""));        //2015/09/02 Lipli4.5.5
                 setLpsVoiceVRPathAoi(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_AOI, ""));            //2015/09/02 Lipli4.5.5
+                setLpsVoiceVRPathSeika(setting.getString(LiplisDefine.PREFS_VOICE_VRPATH_SEIKA, ""));        //2016/06/15 Lipli4.7.0
+                
 
                 setTwitterActivate(setting.getInt(LiplisDefine.PREFS_TWITTER_ACTIVATE, 0));
 
@@ -261,6 +263,7 @@ namespace Liplis.Msg
             setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_ZUNKO_EX, this.lpsVoiceVRPathZunkoEx);    //2015/09/02 Lipli4.5.3
             setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_AKANE, this.lpsVoiceVRPathAkane);         //2015/09/02 Lipli4.5.3
             setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_AOI, this.lpsVoiceVRPathAoi);             //2015/09/02 Lipli4.5.3
+            setting.setString(LiplisDefine.PREFS_VOICE_VRPATH_SEIKA, this.lpsVoiceVRPathSeika);          //2016/06/14 Lipli4.7.0
 
             setting.setInt(LiplisDefine.PREFS_TWITTER_ACTIVATE, this.twitterActivate);
 
@@ -873,7 +876,15 @@ namespace Liplis.Msg
             this.lpsVoiceVRPathAoi = lpsVoiceVRPathAoi;
         }
 
-
+        /// <summary>
+        /// セイカパス
+        /// 2016/06/14 Liplis4.7.0
+        /// </summary>
+        /// <param name="lpsVoiceVRPathSeika"></param>
+        private void setLpsVoiceVRPathSeika(string lpsVoiceVRPathSeika)
+        {
+            this.lpsVoiceVRPathSeika = lpsVoiceVRPathSeika;
+        }
 
         /// <summary>
         /// 選択されているボイスロイドを取得する
@@ -903,6 +914,8 @@ namespace Liplis.Msg
                     return new LpsVoiceRoid(new msgVoiceRoid(LiplisDefine.LPS_VOICE_ROID_AKANE, lpsVoiceVRPathAkane));
                 case 9://琴葉葵
                     return new LpsVoiceRoid(new msgVoiceRoid(LiplisDefine.LPS_VOICE_ROID_AOI, lpsVoiceVRPathAoi));
+                case 10://京町セイカ EX
+                    return new LpsVoiceRoid(new msgVoiceRoid(LiplisDefine.LPS_VOICE_ROID_SEIKA, lpsVoiceVRPathSeika));
 
                 default:
                     return new LpsVoiceRoid(new msgVoiceRoid("", ""));

@@ -1362,8 +1362,6 @@ namespace Liplis.Activity
             savePreference();
         }
 
-
-
         private void btnVoiceLoidPathAkane_Click(object sender, EventArgs e)
         {
             //ファイル名取得
@@ -1411,6 +1409,32 @@ namespace Liplis.Activity
             //OKならプリファレンスに記録してテキストに表示
             txtVoiceLoidPathAoi.Text = filePath;
             os.lpsVoiceVRPathAoi = filePath;
+            savePreference();
+        }
+
+
+        private void btnVoiceLoidPathSeika_Click(object sender, EventArgs e)
+        {
+            //ファイル名取得
+            string filePath = getVRPath("VOICEROID+ 京町セイカ EX", "VOICEROID.exe");
+
+            //ファイル名チェック
+            if (filePath.Equals(""))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("ファイルが選択されませんでした。");
+                return;
+            }
+
+            //存在チェック
+            if (!LpsLiplisUtil.ExistsFile(filePath))
+            {
+                LpsLiplisUtil.LiplisMessageOkOnly("対象のファイルは存在しません！");
+                return;
+            }
+
+            //OKならプリファレンスに記録してテキストに表示
+            txtVoiceLoidPathSeika.Text = filePath;
+            os.lpsVoiceVRPathSeika = filePath;
             savePreference();
         }
 
@@ -1682,6 +1706,7 @@ namespace Liplis.Activity
 
 
         #endregion
+
 
     }
 }

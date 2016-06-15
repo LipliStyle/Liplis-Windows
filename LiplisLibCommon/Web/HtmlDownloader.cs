@@ -80,10 +80,6 @@ namespace Liplis.Web
                         webres.Close();
                 }
 
-
-
-
-
                 return true;
             }
             catch

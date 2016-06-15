@@ -86,12 +86,12 @@
             this.dgvTwitter = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsTwitter = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiTwitterUserDel = new System.Windows.Forms.ToolStripMenuItem();
             this.chkDeleteTwitter = new System.Windows.Forms.CheckBox();
             this.btnRegistTwitter = new System.Windows.Forms.Button();
             this.txtTwitterUserName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmsTwitter = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiTwitterUserDel = new System.Windows.Forms.ToolStripMenuItem();
             this.csmCat.SuspendLayout();
             this.csmRss.SuspendLayout();
             this.msMenu.SuspendLayout();
@@ -129,26 +129,26 @@
             this.tsmiCatFix,
             this.tsmiCatDel});
             this.csmCat.Name = "csmCat";
-            this.csmCat.Size = new System.Drawing.Size(153, 70);
+            this.csmCat.Size = new System.Drawing.Size(137, 70);
             // 
             // tsmiCatAdd
             // 
             this.tsmiCatAdd.Name = "tsmiCatAdd";
-            this.tsmiCatAdd.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCatAdd.Size = new System.Drawing.Size(136, 22);
             this.tsmiCatAdd.Text = "カテゴリ 追加";
             this.tsmiCatAdd.Click += new System.EventHandler(this.tsmiCatAdd_Click);
             // 
             // tsmiCatFix
             // 
             this.tsmiCatFix.Name = "tsmiCatFix";
-            this.tsmiCatFix.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCatFix.Size = new System.Drawing.Size(136, 22);
             this.tsmiCatFix.Text = "カテゴリ 修正";
             this.tsmiCatFix.Click += new System.EventHandler(this.tsmiCatFix_Click);
             // 
             // tsmiCatDel
             // 
             this.tsmiCatDel.Name = "tsmiCatDel";
-            this.tsmiCatDel.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCatDel.Size = new System.Drawing.Size(136, 22);
             this.tsmiCatDel.Text = "カテゴリ 削除";
             this.tsmiCatDel.Click += new System.EventHandler(this.tsmiCatDel_Click);
             // 
@@ -157,12 +157,12 @@
             this.csmRss.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiRssDel});
             this.csmRss.Name = "csmRss";
-            this.csmRss.Size = new System.Drawing.Size(125, 26);
+            this.csmRss.Size = new System.Drawing.Size(118, 26);
             // 
             // tsmiRssDel
             // 
             this.tsmiRssDel.Name = "tsmiRssDel";
-            this.tsmiRssDel.Size = new System.Drawing.Size(124, 22);
+            this.tsmiRssDel.Size = new System.Drawing.Size(117, 22);
             this.tsmiRssDel.Text = "RSS削除";
             this.tsmiRssDel.Click += new System.EventHandler(this.tsmiRssDel_Click);
             // 
@@ -175,7 +175,7 @@
             this.tsmiTwitter});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(784, 26);
+            this.msMenu.Size = new System.Drawing.Size(784, 24);
             this.msMenu.TabIndex = 6;
             this.msMenu.Text = "Twitter";
             // 
@@ -184,13 +184,13 @@
             this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiEnd});
             this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(85, 22);
+            this.tsmiFile.Size = new System.Drawing.Size(66, 20);
             this.tsmiFile.Text = "ファイル(&F)";
             // 
             // tsmiEnd
             // 
             this.tsmiEnd.Name = "tsmiEnd";
-            this.tsmiEnd.Size = new System.Drawing.Size(118, 22);
+            this.tsmiEnd.Size = new System.Drawing.Size(113, 22);
             this.tsmiEnd.Text = "終了(&X)";
             this.tsmiEnd.Click += new System.EventHandler(this.tsmiEnd_Click);
             // 
@@ -199,13 +199,13 @@
             this.tsmiFilter.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFilterSearch});
             this.tsmiFilter.Name = "tsmiFilter";
-            this.tsmiFilter.Size = new System.Drawing.Size(98, 22);
+            this.tsmiFilter.Size = new System.Drawing.Size(74, 20);
             this.tsmiFilter.Text = "フィルター(&S)";
             // 
             // tsmiFilterSearch
             // 
             this.tsmiFilterSearch.Name = "tsmiFilterSearch";
-            this.tsmiFilterSearch.Size = new System.Drawing.Size(100, 22);
+            this.tsmiFilterSearch.Size = new System.Drawing.Size(98, 22);
             this.tsmiFilterSearch.Text = "検索";
             this.tsmiFilterSearch.Click += new System.EventHandler(this.tsmiFilterSearch_Click);
             // 
@@ -216,27 +216,27 @@
             this.tsmiCatSearch,
             this.tsmiCatReload});
             this.tsmiRss.Name = "tsmiRss";
-            this.tsmiRss.Size = new System.Drawing.Size(62, 22);
+            this.tsmiRss.Size = new System.Drawing.Size(53, 20);
             this.tsmiRss.Text = "RSS(&R)";
             // 
             // tsmiCatAdd_
             // 
             this.tsmiCatAdd_.Name = "tsmiCatAdd_";
-            this.tsmiCatAdd_.Size = new System.Drawing.Size(148, 22);
+            this.tsmiCatAdd_.Size = new System.Drawing.Size(133, 22);
             this.tsmiCatAdd_.Text = "カテゴリ追加";
             this.tsmiCatAdd_.Click += new System.EventHandler(this.tsmiCatAdd__Click);
             // 
             // tsmiCatSearch
             // 
             this.tsmiCatSearch.Name = "tsmiCatSearch";
-            this.tsmiCatSearch.Size = new System.Drawing.Size(148, 22);
+            this.tsmiCatSearch.Size = new System.Drawing.Size(133, 22);
             this.tsmiCatSearch.Text = "検索";
             this.tsmiCatSearch.Click += new System.EventHandler(this.tsmiCatSearch_Click);
             // 
             // tsmiCatReload
             // 
             this.tsmiCatReload.Name = "tsmiCatReload";
-            this.tsmiCatReload.Size = new System.Drawing.Size(148, 22);
+            this.tsmiCatReload.Size = new System.Drawing.Size(133, 22);
             this.tsmiCatReload.Text = "再読み込み";
             this.tsmiCatReload.Click += new System.EventHandler(this.tsmiCatReload_Click);
             // 
@@ -247,27 +247,27 @@
             this.tsmiTwitterSearch,
             this.tsmiTwitterReload});
             this.tsmiTwitter.Name = "tsmiTwitter";
-            this.tsmiTwitter.Size = new System.Drawing.Size(80, 22);
+            this.tsmiTwitter.Size = new System.Drawing.Size(68, 20);
             this.tsmiTwitter.Text = "Twitter(&T)";
             // 
             // tsmiTwitterActivate
             // 
             this.tsmiTwitterActivate.Name = "tsmiTwitterActivate";
-            this.tsmiTwitterActivate.Size = new System.Drawing.Size(166, 22);
+            this.tsmiTwitterActivate.Size = new System.Drawing.Size(157, 22);
             this.tsmiTwitterActivate.Text = "Twitter認証登録";
             this.tsmiTwitterActivate.Click += new System.EventHandler(this.tsmiTwitterActivate_Click);
             // 
             // tsmiTwitterSearch
             // 
             this.tsmiTwitterSearch.Name = "tsmiTwitterSearch";
-            this.tsmiTwitterSearch.Size = new System.Drawing.Size(166, 22);
+            this.tsmiTwitterSearch.Size = new System.Drawing.Size(157, 22);
             this.tsmiTwitterSearch.Text = "検索";
             this.tsmiTwitterSearch.Click += new System.EventHandler(this.tsmiTwitterSearch_Click);
             // 
             // tsmiTwitterReload
             // 
             this.tsmiTwitterReload.Name = "tsmiTwitterReload";
-            this.tsmiTwitterReload.Size = new System.Drawing.Size(166, 22);
+            this.tsmiTwitterReload.Size = new System.Drawing.Size(157, 22);
             this.tsmiTwitterReload.Text = "再読み込み";
             this.tsmiTwitterReload.Click += new System.EventHandler(this.tsmiTwitterReload_Click);
             // 
@@ -277,10 +277,10 @@
             this.tb.Controls.Add(this.tbRss);
             this.tb.Controls.Add(this.tbTwitter);
             this.tb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb.Location = new System.Drawing.Point(0, 26);
+            this.tb.Location = new System.Drawing.Point(0, 24);
             this.tb.Name = "tb";
             this.tb.SelectedIndex = 0;
-            this.tb.Size = new System.Drawing.Size(784, 536);
+            this.tb.Size = new System.Drawing.Size(784, 538);
             this.tb.TabIndex = 7;
             // 
             // tbFilter
@@ -290,7 +290,7 @@
             this.tbFilter.Location = new System.Drawing.Point(4, 22);
             this.tbFilter.Name = "tbFilter";
             this.tbFilter.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFilter.Size = new System.Drawing.Size(776, 510);
+            this.tbFilter.Size = new System.Drawing.Size(776, 512);
             this.tbFilter.TabIndex = 3;
             this.tbFilter.Text = "フィルター";
             this.tbFilter.UseVisualStyleBackColor = true;
@@ -301,7 +301,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(770, 460);
+            this.panel1.Size = new System.Drawing.Size(770, 462);
             this.panel1.TabIndex = 2;
             // 
             // spcFilter
@@ -321,8 +321,8 @@
             this.spcFilter.Panel2.Controls.Add(this.chkDeleteFilter);
             this.spcFilter.Panel2.Controls.Add(this.txtFillterWord);
             this.spcFilter.Panel2.Controls.Add(this.btnFillterAdd);
-            this.spcFilter.Size = new System.Drawing.Size(770, 460);
-            this.spcFilter.SplitterDistance = 415;
+            this.spcFilter.Size = new System.Drawing.Size(770, 462);
+            this.spcFilter.SplitterDistance = 416;
             this.spcFilter.TabIndex = 2;
             // 
             // dgvFilter
@@ -349,7 +349,7 @@
             this.dgvFilter.MultiSelect = false;
             this.dgvFilter.Name = "dgvFilter";
             this.dgvFilter.RowTemplate.Height = 21;
-            this.dgvFilter.Size = new System.Drawing.Size(770, 415);
+            this.dgvFilter.Size = new System.Drawing.Size(770, 416);
             this.dgvFilter.TabIndex = 1;
             this.dgvFilter.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFilter_CellValueChanged);
             this.dgvFilter.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvFilter_CurrentCellDirtyStateChanged);
@@ -442,7 +442,7 @@
             this.tbRss.Location = new System.Drawing.Point(4, 22);
             this.tbRss.Name = "tbRss";
             this.tbRss.Padding = new System.Windows.Forms.Padding(3);
-            this.tbRss.Size = new System.Drawing.Size(776, 510);
+            this.tbRss.Size = new System.Drawing.Size(776, 512);
             this.tbRss.TabIndex = 1;
             this.tbRss.Text = "RSS";
             this.tbRss.UseVisualStyleBackColor = true;
@@ -462,7 +462,7 @@
             // spc.Panel2
             // 
             this.spc.Panel2.Controls.Add(this.spc2);
-            this.spc.Size = new System.Drawing.Size(770, 504);
+            this.spc.Size = new System.Drawing.Size(770, 506);
             this.spc.SplitterDistance = 195;
             this.spc.TabIndex = 4;
             // 
@@ -480,8 +480,8 @@
             // spc3.Panel2
             // 
             this.spc3.Panel2.Controls.Add(this.btnCatAdd);
-            this.spc3.Size = new System.Drawing.Size(195, 504);
-            this.spc3.SplitterDistance = 470;
+            this.spc3.Size = new System.Drawing.Size(195, 506);
+            this.spc3.SplitterDistance = 471;
             this.spc3.TabIndex = 4;
             // 
             // tvRss
@@ -498,7 +498,7 @@
             treeNode1.Text = "カテゴリ";
             this.tvRss.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
-            this.tvRss.Size = new System.Drawing.Size(195, 470);
+            this.tvRss.Size = new System.Drawing.Size(195, 471);
             this.tvRss.TabIndex = 4;
             this.tvRss.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvRss_AfterSelect);
             this.tvRss.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tvRss_MouseDown);
@@ -508,7 +508,7 @@
             this.btnCatAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCatAdd.Location = new System.Drawing.Point(0, 0);
             this.btnCatAdd.Name = "btnCatAdd";
-            this.btnCatAdd.Size = new System.Drawing.Size(195, 30);
+            this.btnCatAdd.Size = new System.Drawing.Size(195, 31);
             this.btnCatAdd.TabIndex = 8;
             this.btnCatAdd.Text = "カテゴリ追加";
             this.btnCatAdd.UseVisualStyleBackColor = true;
@@ -536,8 +536,8 @@
             this.spc2.Panel2.Controls.Add(this.btnRegist);
             this.spc2.Panel2.Controls.Add(this.txtUrl);
             this.spc2.Panel2.Controls.Add(this.lblRssUrl);
-            this.spc2.Size = new System.Drawing.Size(571, 504);
-            this.spc2.SplitterDistance = 440;
+            this.spc2.Size = new System.Drawing.Size(571, 506);
+            this.spc2.SplitterDistance = 441;
             this.spc2.TabIndex = 0;
             // 
             // dgv
@@ -564,7 +564,7 @@
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.RowTemplate.Height = 21;
-            this.dgv.Size = new System.Drawing.Size(571, 440);
+            this.dgv.Size = new System.Drawing.Size(571, 441);
             this.dgv.TabIndex = 0;
             this.dgv.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgv_UserDeletingRow);
             // 
@@ -638,7 +638,7 @@
             this.tbTwitter.Controls.Add(this.spcTwitter);
             this.tbTwitter.Location = new System.Drawing.Point(4, 22);
             this.tbTwitter.Name = "tbTwitter";
-            this.tbTwitter.Size = new System.Drawing.Size(776, 510);
+            this.tbTwitter.Size = new System.Drawing.Size(776, 512);
             this.tbTwitter.TabIndex = 2;
             this.tbTwitter.Text = "ツイッター";
             this.tbTwitter.UseVisualStyleBackColor = true;
@@ -663,8 +663,8 @@
             this.spcTwitter.Panel2.Controls.Add(this.btnRegistTwitter);
             this.spcTwitter.Panel2.Controls.Add(this.txtTwitterUserName);
             this.spcTwitter.Panel2.Controls.Add(this.label2);
-            this.spcTwitter.Size = new System.Drawing.Size(776, 510);
-            this.spcTwitter.SplitterDistance = 475;
+            this.spcTwitter.Size = new System.Drawing.Size(776, 512);
+            this.spcTwitter.SplitterDistance = 476;
             this.spcTwitter.TabIndex = 1;
             // 
             // dgvTwitter
@@ -692,7 +692,7 @@
             this.dgvTwitter.Name = "dgvTwitter";
             this.dgvTwitter.ReadOnly = true;
             this.dgvTwitter.RowTemplate.Height = 21;
-            this.dgvTwitter.Size = new System.Drawing.Size(776, 475);
+            this.dgvTwitter.Size = new System.Drawing.Size(776, 476);
             this.dgvTwitter.TabIndex = 0;
             this.dgvTwitter.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvTwitter_UserDeletingRow);
             // 
@@ -709,6 +709,20 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "紹介文";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // cmsTwitter
+            // 
+            this.cmsTwitter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTwitterUserDel});
+            this.cmsTwitter.Name = "csmRss";
+            this.cmsTwitter.Size = new System.Drawing.Size(170, 26);
+            // 
+            // tsmiTwitterUserDel
+            // 
+            this.tsmiTwitterUserDel.Name = "tsmiTwitterUserDel";
+            this.tsmiTwitterUserDel.Size = new System.Drawing.Size(169, 22);
+            this.tsmiTwitterUserDel.Text = "Twitterユーザー削除";
+            this.tsmiTwitterUserDel.Click += new System.EventHandler(this.tsmiTwitterUserDel_Click);
             // 
             // chkDeleteTwitter
             // 
@@ -746,20 +760,6 @@
             this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "ユーザー名";
-            // 
-            // cmsTwitter
-            // 
-            this.cmsTwitter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiTwitterUserDel});
-            this.cmsTwitter.Name = "csmRss";
-            this.cmsTwitter.Size = new System.Drawing.Size(191, 26);
-            // 
-            // tsmiTwitterUserDel
-            // 
-            this.tsmiTwitterUserDel.Name = "tsmiTwitterUserDel";
-            this.tsmiTwitterUserDel.Size = new System.Drawing.Size(190, 22);
-            this.tsmiTwitterUserDel.Text = "Twitterユーザー削除";
-            this.tsmiTwitterUserDel.Click += new System.EventHandler(this.tsmiTwitterUserDel_Click);
             // 
             // ActivityTopicRegist
             // 
