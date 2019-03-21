@@ -5,16 +5,12 @@
 //  Liplis4.5
 //  Copyright(c) 2010-2014 LipliStyle.Sachin
 //=======================================================================
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using Liplis.Common;
 using Liplis.Fct;
 using Liplis.Msg;
 using Newtonsoft.Json;
+using System.Collections.Specialized;
+using System.Threading;
 
 namespace Liplis.Web.Clalis
 {
