@@ -62,6 +62,10 @@
 //  2016/01/10 Liplis4.6.2 微修正
 //  2016/06/15 Liplis4.7.0 ボイスロイド 京町セイカ EX　対応
 //
+//  2022/08/19 Liplis4.7.1 liplisNowTopicがNULLのときにエラーログが出力される問題修正
+//  2022/08/19 Liplis4.7.1 アプリ終了時、アイコンが消えるように修正
+//  2022/08/19 Liplis4.7.1 objがNULLのときエラーとなっていた問題修正
+
 // ■運用
 //  ミニからのオーバーライドを必要とする場合は、メソッドをvirtualにした上で、
 //  「☆Miniオーバーライド」をコメントに付け加える。
@@ -3735,7 +3739,8 @@ namespace Liplis.MainSystem
                     return true;
                 }
 
-                if(liplisNowTopic == null)
+                //2022/08/19 liplisNowTopicがNULLのときにエラーログが出力される問題修正
+                if (liplisNowTopic == null)
                 {
                     return false;
                 }
@@ -4131,6 +4136,7 @@ namespace Liplis.MainSystem
 
                 objTouchResult result = olt.checkClick(x, y, ob.getLstTouch(), mode);
 
+                //2022/08/19 objがNULLのときエラーとなっていた問題修正
                 if (result.obj == null)
                 {
                     return;
