@@ -2,6 +2,7 @@
 //  ClassName : LiplisTaskBar
 //  概要      : タスクバーオブジェクト
 //
+//  Update    :2022/08/19 アプリ終了時、アイコンが消えるように修正
 //  Liplis2.0
 //  Copyright(c) 2010-2011 LipliStyle.Sachin
 //=======================================================================
@@ -166,7 +167,8 @@ namespace Liplis.MainSystem
         {
             if (lips.getFlgEnd())
             {
-
+                icon.Icon.Dispose();
+                icon.Dispose();
             }
             else
             {
