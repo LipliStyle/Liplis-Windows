@@ -3735,6 +3735,11 @@ namespace Liplis.MainSystem
                     return true;
                 }
 
+                if(liplisNowTopic == null)
+                {
+                    return false;
+                }
+
                 //テキスト出力
                 if (liplisNowTopic.result.Length > cntLct - 1 )
                 {
@@ -4125,6 +4130,11 @@ namespace Liplis.MainSystem
                 int y = System.Windows.Forms.Cursor.Position.Y - this.Top;
 
                 objTouchResult result = olt.checkClick(x, y, ob.getLstTouch(), mode);
+
+                if (result.obj == null)
+                {
+                    return;
+                }
 
                 if (result.result == mode)
                 {
